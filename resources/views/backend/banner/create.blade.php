@@ -18,7 +18,7 @@
         </div>
 
         <div class="form-group">
-          <label for="inputDesc" class="col-form-label">Description</label>
+          <label for="inputDesc" class="col-form-label">Description de test</label>
           <textarea class="form-control" id="description" name="description">{{old('description')}}</textarea>
           @error('description')
           <span class="text-danger">{{$message}}</span>
