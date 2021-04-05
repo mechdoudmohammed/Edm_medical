@@ -47,10 +47,10 @@ class FournisseurController extends Controller
         $status=Fournisseur::create($data);
 
         if($status){
-            request()->session()->flash('success','Fournisseur successfully created');
+            request()->session()->flash('success','Fournisseur aouté avec Succès');
         }
         else{
-            request()->session()->flash('error','Error, Please try again');
+            request()->session()->flash('Erreur, veuillez réessayer ultérieurement');
         }
         return redirect()->route('fournisseur.index');
     }
@@ -76,7 +76,7 @@ class FournisseurController extends Controller
     {
         $fournisseur=Fournisseur::find($id);
         if(!$fournisseur){
-            request()->session()->flash('error','Fournisseur not found');
+            request()->session()->flash('error','Fournisseur introuvable');
         }
         return view('backend.fournisseur.edit')->with('fournisseur',$fournisseur);
     }
@@ -102,10 +102,10 @@ class FournisseurController extends Controller
      //  return $data;
         $status=$fournisseur->fill($data)->save();
         if($status){
-            request()->session()->flash('success','Fournisseur successfully updated');
+            request()->session()->flash('success','Fournisseur modifié avec Succès');
         }
         else{
-            request()->session()->flash('error','Error, Please try again');
+            request()->session()->flash('Erreur, veuillez réessayer ultérieurement');
         }
         return redirect()->route('fournisseur.index');
     }
@@ -122,15 +122,15 @@ class FournisseurController extends Controller
         if($fournisseur){
             $status=$fournisseur->delete();
             if($status){
-                request()->session()->flash('success','Fournisseur successfully deleted');
+                request()->session()->flash('Succès','Fournisseur supprimé avec Succès');
             }
             else{
-                request()->session()->flash('error','Error, Please try again');
+                request()->session()->flash('Erreur, veuillez réessayer ultérieurement');
             }
             return redirect()->route('fournisseur.index');
         }
         else{
-            request()->session()->flash('error','Fournisseur not found');
+            request()->session()->flash('erreur','Fournisseur introuvable');
             return redirect()->back();
         }
     }

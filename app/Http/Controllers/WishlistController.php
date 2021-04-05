@@ -15,20 +15,20 @@ class WishlistController extends Controller
     public function wishlist(Request $request){
         // dd($request->all());
         if (empty($request->slug)) {
-            request()->session()->flash('error','Invalid Materiels');
+            request()->session()->flash('erreur','Materiel invalide');
             return back();
         }        
         $materiel = Materiel::where('slug', $request->slug)->first();
         // return $materiel;
         if (empty($materiel)) {
-            request()->session()->flash('error','Invalid Materiels');
+            request()->session()->flash('erreur','Materiel invalide');
             return back();
         }
 
         $already_wishlist = Wishlist::where('user_id', auth()->user()->id)->where('cart_id',null)->where('materiel_id', $materiel->id)->first();
         // return $already_wishlist;
         if($already_wishlist) {
-            request()->session()->flash('error','You already placed in wishlist');
+            request()->session()->flash('erreur', 'Erreur, veuillez réessayer ultérieurement');
             return back();
         }else{
             
@@ -41,7 +41,7 @@ class WishlistController extends Controller
             if ($wishlist->materiel->stock < $wishlist->quantity || $wishlist->materiel->stock <= 0) return back()->with('error','Stock not sufficient!.');
             $wishlist->save();
         }
-        request()->session()->flash('success','Materiel successfully added to wishlist');
+        request()->session()->flash('Succès','Materiel ajouté à la liste avec succès');
         return back();       
     }  
     
@@ -49,10 +49,10 @@ class WishlistController extends Controller
         $wishlist = Wishlist::find($request->id);
         if ($wishlist) {
             $wishlist->delete();
-            request()->session()->flash('success','Wishlist successfully removed');
+            request()->session()->flash('Succès','Suppresion avec succès');
             return back();  
         }
-        request()->session()->flash('error','Error please try again');
+        request()->session()->flash('erreur', 'Erreur, veuillez réessayer ultérieurement');
         return back();       
     }     
 }

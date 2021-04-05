@@ -46,10 +46,10 @@ class LivraisonController extends Controller
         // return $data;
         $status=Livraison::create($data);
         if($status){
-            request()->session()->flash('success','Livraison successfully created');
+            request()->session()->flash('Succès','Livraison crée avec succès');
         }
         else{
-            request()->session()->flash('error','Error, Please try again');
+            request()->session()->flash('erreur','Erreur, veuillez réessayer ultérieurement');
         }
         return redirect()->route('livraison.index');
     }
@@ -75,7 +75,7 @@ class LivraisonController extends Controller
     {
         $livraison=Livraison::find($id);
         if(!$livraison){
-            request()->session()->flash('error','Livraison not found');
+            request()->session()->flash('erreur','Erreur, veuillez réessayer ultérieurement');
         }
         return view('backend.livraison.edit')->with('livraison',$livraison);
     }
@@ -99,10 +99,10 @@ class LivraisonController extends Controller
         // return $data;
         $status=$livraison->fill($data)->save();
         if($status){
-            request()->session()->flash('success','Livraison successfully updated');
+            request()->session()->flash('Succès','Livraison modifié avec succès');
         }
         else{
-            request()->session()->flash('error','Error, Please try again');
+            request()->session()->flash('erreur','Erreur, veuillez réessayer ultérieurement');
         }
         return redirect()->route('livraison.index');
     }
@@ -119,15 +119,15 @@ class LivraisonController extends Controller
         if($livraison){
             $status=$livraison->delete();
             if($status){
-                request()->session()->flash('success','Livraison successfully deleted');
+                request()->session()->flash('Succès','Livraison supprimé avec succès');
             }
             else{
-                request()->session()->flash('error','Error, Please try again');
+                request()->session()->flash('erreur','Erreur, veuillez réessayer ultérieurement');
             }
             return redirect()->route('livraison.index');
         }
         else{
-            request()->session()->flash('error','Livraison not found');
+            request()->session()->flash('erreur','Livraison introuvable');
             return redirect()->back();
         }
     }

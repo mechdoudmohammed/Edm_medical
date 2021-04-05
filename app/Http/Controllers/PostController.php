@@ -77,10 +77,10 @@ class PostController extends Controller
 
         $status=Post::create($data);
         if($status){
-            request()->session()->flash('success','Post Successfully added');
+            request()->session()->flash('Succès','Poste ajouté avec succès');
         }
         else{
-            request()->session()->flash('error','Please try again!!');
+            request()->session()->flash('erreur','Erreur, veuillez réessayer ultérieurement');
         }
         return redirect()->route('post.index');
     }
@@ -147,10 +147,10 @@ class PostController extends Controller
 
         $status=$post->fill($data)->save();
         if($status){
-            request()->session()->flash('success','Post Successfully updated');
+            request()->session()->flash('Succès','Poste modifié avec succès');
         }
         else{
-            request()->session()->flash('error','Please try again!!');
+            request()->session()->flash('erreur','Erreur, veuillez réessayer ultérieurement');
         }
         return redirect()->route('post.index');
     }
@@ -168,10 +168,10 @@ class PostController extends Controller
         $status=$post->delete();
         
         if($status){
-            request()->session()->flash('success','Post successfully deleted');
+            request()->session()->flash('Succès','Poste supprimé avec succès');
         }
         else{
-            request()->session()->flash('error','Error while deleting post ');
+            request()->session()->flash('erreur','Erreur, veuillez réessayer ultérieurement');
         }
         return redirect()->route('post.index');
     }

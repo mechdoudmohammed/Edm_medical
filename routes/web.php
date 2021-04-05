@@ -112,10 +112,12 @@ Route::group(['prefix'=>'/admin','middleware'=>['auth','admin']],function(){
 
 
     
-     //livreur
+    //livreur
      Route::get('/livreur','LivreurController@index')->name('livreur_index');
      Route::get('/ajouter/livreur','LivreurController@create')->name('livreur_create');
-     Route::get('/ajouter2/livreur','LivreurController@store')->name('livreur_store');
+     Route::post('/ajouter2/livreur','LivreurController@store')->name('livreur_store');
+     Route::post('/ajouter3/livreur','LivreurController@update')->name('livreur_update');
+
 
 
 

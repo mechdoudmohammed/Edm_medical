@@ -48,10 +48,10 @@ class AdminController extends Controller
         $data['photo']= $file_name;
         $status=$user->fill($data)->save();
         if($status){
-            request()->session()->flash('success','Successfully updated your profile');
+            request()->session()->flash('Succès','Profile modifié avec Succès');
         }
         else{
-            request()->session()->flash('error','Please try again!');
+            request()->session()->flash('erreur','Erreur, veuillez réessayer ultérieurement');
         }
         return redirect()->back();
     }
@@ -81,10 +81,10 @@ class AdminController extends Controller
         // return $settings;
         $status=$settings->fill($data)->save();
         if($status){
-            request()->session()->flash('success','Setting successfully updated');
+            request()->session()->flash('Succès','Paramétres appliqué');
         }
         else{
-            request()->session()->flash('error','Please try again');
+            request()->session()->flash('erreur','Erreur, veuillez réessayer ultérieurement');
         }
         return redirect()->route('admin');
     }
@@ -103,7 +103,7 @@ class AdminController extends Controller
 
         User::find(auth()->user()->id)->update(['password'=> Hash::make($request->new_password)]);
 
-        return redirect()->route('admin')->with('success','Password est bien changee');
+        return redirect()->route('admin')->with('Succès','Changement de mot de passe avec succès');
     }
 
     // Pie chart

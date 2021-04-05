@@ -18,13 +18,13 @@ class CartController extends Controller
     public function addToCart(Request $request){
         // dd($request->all());
         if (empty($request->slug)) {
-            request()->session()->flash('error','Invalid Materiels');
+            request()->session()->flash('erreur','Materiel invalide');
             return back();
         }        
         $materiel = Materiel::where('slug', $request->slug)->first();
         // return $materiel;
         if (empty($materiel)) {
-            request()->session()->flash('error','Invalid Materiels');
+            request()->session()->flash('erreur','Materiel invalide');
             return back();
         }
 
@@ -50,7 +50,7 @@ class CartController extends Controller
             $cart->save();
             $wishlist=Wishlist::where('user_id',auth()->user()->id)->where('cart_id',null)->update(['cart_id'=>$cart->id]);
         }
-        request()->session()->flash('success','Materiel successfully added to cart');
+        request()->session()->flash('Succès','Matériel ajouté avec succès au panier');
         return back();       
     }  
 
@@ -64,10 +64,10 @@ class CartController extends Controller
 
         $materiel = Materiel::where('slug', $request->slug)->first();
         if($materiel->stock <$request->quant[1]){
-            return back()->with('error','Out of stock, You can add other materiels.');
+            return back()->with('erreur','En rupture de stock, vous pouvez ajouter d autres matériaux.');
         }
         if ( ($request->quant[1] < 1) || empty($materiel) ) {
-            request()->session()->flash('error','Invalid Materiels');
+            request()->session()->flash('erreur','Materiel invalide');
             return back();
         }    
 
@@ -96,7 +96,7 @@ class CartController extends Controller
             // return $cart;
             $cart->save();
         }
-        request()->session()->flash('success','Materiel successfully added to cart.');
+        request()->session()->flash('Succès','Matériel ajouté avec succès au panier');
         return back();       
     } 
     
@@ -104,10 +104,10 @@ class CartController extends Controller
         $cart = Cart::find($request->id);
         if ($cart) {
             $cart->delete();
-            request()->session()->flash('success','Cart successfully removed');
+            request()->session()->flash('Succès','Panier vidé avec succès ');
             return back();  
         }
-        request()->session()->flash('error','Error please try again');
+        request()->session()->flash('erreur','Erreur, veuillez réessayer ultérieurement');
         return back();       
     }     
 
@@ -127,7 +127,7 @@ class CartController extends Controller
                     // return $quant;
 
                     if($cart->materiel->stock < $quant){
-                        request()->session()->flash('error','Out of stock');
+                        request()->session()->flash('erreur','rupture stock ');
                         return back();
                     }
                     $cart->quantity = ($cart->materiel->stock > $quant) ? $quant  : $cart->materiel->stock;
@@ -138,14 +138,14 @@ class CartController extends Controller
                     $cart->amount = $after_price * $quant;
                     // return $cart->price;
                     $cart->save();
-                    $success = 'Cart successfully updated!';
+                    $success = 'Panier modifié avec succès';
                 }else{
-                    $error[] = 'Cart Invalid!';
+                    $error[] = 'Panier invalide';
                 }
             }
-            return back()->with($error)->with('success', $success);
+            return back()->with($error)->with('Succès', $success);
         }else{
-            return back()->with('Cart Invalid!');
+            return back()->with('Panier invalide');
         }    
     }
 
