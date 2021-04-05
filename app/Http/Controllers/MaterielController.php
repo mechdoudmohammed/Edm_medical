@@ -89,10 +89,10 @@ class MaterielController extends Controller
         // return $data;
         $status=Materiel::create($data);
         if($status){
-            request()->session()->flash('success','Materiel Successfully added');
+            request()->session()->flash('Succès','Materiel ajouté avec succès');
         }
         else{
-            request()->session()->flash('error','Please try again!!');
+            request()->session()->flash('erreur','Erreur, veuillez réessayer ultérieurement');
         }
         return redirect()->route('materiel.index');
 
@@ -172,10 +172,10 @@ class MaterielController extends Controller
          //return $data;
         $status=$materiel->fill($data)->save();
         if($status){
-            request()->session()->flash('success','Materiel Successfully updated');
+            request()->session()->flash('Succès','Materiel modifié avec succès');
         }
         else{
-            request()->session()->flash('error','Please try again!!');
+            request()->session()->flash('erreur','Erreur, veuillez réessayer ultérieurement');
         }
         return redirect()->route('materiel.index');
     }
@@ -192,10 +192,10 @@ class MaterielController extends Controller
         $status=$materiel->delete();
 
         if($status){
-            request()->session()->flash('success','Materiel successfully deleted');
+            request()->session()->flash('Succès','Materiel supprimé avec succès');
         }
         else{
-            request()->session()->flash('error','Error while deleting materiel');
+            request()->session()->flash('erreur','Erreur, veuillez réessayer ultérieurement');
         }
         return redirect()->route('materiel.index');
     }

@@ -52,10 +52,10 @@ class UsersController extends Controller
         $status=User::create($data);
         // dd($status);
         if($status){
-            request()->session()->flash('success','Successfully added user');
+            request()->session()->flash('Succès','utilisateur ajouté avec succès');
         }
         else{
-            request()->session()->flash('error','Error occurred while adding user');
+            request()->session()->flash('erreur','Erreur, veuillez réessayer ultérieurement');
         }
         return redirect()->route('users.index');
 
@@ -111,10 +111,10 @@ class UsersController extends Controller
         
         $status=$user->fill($data)->save();
         if($status){
-            request()->session()->flash('success','Successfully updated');
+            request()->session()->flash('Succès','Modification avec succès');
         }
         else{
-            request()->session()->flash('error','Error occured while updating');
+            request()->session()->flash('erreur','Erreur, veuillez réessayer ultérieurement');
         }
         return redirect()->route('users.index');
 
@@ -131,10 +131,10 @@ class UsersController extends Controller
         $delete=User::findorFail($id);
         $status=$delete->delete();
         if($status){
-            request()->session()->flash('success','User Successfully deleted');
+            request()->session()->flash('Succès','utilisateur supprimé avec succès');
         }
         else{
-            request()->session()->flash('error','There is an error while deleting users');
+            request()->session()->flash('erreur', 'Erreur, veuillez réessayer ultérieurement');
         }
         return redirect()->route('users.index');
     }

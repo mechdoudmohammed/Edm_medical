@@ -148,7 +148,7 @@ class OrderController extends Controller
         Cart::where('user_id', auth()->user()->id)->where('order_id', null)->update(['order_id' => $order->id]);
 
         // dd($users);
-        request()->session()->flash('success','Your materiel successfully placed in order');
+        request()->session()->flash('Succès','Materiel ajouté au panier');
         return redirect()->route('home');
     }
 
@@ -204,10 +204,10 @@ class OrderController extends Controller
         }
         $status=$order->fill($data)->save();
         if($status){
-            request()->session()->flash('success','Successfully updated order');
+            request()->session()->flash('Succès','Commande modifié avec succès');
         }
         else{
-            request()->session()->flash('error','Error while updating order');
+            request()->session()->flash('erreur','Erreur, veuillez réessayer ultérieurement');
         }
         return redirect()->route('order.index');
     }
@@ -224,15 +224,15 @@ class OrderController extends Controller
         if($order){
             $status=$order->delete();
             if($status){
-                request()->session()->flash('success','Order Successfully deleted');
+                request()->session()->flash('Succès','Commande supprimé avec succès');
             }
             else{
-                request()->session()->flash('error','Order can not deleted');
+                request()->session()->flash('erreur','Erreur, veuillez réessayer ultérieurement');
             }
             return redirect()->route('order.index');
         }
         else{
-            request()->session()->flash('error','Order can not found');
+            request()->session()->flash('erreur','Commande introuvable');
             return redirect()->back();
         }
     }
@@ -246,28 +246,28 @@ class OrderController extends Controller
         $order=Order::where('user_id',auth()->user()->id)->where('order_number',$request->order_number)->first();
         if($order){
             if($order->status=="new"){
-            request()->session()->flash('success','Your order has been placed. please wait.');
+            request()->session()->flash('Succès','veuillez patienter');
             return redirect()->route('home');
 
             }
             elseif($order->status=="process"){
-                request()->session()->flash('success','Your order is under processing please wait.');
+                request()->session()->flash('Succès','Votre commande est en cours de traitement, veuillez patienter.');
                 return redirect()->route('home');
 
             }
             elseif($order->status=="delivered"){
-                request()->session()->flash('success','Your order is successfully delivered.');
+                request()->session()->flash('Succès','Votre commande est livrée avec succès.');
                 return redirect()->route('home');
 
             }
             else{
-                request()->session()->flash('error','Your order canceled. please try again');
+                request()->session()->flash('erreur','Erreur, veuillez réessayer ultérieurement');
                 return redirect()->route('home');
 
             }
         }
         else{
-            request()->session()->flash('error','Invalid order numer please try again');
+            request()->session()->flash('erreur','Numero de commande invalide');
             return back();
         }
     }

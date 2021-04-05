@@ -61,10 +61,10 @@ class MaterielReviewController extends Controller
         ];
         Notification::send($user,new StatusNotification($details));
         if($status){
-            request()->session()->flash('success','Thank you for your feedback');
+            request()->session()->flash('Succès','Merci pour votre feedback');
         }
         else{
-            request()->session()->flash('error','Something went wrong! Please try again!!');
+            request()->session()->flash('erreur','Erreur, veuillez réessayer ultérieurement');
         }
         return redirect()->back();
     }
@@ -119,14 +119,14 @@ class MaterielReviewController extends Controller
             // ];
             // Notification::send($user,new StatusNotification($details));
             if($status){
-                request()->session()->flash('success','Review Successfully updated');
+                request()->session()->flash('Succès','Examination modifié avec succès');
             }
             else{
-                request()->session()->flash('error','Something went wrong! Please try again!!');
+                request()->session()->flash('erreur','Erreur, veuillez réessayer ultérieurement');
             }
         }
         else{
-            request()->session()->flash('error','Review not found!!');
+            request()->session()->flash('erreur','Examination introuvable');
         }
 
         return redirect()->route('review.index');
@@ -143,10 +143,10 @@ class MaterielReviewController extends Controller
         $review=MaterielReview::find($id);
         $status=$review->delete();
         if($status){
-            request()->session()->flash('success','Successfully deleted review');
+            request()->session()->flash('Succès','Examination supprimé avec succès');
         }
         else{
-            request()->session()->flash('error','Something went wrong! Try again');
+            request()->session()->flash('erreur','Erreur, veuillez réessayer ultérieurement');
         }
         return redirect()->route('review.index');
     }
