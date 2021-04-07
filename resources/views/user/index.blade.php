@@ -91,7 +91,9 @@
       @php
           $orders=DB::table('orders')->where('user_id',auth()->user()->id)->paginate(10);
       @endphp
+
       <!-- Order -->
+      
       <div class="col-xl-12 col-lg-12">
         <table class="table table-bordered" id="order-dataTable" width="100%" cellspacing="0">
           <thead>
@@ -120,7 +122,11 @@
           </tfoot>
           <tbody>
             @if(count($orders)>0)
-              @foreach($orders as $order)   
+              @foreach($orders as $order)  
+
+      @php
+          $reclamations=DB::table('reclamations')->where('id_order',$order->id)->get();
+      @endphp
                 <tr>
                     <td>{{$order->id}}</td>
                     <td>{{$order->order_number}}</td>
@@ -138,9 +144,20 @@
                         @else
                           <span class="badge badge-danger">{{$order->status}}</span>
                         @endif
+                        </br>
+                        @if(count($reclamations)>0 )
+                        @foreach($reclamations as $reclamation)
+                        <span class="badge badge-dark">Reclamation {{$reclamation->statut}}</span>
+                        @endforeach
+                       @endif
                     </td>
+
                     <td>
-                        <a href="{{route('user.order.show',$order->id)}}" class="btn btn-warning btn-sm float-left mr-1" style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" title="view" data-placement="bottom"><i class="fas fa-eye"></i></a>
+                        <a href="{{route('user.order.show',$order->id)}}" class="btn btn-warning btn-sm float-left mr-1" style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" title="view" data-placement="bottom"><i class="fas fa-eye"></i></a> </br> 
+                        @if(count($reclamations)==0)
+                        <a href="{{route('user.reclamation.create',$order->id)}}" class="btn btn-info btn-sm float-left mr-1" style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" title="reclamer" data-placement="bottom"><i class="fas fa-exclamation"></i></a> </br> 
+                       @endif
+                       
                         <form method="POST" action="{{route('user.order.delete',[$order->id])}}">
                           @csrf 
                           @method('delete')
@@ -291,12 +308,6 @@ var myLineChart = new Chart(ctx, {
     }
   }
 });
-
-
-
-
-
-
 
 
 

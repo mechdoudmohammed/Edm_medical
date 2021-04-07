@@ -44,6 +44,7 @@
           <tbody>
             @foreach($orders as $order)  
             @php
+                $reclamations=DB::table('reclamations')->where('id_order',$order->id)->get();
                 $livraison_charge=DB::table('livraisons')->where('id',$order->livraison_id)->pluck('price');
             @endphp  
                 <tr>
@@ -64,9 +65,18 @@
                         @else
                           <span class="badge badge-danger">{{$order->status}}</span>
                         @endif
+
+                        @if(count($reclamations)>0 )
+                        @foreach($reclamations as $reclamation)
+                        <span class="badge badge-dark">Reclamation {{$reclamation->statut}}</span>
+                        @endforeach
+                       @endif
                     </td>
                     <td>
-                        <a href="{{route('user.order.show',$order->id)}}" class="btn btn-warning btn-sm float-left mr-1" style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" title="view" data-placement="bottom"><i class="fas fa-eye"></i></a>
+                        <a href="{{route('user.order.show',$order->id)}}" class="btn btn-warning btn-sm float-left mr-1" style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" title="view" data-placement="bottom"><i class="fas fa-eye"></i></a> </br>
+                        @if(count($reclamations)==0)
+                        <a href="{{route('user.reclamation.create',$order->id)}}" class="btn btn-info btn-sm float-left mr-1" style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" title="reclamer" data-placement="bottom"><i class="fas fa-exclamation"></i></a> </br> 
+                       @endif
                         <form method="POST" action="{{route('user.order.delete',[$order->id])}}">
                           @csrf 
                           @method('delete')
@@ -136,7 +146,7 @@
               e.preventDefault();
               swal({
                     title: "Are you sure?",
-                    text: "l'enregistrement sera supprimé",
+                    text: "Once deleted, you will not be able to recover this data!",
                     icon: "warning",
                     buttons: true,
                     dangerMode: true,
