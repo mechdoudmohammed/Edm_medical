@@ -155,6 +155,14 @@
             <i class="fas fa-comments"></i>
             <span>Reviews</span></a>
     </li>
+     <!-- reclamations -->
+     <li class="nav-item">
+        <a class="nav-link" href="{{route('backend.reclamtion.index')}}">
+            <i class="fas fa-exclamation"></i>
+            <span>Reclamations</span>
+        </a>
+    </li> 
+
     
 
     <!-- Divider -->

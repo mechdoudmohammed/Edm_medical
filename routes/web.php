@@ -109,7 +109,10 @@ Route::group(['prefix'=>'/admin','middleware'=>['auth','admin']],function(){
     Route::resource('fournisseur','FournisseurController');
     //location
     Route::get('/location','locationController@index')->name('location_index');
-
+    
+    //reclamtion  
+    Route::get('/reclamation','AdminController@showreclamation')->name('backend.reclamtion.index');
+    Route::post('/reclamation/edit/{id}','AdminController@editereclamation')->name('reclamation.edit');
 
     
     //livreur
@@ -180,7 +183,7 @@ Route::group(['prefix'=>'/user','middleware'=>['user']],function(){
      Route::post('/profile/{id}','HomeController@profileUpdate')->name('user-profile-update');
 
 //location
-Route::get('/location_form','locationController@location_form')->name('location_form');
+    Route::get('/location_form','locationController@location_form')->name('location_form');
     //  Order
     Route::get('/order',"HomeController@orderIndex")->name('user.order.index');
 
@@ -203,6 +206,11 @@ Route::get('/location_form','locationController@location_form')->name('location_
     Route::get('user-post/comment/edit/{id}','HomeController@userCommentEdit')->name('user.post-comment.edit');
     Route::patch('user-post/comment/udpate/{id}','HomeController@userCommentUpdate')->name('user.post-comment.update');
 
+     //Reclamation
+     Route::get('reclamation/create/{id}',"ReclamationController@create")->name('user.reclamation.create');
+     Route::get('reclamation/index',"ReclamationController@index")->name('user.reclamation.index');
+     Route::post('ajouter/reclamation/{id}','ReclamationController@save')->name('reclamation.save');
+ 
     // Password Change
     Route::get('change-password', 'HomeController@changePassword')->name('user.change.password.form');
     Route::post('change-password', 'HomeController@changPasswordStore')->name('change.password');

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Settings;
+use App\Models\Reclamation;
 use App\User;
 use App\Rules\MatchOldPassword;
 use Hash;
@@ -35,6 +36,19 @@ class AdminController extends Controller
         // return $profile;
         return view('backend.users.profile')->with('profile',$profile);
     }
+        //afficher la liste des reclamations pour l'admin
+    public function showreclamation(){
+    
+        return view('backend.reclamation.index');
+    }
+        //modifier l'etat d'un reclamation pour un client
+    public function editereclamation (Request $req,$id){
+
+        $reclamation=Reclamation::findOrFail($id);
+        $statut=$req->all();
+        $reclamation->fill($statut)->save();
+        return redirect()->back();
+    } 
 
     public function profileUpdate(Request $request,$id){
         $file_extension=$request -> photo -> getClientOriginalExtension();
