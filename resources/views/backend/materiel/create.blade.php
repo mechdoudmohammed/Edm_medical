@@ -8,9 +8,9 @@
       <form method="post" action="{{route('materiel.store')}}" enctype="multipart/form-data">
         {{csrf_field()}}
         <div class="form-group">
-          <label for="inputTitle" class="col-form-label">Titre <span class="text-danger">*</span></label>
-          <input id="inputTitle" type="text" name="title" placeholder="Enter title"  value="{{old('title')}}" class="form-control">
-          @error('title')
+          <label for="inputNom" class="col-form-label">Titre <span class="text-danger">*</span></label>
+          <input id="inputNom" type="text" name="nom" placeholder="Enter nom"  value="{{old('nom')}}" class="form-control">
+          @error('nom')
           <span class="text-danger">{{$message}}</span>
           @enderror
         </div>
@@ -34,8 +34,8 @@
           <div class="form-group">
               <label for="location">Pour la location?</label><br>
        
-              <input type="radio" name='location' value='1' id="choixb1" onclick="activer()"  checked="checked"> Oui<br>
-              <input type="radio" name='location' value='0' id="choixb2" onclick="desactive()"> Non<br>
+              <input type="radio" name='location' value='1' id="choixb1" onclick="activer()" > Oui<br>
+              <input type="radio" name='location' value='0' id="choixb2" onclick="desactive()"  checked="checked"> Non<br>
               <script  type="text/javascript">
               function desactive()  {
                   if(document.getElementById('choixb2').checked )  {
@@ -53,7 +53,7 @@
           @enderror
               <div class="form-group">
           <label for="inputprixlocation" class="col-form-label">prix de location <span class="text-danger">*</span></label>
-          <input id="inputprixlocation" type="text" name="prix_location" placeholder="Enter le prix"  value="{{old('prix_location')}}" class="form-control">
+          <input id="inputprixlocation" type="text" name="prix_location" placeholder="Enter le prix" disabled value="{{old('prix_location')}}" class="form-control">
          
        
         </div>
@@ -94,31 +94,32 @@
         </div>
 
         <div class="form-group">
-          <label for="discount" class="col-form-label">Discount(%)</label>
-          <input id="discount" type="number" name="discount" min="0" max="100" placeholder="Enter discount"  value="{{old('discount')}}" class="form-control">
+          <label for="discount" class="col-form-label">Remise(%)</label>
+          <input id="discount" type="number" name="discount" min="0" max="100" placeholder="Enter Remise"  value="{{old('discount')}}" class="form-control">
           @error('discount')
           <span class="text-danger">{{$message}}</span>
           @enderror
         </div>
+        {{--
         <div class="form-group">
-          <label for="size">Size</label>
+          <label for="size">Taille</label>
           <select name="size[]" class="form-control selectpicker"  multiple data-live-search="true">
-              <option value="">--Select any size--</option>
+              <option value="">--Sélectionner Taille--</option>
               <option value="S">Small (S)</option>
               <option value="M">Medium (M)</option>
               <option value="L">Large (L)</option>
               <option value="XL">Extra Large (XL)</option>
           </select>
-        </div>
+        </div>--}}
 
         <div class="form-group">
-          <label for="fournisseur_id">Marque</label>
+          <label for="fournisseur_id">Fournisseur</label>
           {{-- {{$fournisseurs}} --}}
 
           <select name="fournisseur_id" class="form-control">
-              <option value="">--Select Fournisseur--</option>
+              <option value="">--Sélectionner Fournisseur--</option>
              @foreach($fournisseurs as $fournisseur)
-              <option value="{{$fournisseur->id}}">{{$fournisseur->title}}</option>
+              <option value="{{$fournisseur->id}}">{{$fournisseur->nom}}</option>
              @endforeach
           </select>
         </div>
@@ -126,7 +127,7 @@
         <div class="form-group">
           <label for="condition">État </label>
           <select name="condition" class="form-control">
-              <option value="">--Selectioner État  --</option>
+              <option value="">--Sélectionner l'État  --</option>
               <option value="default">Défaut</option>
               <option value="new">Nouveau</option>
               <option value="hot">Offre spéciale</option>
@@ -141,12 +142,22 @@
           @enderror
         </div>
         <div class="form-group">
-          <label for="inputPhoto" class="col-form-label">Photo <span class="text-danger">*</span></label>
+          <label for="inputPhoto" class="col-form-label">Photo: <span class="text-danger">*</span></label>
           <div class="input-group">
           <input id="thumbnail" class="form-control" type="file" name="photo" value="{{old('photo')}}">
         </div>
         <div id="holder" style="margin-top:15px;max-height:100px;"></div>
           @error('photo')
+          <span class="text-danger">{{$message}}</span>
+          @enderror
+        </div>
+        <div class="form-group">
+          <label for="inputfiche_technique" class="col-form-label">Fiche_technique:</label>
+          <div class="input-group">
+          <input id="thumbnail" class="form-control" type="file" name="fiche_technique" value="{{old('fiche_technique')}}">
+        </div>
+        <div id="holder" style="margin-top:15px;max-height:100px;"></div>
+          @error('fiche_technique')
           <span class="text-danger">{{$message}}</span>
           @enderror
         </div>

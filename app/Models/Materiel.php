@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Cart;
 class Materiel extends Model
 {
-    protected $fillable=['title','location','slug','summary','description','cat_id','child_cat_id','price','prix_location','fournisseur_id','discount','status','photo','size','stock','is_featured','condition'];
+    protected $fillable=['nom','location','slug','summary','description','cat_id','child_cat_id','fiche_technique','price','prix_location','fournisseur_id','discount','status','photo','size','stock','is_featured','condition'];
 
     public function cat_info(){
         return $this->hasOne('App\Models\Category','id','cat_id');

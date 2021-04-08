@@ -40,9 +40,16 @@ class BannerController extends Controller
         $this->validate($request,[
             'title'=>'string|required|max:50',
             'description'=>'string|nullable',
-            'photo'=>'string|required',
+            'photo'=>'required',
             'status'=>'required|in:active,inactive',
         ]);
+
+        $file_extension=$request -> photo -> getClientOriginalExtension();
+        $file_name = time().".".$file_extension;
+        $path='backend/img/bannière';
+        $request->photo -> move($path,$file_name);
+
+
         $data=$request->all();
         $slug=Str::slug($request->title);
         $count=Banner::where('slug',$slug)->count();
@@ -50,6 +57,8 @@ class BannerController extends Controller
             $slug=$slug.'-'.date('ymdis').'-'.rand(0,999);
         }
         $data['slug']=$slug;
+        $data['photo']=$file_name;
+        //return $data;
         // return $slug;
         $status=Banner::create($data);
         if($status){

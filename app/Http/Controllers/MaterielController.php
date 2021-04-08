@@ -44,9 +44,12 @@ class MaterielController extends Controller
      */
     public function store(Request $request)
     {
+        if ($request["location"]==false){
+         $request["prix_location"]=null;
+        }
         //return $request->all();
         $this->validate($request,[
-            'title'=>'string|required',
+            'nom'=>'string|required',
             'summary'=>'string|required',
             'description'=>'string|nullable',
             'photo'=>'required',
@@ -62,20 +65,26 @@ class MaterielController extends Controller
             'discount'=>'nullable|numeric',
             'location'=>'required'
         ]);
-
+        //enregister la photo
         $file_extension=$request -> photo -> getClientOriginalExtension();
         $file_name = time().".".$file_extension;
         $path='backend/img/materiels';
         $request->photo -> move($path,$file_name);
+        //enregister le fichier fiches technique
+        $file_extension=$request -> fiche_technique -> getClientOriginalExtension();
+        $file_name_fiche_technique = time().".".$file_extension;
+        $path2='backend/fiches_techniques';
+        $request->fiche_technique -> move($path2,$file_name_fiche_technique);
 
         $data=$request->all();
-        $slug=Str::slug($request->title);
+        $slug=Str::slug($request->nom);
         $count=Materiel::where('slug',$slug)->count();
         if($count>0){
             $slug=$slug.'-'.date('ymdis').'-'.rand(0,999);
         }
         $data['slug']=$slug;
         $data['photo']=$file_name;
+        $data['fiche_technique']=$file_name_fiche_technique;
 
         $data['is_featured']=$request->input('is_featured',0);
         $size=$request->input('size');

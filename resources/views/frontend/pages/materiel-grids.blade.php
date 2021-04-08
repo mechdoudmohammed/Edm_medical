@@ -108,7 +108,7 @@
                                                 <img src="backend\img\materiels\{{$photo[0]}}" alt="backend\img\materiels\{{$photo[0]}}">
                                             </div>
                                             <div class="content">
-                                                <h5><a href="{{route('materiel-detail',$materiel->slug)}}">{{$materiel->title}}</a></h5>
+                                                <h5><a href="{{route('materiel-detail',$materiel->slug)}}">{{$materiel->nom}}</a></h5>
                                                 @php
                                                     $org=($materiel->price-($materiel->price*$materiel->discount)/100);
                                                 @endphp
@@ -125,10 +125,10 @@
                                     <h3 class="title">Fournisseurs</h3>
                                     <ul class="categor-list">
                                         @php
-                                            $fournisseurs=DB::table('fournisseurs')->orderBy('title','ASC')->where('status','active')->get();
+                                            $fournisseurs=DB::table('fournisseurs')->orderBy('nom','ASC')->where('status','active')->get();
                                         @endphp
                                         @foreach($fournisseurs as $fournisseur)
-                                            <li><a href="{{route('materiel-fournisseur',$fournisseur->slug)}}">{{$fournisseur->title}}</a></li>
+                                            <li><a href="{{route('materiel-fournisseur',$fournisseur->slug)}}">{{$fournisseur->nom}}</a></li>
                                         @endforeach
                                     </ul>
                                 </div>
@@ -198,7 +198,7 @@
                                                 </div>
                                             </div>
                                             <div class="materiel-content">
-                                                <h3><a href="{{route('materiel-detail',$materiel->slug)}}">{{$materiel->title}}</a></h3>
+                                                <h3><a href="{{route('materiel-detail',$materiel->slug)}}">{{$materiel->nom}}</a></h3>
                                                 @php
                                                     $after_discount=($materiel->price-($materiel->price*$materiel->discount)/100);
                                                 @endphp
@@ -261,7 +261,7 @@
                                     </div>
                                     <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
                                         <div class="quickview-content">
-                                            <h2>{{$materiel->title}}</h2>
+                                            <h2>{{$materiel->nom}}</h2>
                                             <div class="quickview-ratting-review">
                                                 <div class="quickview-ratting-wrap">
                                                     <div class="quickview-ratting">

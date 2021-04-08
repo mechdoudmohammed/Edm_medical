@@ -19,6 +19,7 @@
           <thead>
             <tr>
             <th>ID</th>
+            <th>Fiche Technique</th>
               <th>Nom</th>
               <th>Categorie</th>
               <th>Is Featured</th>
@@ -38,6 +39,7 @@
           <tfoot>
             <tr>
               <th>ID</th>
+              <th>Fiche Technique</th>
               <th>Nom</th>
               <th>Categorie</th>
               <th>Is Featured</th>
@@ -64,6 +66,7 @@
             @endphp
                 <tr>
                     <td>{{$materiel->id}}</td>
+                    <td><a href="..\backend\fiches_techniques\{{$materiel->fiche_technique}}">fiche technique</a></td>
                     <td>{{$materiel->nom}}</td>
                     <td>{{$materiel->cat_info['title']}}
                       <sub>
