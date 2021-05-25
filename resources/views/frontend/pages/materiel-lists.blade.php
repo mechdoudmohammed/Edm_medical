@@ -81,7 +81,7 @@
 											<div class="materiel_filter">
 											<button type="submit" class="filter_button">Filtrer</button>
 											<div class="label-input">
-												<span>Range:</span>
+												<span>Marge:</span>
 												<input style="" type="text" id="amount" readonly/>
 												<input type="hidden" name="price_range" id="price_range" value="@if(!empty($_GET['price'])){{$_GET['price']}}@endif"/>
 											</div>
@@ -90,13 +90,13 @@
 									</div>
 									{{-- <ul class="check-box-list">
 										<li>
-											<label class="checkbox-inline" for="1"><input name="news" id="1" type="checkbox">$20 - $50<span class="count">(3)</span></label>
+											<label class="checkbox-inline" for="1"><input name="news" id="1" type="checkbox">20 Dhs - 50 Dhs<span class="count">(3)</span></label>
 										</li>
 										<li>
-											<label class="checkbox-inline" for="2"><input name="news" id="2" type="checkbox">$50 - $100<span class="count">(5)</span></label>
+											<label class="checkbox-inline" for="2"><input name="news" id="2" type="checkbox">50 Dhs - 100 Dhs<span class="count">(5)</span></label>
 										</li>
 										<li>
-											<label class="checkbox-inline" for="3"><input name="news" id="3" type="checkbox">$100 - $250<span class="count">(8)</span></label>
+											<label class="checkbox-inline" for="3"><input name="news" id="3" type="checkbox">100 Dhs - 250 Dhs<span class="count">(8)</span></label>
 										</li>
 									</ul> --}}
 								</div>
@@ -119,7 +119,7 @@
                                                 @php
                                                     $org=($materiel->price-($materiel->price*$materiel->discount)/100);
                                                 @endphp
-                                                <p class="price"><del class="text-muted">${{number_format($materiel->price,2)}}</del>   ${{number_format($org,2)}}  </p>
+                                                <p class="price"><del class="text-muted">{{number_format($materiel->price,2)}} Dhs</del>   {{number_format($org,2)}} Dhs </p>
                                             </div>
                                         </div>
                                         <!-- End Single Post -->
@@ -148,9 +148,9 @@
 									<div class="shop-top">
 										<div class="shop-shorter">
 											<div class="single-shorter">
-												<label>Show :</label>
+												<label>Afficher :</label>
 												<select class="show" name="show" onchange="this.form.submit();">
-													<option value="">Default</option>
+													<option value="">par defaut</option>
 													<option value="9" @if(!empty($_GET['show']) && $_GET['show']=='9') selected @endif>09</option>
 													<option value="15" @if(!empty($_GET['show']) && $_GET['show']=='15') selected @endif>15</option>
 													<option value="21" @if(!empty($_GET['show']) && $_GET['show']=='21') selected @endif>21</option>
@@ -158,9 +158,9 @@
 												</select>
 											</div>
 											<div class="single-shorter">
-												<label>Sort By :</label>
+												<label>filtrer par  :</label>
 												<select class='sortBy' name='sortBy' onchange="this.form.submit();">
-													<option value="">Default</option>
+													<option value="">Par defaut</option>
 													<option value="title" @if(!empty($_GET['sortBy']) && $_GET['sortBy']=='title') selected @endif>Nom</option>
 													<option value="price" @if(!empty($_GET['sortBy']) && $_GET['sortBy']=='price') selected @endif>Prix</option>
 													<option value="categorie" @if(!empty($_GET['sortBy']) && $_GET['sortBy']=='categorie') selected @endif>Categorie</option>
@@ -195,7 +195,7 @@
 															</a>
 															<div class="button-head">
 																<div class="materiel-action">
-																	<a data-toggle="modal" data-target="#{{$materiel->id}}" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
+																	<a data-toggle="modal" data-target="#{{$materiel->id}}" title="Quick View" href="#"><i class=" ti-eye"></i><span>Achat rapide</span></a>
 																	<a title="Wishlist" href="{{route('add-to-wishlist',$materiel->slug)}}" class="wishlist" data-id="{{$materiel->id}}"><i class=" ti-heart "></i><span>Add to Wishlist</span></a>
 																</div>
 																<div class="materiel-action-2">

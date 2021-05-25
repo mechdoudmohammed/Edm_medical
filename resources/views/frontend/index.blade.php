@@ -1,33 +1,8 @@
 @extends('frontend.layouts.master')
-@section('title','EDM-Medical || HOME PAGE')
+@section('title','EDM-Medical ||  PAGE accueil')
 @section('main-content')
 <!-- Slider Area -->
-<section class="hero-slider">
-    <!-- Single Slider -->
 
-    {{-- <div class="single-slider">
-        <div class="container">
-            <div class="row no-gutters">
-                <div class="col-lg-9 offset-lg-3 col-12">
-                    <div class="text-inner">
-                        <div class="row">
-                            <div class="col-lg-7 col-12">
-                                <div class="hero-text">
-                                    <h1><span>UP TO 50% OFF </span>Shirt For Man</h1>
-                                    <p>Maboriosam in a nesciung eget magnae <br> dapibus disting tloctio in the find it pereri <br> odiy maboriosm.</p>
-                                    <div class="button">
-                                        <a href="#" class="btn">Achetez maintenant!</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> --}}
-    <!--/ End Single Slider -->
-</section>
 @if(count($banners)>0)
     <section id="Gslider" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -47,11 +22,11 @@
         </div>
         <a class="carousel-control-prev" href="#Gslider" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
+        <span class="sr-only">Précedent</span>
         </a>
         <a class="carousel-control-next" href="#Gslider" role="button" data-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
+        <span class="sr-only">Suivant</span>
         </a>
     </section>
 @endif
@@ -78,7 +53,7 @@
                                 @endif
                                 <div class="content">
                                     <h3>{{$cat->title}}</h3>
-                                        <a href="{{route('materiel-cat',$cat->slug)}}">Discover Now</a>
+                                        <a href="{{route('materiel-cat',$cat->slug)}}">Découvrez maintenant</a>
                                 </div>
                             </div>
                         </div>
@@ -140,11 +115,11 @@
                                                 <img class="default-img" src="backend\img\materiels\{{$photo[0]}}" alt="backend\img\materiels\{{$photo[0]}}">
                                                 <img class="hover-img" src="backend\img\materiels\{{$photo[0]}}" alt="backend\img\materiels\{{$photo[0]}}">
                                                 @if($materiel->stock<=0)
-                                                    <span class="out-of-stock">Sale out</span>
+                                                    <span class="out-of-stock">Vente jusqu'à rupture</span>
                                                 @elseif($materiel->condition=='new')
-                                                    <span class="new">New</span
+                                                    <span class="new">Nouveau</span
                                                 @elseif($materiel->condition=='hot')
-                                                    <span class="hot">Hot</span>
+                                                    <span class="hot">passionné</span>
                                                 @else
                                                     <span class="price-dec">{{$materiel->discount}}% Off</span>
                                                 @endif
@@ -153,11 +128,11 @@
                                             </a>
                                             <div class="button-head">
                                                 <div class="materiel-action">
-                                                    <a data-toggle="modal" data-target="#{{$materiel->id}}" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
-                                                    <a title="Wishlist" href="{{route('add-to-wishlist',$materiel->slug)}}" ><i class=" ti-heart "></i><span>Add to Wishlist</span></a>
+                                                    <a data-toggle="modal" data-target="#{{$materiel->id}}" title="Quick View" href="#"><i class=" ti-eye"></i><span>Achat rapide</span></a>
+                                                    <a title="Wishlist" href="{{route('add-to-wishlist',$materiel->slug)}}" ><i class=" ti-heart "></i><span>Ajouter à la liste de souhaits</span></a>
                                                 </div>
                                                 <div class="materiel-action-2">
-                                                    <a title="Add to cart" href="{{route('add-to-cart',$materiel->slug)}}">Add to cart</a>
+                                                    <a title="Add to cart" href="{{route('add-to-cart',$materiel->slug)}}">Ajouter au panier</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -168,7 +143,7 @@
                                                     $after_discount=($materiel->price-($materiel->price*$materiel->discount)/100);
                                                 @endphp
                                                 <span>Dhs {{number_format($after_discount,2)}}</span>
-                                                <del style="padding-left:4%;">Dhs {{number_format($materiel->price,2)}}</del>
+                                                <del style="padding-left:4%;"> {{number_format($materiel->price,2)}} Dhs</del>
                                             </div>
                                         </div>
                                     </div>
@@ -205,7 +180,7 @@
                             <img src="backend\img\materiels\{{$photo[0]}}" alt="backend\img\materiels\{{$photo[0]}}">
                             <div class="content">
                                 <p>{{$data->cat_info['title']}}</p>
-                                <h3>{{$data->title}} <br>Up to<span> {{$data->discount}}%</span></h3>
+                                <h3>{{$data->title}} <br>Jusqu'à<span> {{$data->discount}}%</span></h3>
                                 <a href="{{route('materiel-detail',$data->slug)}}">Achetez maintenant</a>
                             </div>
                         </div>
@@ -224,7 +199,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="section-title">
-                    <h2>Hot Item</h2>
+                    <h2>Element passionné</h2>
                 </div>
             </div>
         </div>
@@ -247,11 +222,11 @@
                                 </a>
                                 <div class="button-head">
                                     <div class="materiel-action">
-                                        <a data-toggle="modal" data-target="#{{$materiel->id}}" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
-                                        <a title="Wishlist" href="{{route('add-to-wishlist',$materiel->slug)}}" ><i class=" ti-heart "></i><span>Add to Wishlist</span></a>
+                                        <a data-toggle="modal" data-target="#{{$materiel->id}}" title="Quick View" href="#"><i class=" ti-eye"></i><span>Achat rapide</span></a>
+                                        <a title="Wishlist" href="{{route('add-to-wishlist',$materiel->slug)}}" ><i class=" ti-heart "></i><span>Ajouter à la liste de souhaits</span></a>
                                     </div>
                                     <div class="materiel-action-2">
-                                        <a href="{{route('add-to-cart',$materiel->slug)}}">Add to cart</a>
+                                        <a href="{{route('add-to-cart',$materiel->slug)}}">Ajouter au panier</a>
                                     </div>
                                 </div>
                             </div>
@@ -262,7 +237,7 @@
                                     @php
                                     $after_discount=($materiel->price-($materiel->price*$materiel->discount)/100)
                                     @endphp
-                                    <span>Dhs {{number_format($after_discount,2)}}</span>
+                                    <span> {{number_format($after_discount,2)}} Dhs</span>
                                 </div>
                             </div>
                         </div>
@@ -284,7 +259,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="shop-section-title">
-                            <h1>Derniers articles</h1>
+                            <h1>Derniére articles</h1>
                         </div>
                     </div>
                 </div>
@@ -310,7 +285,7 @@
                                 <div class="col-lg-6 col-md-6 col-12 no-padding">
                                     <div class="content">
                                         <h4 class="title"><a href="#">{{$materiel->nom}}</a></h4>
-                                        <p class="price with-discount">Dhs {{number_format($materiel->price,2)}}</p>
+                                        <p class="price with-discount"> {{number_format($materiel->price,2)}} Dhs</p>
                                     </div>
                                 </div>
                                 </div>
@@ -343,14 +318,14 @@
                     <div class="col-lg-6 col-12 padding-left">
                         <div class="content">
                             <div class="heading-block">
-                                <p class="small-title">Deal of day</p>
+                                <p class="small-title">Offre du jour</p>
                                 <h3 class="title">{{$data->title}}</h3>
                                 <p class="text">{!! html_entity_decode($data->summary) !!}</p>
                                 @php
                                     $after_discount=($materiel->price-($materiel->price*$materiel->discount)/100)
                                 @endphp
                               
-                                <h1 class="price">Dhs {{number_format($after_discount)}} <s>Dhs {{number_format($data->price)}}</s></h1>
+                                <h1 class="price"> {{number_format($after_discount)}} Dhs <s> {{number_format($data->price)}} Dhs</s></h1>
                                 <div class="coming-time">
                                     <div class="clearfix" data-countdown="2021/02/30"></div>
                                 </div>
@@ -369,7 +344,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="section-title">
-                    <h2>Notre Post</h2>
+                    <h2>Notre Poste</h2>
                 </div>
             </div>
         </div>
@@ -381,9 +356,9 @@
                         <div class="shop-single-blog">
                             <img src="{{$post->photo}}" alt="{{$post->photo}}">
                             <div class="content">
-                                <p class="date">{{$post->created_at->format('d M , Y. D')}}</p>
+                                <p class="date">{{$post->created_at->format('d-m -Y. ')}}</p>
                                 <a href="{{route('blog.detail',$post->slug)}}" class="title">{{$post->title}}</a>
-                                <a href="{{route('blog.detail',$post->slug)}}" class="more-btn">Continue Reading</a>
+                                <a href="{{route('blog.detail',$post->slug)}}" class="more-btn">Continuer la lecture</a>
                             </div>
                         </div>
                         <!-- End Single Blog  -->
@@ -471,77 +446,7 @@
                                         </div>
                                     <!-- End Materiel slider -->
                                 </div>
-                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                                    <div class="quickview-content">
-                                        <h2>{{$materiel->nom}}</h2>
-                                        <div class="quickview-ratting-review">
-                                            <div class="quickview-ratting-wrap">
-                                                <div class="quickview-ratting">
-                                                    {{-- <i class="yellow fa fa-star"></i>
-                                                    <i class="yellow fa fa-star"></i>
-                                                    <i class="yellow fa fa-star"></i>
-                                                    <i class="yellow fa fa-star"></i>
-                                                    <i class="fa fa-star"></i> --}}
-                                                    @php
-                                                        $rate=DB::table('materiel_reviews')->where('materiel_id',$materiel->id)->avg('rate');
-                                                        $rate_count=DB::table('materiel_reviews')->where('materiel_id',$materiel->id)->count();
-                                                    @endphp
-                                                    @for($i=1; $i<=5; $i++)
-                                                        @if($rate>=$i)
-                                                            <i class="yellow fa fa-star"></i>
-                                                        @else
-                                                        <i class="fa fa-star"></i>
-                                                        @endif
-                                                    @endfor
-                                                </div>
-                                                <a href="#"> ({{$rate_count}} customer review)</a>
-                                            </div>
-                                            <div class="quickview-stock">
-                                                @if($materiel->stock >0)
-                                                <span><i class="fa fa-check-circle-o"></i> {{$materiel->stock}} in stock</span>
-                                                @else
-                                                <span><i class="fa fa-times-circle-o text-danger"></i> {{$materiel->stock}} out stock</span>
-                                                @endif
-                                            </div>
-                                        </div>
-                                        @php
-                                            $after_discount=($materiel->price-($materiel->price*$materiel->discount)/100);
-                                        @endphp
-                                        <h3><small><del class="text-muted">${{number_format($materiel->price,2)}}</del></small>    ${{number_format($after_discount,2)}}  </h3>
-                                        <div class="quickview-peragraph">
-                                            <p>{!! html_entity_decode($materiel->summary) !!}</p>
-                                        </div>
-
-                                        <form action="{{route('single-add-to-cart')}}" method="POST" class="mt-4">
-                                            @csrf
-                                            <div class="quantity">
-                                                <!-- Input Order -->
-                                                <div class="input-group">
-                                                    <div class="button minus">
-                                                        <button type="button" class="btn btn-primary btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
-                                                            <i class="ti-minus"></i>
-                                                        </button>
-                                                    </div>
-													<input type="hidden" name="slug" value="{{$materiel->slug}}">
-                                                    <input type="text" name="quant[1]" class="input-number"  data-min="1" data-max="1000" value="1">
-                                                    <div class="button plus">
-                                                        <button type="button" class="btn btn-primary btn-number" data-type="plus" data-field="quant[1]">
-                                                            <i class="ti-plus"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                                <!--/ End Input Order -->
-                                            </div>
-                                            <div class="add-to-cart">
-                                                <button type="submit" class="btn">Add to cart</button>
-                                                <a href="{{route('add-to-wishlist',$materiel->slug)}}" class="btn min"><i class="ti-heart"></i></a>
-                                            </div>
-                                        </form>
-                                        <div class="default-social">
-                                        <!-- ShareThis BEGIN --><div class="sharethis-inline-share-buttons"></div><!-- ShareThis END -->
-                                        </div>
-                                    </div>
-                                </div>
+    
                             </div>
                         </div>
                     </div>
