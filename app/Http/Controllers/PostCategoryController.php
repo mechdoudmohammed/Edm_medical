@@ -50,12 +50,12 @@ class PostCategoryController extends Controller
         $data['slug']=$slug;
         $status=PostCategory::create($data);
         if($status){
-            request()->session()->flash('success','Post Category Successfully added');
+            request()->session()->flash('success','Post Categorie Successfully added');
         }
         else{
             request()->session()->flash('error','Please try again!!');
         }
-        return redirect()->route('post-category.index');
+        return redirect()->route('post-categorie.index');
     }
 
     /**
@@ -99,12 +99,12 @@ class PostCategoryController extends Controller
         $data=$request->all();
         $status=$postCategory->fill($data)->save();
         if($status){
-            request()->session()->flash('success','Post Category Successfully updated');
+            request()->session()->flash('success','Post Categorie Successfully updated');
         }
         else{
             request()->session()->flash('error','Please try again!!');
         }
-        return redirect()->route('post-category.index');
+        return redirect()->route('post-categorie.index');
     }
 
     /**
@@ -120,11 +120,11 @@ class PostCategoryController extends Controller
         $status=$postCategory->delete();
         
         if($status){
-            request()->session()->flash('success','Post Category successfully deleted');
+            request()->session()->flash('success','Post Categorie successfully deleted');
         }
         else{
-            request()->session()->flash('error','Error while deleting post category');
+            request()->session()->flash('error','Error while deleting post categorie');
         }
-        return redirect()->route('post-category.index');
+        return redirect()->route('post-categorie.index');
     }
 }

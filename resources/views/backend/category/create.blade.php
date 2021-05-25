@@ -5,7 +5,7 @@
 <div class="card">
     <h5 class="card-header">Ajouter une catégorie</h5>
     <div class="card-body">
-      <form method="post" action="{{route('category.store')}}" enctype="multipart/form-data">
+      <form method="post" action="{{route('categorie.store')}}" enctype="multipart/form-data">
         {{csrf_field()}}
         <div class="form-group">
           <label for="inputTitle" class="col-form-label">Titre <span class="text-danger">*</span></label>
@@ -30,9 +30,9 @@
         {{-- {{$parent_cats}} --}}
 
         <div class="form-group d-none" id='parent_cat_div'>
-          <label for="parent_id">Parent Category</label>
+          <label for="parent_id">Parent Categorie</label>
           <select name="parent_id" class="form-control">
-              <option value="">--Select any category--</option>
+              <option value="">--Select any categorie--</option>
               @foreach($parent_cats as $key=>$parent_cat)
                   <option value='{{$parent_cat->id}}'>{{$parent_cat->title}}</option>
               @endforeach

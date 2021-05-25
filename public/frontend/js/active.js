@@ -1,8 +1,8 @@
 /* =====================================
-Template Name: Eshop
+Template Name: EDM Medical
 Author Name: Naimur Rahman
 Author URI: http://www.wpthemesgrid.com/
-Description: Eshop - eCommerce HTML5 Template.
+Description: EDM Medical - eCommerce HTML5 Template.
 Version:1.0
 ========================================*/
 /*=======================================

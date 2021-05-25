@@ -15,7 +15,7 @@
     <div class="card-body">
       <div class="table-responsive">
         @if(count($postTags)>0)
-        <table class="table table-bordered" id="post-category-dataTable" width="100%" cellspacing="0">
+        <table class="table table-bordered" id="post-categorie-dataTable" width="100%" cellspacing="0">
           <thead>
             <tr>
               <th>S.N.</th>
@@ -89,7 +89,7 @@
   <script src="{{asset('backend/js/demo/datatables-demo.js')}}"></script>
   <script>
       
-      $('#post-category-dataTable').DataTable( {
+      $('#post-categorie-dataTable').DataTable( {
             "columnDefs":[
                 {
                     "orderable":false,

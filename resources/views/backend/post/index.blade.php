@@ -20,7 +20,7 @@
             <tr>
               <th>S.N.</th>
               <th>Title</th>
-              <th>Category</th>
+              <th>Categorie</th>
               <th>Tag</th>
               <th>Author</th>
               <th>Photo</th>
@@ -32,7 +32,7 @@
             <tr>
               <th>S.N.</th>
               <th>Title</th>
-              <th>Category</th>
+              <th>Categorie</th>
               <th>Tag</th>
               <th>Author</th>
               <th>Photo</th>

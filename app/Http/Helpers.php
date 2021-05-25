@@ -1,6 +1,6 @@
 <?php
 use App\Models\Message;
-use App\Models\Category;
+use App\Models\Categorie;
 use App\Models\PostTag;
 use App\Models\PostCategory;
 use App\Models\Order;
@@ -14,21 +14,21 @@ class Helper{
         return Message::whereNull('read_at')->orderBy('created_at', 'desc')->get();
     } 
     public static function getAllCategory(){
-        $category=new Category();
-        $menu=$category->getAllParentWithChild();
+        $categorie=new Categorie();
+        $menu=$categorie->getAllParentWithChild();
         return $menu;
     } 
     
     public static function getHeaderCategory(){
-        $category = new Category();
-        // dd($category);
-        $menu=$category->getAllParentWithChild();
+        $categorie = new Categorie();
+        // dd($categorie);
+        $menu=$categorie->getAllParentWithChild();
 
         if($menu){
             ?>
             
             <li>
-            <a href="javascript:void(0);">Category<i class="ti-angle-down"></i></a>
+            <a href="javascript:void(0);">Categorie<i class="ti-angle-down"></i></a>
                 <ul class="dropdown border-0 shadow">
                 <?php
                     foreach($menu as $cat_info){
@@ -62,9 +62,9 @@ class Helper{
 
     public static function materielCategoryList($option='all'){
         if($option='all'){
-            return Category::orderBy('id','DESC')->get();
+            return Categorie::orderBy('id','DESC')->get();
         }
-        return Category::has('materiels')->orderBy('id','DESC')->get();
+        return Categorie::has('materiels')->orderBy('id','DESC')->get();
     }
 
     public static function postTagList($option='all'){

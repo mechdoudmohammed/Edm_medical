@@ -77,9 +77,9 @@
               {{-- {{$categories}} --}}
 
         <div class="form-group">
-          <label for="cat_id">Category <span class="text-danger">*</span></label>
+          <label for="cat_id">Categorie <span class="text-danger">*</span></label>
           <select name="cat_id" id="cat_id" class="form-control">
-              <option value="">--Select any category--</option>
+              <option value="">--Select any categorie--</option>
               @foreach($categories as $key=>$cat_data)
                   <option value='{{$cat_data->id}}' {{(($materiel->cat_id==$cat_data->id)? 'selected' : '')}}>{{$cat_data->title}}</option>
               @endforeach
@@ -92,9 +92,9 @@
         @endphp
         {{-- {{$materiel->child_cat_id}} --}}
         <div class="form-group {{(($materiel->child_cat_id)? '' : 'd-none')}}" id="child_cat_div">
-          <label for="child_cat_id">Sub Category</label>
+          <label for="child_cat_id">Sub Categorie</label>
           <select name="child_cat_id" id="child_cat_id" class="form-control">
-              <option value="">--Select any sub category--</option>
+              <option value="">--Select any sub categorie--</option>
               
           </select>
         </div>
@@ -113,22 +113,6 @@
           @error('discount')
           <span class="text-danger">{{$message}}</span>
           @enderror
-        </div>
-        <div class="form-group">
-          <label for="size">Size</label>
-          <select name="size[]" class="form-control selectpicker"  multiple data-live-search="true">
-              <option value="">--Select any size--</option>
-              @foreach($items as $item)              
-                @php 
-                $data=explode(',',$item->size);
-                // dd($data);
-                @endphp
-              <option value="S"  @if( in_array( "S",$data ) ) selected @endif>Small</option>
-              <option value="M"  @if( in_array( "M",$data ) ) selected @endif>Medium</option>
-              <option value="L"  @if( in_array( "L",$data ) ) selected @endif>Large</option>
-              <option value="XL"  @if( in_array( "XL",$data ) ) selected @endif>Extra Large</option>
-              @endforeach
-          </select>
         </div>
         <div class="form-group">
           <label for="fournisseur_id">Fournisseur</label>
@@ -226,7 +210,7 @@
             if(cat_id !=null){
                 // ajax call
                 $.ajax({
-                    url:"/admin/category/"+cat_id+"/child",
+                    url:"/admin/categorie/"+cat_id+"/child",
                     type:"POST",
                     data:{
                         _token:"{{csrf_token()}}"

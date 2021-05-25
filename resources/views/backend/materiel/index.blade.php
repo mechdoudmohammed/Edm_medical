@@ -19,17 +19,16 @@
           <thead>
             <tr>
             <th>ID</th>
+            <th>Photo</th>
             <th>Fiche Technique</th>
               <th>Nom</th>
               <th>Categorie</th>
               <th>Is Featured</th>
               <th>Prix</th>
               <th>Discount</th>
-              <th>Size</th>
               <th>Condition</th>
               <th>Fournisseur</th>
               <th>Stock</th>
-              <th>Photo</th>
               <th>Statut</th>
               <th>Location</th>
               <th>Prix Location</th>
@@ -39,17 +38,16 @@
           <tfoot>
             <tr>
               <th>ID</th>
+              <th>Photo</th>
               <th>Fiche Technique</th>
               <th>Nom</th>
               <th>Categorie</th>
               <th>Is Featured</th>
               <th>Prix</th>
               <th>Discount</th>
-              <th>Size</th>
               <th>Condition</th>
               <th>Fournisseur</th>
               <th>Stock</th>
-              <th>Photo</th>
               <th>Statut</th>
               <th>Location</th>
               <th>Prix Location</th>
@@ -66,6 +64,17 @@
             @endphp
                 <tr>
                     <td>{{$materiel->id}}</td>
+                    <td>
+                        @if($materiel->photo)
+                            @php
+                              $photo=explode(',',$materiel->photo);
+                              // dd($photo);
+                            @endphp
+                            <img src="..\backend\img\materiels\{{$photo[0]}}" class="img-fluid zoom" style="max-width:80px" alt="{{$materiel->photo}}">
+                        @else
+                            <img src="{{asset('backend/img/thumbnail-default.jpg')}}" class="img-fluid" style="max-width:80px" alt="avatar.png">
+                        @endif
+                    </td>
                     <td><a href="..\backend\fiches_techniques\{{$materiel->fiche_technique}}">fiche technique</a></td>
                     <td>{{$materiel->nom}}</td>
                     <td>{{$materiel->cat_info['title']}}
@@ -78,7 +87,6 @@
                     <td>{{(($materiel->is_featured==1)? 'Yes': 'No')}}</td>
                     <td>{{$materiel->price}}</td>
                     <td>  {{$materiel->discount}}%</td>
-                    <td>{{$materiel->size}}</td>
                     <td>{{$materiel->condition}}</td>
                     <td>@foreach($fournisseurs as $fournisseur) {{$fournisseur->nom}} @endforeach</td>
                     <td>
@@ -87,17 +95,6 @@
                       @else
                       <span class="badge badge-danger">{{$materiel->stock}}</span>
                       @endif
-                    </td>
-                    <td>
-                        @if($materiel->photo)
-                            @php
-                              $photo=explode(',',$materiel->photo);
-                              // dd($photo);
-                            @endphp
-                            <img src="..\backend\img\materiels\{{$photo[0]}}" class="img-fluid zoom" style="max-width:80px" alt="{{$materiel->photo}}">
-                        @else
-                            <img src="{{asset('backend/img/thumbnail-default.jpg')}}" class="img-fluid" style="max-width:80px" alt="avatar.png">
-                        @endif
                     </td>
                     <td>
                         @if($materiel->status=='active')
@@ -127,7 +124,7 @@
                               </button>
                             </div>
                             <div class="modal-body">
-                              <form method="post" action="{{ route('categorys.destroy',$user->id) }}">
+                              <form method="post" action="{{ route('categories.destroy',$user->id) }}">
                                 @csrf
                                 @method('delete')
                                 <button type="submit" class="btn btn-danger" style="margin:auto; text-align:center">Parmanent delete user</button>

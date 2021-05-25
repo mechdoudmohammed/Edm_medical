@@ -16,14 +16,14 @@
         @enderror
         </div>     
         <div class="form-group">
-          <label for="price" class="col-form-label">Price <span class="text-danger">*</span></label>
+          <label for="price" class="col-form-label">Prix <span class="text-danger">*</span></label>
         <input id="price" type="number" name="price" placeholder="Enter price"  value="{{$livraison->price}}" class="form-control">
         @error('price')
         <span class="text-danger">{{$message}}</span>
         @enderror
         </div>        
         <div class="form-group">
-          <label for="status" class="col-form-label">Status <span class="text-danger">*</span></label>
+          <label for="status" class="col-form-label">Statut <span class="text-danger">*</span></label>
           <select name="status" class="form-control">
             <option value="active" {{(($livraison->status=='active') ? 'selected' : '')}}>Active</option>
             <option value="inactive" {{(($livraison->status=='inactive') ? 'selected' : '')}}>Inactive</option>

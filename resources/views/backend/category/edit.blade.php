@@ -3,14 +3,14 @@
 @section('main-content')
 
 <div class="card">
-    <h5 class="card-header">Edit Category</h5>
+    <h5 class="card-header">Edit Categorie</h5>
     <div class="card-body">
-      <form method="post" action="{{route('category.update',$category->id)}}">
+      <form method="post" action="{{route('categorie.update',$categorie->id)}}">
         @csrf
         @method('PATCH')
         <div class="form-group">
           <label for="inputTitle" class="col-form-label">Title <span class="text-danger">*</span></label>
-          <input id="inputTitle" type="text" name="title" placeholder="Enter title"  value="{{$category->title}}" class="form-control">
+          <input id="inputTitle" type="text" name="title" placeholder="Enter title"  value="{{$categorie->title}}" class="form-control">
           @error('title')
           <span class="text-danger">{{$message}}</span>
           @enderror
@@ -18,7 +18,7 @@
 
         <div class="form-group">
           <label for="summary" class="col-form-label">Summary</label>
-          <textarea class="form-control" id="summary" name="summary">{{$category->summary}}</textarea>
+          <textarea class="form-control" id="summary" name="summary">{{$categorie->summary}}</textarea>
           @error('summary')
           <span class="text-danger">{{$message}}</span>
           @enderror
@@ -26,18 +26,18 @@
 
         <div class="form-group">
           <label for="is_parent">Is Parent</label><br>
-          <input type="checkbox" name='is_parent' id='is_parent' value='{{$category->is_parent}}' {{(($category->is_parent==1)? 'checked' : '')}}> Yes
+          <input type="checkbox" name='is_parent' id='is_parent' value='{{$categorie->is_parent}}' {{(($categorie->is_parent==1)? 'checked' : '')}}> Yes
         </div>
         {{-- {{$parent_cats}} --}}
-        {{-- {{$category}} --}}
+        {{-- {{$categorie}} --}}
 
-      <div class="form-group {{(($category->is_parent==1) ? 'd-none' : '')}}" id='parent_cat_div'>
-          <label for="parent_id">Parent Category</label>
+      <div class="form-group {{(($categorie->is_parent==1) ? 'd-none' : '')}}" id='parent_cat_div'>
+          <label for="parent_id">Parent Categorie</label>
           <select name="parent_id" class="form-control">
-              <option value="">--Select any category--</option>
+              <option value="">--Select any categorie--</option>
               @foreach($parent_cats as $key=>$parent_cat)
 
-                  <option value='{{$parent_cat->id}}' {{(($parent_cat->id==$category->parent_id) ? 'selected' : '')}}>{{$parent_cat->title}}</option>
+                  <option value='{{$parent_cat->id}}' {{(($parent_cat->id==$categorie->parent_id) ? 'selected' : '')}}>{{$parent_cat->title}}</option>
               @endforeach
           </select>
         </div>
@@ -50,7 +50,7 @@
                   <i class="fa fa-picture-o"></i> Choose
                   </a>
               </span>
-          <input id="thumbnail" class="form-control" type="text" name="photo" value="..\backend\img\{{$category->photo}}">
+          <input id="thumbnail" class="form-control" type="text" name="photo" value="..\backend\img\{{$categorie->photo}}">
         </div>
         <div id="holder" style="margin-top:15px;max-height:100px;"></div>
           @error('photo')
@@ -61,8 +61,8 @@
         <div class="form-group">
           <label for="status" class="col-form-label">Status <span class="text-danger">*</span></label>
           <select name="status" class="form-control">
-              <option value="active" {{(($category->status=='active')? 'selected' : '')}}>Active</option>
-              <option value="inactive" {{(($category->status=='inactive')? 'selected' : '')}}>Inactive</option>
+              <option value="active" {{(($categorie->status=='active')? 'selected' : '')}}>Active</option>
+              <option value="inactive" {{(($categorie->status=='inactive')? 'selected' : '')}}>Inactive</option>
           </select>
           @error('status')
           <span class="text-danger">{{$message}}</span>

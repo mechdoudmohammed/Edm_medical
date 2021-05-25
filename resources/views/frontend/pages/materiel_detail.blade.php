@@ -14,7 +14,7 @@
 	<meta property="og:image" content="{{$materiel_detail->photo}}">
 	<meta property="og:description" content="{{$materiel_detail->description}}">
 @endsection
-@section('title','EDM-Medical || MATERIEL DETAIL')
+@section('title','EDM-Medical || MATERIEL DETAILS')
 @section('main-content')
 
 		<!-- Breadcrumbs -->
@@ -24,8 +24,8 @@
 					<div class="col-12">
 						<div class="bread-inner">
 							<ul class="bread-list">
-								<li><a href="{{route('home')}}">Home<i class="ti-arrow-right"></i></a></li>
-								<li class="active"><a href="">Shop Details</a></li>
+								<li><a href="{{route('home')}}">Accueil<i class="ti-arrow-right"></i></a></li>
+								<li class="active"><a href="">MATERIEL DETAILS</a></li>
 							</ul>
 						</div>
 					</div>
@@ -84,43 +84,19 @@
                                                 @php
                                                     $after_discount=($materiel_detail->price-(($materiel_detail->price*$materiel_detail->discount)/100));
                                                 @endphp
-												<p class="price"><span class="discount">MAD {{number_format($after_discount,2)}}</span><s>MAD {{number_format($materiel_detail->price,2)}}</s> </p>
+												<p class="price"><span class="discount">Dhs {{number_format($after_discount,2)}}Dhs </span><s>Dhs {{number_format($materiel_detail->price,2)}}</s> </p>
 												<p class="description">{!!($materiel_detail->summary)!!}</p>
 											</div>
 											<!--/ End Description -->
 											<!-- Color -->
-											{{-- <div class="color">
-												<h4>Available Options <span>Color</span></h4>
-												<ul>
-													<li><a href="#" class="one"><i class="ti-check"></i></a></li>
-													<li><a href="#" class="two"><i class="ti-check"></i></a></li>
-													<li><a href="#" class="three"><i class="ti-check"></i></a></li>
-													<li><a href="#" class="four"><i class="ti-check"></i></a></li>
-												</ul>
-											</div> --}}
+										
 											<!--/ End Color -->
-											<!-- Size -->
-											@if($materiel_detail->size)
-												<div class="size mt-4">
-													<h4>Size</h4>
-													<ul>
-														@php
-															$sizes=explode(',',$materiel_detail->size);
-															// dd($sizes);
-														@endphp
-														@foreach($sizes as $size)
-														<li><a href="#" class="one">{{$size}}</a></li>
-														@endforeach
-													</ul>
-												</div>
-											@endif
-											<!--/ End Size -->
 											<!-- Materiel Buy -->
 											<div class="materiel-buy">
 												<form action="{{route('single-add-to-cart')}}" method="POST">
 													@csrf
 													<div class="quantity">
-														<h6>Quantity :</h6>
+														<h6>Quantité :</h6>
 														<!-- Input Order -->
 														<div class="input-group">
 															<div class="button minus">
@@ -139,7 +115,7 @@
 													<!--/ End Input Order -->
 													</div>
 													<div class="add-to-cart mt-4">
-														<button type="submit" class="btn">Add to cart</button>
+														<button type="submit" class="btn">Ajouter au panier</button>
 														<a href="{{route('add-to-wishlist',$materiel_detail->slug)}}" class="btn min"><i class="ti-heart"></i></a>
 													</div>
 												</form>
@@ -159,9 +135,9 @@
                                                     </form>
                                                 {{-- end form de location--}}
 
-												<p class="cat">Category :<a href="{{route('materiel-cat',$materiel_detail->cat_info['slug'])}}">{{$materiel_detail->cat_info['title']}}</a></p>
+												<p class="cat">Categorie :<a href="{{route('materiel-cat',$materiel_detail->cat_info['slug'])}}">{{$materiel_detail->cat_info['title']}}</a></p>
 												@if($materiel_detail->sub_cat_info)
-												<p class="cat mt-1">Sub Category :<a href="{{route('materiel-sub-cat',[$materiel_detail->cat_info['slug'],$materiel_detail->sub_cat_info['slug']])}}">{{$materiel_detail->sub_cat_info['title']}}</a></p>
+												<p class="cat mt-1">Sub Categorie :<a href="{{route('materiel-sub-cat',[$materiel_detail->cat_info['slug'],$materiel_detail->sub_cat_info['slug']])}}">{{$materiel_detail->sub_cat_info['title']}}</a></p>
 												@endif
 												<p class="availability">Stock : @if($materiel_detail->stock>0)<span class="badge badge-success">{{$materiel_detail->stock}}</span>@else <span class="badge badge-danger">{{$materiel_detail->stock}}</span>  @endif</p>
 											</div>
@@ -176,7 +152,7 @@
 												<!-- Tab Nav -->
 												<ul class="nav nav-tabs" id="myTab" role="tablist">
 													<li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#description" role="tab">Description</a></li>
-													<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#reviews" role="tab">Reviews</a></li>
+													<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#reviews" role="tab">Avis</a></li>
 												</ul>
 												<!--/ End Tab Nav -->
 											</div>
@@ -204,9 +180,9 @@
 																<div class="comment-review">
 																	<div class="add-review">
 																		<h5>Ajouter un commentaire</h5>
-																		<p>Your email address will not be published. Required fields are marked</p>
+																		<p>Votre adresse email ne sera pas publiée. les champs requis sont indiqués</p>
 																	</div>
-																	<h4>Your Rating <span class="text-danger">*</span></h4>
+																	<h4>évaluer <span class="text-danger">*</span></h4>
 																	<div class="review-inner">
 																			<!-- Form -->
 																@auth
@@ -236,7 +212,7 @@
                                                                         </div>
 																		<div class="col-lg-12 col-12">
 																			<div class="form-group">
-																				<label>Write a review</label>
+																				<label>Écrire une critique</label>
 																				<textarea name="review" rows="6" placeholder="" ></textarea>
 																			</div>
 																		</div>
@@ -249,7 +225,7 @@
 																</form>
 																@else
 																<p class="text-center p-5">
-																	You need to <a href="{{route('login.form')}}" style="color:rgb(54, 54, 204)">Login</a> OR <a style="color:blue" href="{{route('register.form')}}">Register</a>
+																	Vous avez besoin de  <a href="{{route('login.form')}}" style="color:rgb(54, 54, 204)">Login</a> OR <a style="color:blue" href="{{route('register.form')}}">inscription</a>
 
 																</p>
 																<!--/ End Form -->
@@ -323,7 +299,7 @@
             <div class="row">
 				<div class="col-12">
 					<div class="section-title">
-						<h2>Related Materiels</h2>
+						<h2>materiel recommandé</h2>
 					</div>
 				</div>
             </div>
@@ -348,12 +324,12 @@
                                         </a>
                                         <div class="button-head">
                                             <div class="materiel-action">
-                                                <a data-toggle="modal" data-target="#modelExample" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
-                                                <a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Add to Wishlist</span></a>
-                                                <a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>Add to Compare</span></a>
+                                                <a data-toggle="modal" data-target="#modelExample" title="Quick View" href="#"><i class=" ti-eye"></i><span>achat rapide</span></a>
+                                                <a title="Wishlist" href="#"><i class=" ti-heart "></i><span>Ajouter à la liste de souhaits</span></a>
+                                                <a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>ajouter pour comparer</span></a>
                                             </div>
                                             <div class="materiel-action-2">
-                                                <a title="Add to cart" href="#">Add to cart</a>
+                                                <a title="Add to cart" href="#">Ajouter au panier</a>
                                             </div>
                                         </div>
                                     </div>
@@ -363,8 +339,8 @@
                                             @php
                                                 $after_discount=($data->price-(($data->discount*$data->price)/100));
                                             @endphp
-                                            <span class="old">MAD {{number_format($data->price,2)}}</span>
-                                            <span>MAD {{number_format($after_discount,2)}}</span>
+                                            <span class="old"> {{number_format($data->price,2)}} Dhs</span>
+                                            <span> {{number_format($after_discount,2)}} Dhs</span>
                                         </div>
 
                                     </div>
@@ -410,50 +386,7 @@
                             </div>
                         <!-- End Materiel slider -->
                     </div>
-                    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                        <div class="quickview-content">
-                            <h2>Flared Shift Dress</h2>
-                            <div class="quickview-ratting-review">
-                                <div class="quickview-ratting-wrap">
-                                    <div class="quickview-ratting">
-                                        <i class="yellow fa fa-star"></i>
-                                        <i class="yellow fa fa-star"></i>
-                                        <i class="yellow fa fa-star"></i>
-                                        <i class="yellow fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                    <a href="#"> (1 customer review)</a>
-                                </div>
-                                <div class="quickview-stock">
-                                    <span><i class="fa fa-check-circle-o"></i> in stock</span>
-                                </div>
-                            </div>
-                            <h3>$29.00</h3>
-                            <div class="quickview-peragraph">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia iste laborum ad impedit pariatur esse optio tempora sint ullam autem deleniti nam in quos qui nemo ipsum numquam.</p>
-                            </div>
-                            <div class="size">
-                                <div class="row">
-                                    <div class="col-lg-6 col-12">
-                                        <h5 class="title">Size</h5>
-                                        <select>
-                                            <option selected="selected">s</option>
-                                            <option>m</option>
-                                            <option>l</option>
-                                            <option>xl</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-lg-6 col-12">
-                                        <h5 class="title">Color</h5>
-                                        <select>
-                                            <option selected="selected">orange</option>
-                                            <option>purple</option>
-                                            <option>black</option>
-                                            <option>pink</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
+                  
                             <div class="quantity">
                                 <!-- Input Order -->
                                 <div class="input-group">
@@ -472,12 +405,12 @@
                                 <!--/ End Input Order -->
                             </div>
                             <div class="add-to-cart">
-                                <a href="#" class="btn">Add to cart</a>
+                                <a href="#" class="btn">Ajouter au panier</a>
                                 <a href="#" class="btn min"><i class="ti-heart"></i></a>
                                 <a href="#" class="btn min"><i class="fa fa-compress"></i></a>
                             </div>
                             <div class="default-social">
-                                <h4 class="share-now">Share:</h4>
+                                <h4 class="share-now">partager:</h4>
                                 <ul>
                                     <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
                                     <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
@@ -523,7 +456,7 @@
 		float: right;
 		padding-left: 2px;
 		cursor: pointer;
-		color: #F7941D;
+		color: #4caf50;
 		font-size: 16px;
 		margin-top: 5px;
 		}

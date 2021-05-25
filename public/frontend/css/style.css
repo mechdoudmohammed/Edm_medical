@@ -1,8 +1,8 @@
 /* =====================================
-Template Name: Eshop
+Template Name: EDM Medical
 Author Name: Naimur Rahman
 Author URI: http://www.wpthemesgrid.com/
-Description: Eshop - eCommerce HTML5 Template.
+Description: EDM Medical - eCommerce HTML5 Template.
 Version:1.0
 ========================================*/
 /*======================================
@@ -10,7 +10,7 @@ Version:1.0
 01. Preloader CSS
 02. Header CSS
 	+ Logo
-	+ Category Menu
+	+ Categorie Menu
 	+ Main Menu
 03. Hero Area CSS
 04. Small Banner CSS
@@ -757,13 +757,13 @@ Version:1.0
 .header.shop .topbar p {
 	color: #333;
 }
-.header.shop .all-category {
+.header.shop .all-categorie {
 	color: #fff;
 	background: transparent;
 	position: relative;
 	background: #4caf50;
 }
-.header.shop .all-category h3{
+.header.shop .all-categorie h3{
 	padding: 20px 25px;
 }
 .header.shop .cat-heading {
@@ -776,7 +776,7 @@ Version:1.0
 	margin-right: 15px;
 	font-size: 22px;
 }
-.header.shop .main-category {
+.header.shop .main-categorie {
 	position: absolute;
 	left: 0;
 	top: 64px;
@@ -787,15 +787,15 @@ Version:1.0
 	-moz-box-shadow: 0px 5px 15px #0000000a;
 	box-shadow: 0px 5px 15px #0000000a;
 }
-.header.shop .main-category li{
+.header.shop .main-categorie li{
 	display:block;
 	border-bottom:1px solid #f6f6f6;
 	position:relative;
 }
-.header.shop .main-category li:last-child{
+.header.shop .main-categorie li:last-child{
 	border:none;
 }
-.header.shop .main-category li a {
+.header.shop .main-categorie li a {
 	font-size: 14px;
 	font-weight: 600;
 	color: #333;
@@ -803,11 +803,11 @@ Version:1.0
 	display: block;
 	text-transform: uppercase;
 }
-.header.shop .main-category li a i{
+.header.shop .main-categorie li a i{
 	display:inline-block;
 	float:right;
 }
-.header.shop .sub-category {
+.header.shop .sub-categorie {
 	background: #fff;
 	width: 220px;
 	position: absolute;
@@ -824,21 +824,21 @@ Version:1.0
 	-moz-box-shadow: 0px 5px 15px #0000000a;
 	box-shadow: 0px 5px 15px #0000000a;
 }
-.header.shop .main-category li:hover .sub-category{
+.header.shop .main-categorie li:hover .sub-categorie{
 	opacity:1;
 	visibility:visible;
 }
-.header.shop .main-category li a{
+.header.shop .main-categorie li a{
 	text-transform:capitalize;
 	font-weight:400;
 }
-.header.shop .main-category li a:hover{
+.header.shop .main-categorie li a:hover{
 	color:#4caf50;
 }
-.header.shop .main-category .main-mega{
+.header.shop .main-categorie .main-mega{
 	position:relative;
 }
-.header.shop .main-category li .mega-menu {
+.header.shop .main-categorie li .mega-menu {
 	width: 850px;
 	display: inline-block;
 	height: auto;
@@ -856,33 +856,33 @@ Version:1.0
 	-moz-transition:all 0.4s ease;
 	transition:all 0.4s ease;
 }
-.header.shop .main-category li:hover .mega-menu{
+.header.shop .main-categorie li:hover .mega-menu{
 	opacity:1;
 	visibility:visible;
 }
-.header.shop .main-category li .mega-menu .single-menu {
+.header.shop .main-categorie li .mega-menu .single-menu {
 	width: 33%;
 	display: inline-block;
 	border: none;
 	padding: 0;
 	padding-right: 20px;
 }
-.header.shop .main-category li .mega-menu .single-menu a{
+.header.shop .main-categorie li .mega-menu .single-menu a{
 	padding:0;
 }
-.header.shop .main-category li .mega-menu .single-menu .image{
+.header.shop .main-categorie li .mega-menu .single-menu .image{
 	overflow:hidden;
 }
-.header.shop .main-category li .mega-menu .single-menu img{
+.header.shop .main-categorie li .mega-menu .single-menu img{
 	display:block;
 	height:100%;
 	width:100%;
 	cursor:pointer;
 }
-.header.shop .main-category li .mega-menu .single-menu .image:hover img{
+.header.shop .main-categorie li .mega-menu .single-menu .image:hover img{
 	transform:scale(1.1);
 }
-.header.shop .main-category li .mega-menu .single-menu .title-link {
+.header.shop .main-categorie li .mega-menu .single-menu .title-link {
 	margin-bottom: 20px;
 	background: #4caf50;
 	color: #fff;
@@ -891,21 +891,21 @@ Version:1.0
 	display: inline-block;
 	font-size: 14px;
 }
-.header.shop .main-category li .mega-menu .single-menu .title-link:hover{
+.header.shop .main-categorie li .mega-menu .single-menu .title-link:hover{
 	background:#333;
 	color:#fff;
 }
-.header.shop .main-category li .mega-menu .single-menu .inner-link{
+.header.shop .main-categorie li .mega-menu .single-menu .inner-link{
 	margin-top:25px;
 }
-.header.shop .main-category li .mega-menu .single-menu .inner-link a{
+.header.shop .main-categorie li .mega-menu .single-menu .inner-link a{
 	margin-bottom:10px;
 }
-.header.shop .main-category li .mega-menu .single-menu .inner-link a:hover{
+.header.shop .main-categorie li .mega-menu .single-menu .inner-link a:hover{
 	color:#4caf50;
 	background:transparent;
 }
-.header.shop .main-category li .mega-menu .single-menu .inner-link a:last-child{
+.header.shop .main-categorie li .mega-menu .single-menu .inner-link a:last-child{
 	margin-bottom:0px;
 }
 .header.shop .menu-origin {
@@ -1043,7 +1043,7 @@ Version:1.0
 	position: absolute;
 	top: -7px;
 	right: -8px;
-	background: #f6931d;
+	background: #4caf50;
 	width: 18px;
 	height: 18px;
 	line-height: 18px;
@@ -1141,19 +1141,19 @@ Version:1.0
 	width:100%;
 	z-index:999;
 }
-.header.sticky .all-category{}
-.header.sticky .all-category h3{
+.header.sticky .all-categorie{}
+.header.sticky .all-categorie h3{
 	cursor:pointer;
 
 }
-.header.sticky .all-category .main-category{
+.header.sticky .all-categorie .main-categorie{
 	opacity:0;
 	visibility:hidden;
 	-webkit-transition:all 0.4s ease;
 	-moz-transition:all 0.4s ease;
 	transition:all 0.4s ease;
 }
-.header.sticky .all-category:hover .main-category{
+.header.sticky .all-categorie:hover .main-categorie{
 	opacity:1;
 	visibility:visible;
 }
@@ -1774,7 +1774,7 @@ Version:1.0
   transition: opacity 0.5s ease, transform 2s cubic-bezier(0, 0, 0.44, 1.18), -webkit-transform 2s cubic-bezier(0, 0, 0.44, 1.18);
 }
 .single-materiel .materiel-img a span.price-dec {
-	background-color: #f6931d;
+	background-color: #4caf50;
 	display: inline-block;
 	font-size: 11px;
 	color: #fff;
@@ -2142,7 +2142,7 @@ Version:1.0
 	margin-left:5px;
 	color:#666;
 }
-/* Category List */
+/* Categorie List */
 .shop-sidebar .categor-list {
 	margin-top: 10px;
 }
@@ -4148,7 +4148,7 @@ Version:1.0
 	background:#4caf50;
 	color:#fff;
 }
-/* Category List */
+/* Categorie List */
 .main-sidebar .categor-list {
 	margin-top: 15px;
 }

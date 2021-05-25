@@ -66,9 +66,9 @@
               {{-- {{$categories}} --}}
 
         <div class="form-group">
-          <label for="cat_id">Category <span class="text-danger">*</span></label>
+          <label for="cat_id">Categorie <span class="text-danger">*</span></label>
           <select name="cat_id" id="cat_id" class="form-control">
-              <option value="">--Select any category--</option>
+              <option value="">--Select any categorie--</option>
               @foreach($categories as $key=>$cat_data)
                   <option value='{{$cat_data->id}}'>{{$cat_data->title}}</option>
               @endforeach
@@ -76,9 +76,9 @@
         </div>
 
         <div class="form-group d-none" id="child_cat_div">
-          <label for="child_cat_id">Sub Category</label>
+          <label for="child_cat_id">Sub Categorie</label>
           <select name="child_cat_id" id="child_cat_id" class="form-control">
-              <option value="">--Select any category--</option>
+              <option value="">--Select any categorie--</option>
               {{-- @foreach($parent_cats as $key=>$parent_cat)
                   <option value='{{$parent_cat->id}}'>{{$parent_cat->title}}</option>
               @endforeach --}}
@@ -220,7 +220,7 @@
     if(cat_id !=null){
       // Ajax call
       $.ajax({
-        url:"/admin/category/"+cat_id+"/child",
+        url:"/admin/categorie/"+cat_id+"/child",
         data:{
           _token:"{{csrf_token()}}",
           id:cat_id
@@ -231,7 +231,7 @@
             response=$.parseJSON(response)
           }
           // console.log(response);
-          var html_option="<option value=''>----Select sub category----</option>"
+          var html_option="<option value=''>----Select sub categorie----</option>"
           if(response.status){
             var data=response.data;
             // alert(data);

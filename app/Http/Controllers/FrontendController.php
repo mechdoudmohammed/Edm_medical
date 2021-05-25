@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Banner;
 use App\Models\Materiel;
-use App\Models\Category;
+use App\Models\Categorie;
 use App\Models\PostTag;
 use App\Models\PostCategory;
 use App\Models\Post;
@@ -30,14 +30,14 @@ class FrontendController extends Controller
         $banners=Banner::where('status','active')->limit(3)->orderBy('id','DESC')->get();
         // return $banner;
         $materiels=Materiel::where('status','active')->orderBy('id','DESC')->limit(8)->get();
-        $category=Category::where('status','active')->where('is_parent',1)->orderBy('title','ASC')->get();
-        // return $category;
+        $categorie=Categorie::where('status','active')->where('is_parent',1)->orderBy('title','ASC')->get();
+        // return $categorie;
         return view('frontend.index')
                 ->with('featured',$featured)
                 ->with('posts',$posts)
                 ->with('banners',$banners)
                 ->with('materiel_lists',$materiels)
-                ->with('category_lists',$category);
+                ->with('category_lists',$categorie);
     }   
 
     public function aboutUs(){
@@ -57,10 +57,10 @@ class FrontendController extends Controller
     public function materielGrids(){
         $materiels=Materiel::query();
         
-        if(!empty($_GET['category'])){
-            $slug=explode(',',$_GET['category']);
+        if(!empty($_GET['categorie'])){
+            $slug=explode(',',$_GET['categorie']);
             // dd($slug);
-            $cat_ids=Category::select('id')->whereIn('slug',$slug)->pluck('id')->toArray();
+            $cat_ids=Categorie::select('id')->whereIn('slug',$slug)->pluck('id')->toArray();
             // dd($cat_ids);
             $materiels->whereIn('cat_id',$cat_ids);
             // return $materiels;
@@ -97,7 +97,7 @@ class FrontendController extends Controller
         else{
             $materiels=$materiels->where('status','active')->paginate(9);
         }
-        // Sort by name , price, category
+        // Sort by name , price, categorie
 
       
         return view('frontend.pages.materiel-grids')->with('materiels',$materiels)->with('recent_materiels',$recent_materiels);
@@ -105,10 +105,10 @@ class FrontendController extends Controller
     public function materielLists(){
         $materiels=Materiel::query();
         
-        if(!empty($_GET['category'])){
-            $slug=explode(',',$_GET['category']);
+        if(!empty($_GET['categorie'])){
+            $slug=explode(',',$_GET['categorie']);
             // dd($slug);
-            $cat_ids=Category::select('id')->whereIn('slug',$slug)->pluck('id')->toArray();
+            $cat_ids=Categorie::select('id')->whereIn('slug',$slug)->pluck('id')->toArray();
             // dd($cat_ids);
             $materiels->whereIn('cat_id',$cat_ids)->paginate;
             // return $materiels;
@@ -145,7 +145,7 @@ class FrontendController extends Controller
         else{
             $materiels=$materiels->where('status','active')->paginate(6);
         }
-        // Sort by name , price, category
+        // Sort by name , price, categorie
 
       
         return view('frontend.pages.materiel-lists')->with('materiels',$materiels)->with('recent_materiels',$recent_materiels);
@@ -164,13 +164,13 @@ class FrontendController extends Controller
             }
 
             $catURL="";
-            if(!empty($data['category'])){
-                foreach($data['category'] as $category){
+            if(!empty($data['categorie'])){
+                foreach($data['categorie'] as $categorie){
                     if(empty($catURL)){
-                        $catURL .='&category='.$category;
+                        $catURL .='&categorie='.$categorie;
                     }
                     else{
-                        $catURL .=','.$category;
+                        $catURL .=','.$categorie;
                     }
                 }
             }
@@ -223,7 +223,7 @@ class FrontendController extends Controller
 
     }
     public function materielCat(Request $request){
-        $materiels=Category::getMaterielByCat($request->slug);
+        $materiels=Categorie::getMaterielByCat($request->slug);
         // return $request->slug;
         $recent_materiels=Materiel::where('status','active')->orderBy('id','DESC')->limit(3)->get();
 
@@ -236,7 +236,7 @@ class FrontendController extends Controller
 
     }
     public function materielSubCat(Request $request){
-        $materiels=Category::getMaterielBySubCat($request->sub_slug);
+        $materiels=Categorie::getMaterielBySubCat($request->sub_slug);
         // return $materiels;
         $recent_materiels=Materiel::where('status','active')->orderBy('id','DESC')->limit(3)->get();
 
@@ -252,8 +252,8 @@ class FrontendController extends Controller
     public function blog(){
         $post=Post::query();
         
-        if(!empty($_GET['category'])){
-            $slug=explode(',',$_GET['category']);
+        if(!empty($_GET['categorie'])){
+            $slug=explode(',',$_GET['categorie']);
             // dd($slug);
             $cat_ids=PostCategory::select('id')->whereIn('slug',$slug)->pluck('id')->toArray();
             return $cat_ids;
@@ -304,13 +304,13 @@ class FrontendController extends Controller
         $data=$request->all();
         // return $data;
         $catURL="";
-        if(!empty($data['category'])){
-            foreach($data['category'] as $category){
+        if(!empty($data['categorie'])){
+            foreach($data['categorie'] as $categorie){
                 if(empty($catURL)){
-                    $catURL .='&category='.$category;
+                    $catURL .='&categorie='.$categorie;
                 }
                 else{
-                    $catURL .=','.$category;
+                    $catURL .=','.$categorie;
                 }
             }
         }

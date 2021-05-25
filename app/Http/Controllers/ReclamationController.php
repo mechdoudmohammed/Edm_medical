@@ -52,7 +52,7 @@ class ReclamationController extends Controller
         if($reclamation)
         $users=User::where('role','admin')->first();
         $details=[
-            'title'=>'Nouvelle reclamation de ',
+            'title'=>'Nouvelle reclamation par user N:'.$reclamation->id_user,
             'actionURL'=>route('backend.reclamtion.index'),
             'fas'=>'fa-file-alt'
         ];

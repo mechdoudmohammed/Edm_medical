@@ -72,7 +72,7 @@ Route::get('/blog','FrontendController@blog')->name('blog');
 Route::get('/blog-detail/{slug}','FrontendController@blogDetail')->name('blog.detail');
 Route::get('/blog/search','FrontendController@blogSearch')->name('blog.search');
 Route::post('/blog/filter','FrontendController@blogFilter')->name('blog.filter');
-Route::get('blog-cat/{slug}','FrontendController@blogByCategory')->name('blog.category');
+Route::get('blog-cat/{slug}','FrontendController@blogByCategory')->name('blog.categorie');
 Route::get('blog-tag/{slug}','FrontendController@blogByTag')->name('blog.tag');
 
 // NewsLetter
@@ -127,18 +127,18 @@ Route::group(['prefix'=>'/admin','middleware'=>['auth','admin']],function(){
     // Profile
     Route::get('/profile','AdminController@profile')->name('admin-profile');
     Route::post('/profile/{id}','AdminController@profileUpdate')->name('profile-update');
-    // Category
-    Route::resource('/category','CategoryController');
+    // Categorie
+    Route::resource('/categorie','CategoryController');
     // Materiel
     Route::resource('/materiel','MaterielController');
     // Location
     Route::resource('/location','LocationController');
      // Livreur
      Route::resource('/livreur','LivreurController');
-    // Ajax for sub category
-    Route::post('/category/{id}/child','CategoryController@getChildByParent');
-    // POST category
-    Route::resource('/post-category','PostCategoryController');
+    // Ajax for sub categorie
+    Route::post('/categorie/{id}/child','CategoryController@getChildByParent');
+    // POST categorie
+    Route::resource('/post-categorie','PostCategoryController');
     // Post tag
     Route::resource('/post-tag','PostTagController');
     // Post

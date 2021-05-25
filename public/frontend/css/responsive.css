@@ -1,8 +1,8 @@
 /* =====================================
-Template Name: Eshop
+Template Name: EDM Medical
 Author Name: Naimur Rahman
 Author URI: http://www.wpthemesgrid.com/
-Description: Eshop - eCommerce HTML5 Template.
+Description: EDM Medical - eCommerce HTML5 Template.
 Version:1.0
 ========================================*/
 /* Tablet Screen */
@@ -94,7 +94,7 @@ Version:1.0
 	height: auto;
 	font-size: 13px;
 }
-.header.shop .all-category {
+.header.shop .all-categorie {
 	display: none;
 }
 .navbar-nav {
@@ -123,7 +123,7 @@ Version:1.0
 	display:block;
 }
 .hero-slider {
-	height: 416px;
+/*	height: 416px;*/
 }
 .hero-slider .hero-text {
 	margin-top: 80px;
@@ -403,7 +403,7 @@ Version:1.0
 	display:none;
 }
 .slicknav_nav li:hover a{
-	color:#F7941D;
+	color:#4caf50;
 	background:transparent;
 }
 .slicknav_nav li:hover{
@@ -417,7 +417,7 @@ Version:1.0
 	background:transparent;
 }
 .slicknav_nav li .dropdown li a:hover{
-	color:#F7941D;
+	color:#4caf50;
 	background:transparent;
 }
 .slicknav_nav li .slicknav_item{
@@ -433,12 +433,12 @@ Version:1.0
 	padding-bottom:0px;
 }
 .slicknav_menu .slicknav_icon-bar {
-	background-color: #F7941D;
+	background-color: #4caf50;
 	box-shadow: none;
 	text-shadow: none;
 }
 .slicknav_nav .slicknav_arrow{
-	color:#F7941D;
+	color:#4caf50;
 }
 .slicknav_menu .slicknav_icon-bar {
 	display: block;
@@ -519,14 +519,14 @@ Version:1.0
 	padding: 0 52px 0 20px;
 	width: 264px;
 }
-.header.shop .all-category {
+.header.shop .all-categorie {
 	display: none;
 }
 .header .header-inner{
 	display:none 
 }
 .hero-slider {
-	height: 350px;
+	/*height: 350px;*/
 }
 .hero-slider .hero-text {
 	margin-top: 60px;
@@ -884,7 +884,7 @@ Version:1.0
 	width: 50%;
 	height: 100%;
 	border-bottom: 1px solid #e6ebee;
-	background: #F7941D;
+	background: #4caf50;
 	color: #fff;
 	border: none;
 }
@@ -1116,7 +1116,7 @@ Version:1.0
 	display:none;
 }
 .slicknav_nav li:hover a{
-	color:#F7941D;
+	color:#4caf50;
 	background:transparent;
 }
 .slicknav_nav li:hover{
@@ -1130,7 +1130,7 @@ Version:1.0
 	background:transparent;
 }
 .slicknav_nav li .dropdown li a:hover{
-	color:#F7941D;
+	color:#4caf50;
 	background:transparent;
 }
 .slicknav_nav li .slicknav_item{
@@ -1146,12 +1146,12 @@ Version:1.0
 	padding-bottom:0px;
 }
 .slicknav_menu .slicknav_icon-bar {
-	background-color: #F7941D;
+	background-color: #4caf50;
 	box-shadow: none;
 	text-shadow: none;
 }
 .slicknav_nav .slicknav_arrow{
-	color:#F7941D;
+	color:#4caf50;
 }
 .slicknav_menu .slicknav_icon-bar {
 	display: block;
@@ -1251,7 +1251,7 @@ Version:1.0
 	padding: 0 52px 0 20px;
 	width: 264px;
 }
-.header.shop .all-category {
+.header.shop .all-categorie {
 	display: none;
 }
 .header .header-inner{
@@ -1261,7 +1261,7 @@ Version:1.0
 	display:none !important;
 }
 .hero-slider {
-	height: 350px;
+/*	height: 350px;*/
 }
 .hero-slider .hero-text {
 	margin-top: 60px;

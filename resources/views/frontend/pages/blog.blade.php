@@ -1,6 +1,6 @@
 @extends('frontend.layouts.master')
 
-@section('title','EDM-Medical || Blog Page')
+@section('title','EDM-Medical || Poste')
 
 @section('main-content')
     <!-- Breadcrumbs -->
@@ -10,8 +10,8 @@
                 <div class="col-12">
                     <div class="bread-inner">
                         <ul class="bread-list">
-                            <li><a href="{{route('home')}}">Home<i class="ti-arrow-right"></i></a></li>
-                            <li class="active"><a href="javascript:void(0);">Blog Grid Sidebar</a></li>
+                            <li><a href="{{route('home')}}">Acceuil<i class="ti-arrow-right"></i></a></li>
+                            <li class="active"><a href="javascript:void(0);">Poste</a></li>
                         </ul>
                     </div>
                 </div>
@@ -43,14 +43,14 @@
                                                     @if($data->name)
                                                         {{$data->name}}
                                                     @else
-                                                        Anonymous
+                                                       admin
                                                     @endif
                                                 @endforeach
                                             </span>
                                         </p>
                                         <a href="{{route('blog.detail',$post->slug)}}" class="title">{{$post->title}}</a>
                                         <p>{!! html_entity_decode($post->summary) !!}</p>
-                                        <a href="{{route('blog.detail',$post->slug)}}" class="more-btn">Continue Reading</a>
+                                        <a href="{{route('blog.detail',$post->slug)}}" class="more-btn">Continuer la lecture</a>
                                     </div>
                                 </div>
                                 <!-- End Single Blog  -->
@@ -74,12 +74,12 @@
                         </div>
                         <!--/ End Single Widget -->
                         <!-- Single Widget -->
-                        <div class="single-widget category">
+                        <div class="single-widget categorie">
                             <h3 class="title">Blog Categories</h3>
                             <ul class="categor-list">
-                                @if(!empty($_GET['category']))
+                                @if(!empty($_GET['categorie']))
                                     @php 
-                                        $filter_cats=explode(',',$_GET['category']);
+                                        $filter_cats=explode(',',$_GET['categorie']);
                                     @endphp
                                 @endif
                             <form action="{{route('blog.filter')}}" method="POST">
@@ -87,7 +87,7 @@
                                     {{-- {{count(Helper::postCategoryList())}} --}}
                                     @foreach(Helper::postCategoryList('posts') as $cat)
                                     <li>
-                                        <a href="{{route('blog.category',$cat->slug)}}">{{$cat->title}} </a>
+                                        <a href="{{route('blog.categorie',$cat->slug)}}">{{$cat->title}} </a>
                                     </li>
                                     @endforeach
                                 </form>
@@ -116,7 +116,7 @@
                                                     @if($data->name)
                                                         {{$data->name}}
                                                     @else
-                                                        Anonymous
+                                                        Admin
                                                     @endif
                                                 @endforeach
                                             </li>
@@ -151,19 +151,7 @@
                             </ul>
                         </div>
                         <!--/ End Single Widget -->
-                        <!-- Single Widget -->
-                        <div class="single-widget newsletter">
-                            <h3 class="title">Newslatter</h3>
-                            <div class="letter-inner">
-                                <h4>Subscribe & get news <br> latest updates.</h4>
-                                <form method="POST" action="{{route('subscribe')}}" class="form-inner">
-                                    @csrf
-                                    <input type="email" name="email" placeholder="Enter your email">
-                                    <button type="submit" class="btn " style="width: 100%">Submit</button>
-                                </form>
-                            </div>
-                        </div>
-                        <!--/ End Single Widget -->
+                      
                     </div>
                 </div>
             </div>

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Materiel;
-use App\Models\Category;
+use App\Models\Categorie;
 use App\Models\Fournisseur;
 
 use Illuminate\Support\Str;
@@ -31,9 +31,9 @@ class MaterielController extends Controller
     public function create()
     {
         $fournisseur=Fournisseur::get();
-        $category=Category::where('is_parent',1)->get();
-        // return $category;
-        return view('backend.materiel.create')->with('categories',$category)->with('fournisseurs',$fournisseur);
+        $categorie=Categorie::where('is_parent',1)->get();
+        // return $categorie;
+        return view('backend.materiel.create')->with('categories',$categorie)->with('fournisseurs',$fournisseur);
     }
 
     /**
@@ -53,7 +53,6 @@ class MaterielController extends Controller
             'summary'=>'string|required',
             'description'=>'string|nullable',
             'photo'=>'required',
-            'size'=>'nullable',
             'stock'=>"required|numeric",
             'cat_id'=>'required|exists:categories,id',
             'fournisseur_id'=>'nullable|exists:fournisseurs,id',
@@ -87,14 +86,6 @@ class MaterielController extends Controller
         $data['fiche_technique']=$file_name_fiche_technique;
 
         $data['is_featured']=$request->input('is_featured',0);
-        $size=$request->input('size');
-        if($size){
-            $data['size']=implode(',',$size);
-        }
-        else{
-            $data['size']='';
-        }
-        // return $size;
         // return $data;
         $status=Materiel::create($data);
         if($status){
@@ -128,12 +119,12 @@ class MaterielController extends Controller
     {
         $fournisseur=Fournisseur::get();
         $materiel=Materiel::findOrFail($id);
-        $category=Category::where('is_parent',1)->get();
+        $categorie=Categorie::where('is_parent',1)->get();
         $items=Materiel::where('id',$id)->get();
         // return $items;
         return view('backend.materiel.edit')->with('materiel',$materiel)
                     ->with('fournisseurs',$fournisseur)
-                    ->with('categories',$category)->with('items',$items);
+                    ->with('categories',$categorie)->with('items',$items);
     }
 
     /**
@@ -157,7 +148,6 @@ class MaterielController extends Controller
             'summary'=>'string|required',
             'description'=>'string|nullable',
             'photo'=>'string|required',
-            'size'=>'nullable',
             'stock'=>"required|numeric",
             'cat_id'=>'required|exists:categories,id',
             'child_cat_id'=>'nullable|exists:categories,id',
@@ -171,13 +161,6 @@ class MaterielController extends Controller
 
         $data=$request->all();
         $data['is_featured']=$request->input('is_featured',0);
-        $size=$request->input('size');
-        if($size){
-            $data['size']=implode(',',$size);
-        }
-        else{
-            $data['size']='';
-        }
          //return $data;
         $status=$materiel->fill($data)->save();
         if($status){

@@ -3,9 +3,9 @@
 @section('main-content')
 
 <div class="card">
-    <h5 class="card-header">Add Post Category</h5>
+    <h5 class="card-header">Add Post Categorie</h5>
     <div class="card-body">
-      <form method="post" action="{{route('post-category.store')}}">
+      <form method="post" action="{{route('post-categorie.store')}}">
         {{csrf_field()}}
         <div class="form-group">
           <label for="inputTitle" class="col-form-label">Title</label>

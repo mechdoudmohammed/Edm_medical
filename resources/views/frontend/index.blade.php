@@ -41,10 +41,7 @@
                 <div class="carousel-item {{(($key==0)? 'active' : '')}}">
                     <img class="first-slide" src="backend\img\bannière\{{$banner->photo}}" alt="First slide">
                     <div class="carousel-caption d-none d-md-block text-left">
-                        <h1 class="wow fadeInDown">{{$banner->title}}</h1>
-                        <p>{!! html_entity_decode($banner->description) !!}</p>
-                        <a class="btn btn-lg ws-btn wow fadeInUpBig" href="{{route('materiel-grids')}}" role="button">Achetez maintenant<i class="far fa-arrow-alt-circle-right"></i></i></a>
-                    </div>
+                                           </div>
                 </div>
             @endforeach
         </div>
@@ -170,8 +167,8 @@
                                                 @php
                                                     $after_discount=($materiel->price-($materiel->price*$materiel->discount)/100);
                                                 @endphp
-                                                <span>MAD {{number_format($after_discount,2)}}</span>
-                                                <del style="padding-left:4%;">MAD {{number_format($materiel->price,2)}}</del>
+                                                <span>Dhs {{number_format($after_discount,2)}}</span>
+                                                <del style="padding-left:4%;">Dhs {{number_format($materiel->price,2)}}</del>
                                             </div>
                                         </div>
                                     </div>
@@ -261,11 +258,11 @@
                             <div class="materiel-content">
                                 <h3><a href="{{route('materiel-detail',$materiel->slug)}}">{{$materiel->nom}}</a></h3>
                                 <div class="materiel-price">
-                                    <span class="old">MAD {{number_format($materiel->price,2)}}</span>
+                                    <span class="old">Dhs {{number_format($materiel->price,2)}}</span>
                                     @php
                                     $after_discount=($materiel->price-($materiel->price*$materiel->discount)/100)
                                     @endphp
-                                    <span>MAD {{number_format($after_discount,2)}}</span>
+                                    <span>Dhs {{number_format($after_discount,2)}}</span>
                                 </div>
                             </div>
                         </div>
@@ -313,7 +310,7 @@
                                 <div class="col-lg-6 col-md-6 col-12 no-padding">
                                     <div class="content">
                                         <h4 class="title"><a href="#">{{$materiel->nom}}</a></h4>
-                                        <p class="price with-discount">MAD {{number_format($materiel->price,2)}}</p>
+                                        <p class="price with-discount">Dhs {{number_format($materiel->price,2)}}</p>
                                     </div>
                                 </div>
                                 </div>
@@ -353,7 +350,7 @@
                                     $after_discount=($materiel->price-($materiel->price*$materiel->discount)/100)
                                 @endphp
                               
-                                <h1 class="price">MAD {{number_format($after_discount)}} <s>MAD {{number_format($data->price)}}</s></h1>
+                                <h1 class="price">Dhs {{number_format($after_discount)}} <s>Dhs {{number_format($data->price)}}</s></h1>
                                 <div class="coming-time">
                                     <div class="clearfix" data-countdown="2021/02/30"></div>
                                 </div>
@@ -407,8 +404,8 @@
                 <!-- Start Single Service -->
                 <div class="single-service">
                     <i class="ti-rocket"></i>
-                    <h4>LIVRAISON GRATUITE</h4>
-                    <p>Commandes de plus de 2000DH</p>
+                    <h4>LIVRAISON RAPIDE</h4>
+                    <p>100%</p>
                 </div>
                 <!-- End Single Service -->
             </div>
@@ -514,33 +511,7 @@
                                         <div class="quickview-peragraph">
                                             <p>{!! html_entity_decode($materiel->summary) !!}</p>
                                         </div>
-                                        @if($materiel->size)
-                                            <div class="size">
-                                                <div class="row">
-                                                    <div class="col-lg-6 col-12">
-                                                        <h5 class="title">Size</h5>
-                                                        <select>
-                                                            @php
-                                                            $sizes=explode(',',$materiel->size);
-                                                            // dd($sizes);
-                                                            @endphp
-                                                            @foreach($sizes as $size)
-                                                                <option>{{$size}}</option>
-                                                            @endforeach
-                                                        </select>
-                                                    </div>
-                                                    {{-- <div class="col-lg-6 col-12">
-                                                        <h5 class="title">Color</h5>
-                                                        <select>
-                                                            <option selected="selected">orange</option>
-                                                            <option>purple</option>
-                                                            <option>black</option>
-                                                            <option>pink</option>
-                                                        </select>
-                                                    </div> --}}
-                                                </div>
-                                            </div>
-                                        @endif
+
                                         <form action="{{route('single-add-to-cart')}}" method="POST" class="mt-4">
                                             @csrf
                                             <div class="quantity">
@@ -592,7 +563,7 @@
         }
 
         #Gslider .carousel-inner{
-        height: 550px;
+       /* height: 550px;*/
         }
         #Gslider .carousel-inner img{
             width: 100% !important;

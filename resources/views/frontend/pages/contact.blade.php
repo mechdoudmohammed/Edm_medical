@@ -8,8 +8,8 @@
 				<div class="col-12">
 					<div class="bread-inner">
 						<ul class="bread-list">
-							<li><a href="{{route('home')}}">Home<i class="ti-arrow-right"></i></a></li>
-							<li class="active"><a href="javascript:void(0);">Contact</a></li>
+							<li><a href="{{route('home')}}">accueil<i class="ti-arrow-right"></i></a></li>
+							<li class="active"><a href="javascript:void(0);">Nous Contacter</a></li>
 						</ul>
 					</div>
 				</div>
@@ -29,7 +29,7 @@
 									@php
 										$settings=DB::table('settings')->get();
 									@endphp
-									<h4>Get in touch</h4>
+									<h4>Entrer en contact</h4>
 									<h3>Écrivez-nous un message @auth @else<span style="font-size:12px;" class="text-danger">[vous devez d'abord vous connecter]</span>@endauth</h3>
 								</div>
 								<form class="form-contact form contact_form" method="post" action="{{route('contact.store')}}" id="contactForm" novalidate="novalidate">
@@ -43,31 +43,31 @@
 										</div>
 										<div class="col-lg-6 col-12">
 											<div class="form-group">
-												<label>Your Subjects<span>*</span></label>
-												<input name="subject" type="text" id="subject" placeholder="Enter Subject">
+												<label>Votre sujet<span>*</span></label>
+												<input name="subject" type="text" id="subject" placeholder="Enter Sujet">
 											</div>
 										</div>
 										<div class="col-lg-6 col-12">
 											<div class="form-group">
 												<label>Votre e-mail<span>*</span></label>
-												<input name="email" type="email" id="email" placeholder="Enter email address">
+												<input name="email" type="email" id="email" placeholder="Enter email adresse">
 											</div>	
 										</div>
 										<div class="col-lg-6 col-12">
 											<div class="form-group">
-												<label>Your Phone<span>*</span></label>
-												<input id="phone" name="phone" type="number" placeholder="Enter your phone">
+												<label>Votre telephone<span>*</span></label>
+												<input id="phone" name="phone" type="number" placeholder="Enter votre telephone">
 											</div>	
 										</div>
 										<div class="col-12">
 											<div class="form-group message">
-												<label>your message<span>*</span></label>
-												<textarea name="message" id="message" cols="30" rows="9" placeholder="Enter Message"></textarea>
+												<label>Votre message<span>*</span></label>
+												<textarea name="message" id="message" cols="30" rows="9" placeholder="Enter le Message"></textarea>
 											</div>
 										</div>
 										<div class="col-12">
 											<div class="form-group button">
-												<button type="submit" class="btn ">Send Message</button>
+												<button type="submit" class="btn ">Envoyer Message</button>
 											</div>
 										</div>
 									</div>
@@ -78,7 +78,7 @@
 							<div class="single-head">
 								<div class="single-info">
 									<i class="fa fa-phone"></i>
-									<h4 class="title">Call us Now:</h4>
+									<h4 class="title">Appelez-nous maintenant:</h4>
 									<ul>
 										<li>@foreach($settings as $data) {{$data->phone}} @endforeach</li>
 									</ul>
@@ -92,7 +92,7 @@
 								</div>
 								<div class="single-info">
 									<i class="fa fa-location-arrow"></i>
-									<h4 class="title">Our Address:</h4>
+									<h4 class="title">Notre Adresse:</h4>
 									<ul>
 										<li>@foreach($settings as $data) {{$data->address}} @endforeach</li>
 									</ul>
@@ -104,14 +104,6 @@
 			</div>
 	</section>
 	<!--/ End Contact -->
-	
-	<!-- Map Section -->
-	<div class="map-section">
-		<div id="myMap">
-			<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14130.857353934944!2d85.36529494999999!3d27.6952226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sne!2snp!4v1595323330171!5m2!1sne!2snp" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-		</div>
-	</div>
-	<!--/ End Map Section -->
 	
 	<!-- Start Shop Newsletter  -->
 	@include('frontend.layouts.newsletter')
@@ -127,7 +119,7 @@
 				</button>
 			</div>
 			<div class="modal-body">
-				<p class="text-success">Your message is successfully sent...</p>
+				<p class="text-success">Votre message a été envoyé avec succès...</p>
 			</div>
 		  </div>
 		</div>
@@ -138,13 +130,13 @@
 		<div class="modal-dialog" role="document">
 		  <div class="modal-content">
 			<div class="modal-header">
-				<h2 class="text-warning">Sorry!</h2>
+				<h2 class="text-warning">Désolé!</h2>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
 			<div class="modal-body">
-				<p class="text-warning">Something went wrong.</p>
+				<p class="text-warning">Un problème est survenu.</p>
 			</div>
 		  </div>
 		</div>

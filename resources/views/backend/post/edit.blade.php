@@ -41,9 +41,9 @@
         </div>
 
         <div class="form-group">
-          <label for="post_cat_id">Category <span class="text-danger">*</span></label>
+          <label for="post_cat_id">Categorie <span class="text-danger">*</span></label>
           <select name="post_cat_id" class="form-control">
-              <option value="">--Select any category--</option>
+              <option value="">--Select any categorie--</option>
               @foreach($categories as $key=>$data)
                   <option value='{{$data->id}}' {{(($data->id==$post->post_cat_id)? 'selected' : '')}}>{{$data->title}}</option>
               @endforeach

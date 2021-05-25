@@ -10,8 +10,8 @@
                 <div class="col-12">
                     <div class="bread-inner">
                         <ul class="bread-list">
-                            <li><a href="index1.html">Home<i class="ti-arrow-right"></i></a></li>
-                            <li class="active"><a href="blog-single.html">Shop Grid</a></li>
+                            <li><a href="index1.html">Acceuil<i class="ti-arrow-right"></i></a></li>
+                            <li class="active"><a href="blog-single.html">Filtre</a></li>
                         </ul>
                     </div>
                 </div>
@@ -29,12 +29,12 @@
                     <div class="col-lg-3 col-md-4 col-12">
                         <div class="shop-sidebar">
                                 <!-- Single Widget -->
-                                <div class="single-widget category">
+                                <div class="single-widget categorie">
                                     <h3 class="title">Categories</h3>
                                     <ul class="categor-list">
 										@php
-											// $category = new Category();
-											$menu=App\Models\Category::getAllParentWithChild();
+											// $categorie = new Categorie();
+											$menu=App\Models\Categorie::getAllParentWithChild();
 										@endphp
 										@if($menu)
 										<li>
@@ -63,7 +63,7 @@
                                 <!--/ End Single Widget -->
                                 <!-- Shop By Price -->
                                     <div class="single-widget range">
-                                        <h3 class="title">Shop by Price</h3>
+                                        <h3 class="title">Acheter par </h3>
                                         <div class="price-filter">
                                             <div class="price-filter-inner">
                                                 @php
@@ -72,9 +72,9 @@
                                                 @endphp
                                                 <div id="slider-range" data-min="0" data-max="{{$max}}"></div>
                                                 <div class="materiel_filter">
-                                                <button type="submit" class="filter_button">Filter</button>
+                                                <button type="submit" class="filter_button">Filtrer</button>
                                                 <div class="label-input">
-                                                    <span>Range:</span>
+                                                    <span>Marge:</span>
                                                     <input style="" type="text" id="amount" readonly/>
                                                     <input type="hidden" name="price_range" id="price_range" value="@if(!empty($_GET['price'])){{$_GET['price']}}@endif"/>
                                                 </div>
@@ -96,7 +96,7 @@
                                     <!--/ End Shop By Price -->
                                 <!-- Single Widget -->
                                 <div class="single-widget recent-post">
-                                    <h3 class="title">Recent post</h3>
+                                    <h3 class="title">Nouveau poste</h3>
                                     {{-- {{dd($recent_materiels)}} --}}
                                     @foreach($recent_materiels as $materiel)
                                         <!-- Single Post -->
@@ -112,7 +112,7 @@
                                                 @php
                                                     $org=($materiel->price-($materiel->price*$materiel->discount)/100);
                                                 @endphp
-                                                <p class="price"><del class="text-muted">${{number_format($materiel->price,2)}}</del>   ${{number_format($org,2)}}  </p>
+                                                <p class="price"><del class="text-muted">${{number_format($materiel->price,2)}}</del>   {{number_format($org,2)}} Dhs  </p>
 
                                             </div>
                                         </div>
@@ -121,14 +121,14 @@
                                 </div>
                                 <!--/ End Single Widget -->
                                 <!-- Single Widget -->
-                                <div class="single-widget category">
+                                <div class="single-widget categorie">
                                     <h3 class="title">Fournisseurs</h3>
                                     <ul class="categor-list">
                                         @php
                                             $fournisseurs=DB::table('fournisseurs')->orderBy('nom','ASC')->where('status','active')->get();
                                         @endphp
                                         @foreach($fournisseurs as $fournisseur)
-                                            <li><a href="{{route('materiel-fournisseur',$fournisseur->slug)}}">{{$fournisseur->nom}}</a></li>
+                                            <li><a href="{{route('materiel-fournisseur',$fournisseur->nom)}}">{{$fournisseur->nom}}</a></li>
                                         @endforeach
                                     </ul>
                                 </div>
@@ -142,9 +142,9 @@
                                 <div class="shop-top">
                                     <div class="shop-shorter">
                                         <div class="single-shorter">
-                                            <label>Show :</label>
+                                            <label>Afficher :</label>
                                             <select class="show" name="show" onchange="this.form.submit();">
-                                                <option value="">Default</option>
+                                                <option value="">par defaut</option>
                                                 <option value="9" @if(!empty($_GET['show']) && $_GET['show']=='9') selected @endif>09</option>
                                                 <option value="15" @if(!empty($_GET['show']) && $_GET['show']=='15') selected @endif>15</option>
                                                 <option value="21" @if(!empty($_GET['show']) && $_GET['show']=='21') selected @endif>21</option>
@@ -152,12 +152,12 @@
                                             </select>
                                         </div>
                                         <div class="single-shorter">
-                                            <label>Sort By :</label>
+                                            <label>Filtrer par :</label>
                                             <select class='sortBy' name='sortBy' onchange="this.form.submit();">
-                                                <option value="">Default</option>
-                                                <option value="title" @if(!empty($_GET['sortBy']) && $_GET['sortBy']=='title') selected @endif>Name</option>
-                                                <option value="price" @if(!empty($_GET['sortBy']) && $_GET['sortBy']=='price') selected @endif>Price</option>
-                                                <option value="category" @if(!empty($_GET['sortBy']) && $_GET['sortBy']=='category') selected @endif>Category</option>
+                                                <option value="">par defaut</option>
+                                                <option value="title" @if(!empty($_GET['sortBy']) && $_GET['sortBy']=='title') selected @endif>Nom</option>
+                                                <option value="price" @if(!empty($_GET['sortBy']) && $_GET['sortBy']=='price') selected @endif>Prix</option>
+                                                <option value="categorie" @if(!empty($_GET['sortBy']) && $_GET['sortBy']=='categorie') selected @endif>Categorie</option>
                                                 <option value="fournisseur" @if(!empty($_GET['sortBy']) && $_GET['sortBy']=='fournisseur') selected @endif>Fournisseur</option>
                                             </select>
                                         </div>
@@ -189,11 +189,11 @@
                                                 </a>
                                                 <div class="button-head">
                                                     <div class="materiel-action">
-                                                        <a data-toggle="modal" data-target="#{{$materiel->id}}" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
+                                                        <a data-toggle="modal" data-target="#{{$materiel->id}}" title="Quick View" href="#"><i class=" ti-eye"></i><span>achat rapide</span></a>
                                                         <a title="Wishlist" href="{{route('add-to-wishlist',$materiel->slug)}}" class="wishlist" data-id="{{$materiel->id}}"><i class=" ti-heart "></i><span>Add to Wishlist</span></a>
                                                     </div>
                                                     <div class="materiel-action-2">
-                                                        <a title="Add to cart" href="{{route('add-to-cart',$materiel->slug)}}">Add to cart</a>
+                                                        <a title="Add to cart" href="{{route('add-to-cart',$materiel->slug)}}">Ajouter au panier</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -203,13 +203,13 @@
                                                     $after_discount=($materiel->price-($materiel->price*$materiel->discount)/100);
                                                 @endphp
                                                 <span>${{number_format($after_discount,2)}}</span>
-                                                <del style="padding-left:4%;">${{number_format($materiel->price,2)}}</del>
+                                                <del style="padding-left:4%;">{{number_format($materiel->price,2)}} Dhs</del>
                                             </div>
                                         </div>
                                     </div>
                                 @endforeach
                             @else
-                                    <h4 class="text-warning" style="margin:100px auto;">There are no materiels.</h4>
+                                    <h4 class="text-warning" style="margin:100px auto;">Materiel indisponile</h4>
                             @endif
 
 
@@ -231,151 +231,7 @@
 
 
 
-    <!-- Modal -->
-    @if($materiels)
-        @foreach($materiels as $key=>$materiel)
-            <div class="modal fade" id="{{$materiel->id}}" tabindex="-1" role="dialog">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="ti-close" aria-hidden="true"></span></button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="row no-gutters">
-                                    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                                        <!-- Materiel Slider -->
-                                            <div class="materiel-gallery">
-                                                <div class="quickview-slider-active">
-                                                    @php
-                                                        $photo=explode(',',$materiel->photo);
-                                                    // dd($photo);
-                                                    @endphp
-                                                    @foreach($photo as $data)
-                                                        <div class="single-slider">
-                                                            <img src="backend\img\materiels\{{$data}}" alt="backend\img\materiels\{{$data}}">
-                                                        </div>
-                                                    @endforeach
-                                                </div>
-                                            </div>
-                                        <!-- End Materiel slider -->
-                                    </div>
-                                    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                                        <div class="quickview-content">
-                                            <h2>{{$materiel->nom}}</h2>
-                                            <div class="quickview-ratting-review">
-                                                <div class="quickview-ratting-wrap">
-                                                    <div class="quickview-ratting">
-                                                        {{-- <i class="yellow fa fa-star"></i>
-                                                        <i class="yellow fa fa-star"></i>
-                                                        <i class="yellow fa fa-star"></i>
-                                                        <i class="yellow fa fa-star"></i>
-                                                        <i class="fa fa-star"></i> --}}
-                                                        @php
-                                                            $rate=DB::table('materiel_reviews')->where('materiel_id',$materiel->id)->avg('rate');
-                                                            $rate_count=DB::table('materiel_reviews')->where('materiel_id',$materiel->id)->count();
-                                                        @endphp
-                                                        @for($i=1; $i<=5; $i++)
-                                                            @if($rate>=$i)
-                                                                <i class="yellow fa fa-star"></i>
-                                                            @else
-                                                            <i class="fa fa-star"></i>
-                                                            @endif
-                                                        @endfor
-                                                    </div>
-                                                    <a href="#"> ({{$rate_count}} customer review)</a>
-                                                </div>
-                                                <div class="quickview-stock">
-                                                    @if($materiel->stock >0)
-                                                    <span><i class="fa fa-check-circle-o"></i> {{$materiel->stock}} in stock</span>
-                                                    @else
-                                                    <span><i class="fa fa-times-circle-o text-danger"></i> {{$materiel->stock}} out stock</span>
-                                                    @endif
-                                                </div>
-                                            </div>
-                                            @php
-                                                $after_discount=($materiel->price-($materiel->price*$materiel->discount)/100);
-                                            @endphp
-                                            <h3><small><del class="text-muted">${{number_format($materiel->price,2)}}</del></small>    ${{number_format($after_discount,2)}}  </h3>
-                                            <div class="quickview-peragraph">
-                                                <p>{!! html_entity_decode($materiel->summary) !!}</p>
-                                            </div>
-                                            @if($materiel->size)
-                                                <div class="size">
-                                                    <h4>Size</h4>
-                                                    <ul>
-                                                        @php
-                                                            $sizes=explode(',',$materiel->size);
-                                                            // dd($sizes);
-                                                        @endphp
-                                                        @foreach($sizes as $size)
-                                                        <li><a href="#" class="one">{{$size}}</a></li>
-                                                        @endforeach
-                                                    </ul>
-                                                </div>
-                                            @endif
-                                            <div class="size">
-                                                <div class="row">
-                                                    <div class="col-lg-6 col-12">
-                                                        <h5 class="title">Size</h5>
-                                                        <select>
-                                                            @php
-                                                            $sizes=explode(',',$materiel->size);
-                                                            // dd($sizes);
-                                                            @endphp
-                                                            @foreach($sizes as $size)
-                                                                <option>{{$size}}</option>
-                                                            @endforeach
-                                                        </select>
-                                                    </div>
-                                                    {{-- <div class="col-lg-6 col-12">
-                                                        <h5 class="title">Color</h5>
-                                                        <select>
-                                                            <option selected="selected">orange</option>
-                                                            <option>purple</option>
-                                                            <option>black</option>
-                                                            <option>pink</option>
-                                                        </select>
-                                                    </div> --}}
-                                                </div>
-                                            </div>
-                                            <form action="{{route('single-add-to-cart')}}" method="POST">
-                                                @csrf
-                                                <div class="quantity">
-                                                    <!-- Input Order -->
-                                                    <div class="input-group">
-                                                        <div class="button minus">
-                                                            <button type="button" class="btn btn-primary btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
-                                                                <i class="ti-minus"></i>
-                                                            </button>
-                                                        </div>
-                                                        <input type="hidden" name="slug" value="{{$materiel->slug}}">
-                                                        <input type="text" name="quant[1]" class="input-number"  data-min="1" data-max="1000" value="1">
-                                                        <div class="button plus">
-                                                            <button type="button" class="btn btn-primary btn-number" data-type="plus" data-field="quant[1]">
-                                                                <i class="ti-plus"></i>
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                    <!--/ End Input Order -->
-                                                </div>
-                                                <div class="add-to-cart">
-                                                    <button type="submit" class="btn">Add to cart</button>
-                                                    <a href="{{route('add-to-wishlist',$materiel->slug)}}" class="btn min"><i class="ti-heart"></i></a>
-                                                </div>
-                                            </form>
-                                            <div class="default-social">
-                                            <!-- ShareThis BEGIN --><div class="sharethis-inline-share-buttons"></div><!-- ShareThis END -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-            </div>
-        @endforeach
-    @endif
-    <!-- Modal end -->
+ 
 
 @endsection
 @push('styles')
@@ -386,7 +242,7 @@
     .filter_button{
         /* height:20px; */
         text-align: center;
-        background:#F7941D;
+        background:#4caf50;
         padding:8px 16px;
         margin-top:10px;
         color: white;

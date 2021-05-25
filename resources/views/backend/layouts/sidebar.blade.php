@@ -58,13 +58,13 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#categoryCollapse" aria-expanded="true" aria-controls="categoryCollapse">
           <i class="fas fa-sitemap"></i>
-          <span>Category</span>
+          <span>Categorie</span>
         </a>
         <div id="categoryCollapse" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Category Options:</h6>
-            <a class="collapse-item" href="{{route('category.index')}}">Category</a>
-            <a class="collapse-item" href="{{route('category.create')}}">Add Category</a>
+            <h6 class="collapse-header">Categorie Options:</h6>
+            <a class="collapse-item" href="{{route('categorie.index')}}">Categorie</a>
+            <a class="collapse-item" href="{{route('categorie.create')}}">Add Categorie</a>
           </div>
         </div>
     </li>
@@ -188,17 +188,17 @@
       </div>
     </li>
 
-     <!-- Category -->
+     <!-- Categorie -->
      <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#postCategoryCollapse" aria-expanded="true" aria-controls="postCategoryCollapse">
           <i class="fas fa-sitemap fa-folder"></i>
-          <span>Category</span>
+          <span>Categorie</span>
         </a>
         <div id="postCategoryCollapse" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Category Options:</h6>
-            <a class="collapse-item" href="{{route('post-category.index')}}">Category</a>
-            <a class="collapse-item" href="{{route('post-category.create')}}">Add Category</a>
+            <h6 class="collapse-header">Categorie Options:</h6>
+            <a class="collapse-item" href="{{route('post-categorie.index')}}">Categorie</a>
+            <a class="collapse-item" href="{{route('post-categorie.create')}}">Add Categorie</a>
           </div>
         </div>
       </li>

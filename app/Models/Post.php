@@ -39,7 +39,7 @@ class Post extends Model
 
     // public static function getMaterielByCat($slug){
     //     // dd($slug);
-    //     return Category::with('materiels')->where('slug',$slug)->first();
+    //     return Categorie::with('materiels')->where('slug',$slug)->first();
     //     // return Materiel::where('cat_id',$id)->where('child_cat_id',null)->paginate(10);
     // }
 

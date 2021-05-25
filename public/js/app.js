@@ -7399,7 +7399,7 @@ function createDisabledPseudo( disabled ) {
 
 			// Check for inherited disabledness on relevant non-disabled elements:
 			// * listed form-associated elements in a disabled fieldset
-			//   https://html.spec.whatwg.org/multipage/forms.html#category-listed
+			//   https://html.spec.whatwg.org/multipage/forms.html#categorie-listed
 			//   https://html.spec.whatwg.org/multipage/forms.html#concept-fe-disabled
 			// * option elements in a disabled optgroup
 			//   https://html.spec.whatwg.org/multipage/forms.html#concept-option-disabled
@@ -29953,7 +29953,7 @@ var createMathOperation = __webpack_require__(/*! ./_createMathOperation */ "./n
  * @static
  * @memberOf _
  * @since 3.4.0
- * @category Math
+ * @categorie Math
  * @param {number} augend The first number in an addition.
  * @param {number} addend The second number in an addition.
  * @returns {number} Returns the total.
@@ -29990,7 +29990,7 @@ var FUNC_ERROR_TEXT = 'Expected a function';
  * @static
  * @memberOf _
  * @since 0.1.0
- * @category Function
+ * @categorie Function
  * @param {number} n The number of calls before `func` is invoked.
  * @param {Function} func The function to restrict.
  * @returns {Function} Returns the new restricted function.
@@ -30121,7 +30121,7 @@ var WRAP_ARY_FLAG = 128;
  * @static
  * @memberOf _
  * @since 3.0.0
- * @category Function
+ * @categorie Function
  * @param {Function} func The function to cap arguments for.
  * @param {number} [n=func.length] The arity cap.
  * @param- {Object} [guard] Enables use as an iteratee for methods like `_.map`.
@@ -30173,7 +30173,7 @@ var hasOwnProperty = objectProto.hasOwnProperty;
  * @static
  * @memberOf _
  * @since 0.10.0
- * @category Object
+ * @categorie Object
  * @param {Object} object The destination object.
  * @param {...Object} [sources] The source objects.
  * @returns {Object} Returns `object`.
@@ -30232,7 +30232,7 @@ var copyObject = __webpack_require__(/*! ./_copyObject */ "./node_modules/lodash
  * @memberOf _
  * @since 4.0.0
  * @alias extend
- * @category Object
+ * @categorie Object
  * @param {Object} object The destination object.
  * @param {...Object} [sources] The source objects.
  * @returns {Object} Returns `object`.
@@ -30285,7 +30285,7 @@ var copyObject = __webpack_require__(/*! ./_copyObject */ "./node_modules/lodash
  * @memberOf _
  * @since 4.0.0
  * @alias extendWith
- * @category Object
+ * @categorie Object
  * @param {Object} object The destination object.
  * @param {...Object} sources The source objects.
  * @param {Function} [customizer] The function to customize assigned values.
@@ -30333,7 +30333,7 @@ var copyObject = __webpack_require__(/*! ./_copyObject */ "./node_modules/lodash
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Object
+ * @categorie Object
  * @param {Object} object The destination object.
  * @param {...Object} sources The source objects.
  * @param {Function} [customizer] The function to customize assigned values.
@@ -30375,7 +30375,7 @@ var baseAt = __webpack_require__(/*! ./_baseAt */ "./node_modules/lodash/_baseAt
  * @static
  * @memberOf _
  * @since 1.0.0
- * @category Object
+ * @categorie Object
  * @param {Object} object The object to iterate over.
  * @param {...(string|string[])} [paths] The property paths to pick.
  * @returns {Array} Returns the picked values.
@@ -30411,7 +30411,7 @@ var apply = __webpack_require__(/*! ./_apply */ "./node_modules/lodash/_apply.js
  * @static
  * @memberOf _
  * @since 3.0.0
- * @category Util
+ * @categorie Util
  * @param {Function} func The function to attempt.
  * @param {...*} [args] The arguments to invoke `func` with.
  * @returns {*} Returns the `func` result or error object.
@@ -30459,7 +30459,7 @@ var FUNC_ERROR_TEXT = 'Expected a function';
  * @static
  * @memberOf _
  * @since 3.0.0
- * @category Function
+ * @categorie Function
  * @param {number} n The number of calls at which `func` is no longer invoked.
  * @param {Function} func The function to restrict.
  * @returns {Function} Returns the new restricted function.
@@ -30519,7 +30519,7 @@ var WRAP_BIND_FLAG = 1,
  * @static
  * @memberOf _
  * @since 0.1.0
- * @category Function
+ * @categorie Function
  * @param {Function} func The function to bind.
  * @param {*} thisArg The `this` binding of `func`.
  * @param {...*} [partials] The arguments to be partially applied.
@@ -30580,7 +30580,7 @@ var arrayEach = __webpack_require__(/*! ./_arrayEach */ "./node_modules/lodash/_
  * @static
  * @since 0.1.0
  * @memberOf _
- * @category Util
+ * @categorie Util
  * @param {Object} object The object to bind and assign the bound methods to.
  * @param {...(string|string[])} methodNames The object method names to bind.
  * @returns {Object} Returns `object`.
@@ -30642,7 +30642,7 @@ var WRAP_BIND_FLAG = 1,
  * @static
  * @memberOf _
  * @since 0.10.0
- * @category Function
+ * @categorie Function
  * @param {Object} object The object to invoke the method on.
  * @param {string} key The key of the method.
  * @param {...*} [partials] The arguments to be partially applied.
@@ -30705,7 +30705,7 @@ var capitalize = __webpack_require__(/*! ./capitalize */ "./node_modules/lodash/
  * @static
  * @memberOf _
  * @since 3.0.0
- * @category String
+ * @categorie String
  * @param {string} [string=''] The string to convert.
  * @returns {string} Returns the camel cased string.
  * @example
@@ -30746,7 +30746,7 @@ var toString = __webpack_require__(/*! ./toString */ "./node_modules/lodash/toSt
  * @static
  * @memberOf _
  * @since 3.0.0
- * @category String
+ * @categorie String
  * @param {string} [string=''] The string to capitalize.
  * @returns {string} Returns the capitalized string.
  * @example
@@ -30778,7 +30778,7 @@ var isArray = __webpack_require__(/*! ./isArray */ "./node_modules/lodash/isArra
  * @static
  * @memberOf _
  * @since 4.4.0
- * @category Lang
+ * @categorie Lang
  * @param {*} value The value to inspect.
  * @returns {Array} Returns the cast array.
  * @example
@@ -30833,7 +30833,7 @@ var createRound = __webpack_require__(/*! ./_createRound */ "./node_modules/loda
  * @static
  * @memberOf _
  * @since 3.10.0
- * @category Math
+ * @categorie Math
  * @param {number} number The number to round up.
  * @param {number} [precision=0] The precision to round up to.
  * @returns {number} Returns the rounded up number.
@@ -30872,7 +30872,7 @@ var lodash = __webpack_require__(/*! ./wrapperLodash */ "./node_modules/lodash/w
  * @static
  * @memberOf _
  * @since 1.3.0
- * @category Seq
+ * @categorie Seq
  * @param {*} value The value to wrap.
  * @returns {Object} Returns the new `lodash` wrapper instance.
  * @example
@@ -30927,7 +30927,7 @@ var nativeCeil = Math.ceil,
  * @static
  * @memberOf _
  * @since 3.0.0
- * @category Array
+ * @categorie Array
  * @param {Array} array The array to process.
  * @param {number} [size=1] The length of each chunk
  * @param- {Object} [guard] Enables use as an iteratee for methods like `_.map`.
@@ -30981,7 +30981,7 @@ var baseClamp = __webpack_require__(/*! ./_baseClamp */ "./node_modules/lodash/_
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Number
+ * @categorie Number
  * @param {number} number The number to clamp.
  * @param {number} [lower] The lower bound.
  * @param {number} upper The upper bound.
@@ -31041,7 +31041,7 @@ var CLONE_SYMBOLS_FLAG = 4;
  * @static
  * @memberOf _
  * @since 0.1.0
- * @category Lang
+ * @categorie Lang
  * @param {*} value The value to clone.
  * @returns {*} Returns the cloned value.
  * @see _.cloneDeep
@@ -31081,7 +31081,7 @@ var CLONE_DEEP_FLAG = 1,
  * @static
  * @memberOf _
  * @since 1.0.0
- * @category Lang
+ * @categorie Lang
  * @param {*} value The value to recursively clone.
  * @returns {*} Returns the deep cloned value.
  * @see _.clone
@@ -31121,7 +31121,7 @@ var CLONE_DEEP_FLAG = 1,
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Lang
+ * @categorie Lang
  * @param {*} value The value to recursively clone.
  * @param {Function} [customizer] The function to customize cloning.
  * @returns {*} Returns the deep cloned value.
@@ -31174,7 +31174,7 @@ var CLONE_SYMBOLS_FLAG = 4;
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Lang
+ * @categorie Lang
  * @param {*} value The value to clone.
  * @param {Function} [customizer] The function to customize cloning.
  * @returns {*} Returns the cloned value.
@@ -31262,7 +31262,7 @@ var LodashWrapper = __webpack_require__(/*! ./_LodashWrapper */ "./node_modules/
  * @name commit
  * @memberOf _
  * @since 3.2.0
- * @category Seq
+ * @categorie Seq
  * @returns {Object} Returns the new `lodash` wrapper instance.
  * @example
  *
@@ -31305,7 +31305,7 @@ module.exports = wrapperCommit;
  * @static
  * @memberOf _
  * @since 0.1.0
- * @category Array
+ * @categorie Array
  * @param {Array} array The array to compact.
  * @returns {Array} Returns the new array of filtered values.
  * @example
@@ -31352,7 +31352,7 @@ var arrayPush = __webpack_require__(/*! ./_arrayPush */ "./node_modules/lodash/_
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Array
+ * @categorie Array
  * @param {Array} array The array to concatenate.
  * @param {...*} [values] The values to concatenate.
  * @returns {Array} Returns the new concatenated array.
@@ -31411,7 +31411,7 @@ var FUNC_ERROR_TEXT = 'Expected a function';
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Util
+ * @categorie Util
  * @param {Array} pairs The predicate-function pairs.
  * @returns {Function} Returns the new composite function.
  * @example
@@ -31482,7 +31482,7 @@ var CLONE_DEEP_FLAG = 1;
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Util
+ * @categorie Util
  * @param {Object} source The object of property predicates to conform to.
  * @returns {Function} Returns the new spec function.
  * @example
@@ -31524,7 +31524,7 @@ var baseConformsTo = __webpack_require__(/*! ./_baseConformsTo */ "./node_module
  * @static
  * @memberOf _
  * @since 4.14.0
- * @category Lang
+ * @categorie Lang
  * @param {Object} object The object to inspect.
  * @param {Object} source The object of property predicates to conform to.
  * @returns {boolean} Returns `true` if `object` conforms, else `false`.
@@ -31560,7 +31560,7 @@ module.exports = conformsTo;
  * @static
  * @memberOf _
  * @since 2.4.0
- * @category Util
+ * @categorie Util
  * @param {*} value The value to return from the new function.
  * @returns {Function} Returns the new constant function.
  * @example
@@ -31609,7 +31609,7 @@ var hasOwnProperty = objectProto.hasOwnProperty;
  * @static
  * @memberOf _
  * @since 0.5.0
- * @category Collection
+ * @categorie Collection
  * @param {Array|Object} collection The collection to iterate over.
  * @param {Function} [iteratee=_.identity] The iteratee to transform keys.
  * @returns {Object} Returns the composed aggregate object.
@@ -31653,7 +31653,7 @@ var baseAssign = __webpack_require__(/*! ./_baseAssign */ "./node_modules/lodash
  * @static
  * @memberOf _
  * @since 2.3.0
- * @category Object
+ * @categorie Object
  * @param {Object} prototype The object to inherit from.
  * @param {Object} [properties] The properties to assign to the object.
  * @returns {Object} Returns the new object.
@@ -31716,7 +31716,7 @@ var WRAP_CURRY_FLAG = 8;
  * @static
  * @memberOf _
  * @since 2.0.0
- * @category Function
+ * @categorie Function
  * @param {Function} func The function to curry.
  * @param {number} [arity=func.length] The arity of `func`.
  * @param- {Object} [guard] Enables use as an iteratee for methods like `_.map`.
@@ -31781,7 +31781,7 @@ var WRAP_CURRY_RIGHT_FLAG = 16;
  * @static
  * @memberOf _
  * @since 3.0.0
- * @category Function
+ * @categorie Function
  * @param {Function} func The function to curry.
  * @param {number} [arity=func.length] The arity of `func`.
  * @param- {Object} [guard] Enables use as an iteratee for methods like `_.map`.
@@ -31878,7 +31878,7 @@ var nativeMax = Math.max,
  * @static
  * @memberOf _
  * @since 0.1.0
- * @category Function
+ * @categorie Function
  * @param {Function} func The function to debounce.
  * @param {number} [wait=0] The number of milliseconds to delay.
  * @param {Object} [options={}] The options object.
@@ -32076,7 +32076,7 @@ var reComboMark = RegExp(rsCombo, 'g');
  * @static
  * @memberOf _
  * @since 3.0.0
- * @category String
+ * @categorie String
  * @param {string} [string=''] The string to deburr.
  * @returns {string} Returns the deburred string.
  * @example
@@ -32109,7 +32109,7 @@ module.exports = deburr;
  * @static
  * @memberOf _
  * @since 4.14.0
- * @category Util
+ * @categorie Util
  * @param {*} value The value to check.
  * @param {*} defaultValue The default value.
  * @returns {*} Returns the resolved value.
@@ -32159,7 +32159,7 @@ var hasOwnProperty = objectProto.hasOwnProperty;
  * @static
  * @since 0.1.0
  * @memberOf _
- * @category Object
+ * @categorie Object
  * @param {Object} object The destination object.
  * @param {...Object} [sources] The source objects.
  * @returns {Object} Returns `object`.
@@ -32226,7 +32226,7 @@ var apply = __webpack_require__(/*! ./_apply */ "./node_modules/lodash/_apply.js
  * @static
  * @memberOf _
  * @since 3.10.0
- * @category Object
+ * @categorie Object
  * @param {Object} object The destination object.
  * @param {...Object} [sources] The source objects.
  * @returns {Object} Returns `object`.
@@ -32263,7 +32263,7 @@ var baseDelay = __webpack_require__(/*! ./_baseDelay */ "./node_modules/lodash/_
  * @static
  * @memberOf _
  * @since 0.1.0
- * @category Function
+ * @categorie Function
  * @param {Function} func The function to defer.
  * @param {...*} [args] The arguments to invoke `func` with.
  * @returns {number} Returns the timer id.
@@ -32301,7 +32301,7 @@ var baseDelay = __webpack_require__(/*! ./_baseDelay */ "./node_modules/lodash/_
  * @static
  * @memberOf _
  * @since 0.1.0
- * @category Function
+ * @categorie Function
  * @param {Function} func The function to delay.
  * @param {number} wait The number of milliseconds to delay invocation.
  * @param {...*} [args] The arguments to invoke `func` with.
@@ -32345,7 +32345,7 @@ var baseDifference = __webpack_require__(/*! ./_baseDifference */ "./node_module
  * @static
  * @memberOf _
  * @since 0.1.0
- * @category Array
+ * @categorie Array
  * @param {Array} array The array to inspect.
  * @param {...Array} [values] The values to exclude.
  * @returns {Array} Returns the new array of filtered values.
@@ -32392,7 +32392,7 @@ var baseDifference = __webpack_require__(/*! ./_baseDifference */ "./node_module
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Array
+ * @categorie Array
  * @param {Array} array The array to inspect.
  * @param {...Array} [values] The values to exclude.
  * @param {Function} [iteratee=_.identity] The iteratee invoked per element.
@@ -32445,7 +32445,7 @@ var baseDifference = __webpack_require__(/*! ./_baseDifference */ "./node_module
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Array
+ * @categorie Array
  * @param {Array} array The array to inspect.
  * @param {...Array} [values] The values to exclude.
  * @param {Function} [comparator] The comparator invoked per element.
@@ -32487,7 +32487,7 @@ var createMathOperation = __webpack_require__(/*! ./_createMathOperation */ "./n
  * @static
  * @memberOf _
  * @since 4.7.0
- * @category Math
+ * @categorie Math
  * @param {number} dividend The first number in a division.
  * @param {number} divisor The second number in a division.
  * @returns {number} Returns the quotient.
@@ -32521,7 +32521,7 @@ var baseSlice = __webpack_require__(/*! ./_baseSlice */ "./node_modules/lodash/_
  * @static
  * @memberOf _
  * @since 0.5.0
- * @category Array
+ * @categorie Array
  * @param {Array} array The array to query.
  * @param {number} [n=1] The number of elements to drop.
  * @param- {Object} [guard] Enables use as an iteratee for methods like `_.map`.
@@ -32570,7 +32570,7 @@ var baseSlice = __webpack_require__(/*! ./_baseSlice */ "./node_modules/lodash/_
  * @static
  * @memberOf _
  * @since 3.0.0
- * @category Array
+ * @categorie Array
  * @param {Array} array The array to query.
  * @param {number} [n=1] The number of elements to drop.
  * @param- {Object} [guard] Enables use as an iteratee for methods like `_.map`.
@@ -32622,7 +32622,7 @@ var baseIteratee = __webpack_require__(/*! ./_baseIteratee */ "./node_modules/lo
  * @static
  * @memberOf _
  * @since 3.0.0
- * @category Array
+ * @categorie Array
  * @param {Array} array The array to query.
  * @param {Function} [predicate=_.identity] The function invoked per iteration.
  * @returns {Array} Returns the slice of `array`.
@@ -32678,7 +32678,7 @@ var baseIteratee = __webpack_require__(/*! ./_baseIteratee */ "./node_modules/lo
  * @static
  * @memberOf _
  * @since 3.0.0
- * @category Array
+ * @categorie Array
  * @param {Array} array The array to query.
  * @param {Function} [predicate=_.identity] The function invoked per iteration.
  * @returns {Array} Returns the slice of `array`.
@@ -32758,7 +32758,7 @@ var baseClamp = __webpack_require__(/*! ./_baseClamp */ "./node_modules/lodash/_
  * @static
  * @memberOf _
  * @since 3.0.0
- * @category String
+ * @categorie String
  * @param {string} [string=''] The string to inspect.
  * @param {string} [target] The string to search for.
  * @param {number} [position=string.length] The position to search up to.
@@ -32833,7 +32833,7 @@ module.exports = __webpack_require__(/*! ./toPairsIn */ "./node_modules/lodash/t
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Lang
+ * @categorie Lang
  * @param {*} value The value to compare.
  * @param {*} other The other value to compare.
  * @returns {boolean} Returns `true` if the values are equivalent, else `false`.
@@ -32900,7 +32900,7 @@ var reUnescapedHtml = /[&<>"']/g,
  * @static
  * @since 0.1.0
  * @memberOf _
- * @category String
+ * @categorie String
  * @param {string} [string=''] The string to escape.
  * @returns {string} Returns the escaped string.
  * @example
@@ -32943,7 +32943,7 @@ var reRegExpChar = /[\\^$.*+?()[\]{}|]/g,
  * @static
  * @memberOf _
  * @since 3.0.0
- * @category String
+ * @categorie String
  * @param {string} [string=''] The string to escape.
  * @returns {string} Returns the escaped string.
  * @example
@@ -32989,7 +32989,7 @@ var arrayEvery = __webpack_require__(/*! ./_arrayEvery */ "./node_modules/lodash
  * @static
  * @memberOf _
  * @since 0.1.0
- * @category Collection
+ * @categorie Collection
  * @param {Array|Object} collection The collection to iterate over.
  * @param {Function} [predicate=_.identity] The function invoked per iteration.
  * @param- {Object} [guard] Enables use as an iteratee for methods like `_.map`.
@@ -33073,7 +33073,7 @@ var baseFill = __webpack_require__(/*! ./_baseFill */ "./node_modules/lodash/_ba
  * @static
  * @memberOf _
  * @since 3.2.0
- * @category Array
+ * @categorie Array
  * @param {Array} array The array to fill.
  * @param {*} value The value to fill `array` with.
  * @param {number} [start=0] The start position.
@@ -33132,7 +33132,7 @@ var arrayFilter = __webpack_require__(/*! ./_arrayFilter */ "./node_modules/loda
  * @static
  * @memberOf _
  * @since 0.1.0
- * @category Collection
+ * @categorie Collection
  * @param {Array|Object} collection The collection to iterate over.
  * @param {Function} [predicate=_.identity] The function invoked per iteration.
  * @returns {Array} Returns the new filtered array.
@@ -33187,7 +33187,7 @@ var createFind = __webpack_require__(/*! ./_createFind */ "./node_modules/lodash
  * @static
  * @memberOf _
  * @since 0.1.0
- * @category Collection
+ * @categorie Collection
  * @param {Array|Object} collection The collection to inspect.
  * @param {Function} [predicate=_.identity] The function invoked per iteration.
  * @param {number} [fromIndex=0] The index to search from.
@@ -33243,7 +33243,7 @@ var nativeMax = Math.max;
  * @static
  * @memberOf _
  * @since 1.1.0
- * @category Array
+ * @categorie Array
  * @param {Array} array The array to inspect.
  * @param {Function} [predicate=_.identity] The function invoked per iteration.
  * @param {number} [fromIndex=0] The index to search from.
@@ -33306,7 +33306,7 @@ var baseFindKey = __webpack_require__(/*! ./_baseFindKey */ "./node_modules/loda
  * @static
  * @memberOf _
  * @since 1.1.0
- * @category Object
+ * @categorie Object
  * @param {Object} object The object to inspect.
  * @param {Function} [predicate=_.identity] The function invoked per iteration.
  * @returns {string|undefined} Returns the key of the matched element,
@@ -33360,7 +33360,7 @@ var createFind = __webpack_require__(/*! ./_createFind */ "./node_modules/lodash
  * @static
  * @memberOf _
  * @since 2.0.0
- * @category Collection
+ * @categorie Collection
  * @param {Array|Object} collection The collection to inspect.
  * @param {Function} [predicate=_.identity] The function invoked per iteration.
  * @param {number} [fromIndex=collection.length-1] The index to search from.
@@ -33401,7 +33401,7 @@ var nativeMax = Math.max,
  * @static
  * @memberOf _
  * @since 2.0.0
- * @category Array
+ * @categorie Array
  * @param {Array} array The array to inspect.
  * @param {Function} [predicate=_.identity] The function invoked per iteration.
  * @param {number} [fromIndex=array.length-1] The index to search from.
@@ -33467,7 +33467,7 @@ var baseFindKey = __webpack_require__(/*! ./_baseFindKey */ "./node_modules/loda
  * @static
  * @memberOf _
  * @since 2.0.0
- * @category Object
+ * @categorie Object
  * @param {Object} object The object to inspect.
  * @param {Function} [predicate=_.identity] The function invoked per iteration.
  * @returns {string|undefined} Returns the key of the matched element,
@@ -33534,7 +33534,7 @@ var baseFlatten = __webpack_require__(/*! ./_baseFlatten */ "./node_modules/loda
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Collection
+ * @categorie Collection
  * @param {Array|Object} collection The collection to iterate over.
  * @param {Function} [iteratee=_.identity] The function invoked per iteration.
  * @returns {Array} Returns the new flattened array.
@@ -33576,7 +33576,7 @@ var INFINITY = 1 / 0;
  * @static
  * @memberOf _
  * @since 4.7.0
- * @category Collection
+ * @categorie Collection
  * @param {Array|Object} collection The collection to iterate over.
  * @param {Function} [iteratee=_.identity] The function invoked per iteration.
  * @returns {Array} Returns the new flattened array.
@@ -33616,7 +33616,7 @@ var baseFlatten = __webpack_require__(/*! ./_baseFlatten */ "./node_modules/loda
  * @static
  * @memberOf _
  * @since 4.7.0
- * @category Collection
+ * @categorie Collection
  * @param {Array|Object} collection The collection to iterate over.
  * @param {Function} [iteratee=_.identity] The function invoked per iteration.
  * @param {number} [depth=1] The maximum recursion depth.
@@ -33655,7 +33655,7 @@ var baseFlatten = __webpack_require__(/*! ./_baseFlatten */ "./node_modules/loda
  * @static
  * @memberOf _
  * @since 0.1.0
- * @category Array
+ * @categorie Array
  * @param {Array} array The array to flatten.
  * @returns {Array} Returns the new flattened array.
  * @example
@@ -33691,7 +33691,7 @@ var INFINITY = 1 / 0;
  * @static
  * @memberOf _
  * @since 3.0.0
- * @category Array
+ * @categorie Array
  * @param {Array} array The array to flatten.
  * @returns {Array} Returns the new flattened array.
  * @example
@@ -33725,7 +33725,7 @@ var baseFlatten = __webpack_require__(/*! ./_baseFlatten */ "./node_modules/loda
  * @static
  * @memberOf _
  * @since 4.4.0
- * @category Array
+ * @categorie Array
  * @param {Array} array The array to flatten.
  * @param {number} [depth=1] The maximum recursion depth.
  * @returns {Array} Returns the new flattened array.
@@ -33771,7 +33771,7 @@ var WRAP_FLIP_FLAG = 512;
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Function
+ * @categorie Function
  * @param {Function} func The function to flip arguments for.
  * @returns {Function} Returns the new flipped function.
  * @example
@@ -33807,7 +33807,7 @@ var createRound = __webpack_require__(/*! ./_createRound */ "./node_modules/loda
  * @static
  * @memberOf _
  * @since 3.10.0
- * @category Math
+ * @categorie Math
  * @param {number} number The number to round down.
  * @param {number} [precision=0] The precision to round down to.
  * @returns {number} Returns the rounded down number.
@@ -33846,7 +33846,7 @@ var createFlow = __webpack_require__(/*! ./_createFlow */ "./node_modules/lodash
  * @static
  * @memberOf _
  * @since 3.0.0
- * @category Util
+ * @categorie Util
  * @param {...(Function|Function[])} [funcs] The functions to invoke.
  * @returns {Function} Returns the new composite function.
  * @see _.flowRight
@@ -33883,7 +33883,7 @@ var createFlow = __webpack_require__(/*! ./_createFlow */ "./node_modules/lodash
  * @static
  * @since 3.0.0
  * @memberOf _
- * @category Util
+ * @categorie Util
  * @param {...(Function|Function[])} [funcs] The functions to invoke.
  * @returns {Function} Returns the new composite function.
  * @see _.flow
@@ -33929,7 +33929,7 @@ var arrayEach = __webpack_require__(/*! ./_arrayEach */ "./node_modules/lodash/_
  * @memberOf _
  * @since 0.1.0
  * @alias each
- * @category Collection
+ * @categorie Collection
  * @param {Array|Object} collection The collection to iterate over.
  * @param {Function} [iteratee=_.identity] The function invoked per iteration.
  * @returns {Array|Object} Returns `collection`.
@@ -33976,7 +33976,7 @@ var arrayEachRight = __webpack_require__(/*! ./_arrayEachRight */ "./node_module
  * @memberOf _
  * @since 2.0.0
  * @alias eachRight
- * @category Collection
+ * @categorie Collection
  * @param {Array|Object} collection The collection to iterate over.
  * @param {Function} [iteratee=_.identity] The function invoked per iteration.
  * @returns {Array|Object} Returns `collection`.
@@ -34018,7 +34018,7 @@ var baseFor = __webpack_require__(/*! ./_baseFor */ "./node_modules/lodash/_base
  * @static
  * @memberOf _
  * @since 0.3.0
- * @category Object
+ * @categorie Object
  * @param {Object} object The object to iterate over.
  * @param {Function} [iteratee=_.identity] The function invoked per iteration.
  * @returns {Object} Returns `object`.
@@ -34066,7 +34066,7 @@ var baseForRight = __webpack_require__(/*! ./_baseForRight */ "./node_modules/lo
  * @static
  * @memberOf _
  * @since 2.0.0
- * @category Object
+ * @categorie Object
  * @param {Object} object The object to iterate over.
  * @param {Function} [iteratee=_.identity] The function invoked per iteration.
  * @returns {Object} Returns `object`.
@@ -34115,7 +34115,7 @@ var baseForOwn = __webpack_require__(/*! ./_baseForOwn */ "./node_modules/lodash
  * @static
  * @memberOf _
  * @since 0.3.0
- * @category Object
+ * @categorie Object
  * @param {Object} object The object to iterate over.
  * @param {Function} [iteratee=_.identity] The function invoked per iteration.
  * @returns {Object} Returns `object`.
@@ -34160,7 +34160,7 @@ var baseForOwnRight = __webpack_require__(/*! ./_baseForOwnRight */ "./node_modu
  * @static
  * @memberOf _
  * @since 2.0.0
- * @category Object
+ * @categorie Object
  * @param {Object} object The object to iterate over.
  * @param {Function} [iteratee=_.identity] The function invoked per iteration.
  * @returns {Object} Returns `object`.
@@ -34202,7 +34202,7 @@ module.exports = forOwnRight;
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Array
+ * @categorie Array
  * @param {Array} pairs The key-value pairs.
  * @returns {Object} Returns the new object.
  * @example
@@ -34280,7 +34280,7 @@ var baseFunctions = __webpack_require__(/*! ./_baseFunctions */ "./node_modules/
  * @static
  * @since 0.1.0
  * @memberOf _
- * @category Object
+ * @categorie Object
  * @param {Object} object The object to inspect.
  * @returns {Array} Returns the function names.
  * @see _.functionsIn
@@ -34322,7 +34322,7 @@ var baseFunctions = __webpack_require__(/*! ./_baseFunctions */ "./node_modules/
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Object
+ * @categorie Object
  * @param {Object} object The object to inspect.
  * @returns {Array} Returns the function names.
  * @see _.functions
@@ -34363,7 +34363,7 @@ var baseGet = __webpack_require__(/*! ./_baseGet */ "./node_modules/lodash/_base
  * @static
  * @memberOf _
  * @since 3.7.0
- * @category Object
+ * @categorie Object
  * @param {Object} object The object to query.
  * @param {Array|string} path The path of the property to get.
  * @param {*} [defaultValue] The value returned for `undefined` resolved values.
@@ -34417,7 +34417,7 @@ var hasOwnProperty = objectProto.hasOwnProperty;
  * @static
  * @memberOf _
  * @since 0.1.0
- * @category Collection
+ * @categorie Collection
  * @param {Array|Object} collection The collection to iterate over.
  * @param {Function} [iteratee=_.identity] The iteratee to transform keys.
  * @returns {Object} Returns the composed aggregate object.
@@ -34459,7 +34459,7 @@ var baseGt = __webpack_require__(/*! ./_baseGt */ "./node_modules/lodash/_baseGt
  * @static
  * @memberOf _
  * @since 3.9.0
- * @category Lang
+ * @categorie Lang
  * @param {*} value The value to compare.
  * @param {*} other The other value to compare.
  * @returns {boolean} Returns `true` if `value` is greater than `other`,
@@ -34498,7 +34498,7 @@ var createRelationalOperation = __webpack_require__(/*! ./_createRelationalOpera
  * @static
  * @memberOf _
  * @since 3.9.0
- * @category Lang
+ * @categorie Lang
  * @param {*} value The value to compare.
  * @param {*} other The other value to compare.
  * @returns {boolean} Returns `true` if `value` is greater than or equal to
@@ -34540,7 +34540,7 @@ var baseHas = __webpack_require__(/*! ./_baseHas */ "./node_modules/lodash/_base
  * @static
  * @since 0.1.0
  * @memberOf _
- * @category Object
+ * @categorie Object
  * @param {Object} object The object to query.
  * @param {Array|string} path The path to check.
  * @returns {boolean} Returns `true` if `path` exists, else `false`.
@@ -34586,7 +34586,7 @@ var baseHasIn = __webpack_require__(/*! ./_baseHasIn */ "./node_modules/lodash/_
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Object
+ * @categorie Object
  * @param {Object} object The object to query.
  * @param {Array|string} path The path to check.
  * @returns {boolean} Returns `true` if `path` exists, else `false`.
@@ -34629,7 +34629,7 @@ module.exports = hasIn;
  * @memberOf _
  * @since 0.1.0
  * @alias first
- * @category Array
+ * @categorie Array
  * @param {Array} array The array to query.
  * @returns {*} Returns the first element of `array`.
  * @example
@@ -34662,7 +34662,7 @@ module.exports = head;
  * @static
  * @since 0.1.0
  * @memberOf _
- * @category Util
+ * @categorie Util
  * @param {*} value Any value.
  * @returns {*} Returns `value`.
  * @example
@@ -34701,7 +34701,7 @@ var baseInRange = __webpack_require__(/*! ./_baseInRange */ "./node_modules/loda
  * @static
  * @memberOf _
  * @since 3.3.0
- * @category Number
+ * @categorie Number
  * @param {number} number The number to check.
  * @param {number} [start=0] The start of the range.
  * @param {number} end The end of the range.
@@ -34773,7 +34773,7 @@ var nativeMax = Math.max;
  * @static
  * @memberOf _
  * @since 0.1.0
- * @category Collection
+ * @categorie Collection
  * @param {Array|Object|string} collection The collection to inspect.
  * @param {*} value The value to search for.
  * @param {number} [fromIndex=0] The index to search from.
@@ -34833,7 +34833,7 @@ var nativeMax = Math.max;
  * @static
  * @memberOf _
  * @since 0.1.0
- * @category Array
+ * @categorie Array
  * @param {Array} array The array to inspect.
  * @param {*} value The value to search for.
  * @param {number} [fromIndex=0] The index to search from.
@@ -34879,7 +34879,7 @@ var baseSlice = __webpack_require__(/*! ./_baseSlice */ "./node_modules/lodash/_
  * @static
  * @memberOf _
  * @since 0.1.0
- * @category Array
+ * @categorie Array
  * @param {Array} array The array to query.
  * @returns {Array} Returns the slice of `array`.
  * @example
@@ -34918,7 +34918,7 @@ var arrayMap = __webpack_require__(/*! ./_arrayMap */ "./node_modules/lodash/_ar
  * @static
  * @memberOf _
  * @since 0.1.0
- * @category Array
+ * @categorie Array
  * @param {...Array} [arrays] The arrays to inspect.
  * @returns {Array} Returns the new array of intersecting values.
  * @example
@@ -34962,7 +34962,7 @@ var arrayMap = __webpack_require__(/*! ./_arrayMap */ "./node_modules/lodash/_ar
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Array
+ * @categorie Array
  * @param {...Array} [arrays] The arrays to inspect.
  * @param {Function} [iteratee=_.identity] The iteratee invoked per element.
  * @returns {Array} Returns the new array of intersecting values.
@@ -35016,7 +35016,7 @@ var arrayMap = __webpack_require__(/*! ./_arrayMap */ "./node_modules/lodash/_ar
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Array
+ * @categorie Array
  * @param {...Array} [arrays] The arrays to inspect.
  * @param {Function} [comparator] The comparator invoked per element.
  * @returns {Array} Returns the new array of intersecting values.
@@ -35075,7 +35075,7 @@ var nativeObjectToString = objectProto.toString;
  * @static
  * @memberOf _
  * @since 0.7.0
- * @category Object
+ * @categorie Object
  * @param {Object} object The object to invert.
  * @returns {Object} Returns the new inverted object.
  * @example
@@ -35132,7 +35132,7 @@ var nativeObjectToString = objectProto.toString;
  * @static
  * @memberOf _
  * @since 4.1.0
- * @category Object
+ * @categorie Object
  * @param {Object} object The object to invert.
  * @param {Function} [iteratee=_.identity] The iteratee invoked per element.
  * @returns {Object} Returns the new inverted object.
@@ -35182,7 +35182,7 @@ var baseInvoke = __webpack_require__(/*! ./_baseInvoke */ "./node_modules/lodash
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Object
+ * @categorie Object
  * @param {Object} object The object to query.
  * @param {Array|string} path The path of the method to invoke.
  * @param {...*} [args] The arguments to invoke the method with.
@@ -35223,7 +35223,7 @@ var apply = __webpack_require__(/*! ./_apply */ "./node_modules/lodash/_apply.js
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Collection
+ * @categorie Collection
  * @param {Array|Object} collection The collection to iterate over.
  * @param {Array|Function|string} path The path of the method to invoke or
  *  the function invoked per iteration.
@@ -35278,7 +35278,7 @@ var propertyIsEnumerable = objectProto.propertyIsEnumerable;
  * @static
  * @memberOf _
  * @since 0.1.0
- * @category Lang
+ * @categorie Lang
  * @param {*} value The value to check.
  * @returns {boolean} Returns `true` if `value` is an `arguments` object,
  *  else `false`.
@@ -35313,7 +35313,7 @@ module.exports = isArguments;
  * @static
  * @memberOf _
  * @since 0.1.0
- * @category Lang
+ * @categorie Lang
  * @param {*} value The value to check.
  * @returns {boolean} Returns `true` if `value` is an array, else `false`.
  * @example
@@ -35357,7 +35357,7 @@ var nodeIsArrayBuffer = nodeUtil && nodeUtil.isArrayBuffer;
  * @static
  * @memberOf _
  * @since 4.3.0
- * @category Lang
+ * @categorie Lang
  * @param {*} value The value to check.
  * @returns {boolean} Returns `true` if `value` is an array buffer, else `false`.
  * @example
@@ -35393,7 +35393,7 @@ var isFunction = __webpack_require__(/*! ./isFunction */ "./node_modules/lodash/
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Lang
+ * @categorie Lang
  * @param {*} value The value to check.
  * @returns {boolean} Returns `true` if `value` is array-like, else `false`.
  * @example
@@ -35436,7 +35436,7 @@ var isArrayLike = __webpack_require__(/*! ./isArrayLike */ "./node_modules/lodas
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Lang
+ * @categorie Lang
  * @param {*} value The value to check.
  * @returns {boolean} Returns `true` if `value` is an array-like object,
  *  else `false`.
@@ -35482,7 +35482,7 @@ var boolTag = '[object Boolean]';
  * @static
  * @memberOf _
  * @since 0.1.0
- * @category Lang
+ * @categorie Lang
  * @param {*} value The value to check.
  * @returns {boolean} Returns `true` if `value` is a boolean, else `false`.
  * @example
@@ -35534,7 +35534,7 @@ var nativeIsBuffer = Buffer ? Buffer.isBuffer : undefined;
  * @static
  * @memberOf _
  * @since 4.3.0
- * @category Lang
+ * @categorie Lang
  * @param {*} value The value to check.
  * @returns {boolean} Returns `true` if `value` is a buffer, else `false`.
  * @example
@@ -35573,7 +35573,7 @@ var nodeIsDate = nodeUtil && nodeUtil.isDate;
  * @static
  * @memberOf _
  * @since 0.1.0
- * @category Lang
+ * @categorie Lang
  * @param {*} value The value to check.
  * @returns {boolean} Returns `true` if `value` is a date object, else `false`.
  * @example
@@ -35607,7 +35607,7 @@ var isObjectLike = __webpack_require__(/*! ./isObjectLike */ "./node_modules/lod
  * @static
  * @memberOf _
  * @since 0.1.0
- * @category Lang
+ * @categorie Lang
  * @param {*} value The value to check.
  * @returns {boolean} Returns `true` if `value` is a DOM element, else `false`.
  * @example
@@ -35666,7 +35666,7 @@ var hasOwnProperty = objectProto.hasOwnProperty;
  * @static
  * @memberOf _
  * @since 0.1.0
- * @category Lang
+ * @categorie Lang
  * @param {*} value The value to check.
  * @returns {boolean} Returns `true` if `value` is empty, else `false`.
  * @example
@@ -35737,7 +35737,7 @@ var baseIsEqual = __webpack_require__(/*! ./_baseIsEqual */ "./node_modules/loda
  * @static
  * @memberOf _
  * @since 0.1.0
- * @category Lang
+ * @categorie Lang
  * @param {*} value The value to compare.
  * @param {*} other The other value to compare.
  * @returns {boolean} Returns `true` if the values are equivalent, else `false`.
@@ -35779,7 +35779,7 @@ var baseIsEqual = __webpack_require__(/*! ./_baseIsEqual */ "./node_modules/loda
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Lang
+ * @categorie Lang
  * @param {*} value The value to compare.
  * @param {*} other The other value to compare.
  * @param {Function} [customizer] The function to customize comparisons.
@@ -35835,7 +35835,7 @@ var domExcTag = '[object DOMException]',
  * @static
  * @memberOf _
  * @since 3.0.0
- * @category Lang
+ * @categorie Lang
  * @param {*} value The value to check.
  * @returns {boolean} Returns `true` if `value` is an error object, else `false`.
  * @example
@@ -35881,7 +35881,7 @@ var nativeIsFinite = root.isFinite;
  * @static
  * @memberOf _
  * @since 0.1.0
- * @category Lang
+ * @categorie Lang
  * @param {*} value The value to check.
  * @returns {boolean} Returns `true` if `value` is a finite number, else `false`.
  * @example
@@ -35929,7 +35929,7 @@ var asyncTag = '[object AsyncFunction]',
  * @static
  * @memberOf _
  * @since 0.1.0
- * @category Lang
+ * @categorie Lang
  * @param {*} value The value to check.
  * @returns {boolean} Returns `true` if `value` is a function, else `false`.
  * @example
@@ -35973,7 +35973,7 @@ var toInteger = __webpack_require__(/*! ./toInteger */ "./node_modules/lodash/to
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Lang
+ * @categorie Lang
  * @param {*} value The value to check.
  * @returns {boolean} Returns `true` if `value` is an integer, else `false`.
  * @example
@@ -36018,7 +36018,7 @@ var MAX_SAFE_INTEGER = 9007199254740991;
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Lang
+ * @categorie Lang
  * @param {*} value The value to check.
  * @returns {boolean} Returns `true` if `value` is a valid length, else `false`.
  * @example
@@ -36065,7 +36065,7 @@ var nodeIsMap = nodeUtil && nodeUtil.isMap;
  * @static
  * @memberOf _
  * @since 4.3.0
- * @category Lang
+ * @categorie Lang
  * @param {*} value The value to check.
  * @returns {boolean} Returns `true` if `value` is a map, else `false`.
  * @example
@@ -36107,7 +36107,7 @@ var baseIsMatch = __webpack_require__(/*! ./_baseIsMatch */ "./node_modules/loda
  * @static
  * @memberOf _
  * @since 3.0.0
- * @category Lang
+ * @categorie Lang
  * @param {Object} object The object to inspect.
  * @param {Object} source The object of property values to match.
  * @returns {boolean} Returns `true` if `object` is a match, else `false`.
@@ -36149,7 +36149,7 @@ var baseIsMatch = __webpack_require__(/*! ./_baseIsMatch */ "./node_modules/loda
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Lang
+ * @categorie Lang
  * @param {Object} object The object to inspect.
  * @param {Object} source The object of property values to match.
  * @param {Function} [customizer] The function to customize comparisons.
@@ -36202,7 +36202,7 @@ var isNumber = __webpack_require__(/*! ./isNumber */ "./node_modules/lodash/isNu
  * @static
  * @memberOf _
  * @since 0.1.0
- * @category Lang
+ * @categorie Lang
  * @param {*} value The value to check.
  * @returns {boolean} Returns `true` if `value` is `NaN`, else `false`.
  * @example
@@ -36258,7 +36258,7 @@ var CORE_ERROR_TEXT = 'Unsupported core-js use. Try https://npms.io/search?q=pon
  * @static
  * @memberOf _
  * @since 3.0.0
- * @category Lang
+ * @categorie Lang
  * @param {*} value The value to check.
  * @returns {boolean} Returns `true` if `value` is a native function,
  *  else `false`.
@@ -36295,7 +36295,7 @@ module.exports = isNative;
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Lang
+ * @categorie Lang
  * @param {*} value The value to check.
  * @returns {boolean} Returns `true` if `value` is nullish, else `false`.
  * @example
@@ -36331,7 +36331,7 @@ module.exports = isNil;
  * @static
  * @memberOf _
  * @since 0.1.0
- * @category Lang
+ * @categorie Lang
  * @param {*} value The value to check.
  * @returns {boolean} Returns `true` if `value` is `null`, else `false`.
  * @example
@@ -36373,7 +36373,7 @@ var numberTag = '[object Number]';
  * @static
  * @memberOf _
  * @since 0.1.0
- * @category Lang
+ * @categorie Lang
  * @param {*} value The value to check.
  * @returns {boolean} Returns `true` if `value` is a number, else `false`.
  * @example
@@ -36415,7 +36415,7 @@ module.exports = isNumber;
  * @static
  * @memberOf _
  * @since 0.1.0
- * @category Lang
+ * @categorie Lang
  * @param {*} value The value to check.
  * @returns {boolean} Returns `true` if `value` is an object, else `false`.
  * @example
@@ -36456,7 +36456,7 @@ module.exports = isObject;
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Lang
+ * @categorie Lang
  * @param {*} value The value to check.
  * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
  * @example
@@ -36516,7 +36516,7 @@ var objectCtorString = funcToString.call(Object);
  * @static
  * @memberOf _
  * @since 0.8.0
- * @category Lang
+ * @categorie Lang
  * @param {*} value The value to check.
  * @returns {boolean} Returns `true` if `value` is a plain object, else `false`.
  * @example
@@ -36575,7 +36575,7 @@ var nodeIsRegExp = nodeUtil && nodeUtil.isRegExp;
  * @static
  * @memberOf _
  * @since 0.1.0
- * @category Lang
+ * @categorie Lang
  * @param {*} value The value to check.
  * @returns {boolean} Returns `true` if `value` is a regexp, else `false`.
  * @example
@@ -36615,7 +36615,7 @@ var MAX_SAFE_INTEGER = 9007199254740991;
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Lang
+ * @categorie Lang
  * @param {*} value The value to check.
  * @returns {boolean} Returns `true` if `value` is a safe integer, else `false`.
  * @example
@@ -36661,7 +36661,7 @@ var nodeIsSet = nodeUtil && nodeUtil.isSet;
  * @static
  * @memberOf _
  * @since 4.3.0
- * @category Lang
+ * @categorie Lang
  * @param {*} value The value to check.
  * @returns {boolean} Returns `true` if `value` is a set, else `false`.
  * @example
@@ -36699,7 +36699,7 @@ var stringTag = '[object String]';
  * @static
  * @since 0.1.0
  * @memberOf _
- * @category Lang
+ * @categorie Lang
  * @param {*} value The value to check.
  * @returns {boolean} Returns `true` if `value` is a string, else `false`.
  * @example
@@ -36739,7 +36739,7 @@ var symbolTag = '[object Symbol]';
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Lang
+ * @categorie Lang
  * @param {*} value The value to check.
  * @returns {boolean} Returns `true` if `value` is a symbol, else `false`.
  * @example
@@ -36780,7 +36780,7 @@ var nodeIsTypedArray = nodeUtil && nodeUtil.isTypedArray;
  * @static
  * @memberOf _
  * @since 3.0.0
- * @category Lang
+ * @categorie Lang
  * @param {*} value The value to check.
  * @returns {boolean} Returns `true` if `value` is a typed array, else `false`.
  * @example
@@ -36811,7 +36811,7 @@ module.exports = isTypedArray;
  * @static
  * @since 0.1.0
  * @memberOf _
- * @category Lang
+ * @categorie Lang
  * @param {*} value The value to check.
  * @returns {boolean} Returns `true` if `value` is `undefined`, else `false`.
  * @example
@@ -36850,7 +36850,7 @@ var weakMapTag = '[object WeakMap]';
  * @static
  * @memberOf _
  * @since 4.3.0
- * @category Lang
+ * @categorie Lang
  * @param {*} value The value to check.
  * @returns {boolean} Returns `true` if `value` is a weak map, else `false`.
  * @example
@@ -36889,7 +36889,7 @@ var weakSetTag = '[object WeakSet]';
  * @static
  * @memberOf _
  * @since 4.3.0
- * @category Lang
+ * @categorie Lang
  * @param {*} value The value to check.
  * @returns {boolean} Returns `true` if `value` is a weak set, else `false`.
  * @example
@@ -36932,7 +36932,7 @@ var CLONE_DEEP_FLAG = 1;
  * @static
  * @since 4.0.0
  * @memberOf _
- * @category Util
+ * @categorie Util
  * @param {*} [func=_.identity] The value to convert to a callback.
  * @returns {Function} Returns the callback.
  * @example
@@ -36992,7 +36992,7 @@ var nativeJoin = arrayProto.join;
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Array
+ * @categorie Array
  * @param {Array} array The array to convert.
  * @param {string} [separator=','] The element separator.
  * @returns {string} Returns the joined string.
@@ -37026,7 +37026,7 @@ var createCompounder = __webpack_require__(/*! ./_createCompounder */ "./node_mo
  * @static
  * @memberOf _
  * @since 3.0.0
- * @category String
+ * @categorie String
  * @param {string} [string=''] The string to convert.
  * @returns {string} Returns the kebab cased string.
  * @example
@@ -37068,7 +37068,7 @@ var baseAssignValue = __webpack_require__(/*! ./_baseAssignValue */ "./node_modu
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Collection
+ * @categorie Collection
  * @param {Array|Object} collection The collection to iterate over.
  * @param {Function} [iteratee=_.identity] The iteratee to transform keys.
  * @returns {Object} Returns the composed aggregate object.
@@ -37117,7 +37117,7 @@ var arrayLikeKeys = __webpack_require__(/*! ./_arrayLikeKeys */ "./node_modules/
  * @static
  * @since 0.1.0
  * @memberOf _
- * @category Object
+ * @categorie Object
  * @param {Object} object The object to query.
  * @returns {Array} Returns the array of property names.
  * @example
@@ -37163,7 +37163,7 @@ var arrayLikeKeys = __webpack_require__(/*! ./_arrayLikeKeys */ "./node_modules/
  * @static
  * @memberOf _
  * @since 3.0.0
- * @category Object
+ * @categorie Object
  * @param {Object} object The object to query.
  * @returns {Array} Returns the array of property names.
  * @example
@@ -37269,7 +37269,7 @@ module.exports = {
  * @static
  * @memberOf _
  * @since 0.1.0
- * @category Array
+ * @categorie Array
  * @param {Array} array The array to query.
  * @returns {*} Returns the last element of `array`.
  * @example
@@ -37310,7 +37310,7 @@ var nativeMax = Math.max,
  * @static
  * @memberOf _
  * @since 0.1.0
- * @category Array
+ * @categorie Array
  * @param {Array} array The array to inspect.
  * @param {*} value The value to search for.
  * @param {number} [fromIndex=array.length-1] The index to search from.
@@ -38013,7 +38013,7 @@ var createCompounder = __webpack_require__(/*! ./_createCompounder */ "./node_mo
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category String
+ * @categorie String
  * @param {string} [string=''] The string to convert.
  * @returns {string} Returns the lower cased string.
  * @example
@@ -38051,7 +38051,7 @@ var createCaseFirst = __webpack_require__(/*! ./_createCaseFirst */ "./node_modu
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category String
+ * @categorie String
  * @param {string} [string=''] The string to convert.
  * @returns {string} Returns the converted string.
  * @example
@@ -38085,7 +38085,7 @@ var baseLt = __webpack_require__(/*! ./_baseLt */ "./node_modules/lodash/_baseLt
  * @static
  * @memberOf _
  * @since 3.9.0
- * @category Lang
+ * @categorie Lang
  * @param {*} value The value to compare.
  * @param {*} other The other value to compare.
  * @returns {boolean} Returns `true` if `value` is less than `other`,
@@ -38124,7 +38124,7 @@ var createRelationalOperation = __webpack_require__(/*! ./_createRelationalOpera
  * @static
  * @memberOf _
  * @since 3.9.0
- * @category Lang
+ * @categorie Lang
  * @param {*} value The value to compare.
  * @param {*} other The other value to compare.
  * @returns {boolean} Returns `true` if `value` is less than or equal to
@@ -38179,7 +38179,7 @@ var arrayMap = __webpack_require__(/*! ./_arrayMap */ "./node_modules/lodash/_ar
  * @static
  * @memberOf _
  * @since 0.1.0
- * @category Collection
+ * @categorie Collection
  * @param {Array|Object} collection The collection to iterate over.
  * @param {Function} [iteratee=_.identity] The function invoked per iteration.
  * @returns {Array} Returns the new mapped array.
@@ -38234,7 +38234,7 @@ var baseAssignValue = __webpack_require__(/*! ./_baseAssignValue */ "./node_modu
  * @static
  * @memberOf _
  * @since 3.8.0
- * @category Object
+ * @categorie Object
  * @param {Object} object The object to iterate over.
  * @param {Function} [iteratee=_.identity] The function invoked per iteration.
  * @returns {Object} Returns the new mapped object.
@@ -38281,7 +38281,7 @@ var baseAssignValue = __webpack_require__(/*! ./_baseAssignValue */ "./node_modu
  * @static
  * @memberOf _
  * @since 2.4.0
- * @category Object
+ * @categorie Object
  * @param {Object} object The object to iterate over.
  * @param {Function} [iteratee=_.identity] The function invoked per iteration.
  * @returns {Object} Returns the new mapped object.
@@ -38343,7 +38343,7 @@ var CLONE_DEEP_FLAG = 1;
  * @static
  * @memberOf _
  * @since 3.0.0
- * @category Util
+ * @categorie Util
  * @param {Object} source The object of property values to match.
  * @returns {Function} Returns the new spec function.
  * @example
@@ -38390,7 +38390,7 @@ var CLONE_DEEP_FLAG = 1;
  * @static
  * @memberOf _
  * @since 3.2.0
- * @category Util
+ * @categorie Util
  * @param {Array|string} path The path of the property to get.
  * @param {*} srcValue The value to match.
  * @returns {Function} Returns the new spec function.
@@ -38459,7 +38459,7 @@ var baseExtremum = __webpack_require__(/*! ./_baseExtremum */ "./node_modules/lo
  * @static
  * @since 0.1.0
  * @memberOf _
- * @category Math
+ * @categorie Math
  * @param {Array} array The array to iterate over.
  * @returns {*} Returns the maximum value.
  * @example
@@ -38500,7 +38500,7 @@ var baseExtremum = __webpack_require__(/*! ./_baseExtremum */ "./node_modules/lo
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Math
+ * @categorie Math
  * @param {Array} array The array to iterate over.
  * @param {Function} [iteratee=_.identity] The iteratee invoked per element.
  * @returns {*} Returns the maximum value.
@@ -38542,7 +38542,7 @@ var baseMean = __webpack_require__(/*! ./_baseMean */ "./node_modules/lodash/_ba
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Math
+ * @categorie Math
  * @param {Array} array The array to iterate over.
  * @returns {number} Returns the mean.
  * @example
@@ -38577,7 +38577,7 @@ var baseIteratee = __webpack_require__(/*! ./_baseIteratee */ "./node_modules/lo
  * @static
  * @memberOf _
  * @since 4.7.0
- * @category Math
+ * @categorie Math
  * @param {Array} array The array to iterate over.
  * @param {Function} [iteratee=_.identity] The iteratee invoked per element.
  * @returns {number} Returns the mean.
@@ -38629,7 +38629,7 @@ var FUNC_ERROR_TEXT = 'Expected a function';
  * @static
  * @memberOf _
  * @since 0.1.0
- * @category Function
+ * @categorie Function
  * @param {Function} func The function to have its output memoized.
  * @param {Function} [resolver] The function to resolve the cache key.
  * @returns {Function} Returns the new memoized function.
@@ -38709,7 +38709,7 @@ var baseMerge = __webpack_require__(/*! ./_baseMerge */ "./node_modules/lodash/_
  * @static
  * @memberOf _
  * @since 0.5.0
- * @category Object
+ * @categorie Object
  * @param {Object} object The destination object.
  * @param {...Object} [sources] The source objects.
  * @returns {Object} Returns `object`.
@@ -38757,7 +38757,7 @@ var baseMerge = __webpack_require__(/*! ./_baseMerge */ "./node_modules/lodash/_
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Object
+ * @categorie Object
  * @param {Object} object The destination object.
  * @param {...Object} sources The source objects.
  * @param {Function} customizer The function to customize assigned values.
@@ -38802,7 +38802,7 @@ var baseInvoke = __webpack_require__(/*! ./_baseInvoke */ "./node_modules/lodash
  * @static
  * @memberOf _
  * @since 3.7.0
- * @category Util
+ * @categorie Util
  * @param {Array|string} path The path of the method to invoke.
  * @param {...*} [args] The arguments to invoke the method with.
  * @returns {Function} Returns the new invoker function.
@@ -38848,7 +38848,7 @@ var baseInvoke = __webpack_require__(/*! ./_baseInvoke */ "./node_modules/lodash
  * @static
  * @memberOf _
  * @since 3.7.0
- * @category Util
+ * @categorie Util
  * @param {Object} object The object to query.
  * @param {...*} [args] The arguments to invoke the method with.
  * @returns {Function} Returns the new invoker function.
@@ -38892,7 +38892,7 @@ var baseExtremum = __webpack_require__(/*! ./_baseExtremum */ "./node_modules/lo
  * @static
  * @since 0.1.0
  * @memberOf _
- * @category Math
+ * @categorie Math
  * @param {Array} array The array to iterate over.
  * @returns {*} Returns the minimum value.
  * @example
@@ -38933,7 +38933,7 @@ var baseExtremum = __webpack_require__(/*! ./_baseExtremum */ "./node_modules/lo
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Math
+ * @categorie Math
  * @param {Array} array The array to iterate over.
  * @param {Function} [iteratee=_.identity] The iteratee invoked per element.
  * @returns {*} Returns the minimum value.
@@ -38985,7 +38985,7 @@ var arrayEach = __webpack_require__(/*! ./_arrayEach */ "./node_modules/lodash/_
  * @static
  * @since 0.1.0
  * @memberOf _
- * @category Util
+ * @categorie Util
  * @param {Function|Object} [object=lodash] The destination object.
  * @param {Object} source The object of functions to add.
  * @param {Object} [options={}] The options object.
@@ -39059,7 +39059,7 @@ var createMathOperation = __webpack_require__(/*! ./_createMathOperation */ "./n
  * @static
  * @memberOf _
  * @since 4.7.0
- * @category Math
+ * @categorie Math
  * @param {number} multiplier The first number in a multiplication.
  * @param {number} multiplicand The second number in a multiplication.
  * @returns {number} Returns the product.
@@ -39095,7 +39095,7 @@ var FUNC_ERROR_TEXT = 'Expected a function';
  * @static
  * @memberOf _
  * @since 3.0.0
- * @category Function
+ * @categorie Function
  * @param {Function} predicate The predicate to negate.
  * @returns {Function} Returns the new negated function.
  * @example
@@ -39144,7 +39144,7 @@ var toArray = __webpack_require__(/*! ./toArray */ "./node_modules/lodash/toArra
  * @name next
  * @memberOf _
  * @since 4.0.0
- * @category Seq
+ * @categorie Seq
  * @returns {Object} Returns the next iterator value.
  * @example
  *
@@ -39187,7 +39187,7 @@ module.exports = wrapperNext;
  * @static
  * @memberOf _
  * @since 2.3.0
- * @category Util
+ * @categorie Util
  * @example
  *
  * _.times(2, _.noop);
@@ -39218,7 +39218,7 @@ var root = __webpack_require__(/*! ./_root */ "./node_modules/lodash/_root.js");
  * @static
  * @memberOf _
  * @since 2.4.0
- * @category Date
+ * @categorie Date
  * @returns {number} Returns the timestamp.
  * @example
  *
@@ -39253,7 +39253,7 @@ var baseNth = __webpack_require__(/*! ./_baseNth */ "./node_modules/lodash/_base
  * @static
  * @memberOf _
  * @since 4.11.0
- * @category Array
+ * @categorie Array
  * @param {Array} array The array to query.
  * @param {number} [n=0] The index of the element to return.
  * @returns {*} Returns the nth element of `array`.
@@ -39294,7 +39294,7 @@ var baseNth = __webpack_require__(/*! ./_baseNth */ "./node_modules/lodash/_base
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Util
+ * @categorie Util
  * @param {number} [n=0] The index of the argument to return.
  * @returns {Function} Returns the new pass-thru function.
  * @example
@@ -39425,7 +39425,7 @@ var CLONE_DEEP_FLAG = 1,
  * @static
  * @since 0.1.0
  * @memberOf _
- * @category Object
+ * @categorie Object
  * @param {Object} object The source object.
  * @param {...(string|string[])} [paths] The property paths to omit.
  * @returns {Object} Returns the new object.
@@ -39483,7 +39483,7 @@ var baseIteratee = __webpack_require__(/*! ./_baseIteratee */ "./node_modules/lo
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Object
+ * @categorie Object
  * @param {Object} object The source object.
  * @param {Function} [predicate=_.identity] The function invoked per property.
  * @returns {Object} Returns the new object.
@@ -39520,7 +39520,7 @@ var before = __webpack_require__(/*! ./before */ "./node_modules/lodash/before.j
  * @static
  * @memberOf _
  * @since 0.1.0
- * @category Function
+ * @categorie Function
  * @param {Function} func The function to restrict.
  * @returns {Function} Returns the new restricted function.
  * @example
@@ -39558,7 +39558,7 @@ var baseOrderBy = __webpack_require__(/*! ./_baseOrderBy */ "./node_modules/loda
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Collection
+ * @categorie Collection
  * @param {Array|Object} collection The collection to iterate over.
  * @param {Array[]|Function[]|Object[]|string[]} [iteratees=[_.identity]]
  *  The iteratees to sort by.
@@ -39614,7 +39614,7 @@ var arrayMap = __webpack_require__(/*! ./_arrayMap */ "./node_modules/lodash/_ar
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Util
+ * @categorie Util
  * @param {...(Function|Function[])} [iteratees=[_.identity]]
  *  The iteratees to invoke.
  * @returns {Function} Returns the new function.
@@ -39657,7 +39657,7 @@ var nativeMin = Math.min;
  * @static
  * @since 4.0.0
  * @memberOf _
- * @category Function
+ * @categorie Function
  * @param {Function} func The function to wrap.
  * @param {...(Function|Function[])} [transforms=[_.identity]]
  *  The argument transforms.
@@ -39721,7 +39721,7 @@ var arrayEvery = __webpack_require__(/*! ./_arrayEvery */ "./node_modules/lodash
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Util
+ * @categorie Util
  * @param {...(Function|Function[])} [predicates=[_.identity]]
  *  The predicates to check.
  * @returns {Function} Returns the new function.
@@ -39762,7 +39762,7 @@ var arraySome = __webpack_require__(/*! ./_arraySome */ "./node_modules/lodash/_
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Util
+ * @categorie Util
  * @param {...(Function|Function[])} [predicates=[_.identity]]
  *  The predicates to check.
  * @returns {Function} Returns the new function.
@@ -39809,7 +39809,7 @@ var nativeCeil = Math.ceil,
  * @static
  * @memberOf _
  * @since 3.0.0
- * @category String
+ * @categorie String
  * @param {string} [string=''] The string to pad.
  * @param {number} [length=0] The padding length.
  * @param {string} [chars=' '] The string used as padding.
@@ -39865,7 +39865,7 @@ var createPadding = __webpack_require__(/*! ./_createPadding */ "./node_modules/
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category String
+ * @categorie String
  * @param {string} [string=''] The string to pad.
  * @param {number} [length=0] The padding length.
  * @param {string} [chars=' '] The string used as padding.
@@ -39915,7 +39915,7 @@ var createPadding = __webpack_require__(/*! ./_createPadding */ "./node_modules/
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category String
+ * @categorie String
  * @param {string} [string=''] The string to pad.
  * @param {number} [length=0] The padding length.
  * @param {string} [chars=' '] The string used as padding.
@@ -39973,7 +39973,7 @@ var nativeParseInt = root.parseInt;
  * @static
  * @memberOf _
  * @since 1.1.0
- * @category String
+ * @categorie String
  * @param {string} string The string to convert.
  * @param {number} [radix=10] The radix to interpret `value` by.
  * @param- {Object} [guard] Enables use as an iteratee for methods like `_.map`.
@@ -40029,7 +40029,7 @@ var WRAP_PARTIAL_FLAG = 32;
  * @static
  * @memberOf _
  * @since 0.2.0
- * @category Function
+ * @categorie Function
  * @param {Function} func The function to partially apply arguments to.
  * @param {...*} [partials] The arguments to be partially applied.
  * @returns {Function} Returns the new partially applied function.
@@ -40089,7 +40089,7 @@ var WRAP_PARTIAL_RIGHT_FLAG = 64;
  * @static
  * @memberOf _
  * @since 1.0.0
- * @category Function
+ * @categorie Function
  * @param {Function} func The function to partially apply arguments to.
  * @param {...*} [partials] The arguments to be partially applied.
  * @returns {Function} Returns the new partially applied function.
@@ -40139,7 +40139,7 @@ var createAggregator = __webpack_require__(/*! ./_createAggregator */ "./node_mo
  * @static
  * @memberOf _
  * @since 3.0.0
- * @category Collection
+ * @categorie Collection
  * @param {Array|Object} collection The collection to iterate over.
  * @param {Function} [predicate=_.identity] The function invoked per iteration.
  * @returns {Array} Returns the array of grouped elements.
@@ -40191,7 +40191,7 @@ var basePick = __webpack_require__(/*! ./_basePick */ "./node_modules/lodash/_ba
  * @static
  * @since 0.1.0
  * @memberOf _
- * @category Object
+ * @categorie Object
  * @param {Object} object The source object.
  * @param {...(string|string[])} [paths] The property paths to pick.
  * @returns {Object} Returns the new object.
@@ -40230,7 +40230,7 @@ var arrayMap = __webpack_require__(/*! ./_arrayMap */ "./node_modules/lodash/_ar
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Object
+ * @categorie Object
  * @param {Object} object The source object.
  * @param {Function} [predicate=_.identity] The function invoked per property.
  * @returns {Object} Returns the new object.
@@ -40275,7 +40275,7 @@ var baseLodash = __webpack_require__(/*! ./_baseLodash */ "./node_modules/lodash
  * @name plant
  * @memberOf _
  * @since 3.2.0
- * @category Seq
+ * @categorie Seq
  * @param {*} value The value to plant.
  * @returns {Object} Returns the new `lodash` wrapper instance.
  * @example
@@ -40336,7 +40336,7 @@ var baseProperty = __webpack_require__(/*! ./_baseProperty */ "./node_modules/lo
  * @static
  * @memberOf _
  * @since 2.4.0
- * @category Util
+ * @categorie Util
  * @param {Array|string} path The path of the property to get.
  * @returns {Function} Returns the new accessor function.
  * @example
@@ -40377,7 +40377,7 @@ var baseGet = __webpack_require__(/*! ./_baseGet */ "./node_modules/lodash/_base
  * @static
  * @memberOf _
  * @since 3.0.0
- * @category Util
+ * @categorie Util
  * @param {Object} object The object to query.
  * @returns {Function} Returns the new accessor function.
  * @example
@@ -40423,7 +40423,7 @@ var baseRest = __webpack_require__(/*! ./_baseRest */ "./node_modules/lodash/_ba
  * @static
  * @memberOf _
  * @since 2.0.0
- * @category Array
+ * @categorie Array
  * @param {Array} array The array to modify.
  * @param {...*} [values] The values to remove.
  * @returns {Array} Returns `array`.
@@ -40459,7 +40459,7 @@ var basePullAll = __webpack_require__(/*! ./_basePullAll */ "./node_modules/loda
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Array
+ * @categorie Array
  * @param {Array} array The array to modify.
  * @param {Array} values The values to remove.
  * @returns {Array} Returns `array`.
@@ -40502,7 +40502,7 @@ var baseIteratee = __webpack_require__(/*! ./_baseIteratee */ "./node_modules/lo
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Array
+ * @categorie Array
  * @param {Array} array The array to modify.
  * @param {Array} values The values to remove.
  * @param {Function} [iteratee=_.identity] The iteratee invoked per element.
@@ -40545,7 +40545,7 @@ var basePullAll = __webpack_require__(/*! ./_basePullAll */ "./node_modules/loda
  * @static
  * @memberOf _
  * @since 4.6.0
- * @category Array
+ * @categorie Array
  * @param {Array} array The array to modify.
  * @param {Array} values The values to remove.
  * @param {Function} [comparator] The comparator invoked per element.
@@ -40592,7 +40592,7 @@ var arrayMap = __webpack_require__(/*! ./_arrayMap */ "./node_modules/lodash/_ar
  * @static
  * @memberOf _
  * @since 3.0.0
- * @category Array
+ * @categorie Array
  * @param {Array} array The array to modify.
  * @param {...(number|number[])} [indexes] The indexes of elements to remove.
  * @returns {Array} Returns the new array of removed elements.
@@ -40653,7 +40653,7 @@ var nativeMin = Math.min,
  * @static
  * @memberOf _
  * @since 0.7.0
- * @category Number
+ * @categorie Number
  * @param {number} [lower=0] The lower bound.
  * @param {number} [upper=1] The upper bound.
  * @param {boolean} [floating] Specify returning a floating-point number.
@@ -40737,7 +40737,7 @@ var createRange = __webpack_require__(/*! ./_createRange */ "./node_modules/loda
  * @static
  * @since 0.1.0
  * @memberOf _
- * @category Util
+ * @categorie Util
  * @param {number} [start=0] The start of the range.
  * @param {number} end The end of the range.
  * @param {number} [step=1] The value to increment or decrement by.
@@ -40789,7 +40789,7 @@ var createRange = __webpack_require__(/*! ./_createRange */ "./node_modules/loda
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Util
+ * @categorie Util
  * @param {number} [start=0] The start of the range.
  * @param {number} end The end of the range.
  * @param {number} [step=1] The value to increment or decrement by.
@@ -40847,7 +40847,7 @@ var WRAP_REARG_FLAG = 256;
  * @static
  * @memberOf _
  * @since 3.0.0
- * @category Function
+ * @categorie Function
  * @param {Function} func The function to rearrange arguments for.
  * @param {...(number|number[])} indexes The arranged argument indexes.
  * @returns {Function} Returns the new function.
@@ -40900,7 +40900,7 @@ var arrayReduce = __webpack_require__(/*! ./_arrayReduce */ "./node_modules/loda
  * @static
  * @memberOf _
  * @since 0.1.0
- * @category Collection
+ * @categorie Collection
  * @param {Array|Object} collection The collection to iterate over.
  * @param {Function} [iteratee=_.identity] The function invoked per iteration.
  * @param {*} [accumulator] The initial value.
@@ -40951,7 +40951,7 @@ var arrayReduceRight = __webpack_require__(/*! ./_arrayReduceRight */ "./node_mo
  * @static
  * @memberOf _
  * @since 0.1.0
- * @category Collection
+ * @categorie Collection
  * @param {Array|Object} collection The collection to iterate over.
  * @param {Function} [iteratee=_.identity] The function invoked per iteration.
  * @param {*} [accumulator] The initial value.
@@ -40998,7 +40998,7 @@ var arrayFilter = __webpack_require__(/*! ./_arrayFilter */ "./node_modules/loda
  * @static
  * @memberOf _
  * @since 0.1.0
- * @category Collection
+ * @categorie Collection
  * @param {Array|Object} collection The collection to iterate over.
  * @param {Function} [predicate=_.identity] The function invoked per iteration.
  * @returns {Array} Returns the new filtered array.
@@ -41056,7 +41056,7 @@ var baseIteratee = __webpack_require__(/*! ./_baseIteratee */ "./node_modules/lo
  * @static
  * @memberOf _
  * @since 2.0.0
- * @category Array
+ * @categorie Array
  * @param {Array} array The array to modify.
  * @param {Function} [predicate=_.identity] The function invoked per iteration.
  * @returns {Array} Returns the new array of removed elements.
@@ -41117,7 +41117,7 @@ var baseRepeat = __webpack_require__(/*! ./_baseRepeat */ "./node_modules/lodash
  * @static
  * @memberOf _
  * @since 3.0.0
- * @category String
+ * @categorie String
  * @param {string} [string=''] The string to repeat.
  * @param {number} [n=1] The number of times to repeat the string.
  * @param- {Object} [guard] Enables use as an iteratee for methods like `_.map`.
@@ -41165,7 +41165,7 @@ var toString = __webpack_require__(/*! ./toString */ "./node_modules/lodash/toSt
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category String
+ * @categorie String
  * @param {string} [string=''] The string to modify.
  * @param {RegExp|string} pattern The pattern to replace.
  * @param {Function|string} replacement The match replacement.
@@ -41211,7 +41211,7 @@ var FUNC_ERROR_TEXT = 'Expected a function';
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Function
+ * @categorie Function
  * @param {Function} func The function to apply a rest parameter to.
  * @param {number} [start=func.length-1] The start position of the rest parameter.
  * @returns {Function} Returns the new function.
@@ -41257,7 +41257,7 @@ var castPath = __webpack_require__(/*! ./_castPath */ "./node_modules/lodash/_ca
  * @static
  * @since 0.1.0
  * @memberOf _
- * @category Object
+ * @categorie Object
  * @param {Object} object The object to query.
  * @param {Array|string} path The path of the property to resolve.
  * @param {*} [defaultValue] The value returned for `undefined` resolved values.
@@ -41328,7 +41328,7 @@ var nativeReverse = arrayProto.reverse;
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Array
+ * @categorie Array
  * @param {Array} array The array to modify.
  * @returns {Array} Returns `array`.
  * @example
@@ -41365,7 +41365,7 @@ var createRound = __webpack_require__(/*! ./_createRound */ "./node_modules/loda
  * @static
  * @memberOf _
  * @since 3.10.0
- * @category Math
+ * @categorie Math
  * @param {number} number The number to round.
  * @param {number} [precision=0] The precision to round to.
  * @returns {number} Returns the rounded number.
@@ -41404,7 +41404,7 @@ var arraySample = __webpack_require__(/*! ./_arraySample */ "./node_modules/loda
  * @static
  * @memberOf _
  * @since 2.0.0
- * @category Collection
+ * @categorie Collection
  * @param {Array|Object} collection The collection to sample.
  * @returns {*} Returns the random element.
  * @example
@@ -41442,7 +41442,7 @@ var arraySampleSize = __webpack_require__(/*! ./_arraySampleSize */ "./node_modu
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Collection
+ * @categorie Collection
  * @param {Array|Object} collection The collection to sample.
  * @param {number} [n=1] The number of elements to sample.
  * @param- {Object} [guard] Enables use as an iteratee for methods like `_.map`.
@@ -41517,7 +41517,7 @@ var baseSet = __webpack_require__(/*! ./_baseSet */ "./node_modules/lodash/_base
  * @static
  * @memberOf _
  * @since 3.7.0
- * @category Object
+ * @categorie Object
  * @param {Object} object The object to modify.
  * @param {Array|string} path The path of the property to set.
  * @param {*} value The value to set.
@@ -41563,7 +41563,7 @@ var baseSet = __webpack_require__(/*! ./_baseSet */ "./node_modules/lodash/_base
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Object
+ * @categorie Object
  * @param {Object} object The object to modify.
  * @param {Array|string} path The path of the property to set.
  * @param {*} value The value to set.
@@ -41604,7 +41604,7 @@ var arrayShuffle = __webpack_require__(/*! ./_arrayShuffle */ "./node_modules/lo
  * @static
  * @memberOf _
  * @since 0.1.0
- * @category Collection
+ * @categorie Collection
  * @param {Array|Object} collection The collection to shuffle.
  * @returns {Array} Returns the new shuffled array.
  * @example
@@ -41646,7 +41646,7 @@ var mapTag = '[object Map]',
  * @static
  * @memberOf _
  * @since 0.1.0
- * @category Collection
+ * @categorie Collection
  * @param {Array|Object|string} collection The collection to inspect.
  * @returns {number} Returns the collection size.
  * @example
@@ -41700,7 +41700,7 @@ var baseSlice = __webpack_require__(/*! ./_baseSlice */ "./node_modules/lodash/_
  * @static
  * @memberOf _
  * @since 3.0.0
- * @category Array
+ * @categorie Array
  * @param {Array} array The array to slice.
  * @param {number} [start=0] The start position.
  * @param {number} [end=array.length] The end position.
@@ -41743,7 +41743,7 @@ var createCompounder = __webpack_require__(/*! ./_createCompounder */ "./node_mo
  * @static
  * @memberOf _
  * @since 3.0.0
- * @category String
+ * @categorie String
  * @param {string} [string=''] The string to convert.
  * @returns {string} Returns the snake cased string.
  * @example
@@ -41787,7 +41787,7 @@ var arraySome = __webpack_require__(/*! ./_arraySome */ "./node_modules/lodash/_
  * @static
  * @memberOf _
  * @since 0.1.0
- * @category Collection
+ * @categorie Collection
  * @param {Array|Object} collection The collection to iterate over.
  * @param {Function} [predicate=_.identity] The function invoked per iteration.
  * @param- {Object} [guard] Enables use as an iteratee for methods like `_.map`.
@@ -41849,7 +41849,7 @@ var baseFlatten = __webpack_require__(/*! ./_baseFlatten */ "./node_modules/loda
  * @static
  * @memberOf _
  * @since 0.1.0
- * @category Collection
+ * @categorie Collection
  * @param {Array|Object} collection The collection to iterate over.
  * @param {...(Function|Function[])} [iteratees=[_.identity]]
  *  The iteratees to sort by.
@@ -41903,7 +41903,7 @@ var baseSortedIndex = __webpack_require__(/*! ./_baseSortedIndex */ "./node_modu
  * @static
  * @memberOf _
  * @since 0.1.0
- * @category Array
+ * @categorie Array
  * @param {Array} array The sorted array to inspect.
  * @param {*} value The value to evaluate.
  * @returns {number} Returns the index at which `value` should be inserted
@@ -41940,7 +41940,7 @@ var baseIteratee = __webpack_require__(/*! ./_baseIteratee */ "./node_modules/lo
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Array
+ * @categorie Array
  * @param {Array} array The sorted array to inspect.
  * @param {*} value The value to evaluate.
  * @param {Function} [iteratee=_.identity] The iteratee invoked per element.
@@ -41983,7 +41983,7 @@ var baseSortedIndex = __webpack_require__(/*! ./_baseSortedIndex */ "./node_modu
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Array
+ * @categorie Array
  * @param {Array} array The array to inspect.
  * @param {*} value The value to search for.
  * @returns {number} Returns the index of the matched value, else `-1`.
@@ -42025,7 +42025,7 @@ var baseSortedIndex = __webpack_require__(/*! ./_baseSortedIndex */ "./node_modu
  * @static
  * @memberOf _
  * @since 3.0.0
- * @category Array
+ * @categorie Array
  * @param {Array} array The sorted array to inspect.
  * @param {*} value The value to evaluate.
  * @returns {number} Returns the index at which `value` should be inserted
@@ -42062,7 +42062,7 @@ var baseIteratee = __webpack_require__(/*! ./_baseIteratee */ "./node_modules/lo
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Array
+ * @categorie Array
  * @param {Array} array The sorted array to inspect.
  * @param {*} value The value to evaluate.
  * @param {Function} [iteratee=_.identity] The iteratee invoked per element.
@@ -42105,7 +42105,7 @@ var baseSortedIndex = __webpack_require__(/*! ./_baseSortedIndex */ "./node_modu
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Array
+ * @categorie Array
  * @param {Array} array The array to inspect.
  * @param {*} value The value to search for.
  * @returns {number} Returns the index of the matched value, else `-1`.
@@ -42146,7 +42146,7 @@ var baseSortedUniq = __webpack_require__(/*! ./_baseSortedUniq */ "./node_module
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Array
+ * @categorie Array
  * @param {Array} array The array to inspect.
  * @returns {Array} Returns the new duplicate free array.
  * @example
@@ -42182,7 +42182,7 @@ var baseIteratee = __webpack_require__(/*! ./_baseIteratee */ "./node_modules/lo
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Array
+ * @categorie Array
  * @param {Array} array The array to inspect.
  * @param {Function} [iteratee] The iteratee invoked per element.
  * @returns {Array} Returns the new duplicate free array.
@@ -42229,7 +42229,7 @@ var MAX_ARRAY_LENGTH = 4294967295;
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category String
+ * @categorie String
  * @param {string} [string=''] The string to split.
  * @param {RegExp|string} separator The separator pattern to split by.
  * @param {number} [limit] The length to truncate results to.
@@ -42295,7 +42295,7 @@ var nativeMax = Math.max;
  * @static
  * @memberOf _
  * @since 3.2.0
- * @category Function
+ * @categorie Function
  * @param {Function} func The function to spread arguments over.
  * @param {number} [start=0] The start position of the spread.
  * @returns {Function} Returns the new function.
@@ -42356,7 +42356,7 @@ var createCompounder = __webpack_require__(/*! ./_createCompounder */ "./node_mo
  * @static
  * @memberOf _
  * @since 3.1.0
- * @category String
+ * @categorie String
  * @param {string} [string=''] The string to convert.
  * @returns {string} Returns the start cased string.
  * @example
@@ -42397,7 +42397,7 @@ var baseClamp = __webpack_require__(/*! ./_baseClamp */ "./node_modules/lodash/_
  * @static
  * @memberOf _
  * @since 3.0.0
- * @category String
+ * @categorie String
  * @param {string} [string=''] The string to inspect.
  * @param {string} [target] The string to search for.
  * @param {number} [position=0] The position to search from.
@@ -42486,7 +42486,7 @@ module.exports = {
  * @static
  * @memberOf _
  * @since 4.13.0
- * @category Util
+ * @categorie Util
  * @returns {Array} Returns the new empty array.
  * @example
  *
@@ -42520,7 +42520,7 @@ module.exports = stubArray;
  * @static
  * @memberOf _
  * @since 4.13.0
- * @category Util
+ * @categorie Util
  * @returns {boolean} Returns `false`.
  * @example
  *
@@ -42549,7 +42549,7 @@ module.exports = stubFalse;
  * @static
  * @memberOf _
  * @since 4.13.0
- * @category Util
+ * @categorie Util
  * @returns {Object} Returns the new empty object.
  * @example
  *
@@ -42583,7 +42583,7 @@ module.exports = stubObject;
  * @static
  * @memberOf _
  * @since 4.13.0
- * @category Util
+ * @categorie Util
  * @returns {string} Returns the empty string.
  * @example
  *
@@ -42612,7 +42612,7 @@ module.exports = stubString;
  * @static
  * @memberOf _
  * @since 4.13.0
- * @category Util
+ * @categorie Util
  * @returns {boolean} Returns `true`.
  * @example
  *
@@ -42643,7 +42643,7 @@ var createMathOperation = __webpack_require__(/*! ./_createMathOperation */ "./n
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Math
+ * @categorie Math
  * @param {number} minuend The first number in a subtraction.
  * @param {number} subtrahend The second number in a subtraction.
  * @returns {number} Returns the difference.
@@ -42677,7 +42677,7 @@ var baseSum = __webpack_require__(/*! ./_baseSum */ "./node_modules/lodash/_base
  * @static
  * @memberOf _
  * @since 3.4.0
- * @category Math
+ * @categorie Math
  * @param {Array} array The array to iterate over.
  * @returns {number} Returns the sum.
  * @example
@@ -42714,7 +42714,7 @@ var baseIteratee = __webpack_require__(/*! ./_baseIteratee */ "./node_modules/lo
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Math
+ * @categorie Math
  * @param {Array} array The array to iterate over.
  * @param {Function} [iteratee=_.identity] The iteratee invoked per element.
  * @returns {number} Returns the sum.
@@ -42755,7 +42755,7 @@ var baseSlice = __webpack_require__(/*! ./_baseSlice */ "./node_modules/lodash/_
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Array
+ * @categorie Array
  * @param {Array} array The array to query.
  * @returns {Array} Returns the slice of `array`.
  * @example
@@ -42789,7 +42789,7 @@ var baseSlice = __webpack_require__(/*! ./_baseSlice */ "./node_modules/lodash/_
  * @static
  * @memberOf _
  * @since 0.1.0
- * @category Array
+ * @categorie Array
  * @param {Array} array The array to query.
  * @param {number} [n=1] The number of elements to take.
  * @param- {Object} [guard] Enables use as an iteratee for methods like `_.map`.
@@ -42837,7 +42837,7 @@ var baseSlice = __webpack_require__(/*! ./_baseSlice */ "./node_modules/lodash/_
  * @static
  * @memberOf _
  * @since 3.0.0
- * @category Array
+ * @categorie Array
  * @param {Array} array The array to query.
  * @param {number} [n=1] The number of elements to take.
  * @param- {Object} [guard] Enables use as an iteratee for methods like `_.map`.
@@ -42889,7 +42889,7 @@ var baseIteratee = __webpack_require__(/*! ./_baseIteratee */ "./node_modules/lo
  * @static
  * @memberOf _
  * @since 3.0.0
- * @category Array
+ * @categorie Array
  * @param {Array} array The array to query.
  * @param {Function} [predicate=_.identity] The function invoked per iteration.
  * @returns {Array} Returns the slice of `array`.
@@ -42945,7 +42945,7 @@ var baseIteratee = __webpack_require__(/*! ./_baseIteratee */ "./node_modules/lo
  * @static
  * @memberOf _
  * @since 3.0.0
- * @category Array
+ * @categorie Array
  * @param {Array} array The array to query.
  * @param {Function} [predicate=_.identity] The function invoked per iteration.
  * @returns {Array} Returns the slice of `array`.
@@ -42998,7 +42998,7 @@ module.exports = takeWhile;
  * @static
  * @memberOf _
  * @since 0.1.0
- * @category Seq
+ * @categorie Seq
  * @param {*} value The value to provide to `interceptor`.
  * @param {Function} interceptor The function to invoke.
  * @returns {*} Returns `value`.
@@ -43085,7 +43085,7 @@ var hasOwnProperty = objectProto.hasOwnProperty;
  * @static
  * @since 0.1.0
  * @memberOf _
- * @category String
+ * @categorie String
  * @param {string} [string=''] The template string.
  * @param {Object} [options={}] The options object.
  * @param {RegExp} [options.escape=_.templateSettings.escape]
@@ -43401,7 +43401,7 @@ var FUNC_ERROR_TEXT = 'Expected a function';
  * @static
  * @memberOf _
  * @since 0.1.0
- * @category Function
+ * @categorie Function
  * @param {Function} func The function to throttle.
  * @param {number} [wait=0] The number of milliseconds to throttle invocations to.
  * @param {Object} [options={}] The options object.
@@ -43460,7 +43460,7 @@ module.exports = throttle;
  * @static
  * @memberOf _
  * @since 3.0.0
- * @category Seq
+ * @categorie Seq
  * @param {*} value The value to provide to `interceptor`.
  * @param {Function} interceptor The function to invoke.
  * @returns {*} Returns the result of `interceptor`.
@@ -43511,7 +43511,7 @@ var nativeMin = Math.min;
  * @static
  * @since 0.1.0
  * @memberOf _
- * @category Util
+ * @categorie Util
  * @param {number} n The number of times to invoke `iteratee`.
  * @param {Function} [iteratee=_.identity] The function invoked per iteration.
  * @returns {Array} Returns the array of results.
@@ -43577,7 +43577,7 @@ var symIterator = Symbol ? Symbol.iterator : undefined;
  * @static
  * @since 0.1.0
  * @memberOf _
- * @category Lang
+ * @categorie Lang
  * @param {*} value The value to convert.
  * @returns {Array} Returns the converted array.
  * @example
@@ -43634,7 +43634,7 @@ var INFINITY = 1 / 0,
  * @static
  * @memberOf _
  * @since 4.12.0
- * @category Lang
+ * @categorie Lang
  * @param {*} value The value to convert.
  * @returns {number} Returns the converted number.
  * @example
@@ -43686,7 +43686,7 @@ var toFinite = __webpack_require__(/*! ./toFinite */ "./node_modules/lodash/toFi
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Lang
+ * @categorie Lang
  * @param {*} value The value to convert.
  * @returns {number} Returns the converted integer.
  * @example
@@ -43728,7 +43728,7 @@ module.exports = toInteger;
  * @name Symbol.iterator
  * @memberOf _
  * @since 4.0.0
- * @category Seq
+ * @categorie Seq
  * @returns {Object} Returns the wrapper object.
  * @example
  *
@@ -43784,7 +43784,7 @@ var MAX_ARRAY_LENGTH = 4294967295;
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Lang
+ * @categorie Lang
  * @param {*} value The value to convert.
  * @returns {number} Returns the converted integer.
  * @example
@@ -43826,7 +43826,7 @@ var toString = __webpack_require__(/*! ./toString */ "./node_modules/lodash/toSt
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category String
+ * @categorie String
  * @param {string} [string=''] The string to convert.
  * @returns {string} Returns the lower cased string.
  * @example
@@ -43883,7 +43883,7 @@ var freeParseInt = parseInt;
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Lang
+ * @categorie Lang
  * @param {*} value The value to process.
  * @returns {number} Returns the number.
  * @example
@@ -43945,7 +43945,7 @@ var createToPairs = __webpack_require__(/*! ./_createToPairs */ "./node_modules/
  * @memberOf _
  * @since 4.0.0
  * @alias entries
- * @category Object
+ * @categorie Object
  * @param {Object} object The object to query.
  * @returns {Array} Returns the key-value pairs.
  * @example
@@ -43986,7 +43986,7 @@ var createToPairs = __webpack_require__(/*! ./_createToPairs */ "./node_modules/
  * @memberOf _
  * @since 4.0.0
  * @alias entriesIn
- * @category Object
+ * @categorie Object
  * @param {Object} object The object to query.
  * @returns {Array} Returns the key-value pairs.
  * @example
@@ -44029,7 +44029,7 @@ var arrayMap = __webpack_require__(/*! ./_arrayMap */ "./node_modules/lodash/_ar
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Util
+ * @categorie Util
  * @param {*} value The value to convert.
  * @returns {Array} Returns the new property path array.
  * @example
@@ -44069,7 +44069,7 @@ var copyObject = __webpack_require__(/*! ./_copyObject */ "./node_modules/lodash
  * @static
  * @memberOf _
  * @since 3.0.0
- * @category Lang
+ * @categorie Lang
  * @param {*} value The value to convert.
  * @returns {Object} Returns the converted plain object.
  * @example
@@ -44115,7 +44115,7 @@ var MAX_SAFE_INTEGER = 9007199254740991;
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Lang
+ * @categorie Lang
  * @param {*} value The value to convert.
  * @returns {number} Returns the converted integer.
  * @example
@@ -44159,7 +44159,7 @@ var baseToString = __webpack_require__(/*! ./_baseToString */ "./node_modules/lo
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Lang
+ * @categorie Lang
  * @param {*} value The value to convert.
  * @returns {string} Returns the converted string.
  * @example
@@ -44198,7 +44198,7 @@ var toString = __webpack_require__(/*! ./toString */ "./node_modules/lodash/toSt
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category String
+ * @categorie String
  * @param {string} [string=''] The string to convert.
  * @returns {string} Returns the upper cased string.
  * @example
@@ -44251,7 +44251,7 @@ var arrayEach = __webpack_require__(/*! ./_arrayEach */ "./node_modules/lodash/_
  * @static
  * @memberOf _
  * @since 1.3.0
- * @category Object
+ * @categorie Object
  * @param {Object} object The object to iterate over.
  * @param {Function} [iteratee=_.identity] The function invoked per iteration.
  * @param {*} [accumulator] The custom accumulator value.
@@ -44320,7 +44320,7 @@ var reTrim = /^\s+|\s+$/g;
  * @static
  * @memberOf _
  * @since 3.0.0
- * @category String
+ * @categorie String
  * @param {string} [string=''] The string to trim.
  * @param {string} [chars=whitespace] The characters to trim.
  * @param- {Object} [guard] Enables use as an iteratee for methods like `_.map`.
@@ -44379,7 +44379,7 @@ var reTrimEnd = /\s+$/;
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category String
+ * @categorie String
  * @param {string} [string=''] The string to trim.
  * @param {string} [chars=whitespace] The characters to trim.
  * @param- {Object} [guard] Enables use as an iteratee for methods like `_.map`.
@@ -44433,7 +44433,7 @@ var reTrimStart = /^\s+/;
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category String
+ * @categorie String
  * @param {string} [string=''] The string to trim.
  * @param {string} [chars=whitespace] The characters to trim.
  * @param- {Object} [guard] Enables use as an iteratee for methods like `_.map`.
@@ -44497,7 +44497,7 @@ var reFlags = /\w*$/;
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category String
+ * @categorie String
  * @param {string} [string=''] The string to truncate.
  * @param {Object} [options={}] The options object.
  * @param {number} [options.length=30] The maximum string length.
@@ -44603,7 +44603,7 @@ var ary = __webpack_require__(/*! ./ary */ "./node_modules/lodash/ary.js");
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Function
+ * @categorie Function
  * @param {Function} func The function to cap arguments for.
  * @returns {Function} Returns the new capped function.
  * @example
@@ -44645,7 +44645,7 @@ var reEscapedHtml = /&(?:amp|lt|gt|quot|#39);/g,
  * @static
  * @memberOf _
  * @since 0.6.0
- * @category String
+ * @categorie String
  * @param {string} [string=''] The string to unescape.
  * @returns {string} Returns the unescaped string.
  * @example
@@ -44685,7 +44685,7 @@ var baseFlatten = __webpack_require__(/*! ./_baseFlatten */ "./node_modules/loda
  * @static
  * @memberOf _
  * @since 0.1.0
- * @category Array
+ * @categorie Array
  * @param {...Array} [arrays] The arrays to inspect.
  * @returns {Array} Returns the new array of combined values.
  * @example
@@ -44726,7 +44726,7 @@ var baseFlatten = __webpack_require__(/*! ./_baseFlatten */ "./node_modules/loda
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Array
+ * @categorie Array
  * @param {...Array} [arrays] The arrays to inspect.
  * @param {Function} [iteratee=_.identity] The iteratee invoked per element.
  * @returns {Array} Returns the new array of combined values.
@@ -44774,7 +44774,7 @@ var baseFlatten = __webpack_require__(/*! ./_baseFlatten */ "./node_modules/loda
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Array
+ * @categorie Array
  * @param {...Array} [arrays] The arrays to inspect.
  * @param {Function} [comparator] The comparator invoked per element.
  * @returns {Array} Returns the new array of combined values.
@@ -44816,7 +44816,7 @@ var baseUniq = __webpack_require__(/*! ./_baseUniq */ "./node_modules/lodash/_ba
  * @static
  * @memberOf _
  * @since 0.1.0
- * @category Array
+ * @categorie Array
  * @param {Array} array The array to inspect.
  * @returns {Array} Returns the new duplicate free array.
  * @example
@@ -44853,7 +44853,7 @@ var baseIteratee = __webpack_require__(/*! ./_baseIteratee */ "./node_modules/lo
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Array
+ * @categorie Array
  * @param {Array} array The array to inspect.
  * @param {Function} [iteratee=_.identity] The iteratee invoked per element.
  * @returns {Array} Returns the new duplicate free array.
@@ -44893,7 +44893,7 @@ var baseUniq = __webpack_require__(/*! ./_baseUniq */ "./node_modules/lodash/_ba
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Array
+ * @categorie Array
  * @param {Array} array The array to inspect.
  * @param {Function} [comparator] The comparator invoked per element.
  * @returns {Array} Returns the new duplicate free array.
@@ -44932,7 +44932,7 @@ var idCounter = 0;
  * @static
  * @since 0.1.0
  * @memberOf _
- * @category Util
+ * @categorie Util
  * @param {string} [prefix=''] The value to prefix the ID with.
  * @returns {string} Returns the unique ID.
  * @example
@@ -44970,7 +44970,7 @@ var baseUnset = __webpack_require__(/*! ./_baseUnset */ "./node_modules/lodash/_
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Object
+ * @categorie Object
  * @param {Object} object The object to modify.
  * @param {Array|string} path The path of the property to unset.
  * @returns {boolean} Returns `true` if the property is deleted, else `false`.
@@ -45022,7 +45022,7 @@ var nativeMax = Math.max;
  * @static
  * @memberOf _
  * @since 1.2.0
- * @category Array
+ * @categorie Array
  * @param {Array} array The array of grouped elements to process.
  * @returns {Array} Returns the new array of regrouped elements.
  * @example
@@ -45073,7 +45073,7 @@ var apply = __webpack_require__(/*! ./_apply */ "./node_modules/lodash/_apply.js
  * @static
  * @memberOf _
  * @since 3.8.0
- * @category Array
+ * @categorie Array
  * @param {Array} array The array of grouped elements to process.
  * @param {Function} [iteratee=_.identity] The function to combine
  *  regrouped values.
@@ -45124,7 +45124,7 @@ var baseUpdate = __webpack_require__(/*! ./_baseUpdate */ "./node_modules/lodash
  * @static
  * @memberOf _
  * @since 4.6.0
- * @category Object
+ * @categorie Object
  * @param {Object} object The object to modify.
  * @param {Array|string} path The path of the property to set.
  * @param {Function} updater The function to produce the updated value.
@@ -45171,7 +45171,7 @@ var baseUpdate = __webpack_require__(/*! ./_baseUpdate */ "./node_modules/lodash
  * @static
  * @memberOf _
  * @since 4.6.0
- * @category Object
+ * @categorie Object
  * @param {Object} object The object to modify.
  * @param {Array|string} path The path of the property to set.
  * @param {Function} updater The function to produce the updated value.
@@ -45209,7 +45209,7 @@ var createCompounder = __webpack_require__(/*! ./_createCompounder */ "./node_mo
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category String
+ * @categorie String
  * @param {string} [string=''] The string to convert.
  * @returns {string} Returns the upper cased string.
  * @example
@@ -45247,7 +45247,7 @@ var createCaseFirst = __webpack_require__(/*! ./_createCaseFirst */ "./node_modu
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category String
+ * @categorie String
  * @param {string} [string=''] The string to convert.
  * @returns {string} Returns the converted string.
  * @example
@@ -45340,7 +45340,7 @@ var baseValues = __webpack_require__(/*! ./_baseValues */ "./node_modules/lodash
  * @static
  * @since 0.1.0
  * @memberOf _
- * @category Object
+ * @categorie Object
  * @param {Object} object The object to query.
  * @returns {Array} Returns the array of property values.
  * @example
@@ -45386,7 +45386,7 @@ var baseValues = __webpack_require__(/*! ./_baseValues */ "./node_modules/lodash
  * @static
  * @memberOf _
  * @since 3.0.0
- * @category Object
+ * @categorie Object
  * @param {Object} object The object to query.
  * @returns {Array} Returns the array of property values.
  * @example
@@ -45431,7 +45431,7 @@ var baseDifference = __webpack_require__(/*! ./_baseDifference */ "./node_module
  * @static
  * @memberOf _
  * @since 0.1.0
- * @category Array
+ * @categorie Array
  * @param {Array} array The array to inspect.
  * @param {...*} [values] The values to exclude.
  * @returns {Array} Returns the new array of filtered values.
@@ -45470,7 +45470,7 @@ var asciiWords = __webpack_require__(/*! ./_asciiWords */ "./node_modules/lodash
  * @static
  * @memberOf _
  * @since 3.0.0
- * @category String
+ * @categorie String
  * @param {string} [string=''] The string to inspect.
  * @param {RegExp|string} [pattern] The pattern to match words.
  * @param- {Object} [guard] Enables use as an iteratee for methods like `_.map`.
@@ -45517,7 +45517,7 @@ var castFunction = __webpack_require__(/*! ./_castFunction */ "./node_modules/lo
  * @static
  * @memberOf _
  * @since 0.1.0
- * @category Function
+ * @categorie Function
  * @param {*} value The value to wrap.
  * @param {Function} [wrapper=identity] The wrapper function.
  * @returns {Function} Returns the new function.
@@ -45559,7 +45559,7 @@ var LazyWrapper = __webpack_require__(/*! ./_LazyWrapper */ "./node_modules/loda
  * @name at
  * @memberOf _
  * @since 1.0.0
- * @category Seq
+ * @categorie Seq
  * @param {...(string|string[])} [paths] The property paths to pick.
  * @returns {Object} Returns the new `lodash` wrapper instance.
  * @example
@@ -45613,7 +45613,7 @@ var chain = __webpack_require__(/*! ./chain */ "./node_modules/lodash/chain.js")
  * @name chain
  * @memberOf _
  * @since 0.1.0
- * @category Seq
+ * @categorie Seq
  * @returns {Object} Returns the new `lodash` wrapper instance.
  * @example
  *
@@ -45756,7 +45756,7 @@ var hasOwnProperty = objectProto.hasOwnProperty;
  *
  * @name _
  * @constructor
- * @category Seq
+ * @categorie Seq
  * @param {*} value The value to wrap in a `lodash` instance.
  * @returns {Object} Returns the new `lodash` wrapper instance.
  * @example
@@ -45821,7 +45821,7 @@ var LazyWrapper = __webpack_require__(/*! ./_LazyWrapper */ "./node_modules/loda
  * @name reverse
  * @memberOf _
  * @since 0.1.0
- * @category Seq
+ * @categorie Seq
  * @returns {Object} Returns the new `lodash` wrapper instance.
  * @example
  *
@@ -45872,7 +45872,7 @@ var baseWrapperValue = __webpack_require__(/*! ./_baseWrapperValue */ "./node_mo
  * @memberOf _
  * @since 0.1.0
  * @alias toJSON, valueOf
- * @category Seq
+ * @categorie Seq
  * @returns {*} Returns the resolved unwrapped value.
  * @example
  *
@@ -45909,7 +45909,7 @@ var arrayFilter = __webpack_require__(/*! ./_arrayFilter */ "./node_modules/loda
  * @static
  * @memberOf _
  * @since 2.4.0
- * @category Array
+ * @categorie Array
  * @param {...Array} [arrays] The arrays to inspect.
  * @returns {Array} Returns the new array of filtered values.
  * @see _.difference, _.without
@@ -45951,7 +45951,7 @@ var arrayFilter = __webpack_require__(/*! ./_arrayFilter */ "./node_modules/loda
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Array
+ * @categorie Array
  * @param {...Array} [arrays] The arrays to inspect.
  * @param {Function} [iteratee=_.identity] The iteratee invoked per element.
  * @returns {Array} Returns the new array of filtered values.
@@ -45999,7 +45999,7 @@ var arrayFilter = __webpack_require__(/*! ./_arrayFilter */ "./node_modules/loda
  * @static
  * @memberOf _
  * @since 4.0.0
- * @category Array
+ * @categorie Array
  * @param {...Array} [arrays] The arrays to inspect.
  * @param {Function} [comparator] The comparator invoked per element.
  * @returns {Array} Returns the new array of filtered values.
@@ -46040,7 +46040,7 @@ var baseRest = __webpack_require__(/*! ./_baseRest */ "./node_modules/lodash/_ba
  * @static
  * @memberOf _
  * @since 0.1.0
- * @category Array
+ * @categorie Array
  * @param {...Array} [arrays] The arrays to process.
  * @returns {Array} Returns the new array of grouped elements.
  * @example
@@ -46072,7 +46072,7 @@ var assignValue = __webpack_require__(/*! ./_assignValue */ "./node_modules/loda
  * @static
  * @memberOf _
  * @since 0.4.0
- * @category Array
+ * @categorie Array
  * @param {Array} [props=[]] The property identifiers.
  * @param {Array} [values=[]] The property values.
  * @returns {Object} Returns the new object.
@@ -46106,7 +46106,7 @@ var baseSet = __webpack_require__(/*! ./_baseSet */ "./node_modules/lodash/_base
  * @static
  * @memberOf _
  * @since 4.1.0
- * @category Array
+ * @categorie Array
  * @param {Array} [props=[]] The property identifiers.
  * @param {Array} [values=[]] The property values.
  * @returns {Object} Returns the new object.
@@ -46142,7 +46142,7 @@ var baseRest = __webpack_require__(/*! ./_baseRest */ "./node_modules/lodash/_ba
  * @static
  * @memberOf _
  * @since 3.8.0
- * @category Array
+ * @categorie Array
  * @param {...Array} [arrays] The arrays to process.
  * @param {Function} [iteratee=_.identity] The function to combine
  *  grouped values.

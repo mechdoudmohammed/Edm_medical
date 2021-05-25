@@ -3098,7 +3098,7 @@ carrot:
   search:
     terms:
       - bugs bunny
-      - orange
+      - #4caf50
       - vegan
       - vegetable
   styles:

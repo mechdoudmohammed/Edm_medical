@@ -78,8 +78,8 @@
 					<!-- Start Single Service -->
 					<div class="single-service">
 						<i class="ti-rocket"></i>
-						<h4>LIVRAISON GRATUITE</h4>
-						<p>Commandes de plus de 2000DH</p>
+						<h4>LIVRAISON RAPIDE</h4>
+						<p>100%</p>
 					</div>
 					<!-- End Single Service -->
 				</div>
@@ -184,7 +184,7 @@
 											<div class="col-lg-6 col-12">
 												<h5 class="title">Color</h5>
 												<select>
-													<option selected="selected">orange</option>
+													<option selected="selected">#4caf50</option>
 													<option>purple</option>
 													<option>black</option>
 													<option>pink</option>
