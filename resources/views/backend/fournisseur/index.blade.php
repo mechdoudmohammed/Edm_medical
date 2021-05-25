@@ -18,26 +18,26 @@
         <table class="table table-bordered" id="banner-dataTable" width="100%" cellspacing="0">
           <thead>
             <tr>
-              <th>id</th>
-              <th>nom</th>
-              <th>adresse</th>
-              <th>email</th>
-              <th>telephone</th>
-              <th>description</th>
-              <th>statut</th>
-              <th>Action</th>
+              <th>Id</th>
+              <th>Nom</th>
+              <th>Adresse</th>
+              <th>Email</th>
+              <th>Telephone</th>
+              <th>Description</th>
+              <th>Statut</th>
+              <th>Operation</th>
             </tr>
           </thead>
           <tfoot>
             <tr>
-            <th>id</th>
-              <th>nom</th>
-              <th>adresse</th>
-              <th>email</th>
-              <th>telephone</th>
-              <th>description</th>
-              <th>statut</th>
-              <th>Action</th>
+            <th>Id</th>
+              <th>Nom</th>
+              <th>Adresse</th>
+              <th>Email</th>
+              <th>Telephone</th>
+              <th>Description</th>
+              <th>Statut</th>
+              <th>Operation</th>
               </tr>
           </tfoot>
           <tbody>
@@ -57,40 +57,21 @@
                         @endif
                     </td>
                     <td>
-                        <a href="{{route('fournisseur.edit',$fournisseur->id)}}" class="btn btn-primary btn-sm float-left mr-1" style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" title="edit" data-placement="bottom"><i class="fas fa-edit"></i></a>
+                        <a href="{{route('fournisseur.edit',$fournisseur->id)}}" class="btn btn-primary btn-sm float-left mr-1" style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" title="Modifier" data-placement="bottom"><i class="fas fa-edit"></i></a>
                         <form method="POST" action="{{route('fournisseur.destroy',[$fournisseur->id])}}">
                           @csrf 
                           @method('delete')
-                              <button class="btn btn-danger btn-sm dltBtn" data-id={{$fournisseur->id}} style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class="fas fa-trash-alt"></i></button>
+                              <button class="btn btn-danger btn-sm dltBtn" data-id={{$fournisseur->id}} style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" data-placement="bottom" title="Suprimer"><i class="fas fa-trash-alt"></i></button>
                         </form>
                     </td>
-                    {{-- Delete Modal --}}
-                    {{-- <div class="modal fade" id="delModal{{$user->id}}" tabindex="-1" role="dialog" aria-labelledby="#delModal{{$user->id}}Label" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h5 class="modal-title" id="#delModal{{$user->id}}Label">Delete user</h5>
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                              </button>
-                            </div>
-                            <div class="modal-body">
-                              <form method="post" action="{{ route('banners.destroy',$user->id) }}">
-                                @csrf 
-                                @method('delete')
-                                <button type="submit" class="btn btn-danger" style="margin:auto; text-align:center">Parmanent delete user</button>
-                              </form>
-                            </div>
-                          </div>
-                        </div>
-                    </div> --}}
+            
                 </tr>  
             @endforeach
           </tbody>
         </table>
         <span style="float:right">{{$fournisseurs->links()}}</span>
         @else
-          <h6 class="text-center">No fournisseurs found!!! Please create fournisseur</h6>
+          <h6 class="text-center">Aucun fournisseur trouvé !!! Veuillez créer un fournisseur</h6>
         @endif
       </div>
     </div>
@@ -153,7 +134,7 @@
               // alert(dataID);
               e.preventDefault();
               swal({
-                    title: "Are you sure?",
+                    title: "Êtes-vous sûr?",
                     text: "l'enregistrement sera supprimé",
                     icon: "warning",
                     buttons: true,
@@ -163,7 +144,7 @@
                     if (willDelete) {
                        form.submit();
                     } else {
-                        swal("Your data is safe!");
+                        swal("Vos données sont en sécurité!");
                     }
                 });
           })

@@ -32,6 +32,7 @@ class LivreurController extends Controller
         $this->validate($request,[
             'nom'=>'string|required',
             'prenom'=>'string|required',
+            'photo'=>'required',
             'telephone'=>'string|required',
             'email'=>'string|required',
             'password'=>'string|required',
@@ -41,6 +42,12 @@ class LivreurController extends Controller
             'numero_permis'=>'string|required',
             'status'=>'required|in:active,inactive'
         ]);
+         //enregister la photo
+         $file_extension=$request -> photo -> getClientOriginalExtension();
+         $file_name = time().".".$file_extension;
+         $path='backend/img/livreur';
+         $request->photo -> move($path,$file_name);
+         $data['photo']=$file_name;
         $data=$request->all();
     //   return $data;
         

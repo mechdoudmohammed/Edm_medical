@@ -9,8 +9,8 @@
          </div>
      </div>
     <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary float-left">Coupon List</h6>
-      <a href="{{route('coupon.create')}}" class="btn btn-primary btn-sm float-right" data-toggle="tooltip" data-placement="bottom" title="Add User"><i class="fas fa-plus"></i> Add Coupon</a>
+      <h6 class="m-0 font-weight-bold text-primary float-left">Listes des Coupon</h6>
+      <a href="{{route('coupon.create')}}" class="btn btn-primary btn-sm float-right" data-toggle="tooltip" data-placement="bottom" title="Add User"><i class="fas fa-plus"></i> Ajouter Coupon</a>
     </div>
     <div class="card-body">
       <div class="table-responsive">
@@ -18,22 +18,22 @@
         <table class="table table-bordered" id="banner-dataTable" width="100%" cellspacing="0">
           <thead>
             <tr>
-              <th>S.N.</th>
-              <th>Coupon Code</th>
+              <th>ID</th>
+              <th>Code Coupon </th>
               <th>Type</th>
-              <th>Value</th>
-              <th>Status</th>
-              <th>Action</th>
+              <th>Valeur</th>
+              <th>Statut</th>
+              <th>Operation</th>
             </tr>
           </thead>
           <tfoot>
             <tr>
-                <th>S.N.</th>
-                <th>Coupon Code</th>
-                <th>Type</th>
-                <th>Value</th>
-                <th>Status</th>
-                <th>Action</th>
+            <th>ID</th>
+              <th>Code Coupon </th>
+              <th>Type</th>
+              <th>Valeur</th>
+              <th>Statut</th>
+              <th>Operation</th>
               </tr>
           </tfoot>
           <tbody>
@@ -50,7 +50,7 @@
                     </td>
                     <td>
                         @if($coupon->type=='fixed')
-                            ${{number_format($coupon->value,2)}}
+                           {{number_format($coupon->value,2)}} Dhs
                         @else
                             {{$coupon->value}}%
                         @endif</td>
@@ -62,40 +62,21 @@
                         @endif
                     </td>
                     <td>
-                        <a href="{{route('coupon.edit',$coupon->id)}}" class="btn btn-primary btn-sm float-left mr-1" style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" title="edit" data-placement="bottom"><i class="fas fa-edit"></i></a>
+                        <a href="{{route('coupon.edit',$coupon->id)}}" class="btn btn-primary btn-sm float-left mr-1" style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" title="Modifier" data-placement="bottom"><i class="fas fa-edit"></i></a>
                         <form method="POST" action="{{route('coupon.destroy',[$coupon->id])}}">
                           @csrf 
                           @method('delete')
-                              <button class="btn btn-danger btn-sm dltBtn" data-id={{$coupon->id}} style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class="fas fa-trash-alt"></i></button>
+                              <button class="btn btn-danger btn-sm dltBtn" data-id={{$coupon->id}} style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" data-placement="bottom" title="Suprimer"><i class="fas fa-trash-alt"></i></button>
                         </form>
                     </td>
-                    {{-- Delete Modal --}}
-                    {{-- <div class="modal fade" id="delModal{{$user->id}}" tabindex="-1" role="dialog" aria-labelledby="#delModal{{$user->id}}Label" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h5 class="modal-title" id="#delModal{{$user->id}}Label">Delete user</h5>
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                              </button>
-                            </div>
-                            <div class="modal-body">
-                              <form method="post" action="{{ route('banners.destroy',$user->id) }}">
-                                @csrf 
-                                @method('delete')
-                                <button type="submit" class="btn btn-danger" style="margin:auto; text-align:center">Parmanent delete user</button>
-                              </form>
-                            </div>
-                          </div>
-                        </div>
-                    </div> --}}
+                   
                 </tr>  
             @endforeach
           </tbody>
         </table>
         <span style="float:right">{{$coupons->links()}}</span>
         @else
-          <h6 class="text-center">No Coupon found!!! Please create coupon</h6>
+          <h6 class="text-center">Aucun coupon trouvé !!! Veuillez créer un coupon</h6>
         @endif
       </div>
     </div>
@@ -158,7 +139,7 @@
               // alert(dataID);
               e.preventDefault();
               swal({
-                    title: "Are you sure?",
+                    title: "Êtes-vous sûr?",
                     text: "l'enregistrement sera supprimé",
                     icon: "warning",
                     buttons: true,

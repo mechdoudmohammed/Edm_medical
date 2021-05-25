@@ -22,7 +22,7 @@
               <th>Title</th>
               <th>Categorie</th>
               <th>Tag</th>
-              <th>Author</th>
+              <th>Auteur</th>
               <th>Photo</th>
               <th>Status</th>
               <th>Action</th>
@@ -34,7 +34,7 @@
               <th>Title</th>
               <th>Categorie</th>
               <th>Tag</th>
-              <th>Author</th>
+              <th>Auteur</th>
               <th>Photo</th>
               <th>Status</th>
               <th>Action</th>
@@ -151,7 +151,7 @@
               // alert(dataID);
               e.preventDefault();
               swal({
-                    title: "Are you sure?",
+                    title: "Êtes-vous sûr?",
                     text: "l'enregistrement sera supprimé",
                     icon: "warning",
                     buttons: true,

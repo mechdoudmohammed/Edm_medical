@@ -9,8 +9,8 @@
          </div>
      </div>
     <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary float-left">Categorie Lists</h6>
-      <a href="{{route('categorie.create')}}" class="btn btn-primary btn-sm float-right" data-toggle="tooltip" data-placement="bottom" title="Add User"><i class="fas fa-plus"></i> Add Categorie</a>
+      <h6 class="m-0 font-weight-bold text-primary float-left">Listes de catégories</h6>
+      <a href="{{route('categorie.create')}}" class="btn btn-primary btn-sm float-right" data-toggle="tooltip" data-placement="bottom" title="Add User"><i class="fas fa-plus"></i> Ajouter Categorie</a>
     </div>
     <div class="card-body">
       <div class="table-responsive">
@@ -18,26 +18,26 @@
         <table class="table table-bordered" id="banner-dataTable" width="100%" cellspacing="0">
           <thead>
             <tr>
-              <th>S.N.</th>
-              <th>Title</th>
-              <th>Slug</th>
-              <th>Is Parent</th>
-              <th>Parent Categorie</th>
+              <th>Id</th>
+              <th>Titre</th>
+              <th>Sous_titre</th>
+              <th>Cat_mére</th>
+              <th>Categorie mére</th>
               <th>Photo</th>
-              <th>Status</th>
-              <th>Action</th>
+              <th>Statut</th>
+              <th>Operation</th>
             </tr>
           </thead>
           <tfoot>
             <tr>
-              <th>S.N.</th>
-              <th>Title</th>
-              <th>Slug</th>
-              <th>Is Parent</th>
-              <th>Parent Categorie</th>
+            <th>Id</th>
+              <th>Titre</th>
+              <th>Sous_titre</th>
+              <th>Cat_mére</th>
+              <th>Categorie mére</th>
               <th>Photo</th>
-              <th>Status</th>
-              <th>Action</th>
+              <th>Statut</th>
+              <th>Operation</th>
             </tr>
           </tfoot>
           <tbody>
@@ -80,26 +80,7 @@
                           <button class="btn btn-danger btn-sm dltBtn" data-id={{$categorie->id}} style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class="fas fa-trash-alt"></i></button>
                         </form>
                     </td>
-                    {{-- Delete Modal --}}
-                    {{-- <div class="modal fade" id="delModal{{$user->id}}" tabindex="-1" role="dialog" aria-labelledby="#delModal{{$user->id}}Label" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h5 class="modal-title" id="#delModal{{$user->id}}Label">Delete user</h5>
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                              </button>
-                            </div>
-                            <div class="modal-body">
-                              <form method="post" action="{{ route('categories.destroy',$user->id) }}">
-                                @csrf
-                                @method('delete')
-                                <button type="submit" class="btn btn-danger" style="margin:auto; text-align:center">Parmanent delete user</button>
-                              </form>
-                            </div>
-                          </div>
-                        </div>
-                    </div> --}}
+                    
                 </tr>
             @endforeach
           </tbody>
@@ -162,7 +143,7 @@
               // alert(dataID);
               e.preventDefault();
               swal({
-                    title: "Are you sure?",
+                    title: "Êtes-vous sûr?",
                     text: "Once deleted, you will not be able to recover this data!",
                     icon: "warning",
                     buttons: true,

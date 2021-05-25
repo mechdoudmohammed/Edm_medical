@@ -1,5 +1,5 @@
 @extends('backend.layouts.master')
-@section('title','EDM-Medical || Banner Page')
+@section('title','EDM-Medical || bannières Page')
 @section('main-content')
  <!-- DataTales Example -->
  <div class="card shadow mb-4">
@@ -9,8 +9,8 @@
          </div>
      </div>
     <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary float-left">Banners List</h6>
-      <a href="{{route('banner.create')}}" class="btn btn-primary btn-sm float-right" data-toggle="tooltip" data-placement="bottom" title="Add User"><i class="fas fa-plus"></i> Add Banner</a>
+      <h6 class="m-0 font-weight-bold text-primary float-left">Liste des bannières</h6>
+      <a href="{{route('banner.create')}}" class="btn btn-primary btn-sm float-right" data-toggle="tooltip" data-placement="bottom" title="Add User"><i class="fas fa-plus"></i> Ajouter bannière</a>
     </div>
     <div class="card-body">
       <div class="table-responsive">
@@ -18,22 +18,22 @@
         <table class="table table-bordered" id="banner-dataTable" width="100%" cellspacing="0">
           <thead>
             <tr>
-              <th>S.N.</th>
-              <th>Title</th>
-              <th>Slug</th>
+              <th>ID</th>
+              <th>Titre</th>
+              <th>Sous_titre</th>
               <th>Photo</th>
-              <th>Status</th>
-              <th>Action</th>
+              <th>Statut</th>
+              <th>Operation</th>
             </tr>
           </thead>
           <tfoot>
             <tr>
-              <th>S.N.</th>
-              <th>Title</th>
-              <th>Slug</th>
+            <th>ID</th>
+              <th>Titre</th>
+              <th>Sous_titre</th>
               <th>Photo</th>
-              <th>Status</th>
-              <th>Action</th>
+              <th>Statut</th>
+              <th>Operation</th>
               </tr>
           </tfoot>
           <tbody>
@@ -44,7 +44,7 @@
                     <td>{{$banner->slug}}</td>
                     <td>
                         @if($banner->photo)
-                            <img src="{{$banner->photo}}" class="img-fluid zoom" style="max-width:80px" alt="{{$banner->photo}}">
+                            <img src="/Edm_medical\public\backend\img\bannière\{{$banner->photo}}" class="img-fluid zoom" style="max-width:80px" alt="/Edm_medical\public\backend\img\bannière\{{$banner->photo}}">
                         @else
                             <img src="{{asset('backend/img/thumbnail-default.jpg')}}" class="img-fluid zoom" style="max-width:100%" alt="avatar.png">
                         @endif
@@ -65,32 +65,14 @@
                         </form>
                     </td>
                     {{-- Delete Modal --}}
-                    {{-- <div class="modal fade" id="delModal{{$user->id}}" tabindex="-1" role="dialog" aria-labelledby="#delModal{{$user->id}}Label" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h5 class="modal-title" id="#delModal{{$user->id}}Label">Delete user</h5>
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                              </button>
-                            </div>
-                            <div class="modal-body">
-                              <form method="post" action="{{ route('banners.destroy',$user->id) }}">
-                                @csrf 
-                                @method('delete')
-                                <button type="submit" class="btn btn-danger" style="margin:auto; text-align:center">Parmanent delete user</button>
-                              </form>
-                            </div>
-                          </div>
-                        </div>
-                    </div> --}}
+                 
                 </tr>  
             @endforeach
           </tbody>
         </table>
         <span style="float:right">{{$banners->links()}}</span>
         @else
-          <h6 class="text-center">No banners found!!! Please create banner</h6>
+          <h6 class="text-center">Aucune bannière trouvée !!! Veuillez créer une bannière</h6>
         @endif
       </div>
     </div>
@@ -153,7 +135,7 @@
               // alert(dataID);
               e.preventDefault();
               swal({
-                    title: "Are you sure?",
+                    title: "Êtes-vous sûr?",
                     text: "l'enregistrement sera supprimé",
                     icon: "warning",
                     buttons: true,

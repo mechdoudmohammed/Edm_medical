@@ -3,13 +3,13 @@
 @section('main-content')
 
 <div class="card">
-    <h5 class="card-header">Edit Categorie</h5>
+    <h5 class="card-header">Modifier Categorie</h5>
     <div class="card-body">
       <form method="post" action="{{route('categorie.update',$categorie->id)}}">
         @csrf
         @method('PATCH')
         <div class="form-group">
-          <label for="inputTitle" class="col-form-label">Title <span class="text-danger">*</span></label>
+          <label for="inputTitle" class="col-form-label">Titre <span class="text-danger">*</span></label>
           <input id="inputTitle" type="text" name="title" placeholder="Enter title"  value="{{$categorie->title}}" class="form-control">
           @error('title')
           <span class="text-danger">{{$message}}</span>
@@ -17,7 +17,7 @@
         </div>
 
         <div class="form-group">
-          <label for="summary" class="col-form-label">Summary</label>
+          <label for="summary" class="col-form-label">Résumé</label>
           <textarea class="form-control" id="summary" name="summary">{{$categorie->summary}}</textarea>
           @error('summary')
           <span class="text-danger">{{$message}}</span>
@@ -25,8 +25,8 @@
         </div>
 
         <div class="form-group">
-          <label for="is_parent">Is Parent</label><br>
-          <input type="checkbox" name='is_parent' id='is_parent' value='{{$categorie->is_parent}}' {{(($categorie->is_parent==1)? 'checked' : '')}}> Yes
+          <label for="is_parent">Catégorie mère?</label><br>
+          <input type="checkbox" name='is_parent' id='is_parent' value='{{$categorie->is_parent}}' {{(($categorie->is_parent==1)? 'checked' : '')}}> Oui
         </div>
         {{-- {{$parent_cats}} --}}
         {{-- {{$categorie}} --}}
@@ -42,21 +42,20 @@
           </select>
         </div>
 
+
         <div class="form-group">
-          <label for="inputPhoto" class="col-form-label">Photo</label>
-          <div class="input-group">
-              <span class="input-group-btn">
-                  <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
-                  <i class="fa fa-picture-o"></i> Choose
-                  </a>
-              </span>
-          <input id="thumbnail" class="form-control" type="text" name="photo" value="..\backend\img\{{$categorie->photo}}">
-        </div>
+              <label for="inputPhoto" class="col-form-label">Photo</label>
+              <div class="input-group">
+             
+                  <input id="thumbnail" class="form-control" type="file" name="photo" value="..\backend\img\{{$categorie->photo}}">
+              </div>
         <div id="holder" style="margin-top:15px;max-height:100px;"></div>
           @error('photo')
           <span class="text-danger">{{$message}}</span>
           @enderror
         </div>
+
+    
 
         <div class="form-group">
           <label for="status" class="col-form-label">Status <span class="text-danger">*</span></label>

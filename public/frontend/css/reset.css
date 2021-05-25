@@ -1,7 +1,7 @@
 /* =====================================
 Template Name: EDM Medical
-Author Name: Naimur Rahman
-Author URI: http://www.wpthemesgrid.com/
+Auteur Name: Naimur Rahman
+Auteur URI: http://www.wpthemesgrid.com/
 Description: EDM Medical - eCommerce HTML5 Template.
 Version:1.0
 ========================================*/

@@ -21,8 +21,8 @@
               <th>ID</th>
               <th>Type</th>
               <th>Prix</th>
-              <th>Status</th>
-              <th>Action</th>
+              <th>Statut</th>
+              <th>Operation</th>
             </tr>
           </thead>
           <tfoot>
@@ -30,8 +30,8 @@
               <th>ID</th>
               <th>Type</th>
               <th>Prix</th>
-              <th>Status</th>
-              <th>Action</th>
+              <th>Statut</th>
+              <th>Operation</th>
               </tr>
           </tfoot>
           <tbody>
@@ -48,40 +48,21 @@
                         @endif
                     </td>
                     <td>
-                        <a href="{{route('livraison.edit',$livraison->id)}}" class="btn btn-primary btn-sm float-left mr-1" style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" title="edit" data-placement="bottom"><i class="fas fa-edit"></i></a>
+                        <a href="{{route('livraison.edit',$livraison->id)}}" class="btn btn-primary btn-sm float-left mr-1" style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" title="Modifier" data-placement="bottom"><i class="fas fa-edit"></i></a>
                         <form method="POST" action="{{route('livraison.destroy',[$livraison->id])}}">
                           @csrf 
                           @method('delete')
-                              <button class="btn btn-danger btn-sm dltBtn" data-id={{$livraison->id}} style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class="fas fa-trash-alt"></i></button>
+                              <button class="btn btn-danger btn-sm dltBtn" data-id={{$livraison->id}} style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" data-placement="bottom" title="Supprimer"><i class="fas fa-trash-alt"></i></button>
                         </form>
                     </td>
-                    {{-- Delete Modal --}}
-                    {{-- <div class="modal fade" id="delModal{{$user->id}}" tabindex="-1" role="dialog" aria-labelledby="#delModal{{$user->id}}Label" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h5 class="modal-title" id="#delModal{{$user->id}}Label">Delete user</h5>
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                              </button>
-                            </div>
-                            <div class="modal-body">
-                              <form method="post" action="{{ route('banners.destroy',$user->id) }}">
-                                @csrf 
-                                @method('delete')
-                                <button type="submit" class="btn btn-danger" style="margin:auto; text-align:center">Parmanent delete user</button>
-                              </form>
-                            </div>
-                          </div>
-                        </div>
-                    </div> --}}
+                    
                 </tr>  
             @endforeach
           </tbody>
         </table>
         <span style="float:right">{{$livraisons->links()}}</span>
         @else
-          <h6 class="text-center">No livraisons found!!! Please create livraison</h6>
+          <h6 class="text-center">Aucun livraisons trouvé !!! Veuillez créer la livraison</h6>
         @endif
       </div>
     </div>
@@ -144,7 +125,7 @@
               // alert(dataID);
               e.preventDefault();
               swal({
-                    title: "Are you sure?",
+                    title: "Êtes-vous sûr?",
                     text: "l'enregistrement sera supprimé",
                     icon: "warning",
                     buttons: true,
