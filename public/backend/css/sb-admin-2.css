@@ -4751,7 +4751,7 @@ input[type="button"].btn-block {
   padding: 0.5rem 0.75rem;
   margin-left: -1px;
   line-height: 1.25;
-  color: #4e73df;
+  color: #4caf50;
   background-color: #fff;
   border: 1px solid #dddfeb;
 }
@@ -4784,8 +4784,8 @@ input[type="button"].btn-block {
 .page-item.active .page-link {
   z-index: 3;
   color: #fff;
-  background-color: #4e73df;
-  border-color: #4e73df;
+  background-color: #4caf50;
+  border-color: #4caf50;
 }
 
 .page-item.disabled .page-link {

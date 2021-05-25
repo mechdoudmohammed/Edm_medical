@@ -112,7 +112,7 @@
                                         @endphp
                                         <div class="single-post first">
                                             <div class="image">
-                                                <img src="..\public\backend\img\materiels\{{$photo[0]}}" alt="..\public\backend\img\materiels\{{$photo[0]}}">
+                                                <img src="..\backend\img\materiels\{{$photo[0]}}" alt="..\backend\img\materiels\{{$photo[0]}}">
                                             </div>
                                             <div class="content">
                                                 <h5><a href="{{route('materiel-detail',$materiel->slug)}}">{{$materiel->nom}}</a></h5>
@@ -190,8 +190,8 @@
 															@php
 																$photo=explode(',',$materiel->photo);
 															@endphp
-															<img class="default-img" src="..\public\backend\img\materiels\{{$photo[0]}}" alt="..\public\backend\img\materiels\{{$photo[0]}}">
-															<img class="hover-img" src="..\public\backend\img\materiels\{{$photo[0]}}" alt="..\public\backend\img\materiels\{{$photo[0]}}">
+															<img class="default-img" src="..\backend\img\materiels\{{$photo[0]}}" alt="..\backend\img\materiels\{{$photo[0]}}">
+															<img class="hover-img" src="..\backend\img\materiels\{{$photo[0]}}" alt="..\backend\img\materiels\{{$photo[0]}}">
 															</a>
 															<div class="button-head">
 																<div class="materiel-action">
@@ -212,8 +212,8 @@
 																@php
 																	$after_discount=($materiel->price-($materiel->price*$materiel->discount)/100);
 																@endphp
-																<span>${{number_format($after_discount,2)}}</span>
-																<del>${{number_format($materiel->price,2)}}</del>
+																<span>{{number_format($after_discount,2)}} Dhs</span>
+																<del>{{number_format($materiel->price,2)}} Dhs</del>
 															</div>
 															<h3 class="title"><a href="{{route('materiel-detail',$materiel->slug)}}">{{$materiel->nom}}</a></h3>
 														{{-- <p>{!! html_entity_decode($materiel->summary) !!}</p> --}}

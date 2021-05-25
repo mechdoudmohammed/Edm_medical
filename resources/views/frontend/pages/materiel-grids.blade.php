@@ -112,7 +112,7 @@
                                                 @php
                                                     $org=($materiel->price-($materiel->price*$materiel->discount)/100);
                                                 @endphp
-                                                <p class="price"><del class="text-muted">${{number_format($materiel->price,2)}}</del>   {{number_format($org,2)}} Dhs  </p>
+                                                <p class="price"><del class="text-muted">{{number_format($materiel->price,2)}} Dhs</del>   {{number_format($org,2)}} Dhs  </p>
 
                                             </div>
                                         </div>
@@ -202,7 +202,7 @@
                                                 @php
                                                     $after_discount=($materiel->price-($materiel->price*$materiel->discount)/100);
                                                 @endphp
-                                                <span>${{number_format($after_discount,2)}}</span>
+                                                <span>{{number_format($after_discount,2)}} Dhs</span>
                                                 <del style="padding-left:4%;">{{number_format($materiel->price,2)}} Dhs</del>
                                             </div>
                                         </div>

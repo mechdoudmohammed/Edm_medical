@@ -657,7 +657,7 @@ Version:1.0
 	clear: initial;
 	margin: 0;
 	height: 48px;
-	width: 150px;
+	width: 164px;
 	border: none;
 	text-align: center;
 	background: transparent;
@@ -1612,6 +1612,12 @@ Version:1.0
 	top: 50%;
 	transform:translateY(-50%);
 }
+#titre_jus {
+    background: #fff;
+    border-radius: 20px;
+
+    text-align: center;
+}
 .midium-banner .single-banner h3 {
 	font-size: 27px;
 	font-weight: 700;
@@ -1624,10 +1630,14 @@ Version:1.0
 }
 .midium-banner .single-banner p {
 	font-size: 13px;
-	color: #4caf50;
-	font-weight: 500;
-	margin-bottom: 5px;
-	text-transform: uppercase;
+    color: #ffffff;
+    font-weight: 500;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    background: #4caf50;
+    border-radius: 7px;
+    padding: 2px;
+    width: 33%;
 }
 .midium-banner .single-banner a {
 	display: inline-block;

@@ -84,7 +84,7 @@
                                                 @php
                                                     $after_discount=($materiel_detail->price-(($materiel_detail->price*$materiel_detail->discount)/100));
                                                 @endphp
-												<p class="price"><span class="discount">Dhs {{number_format($after_discount,2)}}Dhs </span><s>Dhs {{number_format($materiel_detail->price,2)}}</s> </p>
+												<p class="price"><span class="discount">{{number_format($after_discount,2)}}Dhs </span><s>{{number_format($materiel_detail->price,2)}} Dhs</s> </p>
 												<p class="description">{!!($materiel_detail->summary)!!}</p>
 											</div>
 											<!--/ End Description -->

@@ -180,7 +180,7 @@
                             <img src="backend\img\materiels\{{$photo[0]}}" alt="backend\img\materiels\{{$photo[0]}}">
                             <div class="content">
                                 <p>{{$data->cat_info['title']}}</p>
-                                <h3>{{$data->title}} <br>Jusqu'à<span> {{$data->discount}}%</span></h3>
+                                <h3 id="titre_jus">{{$data->title}} Jusqu'à<span> {{$data->discount}}%</span></h3>
                                 <a href="{{route('materiel-detail',$data->slug)}}">Achetez maintenant</a>
                             </div>
                         </div>
@@ -354,7 +354,7 @@
                     <div class="col-lg-4 col-md-6 col-12">
                         <!-- Start Single Blog  -->
                         <div class="shop-single-blog">
-                            <img src="{{$post->photo}}" alt="{{$post->photo}}">
+                            <img src="backend\img\{{$post->photo}}" alt="backend\img\{{$post->photo}}">
                             <div class="content">
                                 <p class="date">{{$post->created_at->format('d-m -Y. ')}}</p>
                                 <a href="{{route('blog.detail',$post->slug)}}" class="title">{{$post->title}}</a>

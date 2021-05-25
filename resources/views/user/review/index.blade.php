@@ -9,7 +9,7 @@
          </div>
      </div>
     <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary float-left">Review Lists</h6>
+      <h6 class="m-0 font-weight-bold text-primary float-left">Listes des Avis</h6>
     </div>
     <div class="card-body">
       <div class="table-responsive">
@@ -82,7 +82,7 @@
         </table>
         <span style="float:right">{{$reviews->links()}}</span>
         @else
-          <h6 class="text-center">No reviews found!!!</h6>
+          <h6 class="text-center">Aucun commentaire trouvé !!!</h6>
         @endif
       </div>
     </div>
