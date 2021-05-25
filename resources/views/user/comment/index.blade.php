@@ -18,7 +18,7 @@
           <thead>
             <tr>
               <th>S.N.</th>
-              <th>Author</th>
+              <th>Auteur</th>
               <th>Post Title</th>
               <th>Message</th>
               <th>Date</th>
@@ -29,7 +29,7 @@
           <tfoot>
             <tr>
               <th>S.N.</th>
-              <th>Author</th>
+              <th>Auteur</th>
               <th>Post Title</th>
               <th>Message</th>
               <th>Date</th>
@@ -126,7 +126,7 @@
               // alert(dataID);
               e.preventDefault();
               swal({
-                    title: "Are you sure?",
+                    title: "Êtes-vous sûr?",
                     text: "l'enregistrement sera supprimé",
                     icon: "warning",
                     buttons: true,

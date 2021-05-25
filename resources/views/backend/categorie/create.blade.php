@@ -16,7 +16,7 @@
         </div>
 
         <div class="form-group">
-          <label for="summary" class="col-form-label">résume</label>
+          <label for="summary" class="col-form-label">Résume</label>
           <textarea class="form-control" id="summary" name="summary">{{old('summary')}}</textarea>
           @error('summary')
           <span class="text-danger">{{$message}}</span>
@@ -25,7 +25,7 @@
 
         <div class="form-group">
           <label for="is_parent">Catégorie mère?</label><br>
-          <input type="checkbox" name='is_parent' id='is_parent' value='1' checked> Yes
+          <input type="checkbox" name='is_parent' id='is_parent' value='1' checked> Oui
         </div>
         {{-- {{$parent_cats}} --}}
 
@@ -40,10 +40,10 @@
         </div>
 
           <div class="form-group">
-              <label for="inputPhoto" class="col-form-label">Photo</label>
+              <label for="inputPhoto" class="col-form-label">Photo<span class="text-danger">*</span></label>
               <div class="input-group">
              
-                  <input id="thumbnail" class="form-control" type="file" name="photo" value="{{old('photo')}}">
+                  <input id="thumbnail" class="form-control" type="file" name="photo" value="{{old('photo')}}" required>
               </div>
         <div id="holder" style="margin-top:15px;max-height:100px;"></div>
           @error('photo')
@@ -54,16 +54,16 @@
         <div class="form-group">
           <label for="status" class="col-form-label">Statut <span class="text-danger">*</span></label>
           <select name="status" class="form-control">
-              <option value="active">Active</option>
-              <option value="inactive">Inactive</option>
+              <option value="active">Activer</option>
+              <option value="inactive">Désactiver</option>
           </select>
           @error('status')
           <span class="text-danger">{{$message}}</span>
           @enderror
         </div>
         <div class="form-group mb-3">
-          <button type="reset" class="btn btn-warning">Réinitialiser</button>
-           <button class="btn btn-success" type="submit">Valider</button>
+          <button type="reset" class="btn btn-warning">Initialiser</button>
+           <button class="btn btn-success" type="submit">Ajouter</button>
         </div>
       </form>
     </div>

@@ -17,37 +17,39 @@
         <table class="table table-bordered" id="banner-dataTable" width="100%" cellspacing="0">
           <thead>
             <tr>
-              <th>id</th>
-              <th>nom</th>
-              <th>prenom</th>
-              <th>telephone</th>
-              <th>email</th>
-              <th>mot de passe</th>
-              <th>description</th>
-              <th>adresse</th>
-              <th>cin</th>
-              <th>numero de permis</th>
-              <th>statut</th>
-              <th>statut</th>
-              <th>statut</th>
+              <th>Id</th>
+              <th>Photo</th>
+              <th>Nom</th>
+              <th>Prenom</th>
+              <th>Telephone</th>
+              <th>Email</th>
+              <th>Mot de passe</th>
+              <th>Description</th>
+              <th>Adresse</th>
+              <th>Cin</th>
+              <th>Numero de permis</th>
+              <th>Statut</th>
+              <th>Operation</th>
+        
             </tr>
           </thead>
           
           <tfoot>
             <tr>
-            <th>id</th>
-              <th>nom</th>
-              <th>prenom</th>
-              <th>telephone</th>
-              <th>email</th>
-              <th>mot de passe</th>
-              <th>description</th>
-              <th>adresse</th>
-              <th>cin</th>
-              <th>numero de permis</th>
-              <th>statut</th>
-              <th>statut</th>
-              <th>statut</th>
+            <th>Id</th>
+            <th>Photo</th>
+              <th>Nom</th>
+              <th>Prenom</th>
+              <th>Telephone</th>
+              <th>Email</th>
+              <th>Mot de passe</th>
+              <th>Description</th>
+              <th>Adresse</th>
+              <th>Cin</th>
+              <th>Numero de permis</th>
+              <th>Statut</th>
+              <th>Operation</th>
+            
               </tr>
           </tfoot>
 
@@ -55,6 +57,15 @@
             @foreach($livreurs as $livreur)   
                 <tr>
                     <td>{{$livreur->id}}</td>
+                    <td>
+                       @if($livreur->photo)
+                            @php
+                              $photo=explode(',',$livreur->photo);
+                              // dd($photo);
+                            @endphp
+                            <img src="..\backend\img\livreur\{{$photo[0]}}" class="img-fluid zoom" style="max-width:80px" alt="{{$livreur->photo}}">
+                        
+                        @endif</td>
                     <td>{{$livreur->nom}}</td>
                     <td>{{$livreur->prenom}}</td>
                     <td>{{$livreur->telephone}}</td>
@@ -64,10 +75,6 @@
                     <td>{{$livreur->adresse}}</td>
                     <td>{{$livreur->cin}}</td>
                     <td>{{$livreur->numero_permis}}</td>
-                    <td>{{$livreur->statut}}</td>
-                    
-
-                   
                     <td>
                         @if($livreur->status=='active')
                             <span class="badge badge-success">{{$livreur->status}}</span>
@@ -77,33 +84,16 @@
                     </td>
                    
                     <td>
-                        <a href="{{route('livreur.edit',$livreur->id)}}" class="btn btn-primary btn-sm float-left mr-1" style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" title="edit" data-placement="bottom"><i class="fas fa-edit"></i></a>
+                        <a href="{{route('livreur.edit',$livreur->id)}}" class="btn btn-primary btn-sm float-left mr-1" style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" title="Modifier" data-placement="bottom"><i class="fas fa-edit"></i></a>
                         <form method="POST" action="{{route('livreur.destroy',[$livreur->id])}}">
                           @csrf 
                           @method('delete')
-                              <button class="btn btn-danger btn-sm dltBtn" data-id={{$livreur->id}} style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class="fas fa-trash-alt"></i></button>
+                              <button class="btn btn-danger btn-sm dltBtn" data-id={{$livreur->id}} style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" data-placement="bottom" title="Supprimer"><i class="fas fa-trash-alt"></i></button>
                         </form>
                     </td>
-                    {{-- Delete Modal --}}
-                    {{-- <div class="modal fade" id="delModal{{$user->id}}" tabindex="-1" role="dialog" aria-labelledby="#delModal{{$user->id}}Label" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h5 class="modal-title" id="#delModal{{$user->id}}Label">Delete user</h5>
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                              </button>
-                            </div>
-                            <div class="modal-body">
-                              <form method="post" action="{{ route('banners.destroy',$user->id) }}">
-                                @csrf 
-                                @method('delete')
-                                <button type="submit" class="btn btn-danger" style="margin:auto; text-align:center">Parmanent delete user</button>
-                              </form>
-                            </div>
-                          </div>
-                        </div>
-                    </div> --}}
+   
+             
+           
                 </tr>  
             @endforeach
           </tbody>

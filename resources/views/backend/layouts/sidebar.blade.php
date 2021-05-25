@@ -31,19 +31,19 @@
     <li class="nav-item">
         <a class="nav-link" href="{{route('file-manager')}}">
             <i class="fas fa-fw fa-chart-area"></i>
-            <span>Media Manager</span></a>
+            <span>Gestionnaire de médias</span></a>
     </li>
 
     <li class="nav-item">
       <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
         <i class="fas fa-image"></i>
-        <span>Banners</span>
+        <span>Bannières</span>
       </a>
       <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
-          <h6 class="collapse-header">Banner Options:</h6>
-          <a class="collapse-item" href="{{route('banner.index')}}">Banners</a>
-          <a class="collapse-item" href="{{route('banner.create')}}">Add Banners</a>
+          <h6 class="collapse-header">Bannière Options:</h6>
+          <a class="collapse-item" href="{{route('banner.index')}}">Bannière</a>
+          <a class="collapse-item" href="{{route('banner.create')}}">Ajouter Bannière</a>
         </div>
       </div>
     </li>
@@ -51,7 +51,7 @@
     <hr class="sidebar-divider">
         <!-- Heading -->
         <div class="sidebar-heading">
-            Shop
+        Magasin
         </div>
 
     <!-- Categories -->
@@ -64,7 +64,7 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Categorie Options:</h6>
             <a class="collapse-item" href="{{route('categorie.index')}}">Categorie</a>
-            <a class="collapse-item" href="{{route('categorie.create')}}">Add Categorie</a>
+            <a class="collapse-item" href="{{route('categorie.create')}}">Ajouter Categorie</a>
           </div>
         </div>
     </li>
@@ -72,13 +72,13 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#materielCollapse" aria-expanded="true" aria-controls="materielCollapse">
           <i class="fas fa-cubes"></i>
-          <span>Materiels</span>
+          <span>Materiel</span>
         </a>
         <div id="materielCollapse" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Materiel Options:</h6>
-            <a class="collapse-item" href="{{route('materiel.index')}}">Materiels</a>
-            <a class="collapse-item" href="{{route('materiel.create')}}">Add Materiel</a>
+            <a class="collapse-item" href="{{route('materiel.index')}}">Materiel</a>
+            <a class="collapse-item" href="{{route('materiel.create')}}">Ajouter Materiel</a>
           </div>
         </div>
     </li>
@@ -100,11 +100,11 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#livreurCollapse" aria-expanded="true" aria-controls="locationCollapse">
           <i class="fas fa-table"></i>
-          <span>livreur</span>
+          <span>Livreur</span>
         </a>
         <div id="livreurCollapse" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">livreur Options:</h6>
+            <h6 class="collapse-header">Livreur Options:</h6>
             <a class="collapse-item" href="{{route('livreur.index')}}">Afficher livreur</a>
             <a class="collapse-item" href="{{route('livreur.create')}}">Ajouter livreur</a>
           </div>
@@ -121,7 +121,7 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Fournisseur Options:</h6>
             <a class="collapse-item" href="{{route('fournisseur.index')}}">Fournisseurs</a>
-            <a class="collapse-item" href="{{route('fournisseur.create')}}">Add Fournisseur</a>
+            <a class="collapse-item" href="{{route('fournisseur.create')}}">Ajouter Fournisseur</a>
           </div>
         </div>
     </li>
@@ -136,26 +136,26 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Livraison Options:</h6>
             <a class="collapse-item" href="{{route('livraison.index')}}">Livraison</a>
-            <a class="collapse-item" href="{{route('livraison.create')}}">Add Livraison</a>
+            <a class="collapse-item" href="{{route('livraison.create')}}">Ajouter Livraison</a>
           </div>
         </div>
     </li>
 
-    <!--Orders -->
+    <!--Commandes -->
     <li class="nav-item">
         <a class="nav-link" href="{{route('order.index')}}">
             <i class="fas fa-hammer fa-chart-area"></i>
-            <span>Orders</span>
+            <span>Commandes</span>
         </a>
     </li>
 
-    <!-- Reviews -->
+    <!-- Aviss -->
     <li class="nav-item">
         <a class="nav-link" href="{{route('review.index')}}">
             <i class="fas fa-comments"></i>
-            <span>Reviews</span></a>
+            <span>Avis</span></a>
     </li>
-     <!-- reclamations -->
+     <!-- Reclamations -->
      <li class="nav-item">
         <a class="nav-link" href="{{route('backend.reclamtion.index')}}">
             <i class="fas fa-exclamation"></i>
@@ -170,20 +170,20 @@
 
     <!-- Heading -->
     <div class="sidebar-heading">
-      Posts
+      Poste
     </div>
 
     <!-- Posts -->
     <li class="nav-item">
       <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#postCollapse" aria-expanded="true" aria-controls="postCollapse">
         <i class="fas fa-fw fa-folder"></i>
-        <span>Posts</span>
+        <span>Poste</span>
       </a>
       <div id="postCollapse" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
-          <h6 class="collapse-header">Post Options:</h6>
-          <a class="collapse-item" href="{{route('post.index')}}">Posts</a>
-          <a class="collapse-item" href="{{route('post.create')}}">Add Post</a>
+          <h6 class="collapse-header">Poste Options:</h6>
+          <a class="collapse-item" href="{{route('post.index')}}">Poste</a>
+          <a class="collapse-item" href="{{route('post.create')}}">Ajouter Poste</a>
         </div>
       </div>
     </li>
@@ -198,7 +198,7 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Categorie Options:</h6>
             <a class="collapse-item" href="{{route('post-categorie.index')}}">Categorie</a>
-            <a class="collapse-item" href="{{route('post-categorie.create')}}">Add Categorie</a>
+            <a class="collapse-item" href="{{route('post-categorie.create')}}">Ajouter Categorie</a>
           </div>
         </div>
       </li>
@@ -213,7 +213,7 @@
             <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Tag Options:</h6>
             <a class="collapse-item" href="{{route('post-tag.index')}}">Tag</a>
-            <a class="collapse-item" href="{{route('post-tag.create')}}">Add Tag</a>
+            <a class="collapse-item" href="{{route('post-tag.create')}}">Ajouter Tag</a>
             </div>
         </div>
     </li>
@@ -222,7 +222,7 @@
       <li class="nav-item">
         <a class="nav-link" href="{{route('comment.index')}}">
             <i class="fas fa-comments fa-chart-area"></i>
-            <span>Comments</span>
+            <span>Commentaires</span>
         </a>
       </li>
 
@@ -231,7 +231,7 @@
     <hr class="sidebar-divider d-none d-md-block">
      <!-- Heading -->
     <div class="sidebar-heading">
-        General Settings
+       Parametres general
     </div>
     <li class="nav-item">
       <a class="nav-link" href="{{route('coupon.index')}}">
@@ -242,13 +242,13 @@
      <li class="nav-item">
         <a class="nav-link" href="{{route('users.index')}}">
             <i class="fas fa-users"></i>
-            <span>Users</span></a>
+            <span>Utilisateur</span></a>
     </li>
      <!-- General settings -->
      <li class="nav-item">
         <a class="nav-link" href="{{route('settings')}}">
             <i class="fas fa-cog"></i>
-            <span>Settings</span></a>
+            <span>Parametres</span></a>
     </li>
 
     <!-- Sidebar Toggler (Sidebar) -->

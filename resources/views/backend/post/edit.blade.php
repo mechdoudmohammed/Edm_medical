@@ -65,7 +65,7 @@
           </select>
         </div>
         <div class="form-group">
-          <label for="added_by">Author</label>
+          <label for="added_by">Auteur</label>
           <select name="added_by" class="form-control">
               <option value="">--Select any one--</option>
               @foreach($users as $key=>$data)

@@ -3,7 +3,7 @@
 @section('main-content')
 
 <div class="card">
-    <h5 class="card-header">Edit Livraison</h5>
+    <h5 class="card-header">Modifier Livraison</h5>
     <div class="card-body">
       <form method="post" action="{{route('livraison.update',$livraison->id)}}">
         @csrf 
@@ -25,15 +25,15 @@
         <div class="form-group">
           <label for="status" class="col-form-label">Statut <span class="text-danger">*</span></label>
           <select name="status" class="form-control">
-            <option value="active" {{(($livraison->status=='active') ? 'selected' : '')}}>Active</option>
-            <option value="inactive" {{(($livraison->status=='inactive') ? 'selected' : '')}}>Inactive</option>
+            <option value="active" {{(($livraison->status=='active') ? 'selected' : '')}}>Activer</option>
+            <option value="inactive" {{(($livraison->status=='inactive') ? 'selected' : '')}}>Désactiver</option>
           </select>
           @error('status')
           <span class="text-danger">{{$message}}</span>
           @enderror
         </div>
         <div class="form-group mb-3">
-           <button class="btn btn-success" type="submit">Update</button>
+           <button class="btn btn-success" type="submit">Modifier</button>
         </div>
       </form>
     </div>
@@ -52,7 +52,7 @@
 
     $(document).ready(function() {
     $('#description').summernote({
-      placeholder: "Write short description.....",
+      placeholder: "Rédigez une brève description .....",
         tabsize: 2,
         height: 150
     });
