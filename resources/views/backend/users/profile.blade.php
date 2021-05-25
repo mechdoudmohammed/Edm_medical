@@ -14,7 +14,7 @@
      <h4 class=" font-weight-bold">Profile</h4>
      <ul class="breadcrumbs">
          <li><a href="{{route('admin')}}" style="color:#999">Tableau de bord</a></li>
-         <li><a href="" class="active text-primary">Profile Page</a></li>
+         <li><a href="" class="active text-primary">Page de profile </a></li>
      </ul>
    </div>
    <div class="card-body">
@@ -65,7 +65,7 @@
                         @enderror
                       </div>
                      
-                        <button type="submit" class="btn btn-success btn-sm">Mise A jour</button>
+                        <button type="submit" class="btn btn-success btn-sm">Mise à jour</button>
                 </form>
             </div>
         </div>

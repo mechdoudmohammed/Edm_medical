@@ -3,12 +3,12 @@
 @section('main-content')
 
 <div class="card">
-    <h5 class="card-header">Add Post</h5>
+    <h5 class="card-header">Ajouter poste</h5>
     <div class="card-body">
       <form method="post" action="{{route('post.store')}}">
         {{csrf_field()}}
         <div class="form-group">
-          <label for="inputTitle" class="col-form-label">Title <span class="text-danger">*</span></label>
+          <label for="inputTitle" class="col-form-label">Titre <span class="text-danger">*</span></label>
           <input id="inputTitle" type="text" name="title" placeholder="Enter title"  value="{{old('title')}}" class="form-control">
           @error('title')
           <span class="text-danger">{{$message}}</span>
@@ -16,7 +16,7 @@
         </div>
 
         <div class="form-group">
-          <label for="quote" class="col-form-label">Quote</label>
+          <label for="quote" class="col-form-label">Citation</label>
           <textarea class="form-control" id="quote" name="quote">{{old('quote')}}</textarea>
           @error('quote')
           <span class="text-danger">{{$message}}</span>
@@ -24,7 +24,7 @@
         </div>
 
         <div class="form-group">
-          <label for="summary" class="col-form-label">Summary <span class="text-danger">*</span></label>
+          <label for="summary" class="col-form-label">Résumé <span class="text-danger">*</span></label>
           <textarea class="form-control" id="summary" name="summary">{{old('summary')}}</textarea>
           @error('summary')
           <span class="text-danger">{{$message}}</span>
@@ -52,7 +52,7 @@
         <div class="form-group">
           <label for="tags">Tag</label>
           <select name="tags[]" multiple  data-live-search="true" class="form-control selectpicker">
-              <option value="">--Select any tag--</option>
+              <option value="">--Selectionner tag--</option>
               @foreach($tags as $key=>$data)
                   <option value='{{$data->title}}'>{{$data->title}}</option>
               @endforeach
@@ -61,7 +61,7 @@
         <div class="form-group">
           <label for="added_by">Auteur</label>
           <select name="added_by" class="form-control">
-              <option value="">--Select any one--</option>
+              <option value="">--Selectionner un--</option>
               @foreach($users as $key=>$data)
                 <option value='{{$data->id}}' {{($key==0) ? 'selected' : ''}}>{{$data->name}}</option>
             @endforeach
@@ -72,7 +72,7 @@
           <div class="input-group">
               <span class="input-group-btn">
                   <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
-                  <i class="fa fa-picture-o"></i> Choose
+                  <i class="fa fa-picture-o"></i> choix
                   </a>
               </span>
           <input id="thumbnail" class="form-control" type="text" name="photo" value="{{old('photo')}}">
@@ -84,18 +84,18 @@
         </div>
         
         <div class="form-group">
-          <label for="status" class="col-form-label">Status <span class="text-danger">*</span></label>
+          <label for="status" class="col-form-label">Statut <span class="text-danger">*</span></label>
           <select name="status" class="form-control">
-              <option value="active">Active</option>
-              <option value="inactive">Inactive</option>
+              <option value="active">Activer</option>
+              <option value="inactive">Desactiver</option>
           </select>
           @error('status')
           <span class="text-danger">{{$message}}</span>
           @enderror
         </div>
         <div class="form-group mb-3">
-          <button type="reset" class="btn btn-warning">Reset</button>
-           <button class="btn btn-success" type="submit">Submit</button>
+          <button type="reset" class="btn btn-warning">Initialiser</button>
+           <button class="btn btn-success" type="submit">Valider</button>
         </div>
       </form>
     </div>

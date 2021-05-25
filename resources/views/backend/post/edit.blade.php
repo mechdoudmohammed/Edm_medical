@@ -3,13 +3,13 @@
 @section('main-content')
 
 <div class="card">
-    <h5 class="card-header">Edit Post</h5>
+    <h5 class="card-header">Editer poste</h5>
     <div class="card-body">
       <form method="post" action="{{route('post.update',$post->id)}}">
         @csrf 
         @method('PATCH')
         <div class="form-group">
-          <label for="inputTitle" class="col-form-label">Title <span class="text-danger">*</span></label>
+          <label for="inputTitle" class="col-form-label">Titre <span class="text-danger">*</span></label>
           <input id="inputTitle" type="text" name="title" placeholder="Enter title"  value="{{$post->title}}" class="form-control">
           @error('title')
           <span class="text-danger">{{$message}}</span>
@@ -17,7 +17,7 @@
         </div>
 
         <div class="form-group">
-          <label for="quote" class="col-form-label">Quote</label>
+          <label for="quote" class="col-form-label">Citation</label>
           <textarea class="form-control" id="quote" name="quote">{{$post->quote}}</textarea>
           @error('quote')
           <span class="text-danger">{{$message}}</span>
@@ -25,7 +25,7 @@
         </div>
 
         <div class="form-group">
-          <label for="summary" class="col-form-label">Summary <span class="text-danger">*</span></label>
+          <label for="summary" class="col-form-label">Résumé <span class="text-danger">*</span></label>
           <textarea class="form-control" id="summary" name="summary">{{$post->summary}}</textarea>
           @error('summary')
           <span class="text-danger">{{$message}}</span>
@@ -43,7 +43,7 @@
         <div class="form-group">
           <label for="post_cat_id">Categorie <span class="text-danger">*</span></label>
           <select name="post_cat_id" class="form-control">
-              <option value="">--Select any categorie--</option>
+              <option value="">--Selectionner catégorie--</option>
               @foreach($categories as $key=>$data)
                   <option value='{{$data->id}}' {{(($data->id==$post->post_cat_id)? 'selected' : '')}}>{{$data->title}}</option>
               @endforeach
@@ -57,7 +57,7 @@
         <div class="form-group">
           <label for="tags">Tag</label>
           <select name="tags[]" multiple  data-live-search="true" class="form-control selectpicker">
-              <option value="">--Select any tag--</option>
+              <option value="">--Selectionner tag--</option>
               @foreach($tags as $key=>$data)
               
               <option value="{{$data->title}}"  {{(( in_array( "$data->title",$post_tags ) ) ? 'selected' : '')}}>{{$data->title}}</option>
@@ -67,7 +67,7 @@
         <div class="form-group">
           <label for="added_by">Auteur</label>
           <select name="added_by" class="form-control">
-              <option value="">--Select any one--</option>
+              <option value="">--Selectionner un --</option>
               @foreach($users as $key=>$data)
                 <option value='{{$data->id}}' {{(($post->added_by==$data->id)? 'selected' : '')}}>{{$data->name}}</option>
               @endforeach
@@ -78,7 +78,7 @@
           <div class="input-group">
               <span class="input-group-btn">
                   <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
-                  <i class="fa fa-picture-o"></i> Choose
+                  <i class="fa fa-picture-o"></i> choix
                   </a>
               </span>
           <input id="thumbnail" class="form-control" type="text" name="photo" value="{{$post->photo}}">
@@ -91,17 +91,17 @@
         </div>
         
         <div class="form-group">
-          <label for="status" class="col-form-label">Status <span class="text-danger">*</span></label>
+          <label for="status" class="col-form-label">Statut <span class="text-danger">*</span></label>
           <select name="status" class="form-control">
-            <option value="active" {{(($post->status=='active')? 'selected' : '')}}>Active</option>
-            <option value="inactive" {{(($post->status=='inactive')? 'selected' : '')}}>Inactive</option>
+            <option value="active" {{(($post->status=='active')? 'selected' : '')}}>Activer</option>
+            <option value="inactive" {{(($post->status=='inactive')? 'selected' : '')}}>Desactiver</option>
         </select>
           @error('status')
           <span class="text-danger">{{$message}}</span>
           @enderror
         </div>
         <div class="form-group mb-3">
-           <button class="btn btn-success" type="submit">Update</button>
+           <button class="btn btn-success" type="submit">Modifier</button>
         </div>
       </form>
     </div>
@@ -124,7 +124,7 @@
 
     $(document).ready(function() {
     $('#summary').summernote({
-      placeholder: "Write short description.....",
+      placeholder: "Ecrire une petite desrciption.....",
         tabsize: 2,
         height: 150
     });
@@ -132,14 +132,14 @@
 
     $(document).ready(function() {
       $('#quote').summernote({
-        placeholder: "Write short Quote.....",
+        placeholder: "Ecrire une petite citation.....",
           tabsize: 2,
           height: 100
       });
     });
     $(document).ready(function() {
       $('#description').summernote({
-        placeholder: "Write detail description.....",
+        placeholder: "Ecrire le detail de description.....",
           tabsize: 2,
           height: 150
       });

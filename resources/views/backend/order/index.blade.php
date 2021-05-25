@@ -9,7 +9,7 @@
          </div>
      </div>
     <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary float-left">Order Lists</h6>
+      <h6 class="m-0 font-weight-bold text-primary float-left">Liste des commandes</h6>
     </div>
     <div class="card-body">
       <div class="table-responsive">
@@ -23,7 +23,7 @@
               <th>Email</th>
               <th>Quantité</th>
               <th>Charge</th>
-              <th>Total</th>
+              <th>Totale</th>
               <th>Statut</th>
               <th>Operation</th>
             </tr>
@@ -36,7 +36,7 @@
               <th>Email</th>
               <th>Quantité</th>
               <th>Charge</th>
-              <th>Total</th>
+              <th>Totale</th>
               <th>Statut</th>
               <th>Operation</th>
               </tr>

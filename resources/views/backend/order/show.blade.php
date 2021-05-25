@@ -5,7 +5,7 @@
 @section('main-content')
 
 <div class="card">
-<h5 class="card-header">Order<a href="{{route('order.pdf',$order->id)}}" class=" btn btn-sm btn-primary shadow-sm float-right"><i class="fas fa-download fa-sm text-white-50"></i> Generate PDF</a>
+<h5 class="card-header">Commande<a href="{{route('order.pdf',$order->id)}}" class=" btn btn-sm btn-primary shadow-sm float-right"><i class="fas fa-download fa-sm text-white-50"></i> Generate PDF</a>
   </h5>
   <div class="card-body">
     @if($order)
@@ -16,15 +16,15 @@
       @endphp
       <thead>
         <tr>
-            <th>S.N.</th>
-            <th>Order No.</th>
-            <th>Name</th>
+            <th>Id</th>
+            <th>Commande N</th>
+            <th>Nom</th>
             <th>Email</th>
-            <th>Quantity</th>
+            <th>Quantité</th>
             <th>Charge</th>
-            <th>Total Amount</th>
-            <th>Status</th>
-            <th>Action</th>
+            <th>Totale</th>
+            <th>Statut</th>
+            <th>Operation</th>
         </tr>
       </thead>
       <tbody>
@@ -65,22 +65,22 @@
         <div class="row">
           <div class="col-lg-6 col-lx-4">
             <div class="order-info">
-              <h4 class="text-center pb-4">ORDER INFORMATION</h4>
+              <h4 class="text-center pb-4">Information sur la commande</h4>
               <table class="table">
               <tr class="">
-                        <td>Order Number</td>
+                        <td>Numero de commande</td>
                         <td> : {{$order->order_number}}</td>
                     </tr>
                     <tr>
-                        <td>Order Date</td>
-                        <td> : {{$order->created_at->format('D d M, Y')}} at {{$order->created_at->format('g : i a')}} </td>
+                        <td>Date commande</td>
+                        <td> : {{$order->created_at->format(' d-m-Y')}} at {{$order->created_at->format('g : i a')}} </td>
                     </tr>
                     <tr>
-                        <td>Quantity</td>
+                        <td>Quantité</td>
                         <td> : {{$order->quantity}}</td>
                     </tr>
                     <tr>
-                        <td>Order Status</td>
+                        <td>Statut</td>
                         <td> : {{$order->status}}</td>
                     </tr>
                     <tr>
@@ -97,15 +97,15 @@
                       <td> : $ {{number_format($order->coupon,2)}}</td>
                     </tr>
                     <tr>
-                        <td>Total Amount</td>
+                        <td>Totale</td>
                         <td> : $ {{number_format($order->total_amount,2)}}</td>
                     </tr>
                     <tr>
-                        <td>Payment Method</td>
+                        <td>Methode de payment</td>
                         <td> : @if($order->payment_method=='cod') Cash on Delivery @else Paypal @endif</td>
                     </tr>
                     <tr>
-                        <td>Payment Status</td>
+                        <td>Payment Statut</td>
                         <td> : {{$order->payment_status}}</td>
                     </tr>
               </table>
@@ -117,7 +117,7 @@
               <h4 class="text-center pb-4">LIVRAISON INFORMATION</h4>
               <table class="table">
                     <tr class="">
-                        <td>Full Name</td>
+                        <td>Nom complet</td>
                         <td> : {{$order->first_name}} {{$order->last_name}}</td>
                     </tr>
                     <tr>
@@ -125,19 +125,19 @@
                         <td> : {{$order->email}}</td>
                     </tr>
                     <tr>
-                        <td>Phone No.</td>
+                        <td>Tél</td>
                         <td> : {{$order->phone}}</td>
                     </tr>
                     <tr>
-                        <td>Address</td>
+                        <td>Adresse</td>
                         <td> : {{$order->address1}}, {{$order->address2}}</td>
                     </tr>
                     <tr>
-                        <td>Country</td>
+                        <td>ville</td>
                         <td> : {{$order->country}}</td>
                     </tr>
                     <tr>
-                        <td>Post Code</td>
+                        <td>code postale</td>
                         <td> : {{$order->post_code}}</td>
                     </tr>
               </table>

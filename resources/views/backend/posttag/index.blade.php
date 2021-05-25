@@ -9,8 +9,8 @@
          </div>
      </div>
     <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary float-left">Post Tag Lists</h6>
-      <a href="{{route('post-tag.create')}}" class="btn btn-primary btn-sm float-right" data-toggle="tooltip" data-placement="bottom" title="Add User"><i class="fas fa-plus"></i> Add Post Tag</a>
+      <h6 class="m-0 font-weight-bold text-primary float-left">liste tag de poste</h6>
+      <a href="{{route('post-tag.create')}}" class="btn btn-primary btn-sm float-right" data-toggle="tooltip" data-placement="bottom" title="Ajouter tag de poste"><i class="fas fa-plus"></i> Ajouter tag de poste</a>
     </div>
     <div class="card-body">
       <div class="table-responsive">
@@ -18,20 +18,20 @@
         <table class="table table-bordered" id="post-categorie-dataTable" width="100%" cellspacing="0">
           <thead>
             <tr>
-              <th>S.N.</th>
-              <th>Title</th>
-              <th>Slug</th>
-              <th>Status</th>
-              <th>Action</th>
+              <th>ID</th>
+              <th>Titre</th>
+              <th>Sous titre</th>
+              <th>Statut</th>
+              <th>Opération</th>
             </tr>
           </thead>
           <tfoot>
             <tr>
-              <th>S.N.</th>
-              <th>Title</th>
-              <th>Slug</th>
-              <th>Status</th>
-              <th>Action</th>
+            <th>ID</th>
+              <th>Titre</th>
+              <th>Sous titre</th>
+              <th>Statut</th>
+              <th>Opération</th>
               </tr>
           </tfoot>
           <tbody>
@@ -52,7 +52,7 @@
                     <form method="POST" action="{{route('post-tag.destroy',[$data->id])}}">
                       @csrf 
                       @method('delete')
-                          <button class="btn btn-danger btn-sm dltBtn" data-id={{$data->id}} style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class="fas fa-trash-alt"></i></button>
+                          <button class="btn btn-danger btn-sm dltBtn" data-id={{$data->id}} style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" data-placement="bottom" title="Supprimer"><i class="fas fa-trash-alt"></i></button>
                         </form>
                     </td>
                 </tr>  
@@ -61,7 +61,7 @@
         </table>
         <span style="float:right">{{$postTags->links()}}</span>
         @else
-          <h6 class="text-center">No Post Tag found!!! Please create post tag</h6>
+          <h6 class="text-center">Aucune étiquette de message trouvée !!! Veuillez créer une balise de publication</h6>
         @endif
       </div>
     </div>
@@ -119,7 +119,7 @@
               swal({
                     title: "Êtes-vous sûr?",
                     text: "l'enregistrement sera supprimé",
-                    icon: "warning",
+                    icon: "Attetion",
                     buttons: true,
                     dangerMode: true,
                 })
@@ -127,7 +127,7 @@
                     if (willDelete) {
                        form.submit();
                     } else {
-                        swal("Your data is safe!");
+                        swal("Vos données sont en sécurité!");
                     }
                 });
           })

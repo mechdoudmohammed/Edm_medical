@@ -3,7 +3,7 @@
 @section('main-content')
 
 <div class="card">
-    <h5 class="card-header">Edit Materiel</h5>
+    <h5 class="card-header">Editer le materiel</h5>
     <div class="card-body">
       <form method="post" action="{{route('materiel.update',$materiel->id)}}">
         @csrf 
@@ -17,7 +17,7 @@
         </div>
 
         <div class="form-group">
-          <label for="summary" class="col-form-label">Summary <span class="text-danger">*</span></label>
+          <label for="summary" class="col-form-label">Resumé <span class="text-danger">*</span></label>
           <textarea class="form-control" id="summary" name="summary">{{$materiel->summary}}</textarea>
           @error('summary')
           <span class="text-danger">{{$message}}</span>
@@ -71,15 +71,15 @@
 
         
         <div class="form-group">
-          <label for="is_featured">Is Featured</label><br>
-          <input type="checkbox" name='is_featured' id='is_featured' value='{{$materiel->is_featured}}' {{(($materiel->is_featured) ? 'checked' : '')}}> Yes                        
+          <label for="is_featured">Est présenté</label><br>
+          <input type="checkbox" name='is_featured' id='is_featured' value='{{$materiel->is_featured}}' {{(($materiel->is_featured) ? 'checked' : '')}}> Oui                        
         </div>
               {{-- {{$categories}} --}}
 
         <div class="form-group">
           <label for="cat_id">Categorie <span class="text-danger">*</span></label>
           <select name="cat_id" id="cat_id" class="form-control">
-              <option value="">--Select any categorie--</option>
+              <option value="">--Selectionner categorie--</option>
               @foreach($categories as $key=>$cat_data)
                   <option value='{{$cat_data->id}}' {{(($materiel->cat_id==$cat_data->id)? 'selected' : '')}}>{{$cat_data->title}}</option>
               @endforeach
@@ -92,15 +92,15 @@
         @endphp
         {{-- {{$materiel->child_cat_id}} --}}
         <div class="form-group {{(($materiel->child_cat_id)? '' : 'd-none')}}" id="child_cat_div">
-          <label for="child_cat_id">Sub Categorie</label>
+          <label for="child_cat_id">Sous Ctegorie</label>
           <select name="child_cat_id" id="child_cat_id" class="form-control">
-              <option value="">--Select any sub categorie--</option>
+              <option value="">--Selectionner categorie--</option>
               
           </select>
         </div>
 
         <div class="form-group">
-          <label for="price" class="col-form-label">Price(NRS) <span class="text-danger">*</span></label>
+          <label for="price" class="col-form-label">Prix<span class="text-danger">*</span></label>
           <input id="price" type="number" name="price" placeholder="Enter price"  value="{{$materiel->price}}" class="form-control">
           @error('price')
           <span class="text-danger">{{$message}}</span>
@@ -108,7 +108,7 @@
         </div>
 
         <div class="form-group">
-          <label for="discount" class="col-form-label">Discount(%)</label>
+          <label for="discount" class="col-form-label">Réduction(%)</label>
           <input id="discount" type="number" name="discount" min="0" max="100" placeholder="Enter discount"  value="{{$materiel->discount}}" class="form-control">
           @error('discount')
           <span class="text-danger">{{$message}}</span>
@@ -117,7 +117,7 @@
         <div class="form-group">
           <label for="fournisseur_id">Fournisseur</label>
           <select name="fournisseur_id" class="form-control">
-              <option value="">--Select Fournisseur--</option>
+              <option value="">--Selectionner--</option>
              @foreach($fournisseurs as $fournisseur)
               <option value="{{$fournisseur->id}}" {{(($materiel->fournisseur_id==$fournisseur->id)? 'selected':'')}}>{{$fournisseur->nom}}</option>
              @endforeach
@@ -127,15 +127,15 @@
         <div class="form-group">
           <label for="condition">Condition</label>
           <select name="condition" class="form-control">
-              <option value="">--Select Condition--</option>
+              <option value="">--Selectionner condition--</option>
               <option value="default" {{(($materiel->condition=='default')? 'selected':'')}}>Default</option>
-              <option value="new" {{(($materiel->condition=='new')? 'selected':'')}}>New</option>
-              <option value="hot" {{(($materiel->condition=='hot')? 'selected':'')}}>Hot</option>
+              <option value="new" {{(($materiel->condition=='new')? 'selected':'')}}>Nouveau</option>
+              <option value="hot" {{(($materiel->condition=='hot')? 'selected':'')}}>passionné</option>
           </select>
         </div>
 
         <div class="form-group">
-          <label for="stock">Quantity <span class="text-danger">*</span></label>
+          <label for="stock">Quantité <span class="text-danger">*</span></label>
           <input id="quantity" type="number" name="stock" min="0" placeholder="Enter quantity"  value="{{$materiel->stock}}" class="form-control">
           @error('stock')
           <span class="text-danger">{{$message}}</span>
@@ -154,17 +154,17 @@
         </div>
 
         <div class="form-group">
-          <label for="status" class="col-form-label">Status <span class="text-danger">*</span></label>
+          <label for="status" class="col-form-label">Statut <span class="text-danger">*</span></label>
           <select name="status" class="form-control">
-            <option value="active" {{(($materiel->status=='active')? 'selected' : '')}}>Active</option>
-            <option value="inactive" {{(($materiel->status=='inactive')? 'selected' : '')}}>Inactive</option>
+            <option value="active" {{(($materiel->status=='active')? 'selected' : '')}}>Activer</option>
+            <option value="inactive" {{(($materiel->status=='inactive')? 'selected' : '')}}>Desactiver</option>
         </select>
           @error('status')
           <span class="text-danger">{{$message}}</span>
           @enderror
         </div>
         <div class="form-group mb-3">
-           <button class="btn btn-success" type="submit">Mise a jour</button>
+           <button class="btn btn-success" type="submit">Mise à jour</button>
         </div>
       </form>
     </div>

@@ -1,5 +1,5 @@
 @extends('backend.layouts.master')
-@section('title','EDM-Medical || All Notifications')
+@section('title','EDM-Medical ||  Notifications')
 @section('main-content')
 <div class="card">
     <div class="row">
@@ -14,9 +14,9 @@
       <thead>
         <tr>
           <th scope="col">#</th>
-          <th scope="col">Time</th>
-          <th scope="col">Title</th>
-          <th scope="col">Action</th>
+          <th scope="col">Temps</th>
+          <th scope="col">Titre</th>
+          <th scope="col">Opération</th>
         </tr>
       </thead>
       <tbody>
@@ -27,11 +27,11 @@
           <td>{{$notification->created_at->format('F d, Y h:i A')}}</td>
           <td>{{$notification->data['title']}}</td>
           <td>
-            <a href="{{route('admin.notification', $notification->id) }}" class="btn btn-primary btn-sm float-left mr-1" style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" title="view" data-placement="bottom"><i class="fas fa-eye"></i></a>
+            <a href="{{route('admin.notification', $notification->id) }}" class="btn btn-primary btn-sm float-left mr-1" style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" title="afficher" data-placement="bottom"><i class="fas fa-eye"></i></a>
             <form method="POST" action="{{ route('notification.delete', $notification->id) }}">
               @csrf 
               @method('delete')
-                  <button class="btn btn-danger btn-sm dltBtn" data-id={{$notification->id}} style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class="fas fa-trash-alt"></i></button>
+                  <button class="btn btn-danger btn-sm dltBtn" data-id={{$notification->id}} style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" data-placement="bottom" title="Supprimer"><i class="fas fa-trash-alt"></i></button>
             </form>
           </td>
         </tr>
@@ -40,7 +40,7 @@
       </tbody>
     </table>
     @else
-      <h2>Notifications Empty!</h2>
+      <h2>Notifications vides!</h2>
     @endif
   </div>
 </div>
@@ -89,7 +89,7 @@
             swal({
                   title: "Êtes-vous sûr?",
                   text: "l'enregistrement sera supprimé",
-                  icon: "warning",
+                  icon: "Attetion",
                   buttons: true,
                   dangerMode: true,
               })
@@ -97,7 +97,7 @@
                   if (willDelete) {
                     form.submit();
                   } else {
-                      swal("Your data is safe!");
+                      swal("Vos données sont en sécurité!");
                   }
               });
         })

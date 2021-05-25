@@ -9,7 +9,7 @@
          </div>
      </div>
     <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary float-left">Review Lists</h6>
+      <h6 class="m-0 font-weight-bold text-primary float-left">Listes des  avis</h6>
     </div>
     <div class="card-body">
       <div class="table-responsive">
@@ -17,26 +17,26 @@
         <table class="table table-bordered" id="order-dataTable" width="100%" cellspacing="0">
           <thead>
             <tr>
-              <th>S.N.</th>
-              <th>Review By</th>
-              <th>Materiel Title</th>
-              <th>Review</th>
-              <th>Rate</th>
+              <th>ID</th>
+              <th>Avis par</th>
+              <th>Nom materiel </th>
+              <th>Avis</th>
+              <th>Taux</th>
               <th>Date</th>
-              <th>Status</th>
-              <th>Action</th>
+              <th>Statut</th>
+              <th>Opération</th>
             </tr>
           </thead>
           <tfoot>
             <tr>
-              <th>S.N.</th>
-              <th>Review By</th>
-              <th>Materiel Title</th>
-              <th>Review</th>
-              <th>Rate</th>
+            <th>ID</th>
+              <th>Avis par</th>
+              <th>Nom materiel </th>
+              <th>Avis</th>
+              <th>Taux</th>
               <th>Date</th>
-              <th>Status</th>
-              <th>Action</th>
+              <th>Statut</th>
+              <th>Opération</th>
               </tr>
           </tfoot>
           <tbody>
@@ -60,7 +60,7 @@
                         @endfor
                      </ul>
                     </td>
-                    <td>{{$review->created_at->format('M d D, Y g: i a')}}</td>
+                    <td>{{$review->created_at->format('m-d-D, Y g: i a')}}</td>
                     <td>
                         @if($review->status=='active')
                           <span class="badge badge-success">{{$review->status}}</span>
@@ -73,7 +73,7 @@
                         <form method="POST" action="{{route('review.destroy',[$review->id])}}">
                           @csrf 
                           @method('delete')
-                              <button class="btn btn-danger btn-sm dltBtn" data-id={{$review->id}} style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class="fas fa-trash-alt"></i></button>
+                              <button class="btn btn-danger btn-sm dltBtn" data-id={{$review->id}} style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" data-placement="bottom" title="Supprimer"><i class="fas fa-trash-alt"></i></button>
                         </form>
                     </td>
                 </tr>  
@@ -82,7 +82,7 @@
         </table>
         <span style="float:right">{{$reviews->links()}}</span>
         @else
-          <h6 class="text-center">No reviews found!!!</h6>
+          <h6 class="text-center">Aucun commentaire trouvé !!!</h6>
         @endif
       </div>
     </div>
@@ -140,7 +140,7 @@
               swal({
                     title: "Êtes-vous sûr?",
                     text: "l'enregistrement sera supprimé",
-                    icon: "warning",
+                    icon: "Attention",
                     buttons: true,
                     dangerMode: true,
                 })
@@ -148,7 +148,7 @@
                     if (willDelete) {
                        form.submit();
                     } else {
-                        swal("Your data is safe!");
+                        swal("Vos données sont en sécurité!");
                     }
                 });
           })

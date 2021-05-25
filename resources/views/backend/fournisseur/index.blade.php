@@ -9,8 +9,8 @@
          </div>
      </div>
     <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary float-left">Fournisseur Liste</h6>
-      <a href="{{route('fournisseur.create')}}" class="btn btn-primary btn-sm float-right" data-toggle="tooltip" data-placement="bottom" title="Add User"><i class="fas fa-plus"></i> Add Fournisseur</a>
+      <h6 class="m-0 font-weight-bold text-primary float-left">Liste des Fournisseurs </h6>
+      <a href="{{route('fournisseur.create')}}" class="btn btn-primary btn-sm float-right" data-toggle="tooltip" data-placement="bottom" title="Ajouter fournisseur"><i class="fas fa-plus"></i> Ajouter Fournisseur</a>
     </div>
     <div class="card-body">
       <div class="table-responsive">

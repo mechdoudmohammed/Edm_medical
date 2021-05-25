@@ -3,7 +3,7 @@
 @section('main-content')
 
 <div class="card">
-    <h5 class="card-header">Add Materiel</h5>
+    <h5 class="card-header">Ajouter Materiel</h5>
     <div class="card-body">
       <form method="post" action="{{route('materiel.store')}}" enctype="multipart/form-data">
         {{csrf_field()}}
@@ -100,17 +100,7 @@
           <span class="text-danger">{{$message}}</span>
           @enderror
         </div>
-        {{--
-        <div class="form-group">
-          <label for="size">Taille</label>
-          <select name="size[]" class="form-control selectpicker"  multiple data-live-search="true">
-              <option value="">--Sélectionner Taille--</option>
-              <option value="S">Small (S)</option>
-              <option value="M">Medium (M)</option>
-              <option value="L">Large (L)</option>
-              <option value="XL">Extra Large (XL)</option>
-          </select>
-        </div>--}}
+    
 
         <div class="form-group">
           <label for="fournisseur_id">Fournisseur</label>
@@ -165,8 +155,8 @@
         <div class="form-group">
           <label for="status" class="col-form-label">Statut <span class="text-danger">*</span></label>
           <select name="status" class="form-control">
-              <option value="active">Active</option>
-              <option value="inactive">Inactive</option>
+              <option value="active">Activer</option>
+              <option value="inactive">Desactiver</option>
           </select>
           @error('status')
           <span class="text-danger">{{$message}}</span>
@@ -196,7 +186,7 @@
 
     $(document).ready(function() {
       $('#summary').summernote({
-        placeholder: "Write short description.....",
+        placeholder: "Ecrire une petite description.....",
           tabsize: 2,
           height: 100
       });
@@ -204,7 +194,7 @@
 
     $(document).ready(function() {
       $('#description').summernote({
-        placeholder: "Write detail description.....",
+        placeholder: "Ecrire le detail de description.....",
           tabsize: 2,
           height: 150
       });
@@ -231,7 +221,7 @@
             response=$.parseJSON(response)
           }
           // console.log(response);
-          var html_option="<option value=''>----Select sub categorie----</option>"
+          var html_option="<option value=''>----Selectionner le sous categoriee----</option>"
           if(response.status){
             var data=response.data;
             // alert(data);

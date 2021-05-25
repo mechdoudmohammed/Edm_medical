@@ -143,8 +143,8 @@
               e.preventDefault();
               swal({
                     title: "Êtes-vous sûr?",
-                    text: "Once deleted, you will not be able to recover this data!",
-                    icon: "warning",
+                    text: "Une fois supprimées, vous ne pourrez plus récupérer ces données!",
+                    icon: "Attention",
                     buttons: true,
                     dangerMode: true,
                 })
@@ -152,7 +152,7 @@
                     if (willDelete) {
                        form.submit();
                     } else {
-                        swal("Your data is safe!");
+                        swal("Vos données sont en sécurité!");
                     }
                 });
           })

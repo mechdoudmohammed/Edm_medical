@@ -4,22 +4,22 @@
 
 @section('main-content')
 <div class="card">
-<h5 class="card-header">Order       <a href="{{route('order.pdf',$order->id)}}" class=" btn btn-sm btn-primary shadow-sm float-right"><i class="fas fa-download fa-sm text-white-50"></i> Generate PDF</a>
+<h5 class="card-header">Commande       <a href="{{route('order.pdf',$order->id)}}" class=" btn btn-sm btn-primary shadow-sm float-right"><i class="fas fa-download fa-sm text-white-50"></i> Generate PDF</a>
   </h5>
   <div class="card-body">
     @if($order)
     <table class="table table-striped table-hover">
       <thead>
         <tr>
-            <th>S.N.</th>
-            <th>Order No.</th>
-            <th>Name</th>
+            <th>ID</th>
+            <th>Commande n </th>
+            <th>Nom</th>
             <th>Email</th>
-            <th>Quantity</th>
+            <th>Quantité</th>
             <th>Charge</th>
-            <th>Total Amount</th>
-            <th>Status</th>
-            <th>Action</th>
+            <th>Totale</th>
+            <th>Statut</th>
+            <th>Operation</th>
         </tr>
       </thead>
       <tbody>
@@ -47,7 +47,7 @@
                 <form method="POST" action="{{route('order.destroy',[$order->id])}}">
                   @csrf 
                   @method('delete')
-                      <button class="btn btn-danger btn-sm dltBtn" data-id={{$order->id}} style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class="fas fa-trash-alt"></i></button>
+                      <button class="btn btn-danger btn-sm dltBtn" data-id={{$order->id}} style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" data-placement="bottom" title="Supprimer"><i class="fas fa-trash-alt"></i></button>
                 </form>
             </td>
           
@@ -60,38 +60,38 @@
         <div class="row">
           <div class="col-lg-6 col-lx-4">
             <div class="order-info">
-              <h4 class="text-center pb-4">ORDER INFORMATION</h4>
+              <h4 class="text-center pb-4">INFORMATION SUR LA COMMANDE</h4>
               <table class="table">
                     <tr class="">
-                        <td>Order Number</td>
+                        <td>Numero de commande</td>
                         <td> : {{$order->cart_id}}</td>
                     </tr>
                     <tr>
-                        <td>Order Date</td>
+                        <td>Date de commande</td>
                         <td> : {{$order->created_at->diffForHumans()}}</td>
                     </tr>
                     <tr>
-                        <td>Quantity</td>
+                        <td>Quantité</td>
                         <td> : {{$order->quantity}}</td>
                     </tr>
                     <tr>
-                        <td>Order Status</td>
+                        <td>Statut de commande</td>
                         <td> : {{$order->status}}</td>
                     </tr>
                     <tr>
-                        <td>Livraison Charge</td>
+                        <td>Charge de livraison </td>
                         <td> : $ {{number_format($order->delivery_charge,2)}}</td>
                     </tr>
                     <tr>
-                        <td>Total Amount</td>
+                        <td>Totale</td>
                         <td> : $ {{number_format($order->total_amount,2)}}</td>
                     </tr>
                     <tr>
-                        <td>Payment Method</td>
+                        <td>Methode de paiment</td>
                         <td> : </td>
                     </tr>
                     <tr>
-                        <td>Payment Status</td>
+                        <td>Statut de paiment</td>
                         <td> : </td>
                     </tr>
               </table>
@@ -100,10 +100,10 @@
 
           <div class="col-lg-6 col-lx-4">
             <div class="livraison-info">
-              <h4 class="text-center pb-4">LIVRAISON INFORMATION</h4>
+              <h4 class="text-center pb-4"> INFORMATION DE LIVRAISON</h4>
               <table class="table">
                     <tr class="">
-                        <td>Full Name</td>
+                        <td>Nom Complet</td>
                         <td> : {{$order->first_name}} {{$order->last_name}}</td>
                     </tr>
                     <tr>
@@ -111,19 +111,19 @@
                         <td> : {{$order->email}}</td>
                     </tr>
                     <tr>
-                        <td>Phone No.</td>
+                        <td>Tél</td>
                         <td> : {{$order->phone}}</td>
                     </tr>
                     <tr>
-                        <td>Address</td>
+                        <td>Adresse</td>
                         <td> : {{$order->address1}}, {{$order->address2}}</td>
                     </tr>
                     <tr>
-                        <td>Country</td>
+                        <td>ville</td>
                         <td> : {{$order->country}}</td>
                     </tr>
                     <tr>
-                        <td>Post Code</td>
+                        <td>Code postale</td>
                         <td> : {{$order->post_code}}</td>
                     </tr>
               </table>

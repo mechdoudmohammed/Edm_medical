@@ -9,8 +9,8 @@
          </div>
      </div>
     <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary float-left">Post Lists</h6>
-      <a href="{{route('post.create')}}" class="btn btn-primary btn-sm float-right" data-toggle="tooltip" data-placement="bottom" title="Add User"><i class="fas fa-plus"></i> Add Post</a>
+      <h6 class="m-0 font-weight-bold text-primary float-left">Liste des postes </h6>
+      <a href="{{route('post.create')}}" class="btn btn-primary btn-sm float-right" data-toggle="tooltip" data-placement="bottom" title="Ajouter utilisateur"><i class="fas fa-plus"></i> Ajouter poste</a>
     </div>
     <div class="card-body">
       <div class="table-responsive">
@@ -18,26 +18,26 @@
         <table class="table table-bordered" id="materiel-dataTable" width="100%" cellspacing="0">
           <thead>
             <tr>
-              <th>S.N.</th>
-              <th>Title</th>
+              <th>ID</th>
+              <th>Titre</th>
               <th>Categorie</th>
               <th>Tag</th>
               <th>Auteur</th>
               <th>Photo</th>
-              <th>Status</th>
-              <th>Action</th>
+              <th>Statut</th>
+              <th>Operation</th>
             </tr>
           </thead>
           <tfoot>
             <tr>
-              <th>S.N.</th>
-              <th>Title</th>
+            <th>ID</th>
+              <th>Titre</th>
               <th>Categorie</th>
               <th>Tag</th>
               <th>Auteur</th>
               <th>Photo</th>
-              <th>Status</th>
-              <th>Action</th>
+              <th>Statut</th>
+              <th>Operation</th>
             </tr>
           </tfoot>
           <tbody>
@@ -75,11 +75,11 @@
                         @endif
                     </td>
                     <td>
-                        <a href="{{route('post.edit',$post->id)}}" class="btn btn-primary btn-sm float-left mr-1" style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" title="edit" data-placement="bottom"><i class="fas fa-edit"></i></a>
+                        <a href="{{route('post.edit',$post->id)}}" class="btn btn-primary btn-sm float-left mr-1" style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" title="editer" data-placement="bottom"><i class="fas fa-edit"></i></a>
                     <form method="POST" action="{{route('post.destroy',[$post->id])}}">
                       @csrf 
                       @method('delete')
-                          <button class="btn btn-danger btn-sm dltBtn" data-id={{$post->id}} style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class="fas fa-trash-alt"></i></button>
+                          <button class="btn btn-danger btn-sm dltBtn" data-id={{$post->id}} style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" data-placement="bottom" title="Supprimer"><i class="fas fa-trash-alt"></i></button>
                         </form>
                     </td>
                 </tr>  
@@ -88,7 +88,7 @@
         </table>
         <span style="float:right">{{$posts->links()}}</span>
         @else
-          <h6 class="text-center">No posts found!!! Please create Post</h6>
+          <h6 class="text-center">Aucun article trouvé!!! Veuillez créer un message</h6>
         @endif
       </div>
     </div>
@@ -153,7 +153,7 @@
               swal({
                     title: "Êtes-vous sûr?",
                     text: "l'enregistrement sera supprimé",
-                    icon: "warning",
+                    icon: "Attention",
                     buttons: true,
                     dangerMode: true,
                 })
@@ -161,7 +161,7 @@
                     if (willDelete) {
                        form.submit();
                     } else {
-                        swal("Your data is safe!");
+                        swal("Vos données sont en sécurité!");
                     }
                 });
           })

@@ -9,8 +9,8 @@
          </div>
      </div>
     <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary float-left">Materiel Lists</h6>
-      <a href="{{route('materiel.create')}}" class="btn btn-primary btn-sm float-right" data-toggle="tooltip" data-placement="bottom" title="Add User"><i class="fas fa-plus"></i> Add Materiel</a>
+      <h6 class="m-0 font-weight-bold text-primary float-left">Liste materiel</h6>
+      <a href="{{route('materiel.create')}}" class="btn btn-primary btn-sm float-right" data-toggle="tooltip" data-placement="bottom" title="Ajouter materiel"><i class="fas fa-plus"></i> Ajouter Materiel</a>
     </div>
     <div class="card-body">
       <div class="table-responsive">
@@ -23,35 +23,35 @@
             <th>Fiche Technique</th>
               <th>Nom</th>
               <th>Categorie</th>
-              <th>Is Featured</th>
+              <th>Est présenté</th>
               <th>Prix</th>
-              <th>Discount</th>
+              <th>Réduction</th>
               <th>Condition</th>
               <th>Fournisseur</th>
               <th>Stock</th>
               <th>Statut</th>
               <th>Location</th>
               <th>Prix Location</th>
-              <th>Action</th>
+              <th>Opération</th>
             </tr>
           </thead>
           <tfoot>
             <tr>
-              <th>ID</th>
-              <th>Photo</th>
-              <th>Fiche Technique</th>
+            <th>ID</th>
+            <th>Photo</th>
+            <th>Fiche Technique</th>
               <th>Nom</th>
               <th>Categorie</th>
-              <th>Is Featured</th>
+              <th>Est présenté</th>
               <th>Prix</th>
-              <th>Discount</th>
+              <th>Réduction</th>
               <th>Condition</th>
               <th>Fournisseur</th>
               <th>Stock</th>
               <th>Statut</th>
               <th>Location</th>
               <th>Prix Location</th>
-              <th>Action</th>
+              <th>Opération</th>
             </tr>
           </tfoot>
           <tbody>
@@ -84,7 +84,7 @@
                         @endforeach
                       </sub>
                     </td>
-                    <td>{{(($materiel->is_featured==1)? 'Yes': 'No')}}</td>
+                    <td>{{(($materiel->is_featured==1)? 'Oui': 'Non')}}</td>
                     <td>{{$materiel->price}}</td>
                     <td>  {{$materiel->discount}}%</td>
                     <td>{{$materiel->condition}}</td>
@@ -110,36 +110,17 @@
                     <form method="POST" action="{{route('materiel.destroy',[$materiel->id])}}">
                       @csrf
                       @method('delete')
-                          <button class="btn btn-danger btn-sm dltBtn" data-id={{$materiel->id}} style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class="fas fa-trash-alt"></i></button>
+                          <button class="btn btn-danger btn-sm dltBtn" data-id={{$materiel->id}} style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" data-placement="bottom" title="Supprimer"><i class="fas fa-trash-alt"></i></button>
                         </form>
                     </td>
-                    {{-- Delete Modal --}}
-                    {{-- <div class="modal fade" id="delModal{{$user->id}}" tabindex="-1" role="dialog" aria-labelledby="#delModal{{$user->id}}Label" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h5 class="modal-title" id="#delModal{{$user->id}}Label">Delete user</h5>
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                              </button>
-                            </div>
-                            <div class="modal-body">
-                              <form method="post" action="{{ route('categories.destroy',$user->id) }}">
-                                @csrf
-                                @method('delete')
-                                <button type="submit" class="btn btn-danger" style="margin:auto; text-align:center">Parmanent delete user</button>
-                              </form>
-                            </div>
-                          </div>
-                        </div>
-                    </div> --}}
+                  
                 </tr>
             @endforeach
           </tbody>
         </table>
         <span style="float:right">{{$materiels->links()}}</span>
         @else
-          <h6 class="text-center">No Materiels found!!! Please create Materiel</h6>
+          <h6 class="text-center">Aucun matériel trouvé !!! Veuillez créer du matériel</h6>
         @endif
       </div>
     </div>
@@ -205,7 +186,7 @@
               swal({
                     title: "Êtes-vous sûr?",
                     text: "l'enregistrement sera supprimé",
-                    icon: "warning",
+                    icon: "Attention",
                     buttons: true,
                     dangerMode: true,
                 })
@@ -213,7 +194,7 @@
                     if (willDelete) {
                        form.submit();
                     } else {
-                        swal("Your data is safe!");
+                        swal("Vos données sont en sécurité!");
                     }
                 });
           })

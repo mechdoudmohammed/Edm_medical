@@ -9,8 +9,8 @@
          </div>
      </div>
     <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary float-left">Post Categorie Lists</h6>
-      <a href="{{route('post-categorie.create')}}" class="btn btn-primary btn-sm float-right" data-toggle="tooltip" data-placement="bottom" title="Add User"><i class="fas fa-plus"></i> Add Post Categorie</a>
+      <h6 class="m-0 font-weight-bold text-primary float-left">Liste des categories de poste </h6>
+      <a href="{{route('post-categorie.create')}}" class="btn btn-primary btn-sm float-right" data-toggle="tooltip" data-placement="bottom" title="Ajouter categorie de Poste"><i class="fas fa-plus"></i> Ajouter  Categorie de poste</a>
     </div>
     <div class="card-body">
       <div class="table-responsive">
@@ -18,20 +18,20 @@
         <table class="table table-bordered" id="post-categorie-dataTable" width="100%" cellspacing="0">
           <thead>
             <tr>
-              <th>S.N.</th>
-              <th>Title</th>
-              <th>Slug</th>
-              <th>Status</th>
-              <th>Action</th>
+              <th>ID</th>
+              <th>Titre</th>
+              <th>Sous-titre</th>
+              <th>Statut</th>
+              <th>Opération</th>
             </tr>
           </thead>
           <tfoot>
             <tr>
-              <th>S.N.</th>
-              <th>Title</th>
-              <th>Slug</th>
-              <th>Status</th>
-              <th>Action</th>
+            <th>ID</th>
+              <th>Titre</th>
+              <th>Sous-titre</th>
+              <th>Statut</th>
+              <th>Opération</th>
               </tr>
           </tfoot>
           <tbody>
@@ -52,36 +52,17 @@
                     <form method="POST" action="{{route('post-categorie.destroy',[$data->id])}}">
                       @csrf 
                       @method('delete')
-                          <button class="btn btn-danger btn-sm dltBtn" data-id={{$data->id}} style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class="fas fa-trash-alt"></i></button>
+                          <button class="btn btn-danger btn-sm dltBtn" data-id={{$data->id}} style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" data-placement="bottom" title="Supprimer"><i class="fas fa-trash-alt"></i></button>
                         </form>
                     </td>
-                    {{-- Delete Modal --}}
-                    {{-- <div class="modal fade" id="delModal{{$user->id}}" tabindex="-1" role="dialog" aria-labelledby="#delModal{{$user->id}}Label" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h5 class="modal-title" id="#delModal{{$user->id}}Label">Delete user</h5>
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                              </button>
-                            </div>
-                            <div class="modal-body">
-                              <form method="post" action="{{ route('banners.destroy',$user->id) }}">
-                                @csrf 
-                                @method('delete')
-                                <button type="submit" class="btn btn-danger" style="margin:auto; text-align:center">Parmanent delete user</button>
-                              </form>
-                            </div>
-                          </div>
-                        </div>
-                    </div> --}}
+                 
                 </tr>  
             @endforeach
           </tbody>
         </table>
         <span style="float:right">{{$postCategories->links()}}</span>
         @else
-          <h6 class="text-center">No Post Categorie found!!! Please create post categorie</h6>
+          <h6 class="text-center">Aucune catégorie de message trouvée !!! Veuillez créer une catégorie de poste</h6>
         @endif
       </div>
     </div>
@@ -139,7 +120,7 @@
               swal({
                     title: "Êtes-vous sûr?",
                     text: "l'enregistrement sera supprimé",
-                    icon: "warning",
+                    icon: "Attention",
                     buttons: true,
                     dangerMode: true,
                 })
@@ -147,7 +128,7 @@
                     if (willDelete) {
                        form.submit();
                     } else {
-                        swal("Your data is safe!");
+                        swal("Vos données sont en sécurité!");
                     }
                 });
           })
