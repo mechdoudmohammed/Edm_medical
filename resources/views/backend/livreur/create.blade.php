@@ -9,7 +9,7 @@
         {{csrf_field()}}
         <div class="form-group">
           <label for="inputnom" class="col-form-label">Nom <span class="text-danger">*</span></label>
-        <input id="inputnom" type="text" name="nom" placeholder="Enter nom"  value="{{old('nom')}}" class="form-control" require>
+        <input id="inputnom" type="text" name="nom" placeholder="Entrer nom"  value="{{old('nom')}}" class="form-control" require>
         @error('nom')
         <span class="text-danger">{{$message}}</span>
         @enderror
@@ -17,7 +17,7 @@
 
         <div class="form-group">
         <label for="inputprenom" class="col-form-label">Prenom <span class="text-danger">*</span></label>
-        <input id="inputprenom" type="text" name="prenom" placeholder="Enter prenom"  value="{{old('prenom')}}" class="form-control" require>
+        <input id="inputprenom" type="text" name="prenom" placeholder="Entrer prenom"  value="{{old('prenom')}}" class="form-control" require>
         @error('prenom')
         <span class="text-danger">{{$message}}</span>
         @enderror
@@ -26,7 +26,7 @@
 
         <div class="form-group">
           <label for="inputtelephone" class="col-form-label">Telephone <span class="text-danger">*</span></label>
-        <input id="inputtelephone" type="text" name="telephone" placeholder="Enter telephone"  value="{{old('telephone')}}" class="form-control" require>
+        <input id="inputtelephone" type="text" name="telephone" placeholder="Entrer telephone"  value="{{old('telephone')}}" class="form-control" require>
         @error('telephone')
         <span class="text-danger">{{$message}}</span>
         @enderror
@@ -34,7 +34,7 @@
 
         <div class="form-group">
           <label for="inputemail" class="col-form-label">Email <span class="text-danger">*</span></label>
-        <input id="inputemail" type="text" name="email" placeholder="Enter title"  value="{{old('email')}}" class="form-control" require>
+        <input id="inputemail" type="text" name="email" placeholder="Entrer email"  value="{{old('email')}}" class="form-control" require>
         @error('email')
         <span class="text-danger">{{$message}}</span>
         @enderror
@@ -43,7 +43,7 @@
 
         <div class="form-group">
           <label for="inputMotdepasse" class="col-form-label">Mot de passe<span class="text-danger">*</span></label>
-        <input id="inputMotdepasse" type="password" name="password" placeholder="Enter mot de passe"  value="{{old('motdepasse')}}" class="form-control">
+        <input id="inputMotdepasse" type="password" name="password" placeholder="Entrer mot de passe"  value="{{old('motdepasse')}}" class="form-control">
         @error('password')
         <span class="text-danger">{{$message}}</span>
         @enderror
@@ -59,7 +59,7 @@
   
         <div class="form-group">
           <label for="inputadresse" class="col-form-label">Adresse <span class="text-danger">*</span></label>
-        <input id="inputadresse" type="text" name="adresse" placeholder="Enter adresse"  value="{{old('adresse')}}" class="form-control"require>
+        <input id="inputadresse" type="text" name="adresse" placeholder="Entrer adresse"  value="{{old('adresse')}}" class="form-control"require>
         @error('adresse')
         <span class="text-danger">{{$message}}</span>
         @enderror
@@ -67,7 +67,7 @@
 
         <div class="form-group">
           <label for="inputcin" class="col-form-label">Cin <span class="text-danger">*</span></label>
-        <input id="inputcin" type="text" name="cin" placeholder="Enter cin"  value="{{old('cin')}}" class="form-control"require>
+        <input id="inputcin" type="text" name="cin" placeholder="Entrer cin"  value="{{old('cin')}}" class="form-control"require>
         @error('cin')
         <span class="text-danger">{{$message}}</span>
         @enderror
@@ -75,7 +75,7 @@
 
         <div class="form-group">
           <label for="inputnumero_permis" class="col-form-label">Numero permis <span class="text-danger">*</span></label>
-        <input id="inputnumero_permis" type="text" name="numero_permis" placeholder="Enter numero de permis"  value="{{old('numero_permis')}}" class="form-control"require>
+        <input id="inputnumero_permis" type="text" name="numero_permis" placeholder="Entrer numero de permis"  value="{{old('numero_permis')}}" class="form-control"require>
         @error('numero_permis')
         <span class="text-danger">{{$message}}</span>
         @enderror

@@ -9,7 +9,7 @@
         {{csrf_field()}}
         <div class="form-group">
           <label for="inputTitle" class="col-form-label">Titre <span class="text-danger">*</span></label>
-          <input id="inputTitle" type="text" name="title" placeholder="Enter le titre"  value="{{old('title')}}" class="form-control">
+          <input id="inputTitle" type="text" name="title" placeholder="Entrer le titre"  value="{{old('title')}}" class="form-control">
           @error('title')
           <span class="text-danger">{{$message}}</span>
           @enderror
