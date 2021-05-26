@@ -70,38 +70,6 @@ class AdminController extends Controller
         return redirect()->back();
     }
 
-    public function settings(){
-        $data=Settings::first();
-        $profile=Auth()->user();
-        return view('backend.setting')->with('data',$data)
-        ->with('profile',$profile);
-        
-    }
-
-    public function settingsUpdate(Request $request){
-        // return $request->all();
-        $this->validate($request,[
-            'short_des'=>'required|string',
-            'description'=>'required|string',
-            'photo'=>'required',
-            'logo'=>'required',
-            'address'=>'required|string',
-            'email'=>'required|email',
-            'phone'=>'required|string',
-        ]);
-        $data=$request->all();
-        // return $data;
-        $settings=Settings::first();
-        // return $settings;
-        $status=$settings->fill($data)->save();
-        if($status){
-            request()->session()->flash('Succès','Paramétres appliqué');
-        }
-        else{
-            request()->session()->flash('erreur','Erreur, veuillez réessayer ultérieurement');
-        }
-        return redirect()->route('admin');
-    }
 
     public function changePassword(){
         $profile=Auth()->user();

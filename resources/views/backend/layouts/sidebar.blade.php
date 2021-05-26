@@ -244,13 +244,6 @@
             <i class="fas fa-users"></i>
             <span>Utilisateur</span></a>
     </li>
-     <!-- General settings -->
-     <li class="nav-item">
-        <a class="nav-link" href="{{route('settings')}}">
-            <i class="fas fa-cog"></i>
-            <span>Parametres</span></a>
-    </li>
-
     <!-- Sidebar Toggler (Sidebar) -->
     <div class="text-center d-none d-md-inline">
       <button class="rounded-circle border-0" id="sidebarToggle"></button>

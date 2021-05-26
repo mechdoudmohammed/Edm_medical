@@ -40,9 +40,22 @@ class HomeController extends Controller
     }
 
     public function profileUpdate(Request $request,$id){
+        
         // return $request->all();
         $user=User::findOrFail($id);
+         //enregister la photo
+         $file_extension=$request -> photo -> getClientOriginalExtension();
+         $file_name = time().".".$file_extension;
+         $path='backend/img/utilisateurs';
+         $request->photo -> move($path,$file_name);
+         
+        
+        if ($request->photo == null){
+            $request['photo'] = $user->photo;
+        }
+   
         $data=$request->all();
+        $data['photo']=$file_name;
         $status=$user->fill($data)->save();
         if($status){
             request()->session()->flash('Succès','Profile modifié avec succès');

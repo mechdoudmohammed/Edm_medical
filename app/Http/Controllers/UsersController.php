@@ -43,10 +43,18 @@ class UsersController extends Controller
             'password'=>'string|required',
             'role'=>'required|in:admin,user',
             'status'=>'required|in:active,inactive',
-            'photo'=>'nullable|string',
+            'photo'=>'required'
+         
         ]);
+       //return $request;
+         //enregister la photo
+         $file_extension=$request -> photo -> getClientOriginalExtension();
+         $file_name = time().".".$file_extension;
+         $path='backend/img/utilisateurs';
+         $request->photo -> move($path,$file_name);
         // dd($request->all());
         $data=$request->all();
+        $data['photo']=$file_name;
         $data['password']=Hash::make($request->password);
         // dd($data);
         $status=User::create($data);
@@ -103,12 +111,18 @@ class UsersController extends Controller
             'email'=>'string|required',
             'role'=>'required|in:admin,user',
             'status'=>'required|in:active,inactive',
-            'photo'=>'nullable|string',
+            'photo'=>'required'
         ]);
+          //enregister la photo
+          $file_extension=$request -> photo -> getClientOriginalExtension();
+          $file_name = time().".".$file_extension;
+          $path='backend/img/utilisateurs';
+          $request->photo -> move($path,$file_name);
         // dd($request->all());
         $data=$request->all();
         // dd($data);
-        
+        $data['photo']=$file_name;
+        //return $data;
         $status=$user->fill($data)->save();
         if($status){
             request()->session()->flash('Succès','Modification avec succès');

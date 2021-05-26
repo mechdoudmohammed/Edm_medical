@@ -82,7 +82,7 @@
         </table>
         <span style="float:right">{{$reviews->links()}}</span>
         @else
-          <h6 class="text-center">Aucun commentaire trouvé !!!</h6>
+          <h6 class="text-center">Aucun avis trouvé !!!</h6>
         @endif
       </div>
     </div>

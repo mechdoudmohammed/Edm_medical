@@ -90,7 +90,7 @@
         </table>
         <span style="float:right">{{$orders->links()}}</span>
         @else
-          <h6 class="text-center">No orders found!!! Please order some materiels</h6>
+          <h6 class="text-center">Auccune Commande trouvée </h6>
         @endif
       </div>
     </div>

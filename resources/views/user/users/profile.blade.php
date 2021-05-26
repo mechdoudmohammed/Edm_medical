@@ -13,7 +13,7 @@
    <div class="card-header py-3">
      <h4 class=" font-weight-bold">Profile</h4>
      <ul class="breadcrumbs">
-         <li><a href="{{route('admin')}}" style="color:#999">Dashboard</a></li>
+         <li><a href="{{route('admin')}}" style="color:#999">Tableau de bord</a></li>
          <li><a href="" class="active text-primary">Profile Page</a></li>
      </ul>
    </div>
@@ -23,9 +23,9 @@
                 <div class="card">
                     <div class="image">
                         @if($profile->photo)
-                        <img class="card-img-top img-fluid roundend-circle mt-4" style="border-radius:50%;height:80px;width:80px;margin:auto;" src="{{$profile->photo}}" alt="profile picture">
+                        <img class="card-img-top img-fluid roundend-circle mt-4" style="border-radius:50%;height:80px;width:80px;margin:auto;" src="../backend/img/utilisateurs/{{$profile->photo}}" alt="profile picture">
                         @else
-                        <img class="card-img-top img-fluid roundend-circle mt-4" style="border-radius:50%;height:80px;width:80px;margin:auto;" src="{{asset('backend/img/avatar.png')}}" alt="profile picture">
+                        <img class="card-img-top img-fluid roundend-circle mt-4" style="border-radius:50%;height:80px;width:80px;margin:auto;" src="../backend/img/utilisateurs/{{asset('backend/img/avatar.png')}}" alt="profile picture">
                         @endif
                     </div>
                     <div class="card-body mt-4 ml-2">
@@ -36,11 +36,11 @@
                   </div>
             </div>
             <div class="col-md-8">
-                <form class="border px-4 pt-2 pb-3" method="POST" action="{{route('user-profile-update',$profile->id)}}">
+                <form class="border px-4 pt-2 pb-3" method="POST" action="{{route('user-profile-update',$profile->id)}}" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
-                        <label for="inputTitle" class="col-form-label">Name</label>
-                      <input id="inputTitle" type="text" name="name" placeholder="Enter name"  value="{{$profile->name}}" class="form-control">
+                        <label for="inputTitle" class="col-form-label">Nom et Prenom</label>
+                      <input id="inputTitle" type="text" name="name" placeholder="Entrer nom"  value="{{$profile->name}}" class="form-control">
                       @error('name')
                       <span class="text-danger">{{$message}}</span>
                       @enderror
@@ -66,7 +66,7 @@
                       </div>
 
 
-                        <button type="submit" class="btn btn-success btn-sm">Update</button>
+                        <button type="submit" class="btn btn-success btn-sm">Modifier</button>
                 </form>
             </div>
         </div>

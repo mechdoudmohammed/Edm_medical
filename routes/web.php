@@ -153,10 +153,6 @@ Route::group(['prefix'=>'/admin','middleware'=>['auth','admin']],function(){
     Route::resource('/livraison','LivraisonController');
     // Coupon
     Route::resource('/coupon','CouponController');
-    // Settings
-    Route::get('settings','AdminController@settings')->name('settings');
-    Route::post('setting/update','AdminController@settingsUpdate')->name('settings.update');
-
     // Notification
     Route::get('/notification/{id}','NotificationController@show')->name('admin.notification');
     Route::get('/notifications','NotificationController@index')->name('all.notification');

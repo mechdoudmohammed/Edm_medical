@@ -5,7 +5,7 @@
 <div class="card">
     <h5 class="card-header">Ajouter un utilisateur</h5>
     <div class="card-body">
-      <form method="post" action="{{route('users.store')}}">
+      <form method="post" action="{{route('users.store')}}" enctype="multipart/form-data">
         {{csrf_field()}}
         <div class="form-group">
           <label for="inputTitle" class="col-form-label">Nom</label>
@@ -32,20 +32,17 @@
         </div>
 
         <div class="form-group">
-        <label for="inputPhoto" class="col-form-label">Photo</label>
-        <div class="input-group">
-            <span class="input-group-btn">
-                <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
-                <i class="fa fa-picture-o"></i> Choix
-                </a>
-            </span>
-            <input id="thumbnail" class="form-control" type="text" name="photo" value="{{old('photo')}}">
+          <label for="inputPhoto" class="col-form-label">Photo: <span class="text-danger">*</span></label>
+          <div class="input-group">
+          <input id="thumbnail" class="form-control" type="file" name="photo" value="{{old('photo')}}">
         </div>
-        <img id="holder" style="margin-top:15px;max-height:100px;">
+        <div id="holder" style="margin-top:15px;max-height:100px;"></div>
           @error('photo')
           <span class="text-danger">{{$message}}</span>
           @enderror
         </div>
+
+        
         @php 
         $roles=DB::table('users')->select('role')->get();
         @endphp

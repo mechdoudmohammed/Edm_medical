@@ -103,6 +103,9 @@ class BannerController extends Controller
     public function update(Request $request, $id)
     {
         $banner=Banner::findOrFail($id);
+        if ($request->photo == null){
+            $request['photo'] = $banner->photo;
+        }
         $this->validate($request,[
             'title'=>'string|required|max:50',
             'description'=>'string|nullable',

@@ -101,7 +101,7 @@
 
         <div class="form-group">
           <label for="price" class="col-form-label">Prix<span class="text-danger">*</span></label>
-          <input id="price" type="number" name="price" placeholder="Enter price"  value="{{$materiel->price}}" class="form-control">
+          <input id="price" type="number" name="price" placeholder="Entrer prix"  value="{{$materiel->price}}" class="form-control">
           @error('price')
           <span class="text-danger">{{$message}}</span>
           @enderror
@@ -164,7 +164,7 @@
           @enderror
         </div>
         <div class="form-group mb-3">
-           <button class="btn btn-success" type="submit">Mise à jour</button>
+           <button class="btn btn-success" type="submit">Modifier</button>
         </div>
       </form>
     </div>

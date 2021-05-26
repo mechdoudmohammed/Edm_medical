@@ -64,6 +64,7 @@ class MaterielController extends Controller
             'discount'=>'nullable|numeric',
             'location'=>'required'
         ]);
+        //return $request;
         //enregister la photo
         $file_extension=$request -> photo -> getClientOriginalExtension();
         $file_name = time().".".$file_extension;

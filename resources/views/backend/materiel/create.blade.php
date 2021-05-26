@@ -8,7 +8,7 @@
       <form method="post" action="{{route('materiel.store')}}" enctype="multipart/form-data">
         {{csrf_field()}}
         <div class="form-group">
-          <label for="inputNom" class="col-form-label">Titre <span class="text-danger">*</span></label>
+          <label for="inputNom" class="col-form-label">Nom <span class="text-danger">*</span></label>
           <input id="inputNom" type="text" name="nom" placeholder="Entrer nom"  value="{{old('nom')}}" class="form-control">
           @error('nom')
           <span class="text-danger">{{$message}}</span>
@@ -126,7 +126,7 @@
 
         <div class="form-group">
           <label for="stock">Quantité <span class="text-danger">*</span></label>
-          <input id="quantity" type="number" name="stock" min="0" placeholder="Enter Quantité"  value="{{old('stock')}}" class="form-control">
+          <input id="quantity" type="number" name="stock" min="0" placeholder="Entrer Quantité"  value="{{old('stock')}}" class="form-control">
           @error('stock')
           <span class="text-danger">{{$message}}</span>
           @enderror
@@ -163,8 +163,8 @@
           @enderror
         </div>
         <div class="form-group mb-3">
-          <button type="reset" class="btn btn-warning">Réinitialiser</button>
-           <button class="btn btn-success" type="submit">Valider</button>
+          <button type="reset" class="btn btn-warning">Initialiser</button>
+           <button class="btn btn-success" type="submit">Ajouter</button>
         </div>
       </form>
     </div>

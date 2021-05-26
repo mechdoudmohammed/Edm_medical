@@ -9,7 +9,7 @@
         {{csrf_field()}}
         <div class="form-group">
           <label for="inputTitle" class="col-form-label">Type <span class="text-danger">*</span></label>
-        <input id="inputTitle" type="text" name="type" placeholder="Enter title"  value="{{old('type')}}" class="form-control">
+        <input id="inputTitle" type="text" name="type" placeholder="Entrer titre"  value="{{old('type')}}" class="form-control">
         @error('type')
         <span class="text-danger">{{$message}}</span>
         @enderror
@@ -17,7 +17,7 @@
 
         <div class="form-group">
           <label for="price" class="col-form-label">Prix <span class="text-danger">*</span></label>
-        <input id="price" type="number" name="price" placeholder="Enter price"  value="{{old('price')}}" class="form-control">
+        <input id="price" type="number" name="price" placeholder="Entrer prix"  value="{{old('price')}}" class="form-control">
         @error('price')
         <span class="text-danger">{{$message}}</span>
         @enderror

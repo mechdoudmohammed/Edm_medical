@@ -111,6 +111,11 @@ class CategoryController extends Controller
     public function update(Request $request, $id)
     {
         $categorie=Categorie::findOrFail($id);
+
+        if ($request->photo == null){
+            $request['photo'] = $categorie->photo;
+        }
+
         $this->validate($request,[
             'title'=>'string|required',
             'summary'=>'string|nullable',

@@ -35,7 +35,7 @@
 
         <div class="form-group">
           <label for="inputemail" class="col-form-label">Email <span class="text-danger">*</span></label>
-        <input id="inputemail" type="text" name="email" placeholder="Enter title"  value="{{$livreur->email}}" class="form-control" require>
+        <input id="inputemail" type="text" name="email" placeholder="Entrer titre"  value="{{$livreur->email}}" class="form-control" require>
         @error('email')
         <span class="text-danger">{{$message}}</span>
         @enderror

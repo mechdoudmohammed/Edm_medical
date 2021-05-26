@@ -31,7 +31,7 @@
         </div>
         <div class="form-group">
           <label for="inputemail" class="col-form-label">Email </label>
-        <input id="inputemail" type="text" name="email" placeholder="Enter title"  value="{{$fournisseur->email}}" class="form-control">
+        <input id="inputemail" type="text" name="email" placeholder="Entrer titre"  value="{{$fournisseur->email}}" class="form-control">
         @error('email')
         <span class="text-danger">{{$message}}</span>
         @enderror

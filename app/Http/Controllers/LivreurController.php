@@ -64,6 +64,9 @@ class LivreurController extends Controller
     public function update(Request $request, $id)
     {
         $livreur=Livreur::find($id);
+        if ($request->photo == null){
+            $request['photo'] = $livreur->photo;
+        }
         $this->validate($request,[
             'nom'=>'string|required',
             'prenom'=>'string|required',

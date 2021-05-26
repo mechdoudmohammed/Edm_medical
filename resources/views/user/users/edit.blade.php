@@ -5,12 +5,12 @@
 <div class="card">
     <h5 class="card-header">Edit User</h5>
     <div class="card-body">
-      <form method="post" action="{{route('users.update',$user->id)}}">
+      <form method="post" action="{{route('users.update',$user->id)}}" enctype="multipart/form-data">
         @csrf 
         @method('PATCH')
         <div class="form-group">
-          <label for="inputTitle" class="col-form-label">Name</label>
-        <input id="inputTitle" type="text" name="name" placeholder="Enter name"  value="{{$user->name}}" class="form-control">
+          <label for="inputTitle" class="col-form-label">Nom et Prenom</label>
+        <input id="inputTitle" type="text" name="name" placeholder="Entrer name"  value="{{$user->name}}" class="form-control">
         @error('name')
         <span class="text-danger">{{$message}}</span>
         @enderror
