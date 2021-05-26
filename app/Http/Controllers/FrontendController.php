@@ -201,7 +201,7 @@ class FrontendController extends Controller
     }
     public function materielSearch(Request $request){
         $recent_materiels=Materiel::where('status','active')->orderBy('id','DESC')->limit(3)->get();
-        $materiels=Materiel::orwhere('title','like','%'.$request->search.'%')
+        $materiels=Materiel::orwhere('nom','like','%'.$request->search.'%')
                     ->orwhere('slug','like','%'.$request->search.'%')
                     ->orwhere('description','like','%'.$request->search.'%')
                     ->orwhere('summary','like','%'.$request->search.'%')
