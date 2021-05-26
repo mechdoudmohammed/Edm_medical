@@ -65,7 +65,7 @@
                         @enderror
                       </div>
                      
-                        <button type="submit" class="btn btn-success btn-sm">Mise à jour</button>
+                        <button type="submit" class="btn btn-success btn-sm">Modifier</button>
                 </form>
             </div>
         </div>

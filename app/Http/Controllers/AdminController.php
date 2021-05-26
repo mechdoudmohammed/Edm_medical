@@ -53,11 +53,16 @@ class AdminController extends Controller
     public function profileUpdate(Request $request,$id){
 
 
-        // return $request->all();
+         
         $user=User::findOrFail($id);
         if ($request->photo == null){
             $request['photo'] = $user->photo;
+            $data=$request->all();
+            $status=$user->fill($data)->save();
+            return redirect()->back();
+            
         }
+       // return $request->all();
         $file_extension=$request -> photo -> getClientOriginalExtension();
         $file_name = time().".".$file_extension;
         $path='backend/img/Profile_admin';
