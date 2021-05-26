@@ -30,8 +30,8 @@
               <th>Fournisseur</th>
               <th>Stock</th>
               <th>Statut</th>
-              <th>Location</th>
               <th>Prix Location</th>
+              <th>Location</th>
               <th>Opération</th>
             </tr>
           </thead>

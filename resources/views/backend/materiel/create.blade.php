@@ -9,7 +9,7 @@
         {{csrf_field()}}
         <div class="form-group">
           <label for="inputNom" class="col-form-label">Titre <span class="text-danger">*</span></label>
-          <input id="inputNom" type="text" name="nom" placeholder="Enter nom"  value="{{old('nom')}}" class="form-control">
+          <input id="inputNom" type="text" name="nom" placeholder="Entrer nom"  value="{{old('nom')}}" class="form-control">
           @error('nom')
           <span class="text-danger">{{$message}}</span>
           @enderror
@@ -53,7 +53,7 @@
           @enderror
               <div class="form-group">
           <label for="inputprixlocation" class="col-form-label">prix de location <span class="text-danger">*</span></label>
-          <input id="inputprixlocation" type="text" name="prix_location" placeholder="Enter le prix" disabled value="{{old('prix_location')}}" class="form-control">
+          <input id="inputprixlocation" type="text" name="prix_location" placeholder="Entrer le prix" disabled value="{{old('prix_location')}}" class="form-control">
          
        
         </div>
@@ -68,7 +68,7 @@
         <div class="form-group">
           <label for="cat_id">Categorie <span class="text-danger">*</span></label>
           <select name="cat_id" id="cat_id" class="form-control">
-              <option value="">--Select any categorie--</option>
+              <option value="">--Selectionner categorie--</option>
               @foreach($categories as $key=>$cat_data)
                   <option value='{{$cat_data->id}}'>{{$cat_data->title}}</option>
               @endforeach
@@ -76,9 +76,9 @@
         </div>
 
         <div class="form-group d-none" id="child_cat_div">
-          <label for="child_cat_id">Sub Categorie</label>
+          <label for="child_cat_id">Sous Categorie</label>
           <select name="child_cat_id" id="child_cat_id" class="form-control">
-              <option value="">--Select any categorie--</option>
+              <option value="">--Selectionner sous-categorie--</option>
               {{-- @foreach($parent_cats as $key=>$parent_cat)
                   <option value='{{$parent_cat->id}}'>{{$parent_cat->title}}</option>
               @endforeach --}}
@@ -86,8 +86,8 @@
         </div>
 
         <div class="form-group">
-          <label for="price" class="col-form-label">Prix(inclut TVA) <span class="text-danger">*</span></label>
-          <input id="price" type="number" name="price" placeholder="Enter price"  value="{{old('price')}}" class="form-control">
+          <label for="price" class="col-form-label">Prix <span class="text-danger">*</span></label>
+          <input id="price" type="number" name="price" placeholder="Entrer prix"  value="{{old('price')}}" class="form-control">
           @error('price')
           <span class="text-danger">{{$message}}</span>
           @enderror
@@ -95,7 +95,7 @@
 
         <div class="form-group">
           <label for="discount" class="col-form-label">Remise(%)</label>
-          <input id="discount" type="number" name="discount" min="0" max="100" placeholder="Enter Remise"  value="{{old('discount')}}" class="form-control">
+          <input id="discount" type="number" name="discount" min="0" max="100" placeholder="Entrer Remise"  value="{{old('discount')}}" class="form-control">
           @error('discount')
           <span class="text-danger">{{$message}}</span>
           @enderror
