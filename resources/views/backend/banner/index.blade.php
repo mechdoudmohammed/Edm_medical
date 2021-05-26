@@ -93,6 +93,12 @@
       .zoom:hover {
         transform: scale(3.2);
       }
+      img.img-fluid.zoom {
+    border-radius: 61px;
+    width: 100px;
+    height: 81px;
+}
+
   </style>
 @endpush
 
