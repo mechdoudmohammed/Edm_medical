@@ -5,6 +5,11 @@
 <div class="card">
     <h5 class="card-header">Ajouter Materiel</h5>
     <div class="card-body">
+    <div class="row">
+         <div class="col-md-12">
+            @include('backend.layouts.notification')
+         </div>
+     </div>
       <form method="post" action="{{route('materiel.store')}}" enctype="multipart/form-data">
         {{csrf_field()}}
         <div class="form-group">

@@ -144,7 +144,7 @@
               swal({
                     title: "Êtes-vous sûr?",
                     text: "Une fois supprimées, vous ne pourrez plus récupérer ces données!",
-                    icon: "Attention",
+                    icon: "warning",
                     buttons: true,
                     dangerMode: true,
                 })

@@ -41,7 +41,7 @@ class UsersController extends Controller
             'name'=>'string|required|max:30',
             'email'=>'string|required|unique:users',
             'password'=>'string|required',
-            'role'=>'required|in:admin,user',
+            'role'=>'required|in:admin,user,livreur',
             'status'=>'required|in:active,inactive',
             'photo'=>'required'
          
@@ -49,6 +49,10 @@ class UsersController extends Controller
        //return $request;
          //enregister la photo
          $file_extension=$request -> photo -> getClientOriginalExtension();
+         if($file_extension!="png" && $file_extension!="jpg" && $file_extension!="jpeg" ){
+            request()->session()->flash('erreur','Erreur, le fichier doit etre une image');
+            return redirect()->route('users.create');
+               }
          $file_name = time().".".$file_extension;
          $path='backend/img/utilisateurs';
          $request->photo -> move($path,$file_name);

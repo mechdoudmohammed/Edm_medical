@@ -24,6 +24,9 @@
     <section class="shop login section">
         <div class="container">
             <div class="row"> 
+         <div class="col-md-12">
+            @include('backend.layouts.notification')
+         </div>
                 <div class="col-lg-6 offset-lg-3 col-12">
                     <div class="login-form">
                         <h2>Inscription</h2>

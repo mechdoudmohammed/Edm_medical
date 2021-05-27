@@ -66,8 +66,8 @@ class MaterielController extends Controller
         ]);
         //return $request;
         //enregister la photo
-        $file_extension=$request -> photo -> getClientOriginalExtension();
-        $file_name = time().".".$file_extension;
+        $file_extension_img=$request -> photo -> getClientOriginalExtension();
+        $file_name = time().".".$file_extension_img;
         $path='backend/img/materiels';
         $request->photo -> move($path,$file_name);
         //enregister le fichier fiches technique
@@ -75,6 +75,15 @@ class MaterielController extends Controller
         $file_name_fiche_technique = time().".".$file_extension;
         $path2='backend/fiches_techniques';
         $request->fiche_technique -> move($path2,$file_name_fiche_technique);
+
+        if($file_extension_img!="png" && $file_extension_img!="jpg" && $file_extension_img!="jpeg" ){
+            request()->session()->flash('erreur','Erreur, le fichier doit etre une image');
+            return redirect()->route('materiel.create');
+        }
+        if($file_extension!="pdf" ){
+            request()->session()->flash('erreur','Erreur, le fichier doit etre un pdf');
+            return redirect()->route('materiel.create');
+        }
 
         $data=$request->all();
         $slug=Str::slug($request->nom);
@@ -137,18 +146,13 @@ class MaterielController extends Controller
      */
     public function update(Request $request, $id)
     {
-       
+        
         $materiel=Materiel::findOrFail($id);
-     
-        if ($request->photo == null){
-            $request['photo'] = $materiel->photo;
-        }
-   
+
         $this->validate($request,[
             'nom'=>'string|required',
             'summary'=>'string|required',
             'description'=>'string|nullable',
-            'photo'=>'string|required',
             'stock'=>"required|numeric",
             'cat_id'=>'required|exists:categories,id',
             'child_cat_id'=>'nullable|exists:categories,id',
@@ -159,8 +163,45 @@ class MaterielController extends Controller
             'price'=>'required|numeric',
             'discount'=>'nullable|numeric'
         ]);
+   
+        if ($request->photo == null){
+            
+            $request['photo'] = $materiel->photo;
+         
+        }
+        elseif($request->photo != null){
+ //enregister la photo
+            $data=$request->all();
 
-        $data=$request->all();
+            $file_extension_img=$request->photo->getClientOriginalExtension();
+            if($file_extension_img!="png" && $file_extension_img!="jpg" && $file_extension_img!="jpeg" ){
+              request()->session()->flash('erreur','Erreur, le fichier doit etre une image');
+              return redirect()->route('materiel.edit',$id);
+                 }
+                 $file_name = time().".".$file_extension_img;
+                 $path='backend/img/materiels';
+                 $request->photo -> move($path,$file_name);
+                 $data['photo']=$file_name;
+        }
+        if($request->fiche_technique == null){
+            $request['fiche_technique'] = $materiel->fiche_technique;
+        }
+        elseif($request->fiche_technique != null){
+
+      
+            //enregister le fichier fiches technique
+            $file_extension=$request -> fiche_technique -> getClientOriginalExtension();
+            if($file_extension!="pdf" ){
+                request()->session()->flash('erreur','Erreur, le fichier doit etre un pdf');
+                return redirect()->route('materiel.edit',$id);
+            }
+            $file_name_fiche_technique = time().".".$file_extension;
+            $path2='backend/fiches_techniques';
+            $request->fiche_technique -> move($path2,$file_name_fiche_technique);
+            $data['fiche_technique']=$file_name_fiche_technique;
+            }
+        
+
         $data['is_featured']=$request->input('is_featured',0);
          //return $data;
         $status=$materiel->fill($data)->save();

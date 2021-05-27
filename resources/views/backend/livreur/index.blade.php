@@ -165,7 +165,7 @@
               swal({
                     title: "etes vous sur?",
                     text: "l'enregistrement sera supprimé",
-                    icon: "erreur",
+                    icon: "error",
                     buttons: true,
                     dangerMode: true,
                 })
@@ -173,7 +173,7 @@
                     if (willDelete) {
                        form.submit();
                     } else {
-                        swal("Your data is safe!");
+                        swal("Vos données sont en sécurité!");
                     }
                 });
           })

@@ -244,6 +244,11 @@
             <i class="fas fa-users"></i>
             <span>Utilisateur</span></a>
     </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{route('excel.index')}}">
+        <i class="far fa-file-excel"></i>
+            <span>Model Excel</span></a>
+    </li>
     <!-- Sidebar Toggler (Sidebar) -->
     <div class="text-center d-none d-md-inline">
       <button class="rounded-circle border-0" id="sidebarToggle"></button>

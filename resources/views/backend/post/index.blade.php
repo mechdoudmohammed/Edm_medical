@@ -153,7 +153,7 @@
               swal({
                     title: "Êtes-vous sûr?",
                     text: "l'enregistrement sera supprimé",
-                    icon: "Attention",
+                    icon: "warning",
                     buttons: true,
                     dangerMode: true,
                 })

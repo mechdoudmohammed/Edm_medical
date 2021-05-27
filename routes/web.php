@@ -151,6 +151,8 @@ Route::group(['prefix'=>'/admin','middleware'=>['auth','admin']],function(){
     Route::resource('/order','OrderController');
     // Livraison
     Route::resource('/livraison','LivraisonController');
+        // model excel
+        Route::resource('/excel','ExcelController');
     // Coupon
     Route::resource('/coupon','CouponController');
     // Notification

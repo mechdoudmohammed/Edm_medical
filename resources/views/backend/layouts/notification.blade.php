@@ -1,14 +1,15 @@
-@if(session('success'))
+@if(session('Succès'))
     <div class="alert alert-success alert-dismissable fade show">
         <button class="close" data-dismiss="alert" aria-label="Close">×</button>
-        {{session('success')}}
+        {{session('Succès')}}
     </div>
 @endif
 
 
-@if(session('error'))
+
+@if(session('erreur'))
     <div class="alert alert-danger alert-dismissable fade show">
         <button class="close" data-dismiss="alert" aria-label="Close">×</button>
-        {{session('error')}}
+        {{session('erreur')}}
     </div>
 @endif

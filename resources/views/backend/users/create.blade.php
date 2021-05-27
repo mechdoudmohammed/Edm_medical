@@ -5,6 +5,11 @@
 <div class="card">
     <h5 class="card-header">Ajouter un utilisateur</h5>
     <div class="card-body">
+    <div class="row">
+         <div class="col-md-12">
+            @include('backend.layouts.notification')
+         </div>
+     </div>
       <form method="post" action="{{route('users.store')}}" enctype="multipart/form-data">
         {{csrf_field()}}
         <div class="form-group">
@@ -43,16 +48,15 @@
         </div>
 
         
-        @php 
-        $roles=DB::table('users')->select('role')->get();
-        @endphp
+  
         <div class="form-group">
             <label for="role" class="col-form-label">Role</label>
             <select name="role" class="form-control">
                 <option value="">-----Selectionner le Role-----</option>
-                @foreach($roles as $role)
-                    <option value="{{$role->role}}">{{$role->role}}</option>
-                @endforeach
+                <option value="admin">Admin</option>
+                    <option value="user">Utilisateur</option>
+                    <option value="livreur">Livreur</option>
+         
             </select>
           @error('role')
           <span class="text-danger">{{$message}}</span>

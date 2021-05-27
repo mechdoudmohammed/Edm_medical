@@ -65,7 +65,7 @@ class AdminController extends Controller
        // return $request->all();
         $file_extension=$request -> photo -> getClientOriginalExtension();
         $file_name = time().".".$file_extension;
-        $path='backend/img/Profile_admin';
+        $path='backend/img/utilisateurs';
         $request->photo -> move($path,$file_name);
 
         $data=$request->all();

@@ -384,8 +384,8 @@ class FrontendController extends Controller
         $check=$this->create($data);
         Session::put('user',$data['email']);
         if($check){
-            request()->session()->flash('Succès','Inscription avec succès');
-            return redirect()->route('home');
+            request()->session()->flash('Succès','Inscription avec succès,Veuillez-vous se connecter');
+            return redirect()->route('register.form');
         }
         else{
             request()->session()->flash('erreur','Erreur, veuillez réessayer ultérieurement');

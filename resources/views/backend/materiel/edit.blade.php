@@ -5,7 +5,12 @@
 <div class="card">
     <h5 class="card-header">Editer le materiel</h5>
     <div class="card-body">
-      <form method="post" action="{{route('materiel.update',$materiel->id)}}">
+    <div class="row">
+         <div class="col-md-12">
+            @include('backend.layouts.notification')
+         </div>
+     </div>
+      <form method="post" action="{{route('materiel.update',$materiel->id)}}" enctype="multipart/form-data">
         @csrf 
         @method('PATCH')
         <div class="form-group">
@@ -149,6 +154,16 @@
         </div>
         <div id="holder" style="margin-top:15px;max-height:100px;"></div>
           @error('photo')
+          <span class="text-danger">{{$message}}</span>
+          @enderror
+        </div>
+        <div class="form-group">
+          <label for="inputfiche_technique" class="col-form-label">Fiche_technique:<span class="text-danger">*</span></label>
+          <div class="input-group">
+          <input id="thumbnail" class="form-control" type="file" name="fiche_technique" value="{{old('fiche_technique')}}">
+        </div>
+        <div id="holder" style="margin-top:15px;max-height:100px;"></div>
+          @error('fiche_technique')
           <span class="text-danger">{{$message}}</span>
           @enderror
         </div>

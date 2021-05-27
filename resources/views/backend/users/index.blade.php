@@ -47,9 +47,9 @@
                     <td>{{$user->email}}</td>
                     <td>
                         @if($user->photo)
-                            <img src="..\backend\img\Profile_admin\{{$user->photo}}" class="img-fluid rounded-circle" style="max-width:50px" alt="../backend/img/Profile_admin/{{$user->photo}}">
+                            <img src="..\backend\img\utilisateurs\{{$user->photo}}" class="img-fluid rounded-circle" style="max-width:50px" alt="../backend/img/utilisateurs/{{$user->photo}}">
                         @else
-                            <img src="..\backend\img\Profile_admin\{{$user->photo}}" class="img-fluid rounded-circle" style="max-width:50px" alt="avatar.png">
+                            <img src="..\backend\img\utilisateurs\{{$user->photo}}" class="img-fluid rounded-circle" style="max-width:50px" alt="avatar.png">
                         @endif
                     </td>
                     <td>{{(($user->created_at)? $user->created_at->diffForHumans() : '')}}</td>
@@ -131,7 +131,7 @@
               swal({
                     title: "Êtes-vous sûr?",
                     text: "l'enregistrement sera supprimé",
-                    icon: "Attention",
+                    icon: "warning",
                     buttons: true,
                     dangerMode: true,
                 })
