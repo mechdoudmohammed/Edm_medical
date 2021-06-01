@@ -93,7 +93,7 @@
 											<!--/ End Color -->
 											<!-- Materiel Buy -->
 											<div class="materiel-buy">
-												<form action="{{route('single-add-to-cart')}}" method="POST">
+												<form action="{{route('single-add-to-cart')}}" method="POST"  name="form1"  >
 													@csrf
 													<div class="quantity">
 														<h6>Quantité :</h6>
@@ -105,7 +105,7 @@
 																</button>
 															</div>
 															<input type="hidden" name="slug" value="{{$materiel_detail->slug}}">
-															<input type="text" name="quant[1]" class="input-number"  data-min="1" data-max="1000" value="1" id="quantity">
+															<input type="text" name="quant[1]" class="input-number"  data-min="1" data-max="1000" value="1" id="quantity" onblur="document.form2.input.value = this.value;">
 															<div class="button plus">
 																<button type="button" class="btn btn-primary btn-number" data-type="plus" data-field="quant[1]">
 																	<i class="ti-plus"></i>
@@ -115,24 +115,36 @@
 													<!--/ End Input Order -->
 													</div>
 													<div class="add-to-cart mt-4">
-														<button type="submit" class="btn">Ajouter au panier</button>
+														<button type="submit"  class="btn">Ajouter au panier</button>
 														<a href="{{route('add-to-wishlist',$materiel_detail->slug)}}" class="btn min"><i class="ti-heart"></i></a>
 													</div>
 												</form>
+
+													@php
+														$id =  $materiel_detail->id;
+														$test='test';
+														@endphp
                                                 {{-- start form de location--}}
-                                                <form action="{{route('location_form')}}" method="GET">
+                                                <form name="form2" action="{{route('location_form',$id)}}" method="POST">
+													@csrf <!-- {{ csrf_field() }} -->
                                                         <div class="location mt-4">
-													
-				
-														@if($materiel_detail->Location == 1)
+
 														
-														<input type="submit" value="Location" class="btn" style="background: #8bc34a;color: white;">
+														@if($materiel_detail->Location == 1)
+														<input type="hidden"  name="quant[1]"  onblur="document.form2.input.value = this.value;" >
+														<input type="submit"   value="Location" class="btn" style="background: #8bc34a;color: white;">
+														@php
+														 $prix = $materiel_detail->prix_location ;
+														echo "<p class=\"cat\">  Prix de location par jour : ".  $prix  . " DH" ."</p>";
+														@endphp
+														
+														
 														@endif
+														
 												
-													
-                                                    
                                                      </div>
                                                     </form>
+													
                                                 {{-- end form de location--}}
 
 												<p class="cat">Categorie :<a href="{{route('materiel-cat',$materiel_detail->cat_info['slug'])}}">{{$materiel_detail->cat_info['title']}}</a></p>

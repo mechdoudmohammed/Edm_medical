@@ -58,6 +58,7 @@ Route::get('/wishlist',function(){
 Route::get('/wishlist/{slug}','WishlistController@wishlist')->name('add-to-wishlist')->middleware('user');
 Route::get('wishlist-delete/{id}','WishlistController@wishlistDelete')->name('wishlist-delete');
 Route::post('cart/order','OrderController@store')->name('cart.order');
+Route::post('make/location','LocationController@store')->name('make.location');
 Route::get('order/pdf/{id}','OrderController@pdf')->name('order.pdf');
 Route::get('/income','OrderController@incomeChart')->name('materiel.order.income');
 // Route::get('/user/chart','AdminController@userPieChart')->name('user.piechart');
@@ -109,7 +110,9 @@ Route::group(['prefix'=>'/admin','middleware'=>['auth','admin']],function(){
     Route::resource('fournisseur','FournisseurController');
     //location
     Route::get('/location','locationController@index')->name('location_index');
+    Route::get('/location/show/{id}',"HomeController@locationShow")->name('admin.location.show');
     
+
     //reclamtion  
     Route::get('/reclamation','AdminController@showreclamation')->name('backend.reclamtion.index');
     Route::post('/reclamation/edit/{id}','AdminController@editereclamation')->name('reclamation.edit');
@@ -181,13 +184,20 @@ Route::group(['prefix'=>'/user','middleware'=>['user']],function(){
      Route::post('/profile/{id}','HomeController@profileUpdate')->name('user-profile-update');
 
 //location
-    Route::get('/location_form','locationController@location_form')->name('location_form');
+    Route::post('/location_form/{id}','locationController@location_form')->name('location_form');
+    Route::get('/location',"HomeController@locationIndex")->name('user.location.index');
+    Route::get('/location/edite',"HomeController@locationIndex")->name('user.location.index');
+    Route::get('/location/show/{id}',"LocationController@locationShow")->name('user.location.show');
+    Route::delete('/location/delete/{id}','LocationController@locationDelete')->name('user.location.delete');
+
+
+    
     //  Order
     Route::get('/order',"HomeController@orderIndex")->name('user.order.index');
 
 
     Route::get('/order/show/{id}',"HomeController@orderShow")->name('user.order.show');
-
+    
 
     Route::delete('/order/delete/{id}','HomeController@userOrderDelete')->name('user.order.delete');
 
@@ -206,8 +216,14 @@ Route::group(['prefix'=>'/user','middleware'=>['user']],function(){
 
      //Reclamation
      Route::get('reclamation/create/{id}',"ReclamationController@create")->name('user.reclamation.create');
+     Route::get('reclamationloc/create/{id}',"ReclamationController@createloc")->name('user.reclamationloc.create');
+
+   
      Route::get('reclamation/index',"ReclamationController@index")->name('user.reclamation.index');
      Route::post('ajouter/reclamation/{id}','ReclamationController@save')->name('reclamation.save');
+
+     Route::post('ajouter/reclamationloc/{id}','ReclamationController@saveLoc')->name('reclamationloc.save');
+    
  
     // Password Change
     Route::get('change-password', 'HomeController@changePassword')->name('user.change.password.form');

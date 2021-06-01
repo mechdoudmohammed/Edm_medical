@@ -18,7 +18,7 @@
           <thead>
             <tr>
             <th>Id</th>
-              <th>Commanede N</th>
+              <th>Commande N</th>
               <th>Nom</th>
               <th>Email</th>
               <th>Quantité</th>
@@ -32,7 +32,7 @@
           <tfoot>
             <tr>
             <th>Id</th>
-              <th>Commanede N</th>
+              <th>Commande N</th>
               <th>Nom</th>
               <th>Email</th>
               <th>Quantité</th>
@@ -55,7 +55,7 @@
                     <td>{{$order->email}}</td>
                     <td>{{$order->quantity}}</td>
                     <td>@foreach($livraison_charge as $data) {{number_format($data,2)}} Dhs @endforeach</td>
-                    <td>${{number_format($order->total_amount,2)}}</td>
+                    <td>{{number_format($order->total_amount,2)}} DH</td>
                     <td>
                         @if($order->status=='new')
                           <span class="badge badge-primary">{{$order->status}}</span>

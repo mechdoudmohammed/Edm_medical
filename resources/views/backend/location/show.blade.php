@@ -3,39 +3,38 @@
 @section('title','Order Detail')
 
 @section('main-content')
-
 <div class="card">
-<h5 class="card-header">Commande<a href="{{route('order.pdf',$order->id)}}" class=" btn btn-sm btn-primary shadow-sm float-right"><i class="fas fa-download fa-sm text-white-50"></i> Generate PDF</a>
+<h5 class="card-header">Order<a href="{{route('order.pdf',$order->id)}}" class=" btn btn-sm btn-primary shadow-sm float-right"><i class="fas fa-download fa-sm text-white-50"></i> Generate PDF</a>
   </h5>
   <div class="card-body">
     @if($order)
-  
     <table class="table table-striped table-hover">
-      @php
-          $livraison_charge=DB::table('livraisons')->where('id',$order->livraison_id)->pluck('price');
-      @endphp
       <thead>
         <tr>
-            <th>Idix</th>
-            <th>Commande N</th>
+            <th>Id</th>
+            <th>N° Commande</th>
             <th>Nom</th>
             <th>Email</th>
-            <th>Quantité</th>
-            <th>Charge</th>
-            <th>Totale</th>
+            <th>Date Debut</th>
+            <th>Date Fin</th>
+            <th>Duree</th>
+            <th>prix</th>
             <th>Statut</th>
-            <th>Operation</th>
+            
         </tr>
       </thead>
       <tbody>
         <tr>
-            <td>test</td>
+
+            <td>{{$order->id}}</td>
             <td>{{$order->order_number}}</td>
             <td>{{$order->first_name}} {{$order->last_name}}</td>
             <td>{{$order->email}}</td>
-            <td>{{$order->quantity}}</td>
-            <td>@foreach($livraison_charge as $data) $ {{number_format($data,2)}} @endforeach</td>
-            <td>${{number_format($order->total_amount,2)}}</td>
+            <td>{{$order->date_debut}}</td>
+            <td>{{$order->date_fin}}</td>
+            <td>{{$order->duree}}</td>
+
+            <td>{{number_format($order->total_amount,2)}} Dhs</td>
             <td>
                 @if($order->status=='new')
                   <span class="badge badge-primary">{{$order->status}}</span>
@@ -47,14 +46,7 @@
                   <span class="badge badge-danger">{{$order->status}}</span>
                 @endif
             </td>
-            <td>
-                <a href="{{route('order.edit',$order->id)}}" class="btn btn-primary btn-sm float-left mr-1" style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" title="edit" data-placement="bottom"><i class="fas fa-edit"></i></a>
-                <form method="POST" action="{{route('order.destroy',[$order->id])}}">
-                  @csrf
-                  @method('delete')
-                      <button class="btn btn-danger btn-sm dltBtn" data-id={{$order->id}} style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class="fas fa-trash-alt"></i></button>
-                </form>
-            </td>
+
 
         </tr>
       </tbody>
@@ -65,44 +57,32 @@
         <div class="row">
           <div class="col-lg-6 col-lx-4">
             <div class="order-info">
-              <h4 class="text-center pb-4">Information sur la commande</h4>
+              <h4 class="text-center pb-4">INFORMATION DE LOCATION</h4>
               <table class="table">
-              <tr class="">
-                        <td>Numero de commande</td>
+                    <tr class="">
+                        <td>Commande N</td>
                         <td> : {{$order->order_number}}</td>
                     </tr>
                     <tr>
                         <td>Date commande</td>
-                        <td> : {{$order->created_at->format(' d-m-Y')}} at {{$order->created_at->format('g : i a')}} </td>
+                        <td> : {{$order->created_at->format('d-M-Y')}} {{$order->created_at->format('g : i a')}} </td>
                     </tr>
                     <tr>
                         <td>Quantité</td>
-                        <td> : {{$order->quantity}}</td>
+                        <td> : {{$order->quantite}}</td>
                     </tr>
                     <tr>
-                        <td>Statut</td>
+                        <td>Commande Statut</td>
                         <td> : {{$order->status}}</td>
                     </tr>
+
                     <tr>
-                {{--
-                      @php
-                          $livraison_charge=DB::table('livraisons')->where('id',$order->livraison_id)->pluck('price');
-                      @endphp
-                        <td>Livraison Charge</td>
-                        <td> : $ {{number_format($livraison_charge[0],2)}}</td>
-                    </tr>
-                    --}}
-                    <tr>
-                      <td>Coupon</td>
-                      <td> : $ {{number_format($order->coupon,2)}}</td>
+                        <td>Total</td>
+                        <td> : {{number_format($order->total_amount,2)}} Dhs</td>
                     </tr>
                     <tr>
-                        <td>Totale</td>
-                        <td> : $ {{number_format($order->total_amount,2)}}</td>
-                    </tr>
-                    <tr>
-                        <td>Methode de payment</td>
-                        <td> : @if($order->payment_method=='cod') Cash on Delivery @else Paypal @endif</td>
+                      <td>Mode de payment</td>
+                      <td> : @if($order->payment_method=='cod') Cash on Delivery @else Paypal @endif</td>
                     </tr>
                     <tr>
                         <td>Payment Statut</td>
@@ -114,30 +94,30 @@
 
           <div class="col-lg-6 col-lx-4">
             <div class="livraison-info">
-              <h4 class="text-center pb-4">LIVRAISON INFORMATION</h4>
+              <h4 class="text-center pb-4">INFORMATION DE LIVRAISON</h4>
               <table class="table">
                     <tr class="">
-                        <td>Nom complet</td>
-                        <td> : {{$order->first_name}} {{$order->last_name}}</td>
+                        <td>Nom et Prenom</td>
+                        <td> :  {{$order->last_name}} {{$order->first_name}}</td>
                     </tr>
                     <tr>
                         <td>Email</td>
                         <td> : {{$order->email}}</td>
                     </tr>
                     <tr>
-                        <td>Tél</td>
+                        <td>Telephone</td>
                         <td> : {{$order->phone}}</td>
                     </tr>
                     <tr>
-                        <td>Adresse</td>
+                        <td>Adress</td>
                         <td> : {{$order->address1}}, {{$order->address2}}</td>
                     </tr>
                     <tr>
-                        <td>ville</td>
+                        <td>Ville</td>
                         <td> : {{$order->country}}</td>
                     </tr>
                     <tr>
-                        <td>code postale</td>
+                        <td>Code Postal</td>
                         <td> : {{$order->post_code}}</td>
                     </tr>
               </table>
@@ -150,9 +130,6 @@
 
   </div>
 </div>
-
-
-
 @endsection
 
 @push('styles')

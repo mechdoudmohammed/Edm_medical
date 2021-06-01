@@ -33,6 +33,16 @@
         </a>
     </li>
 
+       <!--Location -->
+       <li class="nav-item">
+        <a class="nav-link" href="{{route('user.location.index')}}">
+            <i class="fas fa-hammer fa-chart-area"></i>
+            <span>Les Locations</span>
+        </a>
+    </li>
+
+
+
     <!-- Reviews -->
     <li class="nav-item">
         <a class="nav-link" href="{{route('user.materielreview.index')}}">
@@ -47,6 +57,8 @@
             <span>Reclamations</span>
         </a>
     </li> 
+
+   
     
 
     <!-- Divider -->

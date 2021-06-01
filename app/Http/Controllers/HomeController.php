@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Models\Order;
+use App\Models\Location;
 use App\Models\MaterielReview;
 use App\Models\PostComment;
 use App\Rules\MatchOldPassword;
@@ -71,6 +72,13 @@ class HomeController extends Controller
         $orders=Order::orderBy('id','DESC')->where('user_id',auth()->user()->id)->paginate(10);
         return view('user.order.index')->with('orders',$orders);
     }
+
+    
+    public function locationIndex(){
+        $orders=Location::orderBy('id','DESC')->where('user_id',auth()->user()->id)->paginate(10);
+        return view('user.location.index')->with('orders',$orders);
+    }
+
     public function userOrderDelete($id)
     {
         $order=Order::find($id);
@@ -105,6 +113,18 @@ class HomeController extends Controller
         //return $order;
         return view('user.order.show')->with('order',$order);
     }
+
+    public function locationShow($id)
+
+    {
+
+        $order=Location::find($id);
+
+        //die(var_dump($order));
+        //return $order;
+        return view('backend.location.show')->with('order',$order);
+    }
+    
     // Materiel Review
     public function materielReviewIndex(){
         $reviews=MaterielReview::getAllUserReview();

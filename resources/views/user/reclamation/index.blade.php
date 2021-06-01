@@ -9,15 +9,18 @@
          </div>
      </div>
     <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary float-left">Liste de Reclamations</h6>
+      <h6 class="m-0 font-weight-bold text-primary float-left">Liste de Reclamations sur les commande d'achat</h6>
     </div>
        @php
-          $reclamations=DB::table('reclamations')->where('id_user',auth()->user()->id)->get();
+          $reclamations=DB::table('reclamations')
+          ->where('id_user',auth()->user()->id)
+          ->where('location',0)
+          ->get();
           
       @endphp
     <div class="card-body">
       <div class="table-responsive">
-       @if(count($reclamations)>0)
+       @if(count($reclamations)>0 )
         <table class="table table-bordered" id="order-dataTable" width="100%" cellspacing="0">
           <thead>
             <tr>
@@ -58,11 +61,11 @@
                     </td>
                     <td>{{$reclamation->created_at}}</td>
                     <td>
-                    @if(count($reclamations)>0 )
-                        @foreach($reclamations as $reclamation)
-                        <span class="badge badge-dark">Reclamation {{$reclamation->statut}}</span>
-                        @endforeach
-                       @endif
+                    @if($reclamation->statut=='en cours')
+                            <span class="badge badge-success">{{$reclamation->statut}}</span>
+                        @else
+                            <span class="badge badge-warning">{{$reclamation->statut}}</span>
+                        @endif
                        </td>
                 </tr>  
             @endforeach
@@ -70,12 +73,94 @@
           </tbody>
         </table>
         @else
-          <h6 class="text-center">Il n'y pas de reclamations</h6>
+          <h6 class="text-center">Il n'y pas de reclamations sur les commandes d'achat</h6>
         @endif
       </div>
     </div>
 </div>
+
+ <!-- liste des reclamations sur locations -->
+ <div class="card shadow mb-4">
+     <div class="row">
+         <div class="col-md-12">
+            @include('backend.layouts.notification')
+         </div>
+     </div>
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary float-left">Liste de Reclamations de location</h6>
+    </div>
+       @php
+       $reclamations=DB::table('reclamations')
+          ->where('id_user',auth()->user()->id)
+          ->where('location',1)
+          ->get();
+      @endphp
+    <div class="card-body">
+      <div class="table-responsive">
+       @if(count($reclamations)>0)
+        <table class="table table-bordered" id="order-dataTable" width="100%" cellspacing="0">
+          <thead>
+            <tr>
+              <th>id</th>
+              <th>N° d'order</th>
+              <th>Type</th>
+              <th>message</th>
+              <th>Date</th>
+              <th>Statut</th>
+            </tr>
+          </thead>
+          <tfoot>
+            <tr>
+              <th>id</th>
+              <th>N° d'order</th>
+              <th>Type</th>
+              <th>message</th>
+              <th>Date</th>
+              <th>Statut</th>
+              </tr>
+          </tfoot>
+          <tbody>
+            @foreach($reclamations as $reclamation)  
+            @php
+              $orders=DB::table('locations')->where('id',$reclamation->id_order)->get();
+            @endphp
+            @foreach($orders as $order) 
+                <tr>
+                    <td>EDM{{$reclamation->id}}</td>
+                    <td>{{$order->order_number}}</td>
+                    <td>{{$reclamation->type_reclamation}}</td>
+                    <td>
+                    @if( $reclamation->msg_reclamation== null)
+                    Sans message  
+                    @else
+                      {{$reclamation->msg_reclamation}}
+                    @endif                  
+                    </td>
+                    <td>{{$reclamation->created_at}}</td>
+                    <td>
+                    @if($reclamation->statut=='en cours')
+                            <span class="badge badge-success">{{$reclamation->statut}}</span>
+                        @else
+                            <span class="badge badge-warning">{{$reclamation->statut}}</span>
+                        @endif
+                       </td>
+                </tr>  
+            @endforeach
+            @endforeach
+          </tbody>
+        </table>
+        @else
+          <h6 class="text-center">Il n'y pas de reclamations sur les commandes de location</h6>
+        @endif
+      </div>
+    </div>
+</div>
+
+
 @endsection
+
+
+
 
 @push('styles')
   <link href="{{asset('backend/vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">

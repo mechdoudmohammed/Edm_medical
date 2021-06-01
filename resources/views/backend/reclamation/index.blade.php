@@ -8,10 +8,10 @@
          </div>
      </div>
     <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary float-left">Liste de Reclamations</h6>
+      <h6 class="m-0 font-weight-bold text-primary float-left">Liste de Reclamations des commande d'achat</h6>
     </div>
        @php
-          $reclamations=DB::table('reclamations')->get();
+          $reclamations=DB::table('reclamations')->where('location',0)->get();
           
       @endphp
     <div class="card-body">
@@ -86,7 +86,99 @@
           </tbody>
         </table>
         @else
-          <h6 class="text-center">Il n'y pas de reclamations</h6>
+          <h6 class="text-center">Il n'y pas de reclamations sur les commande d'achat</h6>
+        @endif
+      </div>
+    </div>
+</div>
+
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+     <div class="row">
+         <div class="col-md-12">
+            @include('backend.layouts.notification')
+         </div>
+     </div>
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary float-left">Liste de Reclamations sur les commande de location</h6>
+    </div>
+       @php
+          $reclamations=DB::table('reclamations')->where('location',1)->get();
+          
+      @endphp
+    <div class="card-body">
+      <div class="table-responsive">
+       @if(count($reclamations)>0)
+        <table class="table table-bordered" id="order-dataTable" width="100%" cellspacing="0">
+          <thead>
+            <tr>
+              <th>id</th>
+              <th>id de client</th>
+              <th>N° d'order</th>
+              <th>Type</th>
+              <th>message</th>
+              <th>Date</th>
+              <th>Statut</th>
+              <th>Modifier statut</th>
+            </tr>
+          </thead>
+          <tfoot>
+            <tr>
+              <th>id</th>
+              <th>id de client</th>
+              <th>N° d'order</th>
+              <th>Type</th>
+              <th>message</th>
+              <th>Date</th>
+              <th>Statut</th>
+              <th>Modifier Statut</th>
+              </tr>
+          </tfoot>
+          <tbody>
+            @foreach($reclamations as $reclamation)  
+            @php
+              $orders=DB::table('locations')->where('id',$reclamation->id_order)->get();
+            @endphp
+            @foreach($orders as $order) 
+                <tr>
+                    <td>{{$reclamation->id}}</td>
+                    <td>{{$reclamation->id_user}}</td>
+                    <td>{{$order->order_number}}</td>
+                    <td>{{$reclamation->type_reclamation}}</td>
+                    <td>
+                    @if( $reclamation->msg_reclamation== null)
+                    Sans message  
+                    @else
+                      {{$reclamation->msg_reclamation}}
+                    @endif                  
+                    </td>
+                    <td>{{$reclamation->created_at}}</td>
+                    <td>
+                    @if($reclamation->statut=='en cours')
+                            <span class="badge badge-success">{{$reclamation->statut}}</span>
+                        @else
+                            <span class="badge badge-warning">{{$reclamation->statut}}</span>
+                        @endif
+                    </td>
+                    <td> 
+                  
+                        <form method="POST" action="{{route('reclamation.edit',[$reclamation->id])}}">
+                     @csrf
+                     <select name="statut" class="form-control">
+                        <option value="en cours" {{(($reclamation->statut=='en cours') ? 'selected' : '')}}>en cours</option>
+                        <option value="fermé" {{(($reclamation->statut=='fermé') ? 'selected' : '')}}>fermé</option>
+                        </select>
+                      <button type="submit">Enregistrer</button> 
+              </form>         
+                    </td>
+                </tr>  
+                
+            @endforeach
+            @endforeach
+          </tbody>
+        </table>
+        @else
+          <h6 class="text-center">Il n'y pas de reclamations sur les commandes de location</h6>
         @endif
       </div>
     </div>
