@@ -206,7 +206,48 @@
         </div>
     </section>
     <!--/ End Checkout -->
-    
+    <script type="text/javascript" >
+   
+
+   function ValidateF(){
+       var input1 = document.getElementById('date_debut').value;
+       var input2 = document.getElementById('date_fin').value;
+   if(input1 != "" && input2 != ""){
+       var date1 = new Date(input1);
+       var date2 = new Date(input2);
+       var date3 = new Date();
+       if(date1 <  date3){
+           alert("la Date de debut doit être supérieur à la Date d'aujourd'hui ");
+           document.getElementById('date_debut').value="";
+           document.getElementById('date_fin').value="";
+           return null;
+       }
+   
+       else if(date2 <= date1) {
+   
+           alert('la Date de Fin doit être supérieur à la Date de Debut');
+           document.getElementById('date_debut').value="";
+           document.getElementById('date_fin').value="";
+           
+           return null;
+         
+       }else{
+       var dat1 = new Date('date_debut');
+       var dat2 = new Date('date_fin');
+       var diffTime =  Math.abs(date2 - date1);
+       var diffDays =  Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
+       document.querySelector('.result').innerHTML = diffDays;
+       document.querySelector('.prix_total').innerHTML = diffDays * {{$prix}} *{{ $quantite }};
+       }
+      
+       }
+   }
+   
+   </script>
+
+
+
+
     <!-- Start Shop Services Area  -->
     <section class="shop-services section home">
         <div class="container">
@@ -276,44 +317,7 @@
     <!-- End Shop Newsletter -->
 
      <!--/test sur les date -->
-     <script type="text/javascript">
-   
-
-function ValidateF(){
-    var input1 = document.getElementById('date_debut').value;
-    var input2 = document.getElementById('date_fin').value;
-if(input1 != "" && input2 != ""){
-    var date1 = new Date(input1);
-    var date2 = new Date(input2);
-    var date3 = new Date();
-    if(date1 <  date3){
-        alert("la Date de debut doit être supérieur à la Date d'aujourd'hui ");
-        document.getElementById('date_debut').value="";
-        document.getElementById('date_fin').value="";
-        return null;
-    }
-
-    if(date2 <= date1) {
-
-        alert('la Date de Fin doit être supérieur à la Date de Debut');
-        document.getElementById('date_debut').value="";
-        document.getElementById('date_fin').value="";
-        
-        return null;
-      
-    }else{
-        var dat1 = new Date('date_debut');
-    var dat2 = new Date('date_fin');
-    var diffTime =  Math.abs(date2 - date1);
-    var diffDays =  Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
-    document.querySelector('.result').innerHTML = diffDays;
-    document.querySelector('.prix_total').innerHTML = diffDays * {{$prix}} *{{ $quantite }};
-    }
-   
-    }
-}
-
-</script>
+    
 <!--/ fin des test sur les dates -->
 @endsection
 @push('styles')
@@ -366,6 +370,7 @@ if(input1 != "" && input2 != ""){
 		$(document).ready(function() { $("select.select2").select2(); });
   		$('select.nice-select').niceSelect();
 	</script>
+  
 	<script>
 		function showMe(box){
 			var checkbox=document.getElementById('livraison').style.display;

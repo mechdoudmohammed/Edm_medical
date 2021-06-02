@@ -282,6 +282,8 @@ class LocationController extends Controller
 
         $id_materiel=$id;
         $quantite=$request->quant[1];
+        if($quantite=="")
+        $quantite=1;
         return view('frontend.pages.location')->with( ['id_materiel' => $id_materiel , 'quantite' => $quantite] ) ;
         
 
