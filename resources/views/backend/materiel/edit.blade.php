@@ -48,7 +48,7 @@
               if($materiel->Location==0){
         echo"checked=\"checked\">";
         
-              }?> Non<br>
+              }?> > Non <br>
               <script  type="text/javascript">
               function desactive()  {
                   if(document.getElementById('choixb2').checked )  {

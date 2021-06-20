@@ -163,7 +163,7 @@ class MaterielController extends Controller
             'price'=>'required|numeric',
             'discount'=>'nullable|numeric'
         ]);
-   
+        $data=$request->all();
         if ($request->photo == null){
             
             $request['photo'] = $materiel->photo;

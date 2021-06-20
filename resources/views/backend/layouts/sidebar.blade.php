@@ -28,11 +28,6 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     <!-- Nav Item - Charts -->
-    <li class="nav-item">
-        <a class="nav-link" href="{{route('file-manager')}}">
-            <i class="fas fa-fw fa-chart-area"></i>
-            <span>Gestionnaire de médias</span></a>
-    </li>
 
     <li class="nav-item">
       <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
