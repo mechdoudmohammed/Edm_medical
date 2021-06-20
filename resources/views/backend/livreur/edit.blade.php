@@ -5,7 +5,7 @@
 <div class="card">
     <h5 class="card-header">Modifier livreur</h5>
     <div class="card-body">
-      <form method="post" action="{{route('livreur.update',$livreur->id)}}">
+      <form method="post" action="{{route('livreur.update',$livreur->id)}}" enctype="multipart/form-data">
         @csrf 
         @method('PATCH')
         <div class="form-group">

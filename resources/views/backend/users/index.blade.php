@@ -108,6 +108,20 @@
                     "targets":[6,7]
                 }
             ]
+            ,
+            "oLanguage": {
+              "sSearch": "Chercher:",
+            "sInfo":"Afficher _START_ à _END_ dans _TOTAL_ enregistrements",
+            "sInfoEmpty":"Afficher 0 à 0 dans 0 enregistrements",
+            "sLengthMenu":"Afficher _MENU_ enregistrements",
+            "sZeroRecords":"Rien à afficher",
+            "sEmptyTable":"Rien à afficher",
+}
+        
+
+
+
+
         } );
 
         // Sweet alert

@@ -61,7 +61,7 @@
                     <td>{{$order->date_fin}}</td>
                     <td>{{$order->duree}} jours</td>
                     <td>{{$order->quantite}}</td>                   
-                    <td>{{number_format($order->total_amount,2)}} DH</td>
+                    <td>{{number_format($order->total_amount,2)}} Dhs</td>
                     <td>
                         @if($order->status=='new')
                           <span class="badge badge-primary">{{$order->status}}</span>
@@ -79,7 +79,7 @@
                         @endforeach
                        @endif
                     </td>
-                    <td>
+                    <td style="display:flex;"> 
                     
                         <a href="{{route('user.location.show',$order->id)}}" class="btn btn-warning btn-sm float-left mr-1" style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" title="view" data-placement="bottom"><i class="fas fa-eye"></i></a> </br>
                         @if(count($reclamations)==0)
@@ -129,9 +129,17 @@
             "columnDefs":[
                 {
                     "orderable":false,
-                    "targets":[8]
+                    "targets":[5,6]
                 }
-            ]
+            ],
+            "oLanguage": {
+              "sSearch": "Chercher:",
+            "sInfo":"Afficher _START_ à _END_ dans _TOTAL_ enregistrements",
+            "sInfoEmpty":"Afficher 0 à 0 dans 0 enregistrements",
+            "sLengthMenu":"Afficher _MENU_ enregistrements",
+            "sZeroRecords":"Rien à afficher",
+            "sEmptyTable":"Rien à afficher",
+}
         } );
 
         // Sweet alert

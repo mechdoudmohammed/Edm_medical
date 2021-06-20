@@ -44,7 +44,7 @@
 											@php
 											$photo=explode(',',$cart->materiel['photo']);
 											@endphp
-											<td class="image" data-title="No"><img src="backend\img\materiels\{{$photo[0]}}" alt="{{$photo[0]}}"></td>
+											<td class="image" data-title="No"><img src="{{asset('backend/img/materiels')}}/{{$photo[0]}}" alt="{{$photo[0]}}"></td>
 											<td class="materiel-des" data-title="Description">
 												<p class="materiel-name"><a href="{{route('materiel-detail',$cart->materiel['slug'])}}" target="_blank">{{$cart->materiel['title']}}</a></p>
 												<p class="materiel-des">{!!($cart['summary']) !!}</p>

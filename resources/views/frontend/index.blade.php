@@ -112,8 +112,8 @@
                                                     $photo=explode(',',$materiel->photo);
                                                 // dd($photo);
                                                 @endphp
-                                                <img class="default-img" src="backend\img\materiels\{{$photo[0]}}" alt="backend\img\materiels\{{$photo[0]}}">
-                                                <img class="hover-img" src="backend\img\materiels\{{$photo[0]}}" alt="backend\img\materiels\{{$photo[0]}}">
+                                                <img class="default-img" src="{{asset('backend/img/materiels')}}/{{$photo[0]}}" alt="{{asset('backend/img/materiels')}}/{{$photo[0]}}">
+                                                <img class="hover-img" src="{{asset('backend/img/materiels')}}/{{$photo[0]}}" alt="{{asset('backend/img/materiels')}}/{{$photo[0]}}">
                                                 @if($materiel->stock<=0)
                                                     <span class="out-of-stock">Vente jusqu'à rupture</span>
                                                 @elseif($materiel->condition=='new')
@@ -132,7 +132,7 @@
                                                     <a title="Wishlist" href="{{route('add-to-wishlist',$materiel->slug)}}" ><i class=" ti-heart "></i><span>Ajouter à la liste de souhaits</span></a>
                                                 </div>
                                                 <div class="materiel-action-2">
-                                                    <a title="Add to cart" href="{{route('add-to-cart',$materiel->slug)}}">Ajouter au panier</a>
+                                                    <a title="Ajouter au panier" href="{{route('add-to-cart',$materiel->slug)}}">Ajouter au panier</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -177,7 +177,7 @@
                             @php
                                 $photo=explode(',',$data->photo);
                             @endphp
-                            <img src="backend\img\materiels\{{$photo[0]}}" alt="backend\img\materiels\{{$photo[0]}}">
+                            <img src="{{asset('backend/img/materiels')}}/{{$photo[0]}}" alt="{{asset('backend/img/materiels')}}/{{$photo[0]}}">
                             <div class="content">
                                 <p>{{$data->cat_info['title']}}</p>
                                 <h3 id="titre_jus">{{$data->title}} Jusqu'à<span> {{$data->discount}}%</span></h3>
@@ -216,8 +216,8 @@
                                         $photo=explode(',',$materiel->photo);
                                     // dd($photo);
                                     @endphp
-                                    <img class="default-img" src="backend\img\materiels\{{$photo[0]}}" alt="backend\img\materiels\{{$photo[0]}}">
-                                    <img class="hover-img" src="backend\img\materiels\{{$photo[0]}}" alt="backend\img\materiels\{{$photo[0]}}">
+                                    <img class="default-img" src="{{asset('backend/img/materiels')}}/{{$photo[0]}}" alt="{{asset('backend/img/materiels')}}/{{$photo[0]}}">
+                                    <img class="hover-img" src="{{asset('backend/img/materiels')}}/{{$photo[0]}}" alt="{{asset('backend/img/materiels')}}/{{$photo[0]}}">
                                     {{-- <span class="out-of-stock">Hot</span> --}}
                                 </a>
                                 <div class="button-head">
@@ -278,7 +278,7 @@
                                             $photo=explode(',',$materiel->photo);
                                             // dd($photo);
                                         @endphp
-                                        <img src="backend\img\materiels\{{$photo[0]}}" alt="{{$photo[0]}}">
+                                        <img src="{{asset('backend/img/materiels')}}/{{$photo[0]}}" alt="{{$photo[0]}}">
                                         <a href="{{route('add-to-cart',$materiel->slug)}}" class="buy"><i class="fa fa-shopping-bag"></i></a>
                                     </div>
                                 </div>
@@ -354,7 +354,7 @@
                     <div class="col-lg-4 col-md-6 col-12">
                         <!-- Start Single Blog  -->
                         <div class="shop-single-blog">
-                            <img src="backend\img\{{$post->photo}}" alt="backend\img\{{$post->photo}}">
+                            <img src="{{asset('backend/img/poste')}}/{{$post->photo}}" alt="{{asset('backend/img/poste')}}/{{$post->photo}}">
                             <div class="content">
                                 <p class="date">{{$post->created_at->format('d-m -Y. ')}}</p>
                                 <a href="{{route('blog.detail',$post->slug)}}" class="title">{{$post->title}}</a>
@@ -439,7 +439,7 @@
                                                 @endphp
                                                 @foreach($photo as $data)
                                                     <div class="single-slider">
-                                                        <img src="backend\img\materiels\{{$data}}" alt="backend\img\materiels\{{$data}}">
+                                                        <img src="{{asset('backend/img/materiels')}}/{{$data}}" alt="{{asset('backend/img/materiels')}}/{{$data}}">
                                                     </div>
                                                 @endforeach
                                             </div>

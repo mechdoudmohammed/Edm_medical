@@ -44,7 +44,7 @@
           <tbody>
             @foreach($orders as $order)  
             @php
-                $shipping_charge=DB::table('livraisons')->where('id',$order->shipping_id)->pluck('price');
+                $shipping_charge=DB::table('livraisons')->where('id',$order->livraison_id)->pluck('price');
             @endphp 
                 <tr>
                     <td>{{$order->id}}</td>
@@ -52,7 +52,7 @@
                     <td>{{$order->first_name}} {{$order->last_name}}</td>
                     <td>{{$order->email}}</td>
                     <td>{{$order->quantity}}</td>
-                    <td>@foreach($shipping_charge as $data) $ {{number_format($data,2)}} @endforeach</td>
+                    <td>@foreach($shipping_charge as $data) {{number_format($data,2)}} Dhs @endforeach</td>
                     <td>{{number_format($order->total_amount,2)}} Dhs</td>
                     <td>
                         @if($order->status=='new')
@@ -112,9 +112,17 @@
             "columnDefs":[
                 {
                     "orderable":false,
-                    "targets":[8]
+                    "targets":[5,6]
                 }
-            ]
+            ],
+            "oLanguage": {
+              "sSearch": "Chercher:",
+            "sInfo":"Afficher _START_ à _END_ dans _TOTAL_ enregistrements",
+            "sInfoEmpty":"Afficher 0 à 0 dans 0 enregistrements",
+            "sLengthMenu":"Afficher _MENU_ enregistrements",
+            "sZeroRecords":"Rien à afficher",
+            "sEmptyTable":"Rien à afficher",
+}
         } );
 
         // Sweet alert

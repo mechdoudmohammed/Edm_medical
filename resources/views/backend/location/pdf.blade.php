@@ -137,7 +137,7 @@
       @endforeach
       </tbody>
       <tfoot>
-        <tr>
+      <tr>
           <th scope="col" class="empty"></th>
           <th scope="col" class="text-right">Totale HT:</th>
           <th scope="col"> <span>{{number_format($order->sub_total,2)-number_format($order->sub_total,2)*0.2}} Dhs</span></th>
@@ -167,11 +167,11 @@
             $orders = DB::table('orders')
             ->join('livraisons', 'orders.livraison_id', '=', 'livraisons.id')
             ->select('livraisons.price')->distinct()
-            ->first()
+            ->get()
 @endphp
-          
-                {{$orders->price}}
-           
+            @foreach($orders as $ord)
+                {{$ord->price}}
+              @endforeach
 
                Dhs </span></th>
         </tr>
@@ -181,7 +181,7 @@
 
         <tr>
           <th scope="col" class="empty"></th>          
-          <th scope="col" class="text-right">Total TTC:</th>
+          <th scope="col" class="text-right">Totale TTC:</th>
           <th>
             <span>
                <?php

@@ -15,7 +15,7 @@
     <div class="card-body">
       <div class="table-responsive">
         @if(count($materiels)>0)
-        <table class="table table-bordered" id="materiel-dataTable" width="100%" cellspacing="0">
+        <table class="table table-bordered" id="order-dataTable" width="100%" cellspacing="0">
           <thead>
             <tr>
             <th>ID</th>
@@ -70,7 +70,7 @@
                               $photo=explode(',',$materiel->photo);
                               // dd($photo);
                             @endphp
-                            <img src="..\backend\img\materiels\{{$photo[0]}}" class="img-fluid zoom" style="max-width:80px" alt="{{$materiel->photo}}">
+                            <img src="{{asset('backend/img/materiels')}}/{{$photo[0]}}" class="img-fluid zoom" style="max-width:80px" alt="{{$materiel->photo}}">
                         @else
                             <img src="{{asset('backend/img/thumbnail-default.jpg')}}" class="img-fluid" style="max-width:80px" alt="avatar.png">
                         @endif
@@ -155,14 +155,21 @@
   <script src="{{asset('backend/js/demo/datatables-demo.js')}}"></script>
   <script>
 
-      $('#materiel-dataTable').DataTable( {
-        "scrollX": false
+$('#order-dataTable').DataTable( {
             "columnDefs":[
                 {
                     "orderable":false,
-                    "targets":[10,11,12]
+                    "targets":[5,6]
                 }
-            ]
+            ],
+            "oLanguage": {
+            "sSearch": "Chercher:",
+            "sInfo":"Afficher _START_ à _END_ dans _TOTAL_ enregistrements",
+            "sInfoEmpty":"Afficher 0 à 0 dans 0 enregistrements",
+            "sLengthMenu":"Afficher _MENU_ enregistrements",
+            "sZeroRecords":"Rien à afficher",
+            "sEmptyTable":"Rien à afficher",
+}
         } );
 
         // Sweet alert

@@ -29,7 +29,7 @@
             <td>{{$order->email}}</td>
             <td>{{$order->quantity}}</td>
 
-            <td>${{number_format($order->total_amount,2)}}</td>
+            <td>{{number_format($order->total_amount,2)}} Dhs</td>
             <td>
                 @if($order->status=='new')
                   <span class="badge badge-primary">{{$order->status}}</span>
@@ -56,18 +56,19 @@
               <form method="POST" action="{{route('reclamation.save',[$order->id])}}">
               @csrf
 
-                        <h6 style="text-align:center">Type de reclamation</h6></br>
+                        <label >Type de reclamation: </label>
                         
-                        <select name="type_reclamation"  >
+                        <select name="type_reclamation"  style="padding: 4px;border: none;background: #1cc88a;color: white;    display: inline;">
                             <option value="retard" name="Retard">Retard de livraison</option>
                             <option value="endommage" name="endommage">Ne fonction pas</option>
                             <option value="defferent" name="defferent">Order Défferent</option>
                             <option value="autre" name="autre">Autre</option>
-                        </select></br>                        
-              <h6 style="text-align:center" >Message de reclamation</h6>
-              <textarea maxlength="300" name="msg_reclamation" cols="40" rows="10" placeholder="Taper votre message de reclamation ici.."></textarea>
+                        </select></br>   
+                        <label >Message de reclamation: </label>                     
+        
+              <textarea  maxlength="300" name="msg_reclamation" cols="50" rows="5" placeholder="Taper votre message de reclamation ici.."></textarea>
                     <input name="user_id" type="hidden" value="{{$order->user_id}}">
-               <button type="submit">Envoyer Reclamation</button> 
+               <button type="submit" style="background: #d52a1a;color: white;border-radius: 10px;padding: 5px;margin-left: 216px;margin-top: 10px;border: none;">Envoyer Reclamation</button> 
 
               </form>
             </div>
@@ -96,8 +97,9 @@ textarea, select {
         margin: 0 auto;
     }
     .order-info{
-        background:#ECECEC;
-        padding:20px;
+      background: #f7f7f7;
+    padding: 20px;
+    border-radius: 16px;
     }
     .order-info h4{
         text-decoration: underline;

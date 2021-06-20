@@ -16,7 +16,7 @@
       @endphp
       <thead>
         <tr>
-            <th>Idix</th>
+            <th>Id</th>
             <th>Commande N</th>
             <th>Nom</th>
             <th>Email</th>
@@ -29,13 +29,13 @@
       </thead>
       <tbody>
         <tr>
-            <td>test</td>
+            <td>{{$order->id}}</td>
             <td>{{$order->order_number}}</td>
             <td>{{$order->first_name}} {{$order->last_name}}</td>
             <td>{{$order->email}}</td>
             <td>{{$order->quantity}}</td>
-            <td>@foreach($livraison_charge as $data) $ {{number_format($data,2)}} @endforeach</td>
-            <td>${{number_format($order->total_amount,2)}}</td>
+            <td>@foreach($livraison_charge as $data)  {{number_format($data,2)}} Dhs @endforeach</td>
+            <td>{{number_format($order->total_amount,2)}} Dhs</td>
             <td>
                 @if($order->status=='new')
                   <span class="badge badge-primary">{{$order->status}}</span>
@@ -89,16 +89,16 @@
                           $livraison_charge=DB::table('livraisons')->where('id',$order->livraison_id)->pluck('price');
                       @endphp
                         <td>Livraison Charge</td>
-                        <td> : $ {{number_format($livraison_charge[0],2)}}</td>
+                        <td> : {{number_format($livraison_charge[0],2)}} Dhs</td>
                     </tr>
                     --}}
                     <tr>
                       <td>Coupon</td>
-                      <td> : $ {{number_format($order->coupon,2)}}</td>
+                      <td> : {{number_format($order->coupon,2)}} Dhs</td>
                     </tr>
                     <tr>
                         <td>Totale</td>
-                        <td> : $ {{number_format($order->total_amount,2)}}</td>
+                        <td> : {{number_format($order->total_amount,2)}} Dhs</td>
                     </tr>
                     <tr>
                         <td>Methode de payment</td>

@@ -76,7 +76,13 @@
                         <option value="en cours" {{(($reclamation->statut=='en cours') ? 'selected' : '')}}>en cours</option>
                         <option value="fermé" {{(($reclamation->statut=='fermé') ? 'selected' : '')}}>fermé</option>
                         </select>
-                      <button type="submit">Enregistrer</button> 
+                      <button type="submit" style="border: none;
+    padding: 10px;
+    margin-left: 46px;
+    margin-top: 10px;
+    color: white;
+    background: #1cc88a;
+    border-radius: 10px;">Enregistrer</button> 
               </form>         
                     </td>
                 </tr>  
@@ -109,7 +115,7 @@
     <div class="card-body">
       <div class="table-responsive">
        @if(count($reclamations)>0)
-        <table class="table table-bordered" id="order-dataTable" width="100%" cellspacing="0">
+        <table class="table table-bordered" id="order-dataTable2" width="100%" cellspacing="0">
           <thead>
             <tr>
               <th>id</th>
@@ -168,7 +174,13 @@
                         <option value="en cours" {{(($reclamation->statut=='en cours') ? 'selected' : '')}}>en cours</option>
                         <option value="fermé" {{(($reclamation->statut=='fermé') ? 'selected' : '')}}>fermé</option>
                         </select>
-                      <button type="submit">Enregistrer</button> 
+                      <button type="submit" style="border: none;
+    padding: 10px;
+    margin-left: 46px;
+    margin-top: 10px;
+    color: white;
+    background: #1cc88a;
+    border-radius: 10px;">Enregistrer</button> 
               </form>         
                     </td>
                 </tr>  
@@ -212,7 +224,15 @@
                     "orderable":false,
                     "targets":[5,6]
                 }
-            ]
+            ],
+            "oLanguage": {
+              "sSearch": "Chercher:",
+            "sInfo":"Afficher _START_ à _END_ dans _TOTAL_ enregistrements",
+            "sInfoEmpty":"Afficher 0 à 0 dans 0 enregistrements",
+            "sLengthMenu":"Afficher _MENU_ enregistrements",
+            "sZeroRecords":"Rien à afficher",
+            "sEmptyTable":"Rien à afficher",
+}
         } );
 
         // Sweet alert
@@ -221,6 +241,33 @@
             
         }
   </script>
+
+<script>
+      
+      $('#order-dataTable2').DataTable( {
+            "columnDefs":[
+                {
+                    "orderable":false,
+                    "targets":[5,6]
+                }
+            ],
+            "oLanguage": {
+              "sSearch": "Chercher:",
+            "sInfo":"Afficher _START_ à _END_ dans _TOTAL_ enregistrements",
+            "sInfoEmpty":"Afficher 0 à 0 dans 0 enregistrements",
+            "sLengthMenu":"Afficher _MENU_ enregistrements",
+            "sZeroRecords":"Rien à afficher",
+            "sEmptyTable":"Rien à afficher",
+}
+        } );
+
+        // Sweet alert
+
+        function deleteData(id){
+            
+        }
+  </script>
+  
   <script>
       $(document).ready(function(){
         $.ajaxSetup({

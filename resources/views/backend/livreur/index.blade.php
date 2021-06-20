@@ -14,7 +14,7 @@
     <div class="card-body">
       <div class="table-responsive">
         @if(count($livreurs)>0)
-        <table class="table table-bordered" id="banner-dataTable" width="100%" cellspacing="0">
+        <table class="table table-bordered" id="order-dataTable" width="100%" cellspacing="0">
           <thead>
             <tr>
               <th>Id</th>
@@ -23,7 +23,6 @@
               <th>Prenom</th>
               <th>Telephone</th>
               <th>Email</th>
-              <th>Mot de passe</th>
               <th>Description</th>
               <th>Adresse</th>
               <th>Cin</th>
@@ -42,7 +41,6 @@
               <th>Prenom</th>
               <th>Telephone</th>
               <th>Email</th>
-              <th>Mot de passe</th>
               <th>Description</th>
               <th>Adresse</th>
               <th>Cin</th>
@@ -70,7 +68,6 @@
                     <td>{{$livreur->prenom}}</td>
                     <td>{{$livreur->telephone}}</td>
                     <td>{{$livreur->email}}</td>
-                    <td>{{$livreur->password}}</td>
                     <td>{{$livreur->description}}</td>
                     <td>{{$livreur->adresse}}</td>
                     <td>{{$livreur->cin}}</td>
@@ -135,13 +132,21 @@
   <script src="{{asset('backend/js/demo/datatables-demo.js')}}"></script>
   <script>
       
-      $('#banner-dataTable').DataTable( {
+    $('#order-dataTable').DataTable( {
             "columnDefs":[
                 {
                     "orderable":false,
-                    "targets":[3,4]
+                    "targets":[5,6]
                 }
-            ]
+            ],
+            "oLanguage": {
+              "sSearch": "Chercher:",
+            "sInfo":"Afficher _START_ à _END_ dans _TOTAL_ enregistrements",
+            "sInfoEmpty":"Afficher 0 à 0 dans 0 enregistrements",
+            "sLengthMenu":"Afficher _MENU_ enregistrements",
+            "sZeroRecords":"Rien à afficher",
+            "sEmptyTable":"Rien à afficher",
+}
         } );
 
         // Sweet alert

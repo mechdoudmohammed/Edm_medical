@@ -29,7 +29,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="image">
-                                    <img src="..\backend\img\{{$post->photo}}" alt="..\backend\img\{{$post->photo}}">
+                                    <img src="{{asset('backend/img/poste')}}/{{$post->photo}}" alt="{{asset('backend/img/poste')}}/{{$post->photo}}">
                                 </div>
                                 <div class="blog-detail">
                                     <h2 class="blog-title">{{$post->title}}</h2>
@@ -151,7 +151,7 @@
                                 <!-- Single Post -->
                                 <div class="single-post">
                                     <div class="image">
-                                        <img src="..\backend\img\{{$post->photo}}" alt="..\backend\img\{{$post->photo}}">
+                                        <img src="{{asset('backend/img/poste')}}/{{$post->photo}}" alt="{{asset('backend/img/poste')}}/{{$post->photo}}">
                                     </div>
                                     <div class="content">
                                         <h5><a href="#">{{$post->title}}</a></h5>
@@ -197,7 +197,7 @@
                                     @csrf
                                     <div class="form-inner">
                                         <input type="email" name="email" placeholder="Enter your email">
-                                        <button type="submit" class="btn mt-2">Submit</button>
+                                        <button type="submit" class="btn mt-2">Valider</button>
                                     </div>
                                 </form>
                             </div>

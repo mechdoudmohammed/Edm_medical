@@ -4,20 +4,20 @@
 
 @section('main-content')
 <div class="card">
-<h5 class="card-header">Order<a href="{{route('order.pdf',$order->id)}}" class=" btn btn-sm btn-primary shadow-sm float-right"><i class="fas fa-download fa-sm text-white-50"></i> Generate PDF</a>
+<h5 class="card-header">Reclamation
   </h5>
   <div class="card-body">
     @if($order)
     <table class="table table-striped table-hover">
       <thead>
         <tr>
-            <th>S.N.</th>
-            <th>Order No.</th>
-            <th>Name</th>
+            <th>Id</th>
+            <th>Location N</th>
+            <th>Nom</th>
             <th>Email</th>
-            <th>Quantity</th>
-            <th>Total Amount</th>
-            <th>Status</th>
+            <th>Quantite</th>
+            <th>Totale</th>
+            <th>Statut</th>
         </tr>
       </thead>
       <tbody>
@@ -29,7 +29,7 @@
             <td>{{$order->email}}</td>
             <td>{{$order->quantity}}</td>
 
-            <td>${{number_format($order->total_amount,2)}}</td>
+            <td>{{number_format($order->total_amount,2)}} Dhs</td>
             <td>
                 @if($order->status=='new')
                   <span class="badge badge-primary">{{$order->status}}</span>
@@ -56,9 +56,9 @@
               <form method="POST" action="{{route('reclamationloc.save',[$order->id])}}">
               @csrf
 
-                        <h6 style="text-align:center">Type de reclamation</h6></br>
+              <label >Type de reclamation: </label>
                         
-                        <select name="type_reclamation"  >
+                        <select name="type_reclamation"  style="padding: 4px;border: none;background: #1cc88a;color: white;    display: inline;">
                             <option value="retard" name="Retard">Retard de livraison</option>
                             <option value="endommage" name="endommage">Ne fonction pas</option>
                             <option value="defferent" name="defferent">Order Défferent</option>
@@ -67,7 +67,7 @@
               <h6 style="text-align:center" >Message de reclamation</h6>
               <textarea maxlength="300" name="msg_reclamation" cols="40" rows="10" placeholder="Taper votre message de reclamation ici.."></textarea>
                     <input name="user_id" type="hidden" value="{{$order->user_id}}">
-               <button type="submit">Envoyer Reclamation</button> 
+               <button type="submit"style="background: #d52a1a;color: white;border-radius: 10px;padding: 5px;margin-left: 216px;margin-top: 10px;border: none;">Envoyer Reclamation</button> 
 
               </form>
             </div>
@@ -96,8 +96,9 @@ textarea, select {
         margin: 0 auto;
     }
     .order-info{
-        background:#ECECEC;
-        padding:20px;
+      background: #f7f7f7;
+    padding: 20px;
+    border-radius: 16px;
     }
     .order-info h4{
         text-decoration: underline;

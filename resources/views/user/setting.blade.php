@@ -10,7 +10,7 @@
         {{-- @method('PATCH') --}}
         {{-- {{dd($data)}} --}}
         <div class="form-group">
-          <label for="short_des" class="col-form-label">Short Description <span class="text-danger">*</span></label>
+          <label for="short_des" class="col-form-label">Description <span class="text-danger">*</span></label>
           <textarea class="form-control" id="quote" name="short_des">{{$data->short_des}}</textarea>
           @error('short_des')
           <span class="text-danger">{{$message}}</span>
@@ -64,7 +64,7 @@
 
         <div class="form-group">
           <label for="facebook" class="col-form-label">Facebook</label>
-          <input type="text" class="form-control" name="facebook" required value="{{$data->facebook}}">
+          <input type="text" class="form-control" name="facebook" required value="">
           @error('facebook')
           <span class="text-danger">{{$message}}</span>
           @enderror
@@ -72,27 +72,27 @@
 
         <div class="form-group">
           <label for="instagram" class="col-form-label">Instagram</label>
-          <input type="text" class="form-control" name="instagram" required value="{{$data->instagram}}">
+          <input type="text" class="form-control" name="instagram" required value="">
           @error('instagram')
           <span class="text-danger">{{$message}}</span>
           @enderror
         </div>
         <div class="form-group">
           <label for="youtube" class="col-form-label">Youtube</label>
-          <input type="text" class="form-control" name="youtube" required value="{{$data->youtube}}">
+          <input type="text" class="form-control" name="youtube" required value="">
           @error('youtube')
           <span class="text-danger">{{$message}}</span>
           @enderror
         </div>
         <div class="form-group">
           <label for="twitter" class="col-form-label">Twitter</label>
-          <input type="text" class="form-control" name="twitter" required value="{{$data->twitter}}">
+          <input type="text" class="form-control" name="twitter" required value="">
           @error('twitter')
           <span class="text-danger">{{$message}}</span>
           @enderror
         </div>
         <div class="form-group mb-3">
-           <button class="btn btn-success" type="submit">Update</button>
+           <button class="btn btn-success" type="submit">Modifier</button>
         </div>
       </form>
     </div>

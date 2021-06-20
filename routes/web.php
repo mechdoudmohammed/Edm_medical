@@ -60,6 +60,7 @@ Route::get('wishlist-delete/{id}','WishlistController@wishlistDelete')->name('wi
 Route::post('cart/order','OrderController@store')->name('cart.order');
 Route::post('make/location','LocationController@store')->name('make.location');
 Route::get('order/pdf/{id}','OrderController@pdf')->name('order.pdf');
+
 Route::get('/income','OrderController@incomeChart')->name('materiel.order.income');
 // Route::get('/user/chart','AdminController@userPieChart')->name('user.piechart');
 Route::get('/materiel-grids','FrontendController@materielGrids')->name('materiel-grids');
@@ -111,7 +112,7 @@ Route::group(['prefix'=>'/admin','middleware'=>['auth','admin']],function(){
     //location
     Route::get('/location','locationController@index')->name('location_index');
     Route::get('/location/show/{id}',"HomeController@locationShow")->name('admin.location.show');
-    
+    Route::get('location/pdf/{id}','LocationController@pdf')->name('location.pdf');
 
     //reclamtion  
     Route::get('/reclamation','AdminController@showreclamation')->name('backend.reclamtion.index');

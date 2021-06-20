@@ -115,7 +115,7 @@
                                     <div class="col-lg-6 col-md-6 col-12">
                                         <div class="form-group">
                                             <label>Date Debut de Location <span>*</span></label>
-                                            <input onfocusout="ValidateF()"  type="date" id="date_debut" name="date_debut" placeholder="" required value="{{old('Date_debut')}}">
+                                            <input onfocusout="ValidateF()"  type="date" id="date_debut" name="date_debut" placeholder="" required >
                                             @error('phone')
                                                 <span class='text-danger'>{{$message}}</span>
                                             @enderror
@@ -126,7 +126,7 @@
                                     <div class="col-lg-6 col-md-6 col-12">
                                         <div class="form-group">
                                             <label>Date Fin de Location <span>*</span></label>
-                                            <input onfocusout="ValidateF()" type="date" id="date_fin" name="date_fin" placeholder="" required value="{{old('Date_fin')}}">
+                                            <input onfocusout="ValidateF()" type="date" id="date_fin" name="date_fin" placeholder="" required >
                                             @error('phone')
                                                 <span class='text-danger'>{{$message}}</span>
                                             @enderror
@@ -175,7 +175,7 @@
                                         <div class="checkbox">
                                             {{-- <label class="checkbox-inline" for="1"><input name="updates" id="1" type="checkbox">Vérifier</label> --}}
                                             <form-group>
-                                                <input name="payment_method"  type="radio" value="cod"> <label> Cash On Delivery</label><br>
+                                                <input name="payment_method"  type="radio" value="cod"> <label> Paiement à la livraison</label><br>
                                                 <input name="payment_method"  type="radio" value="paypal"> <label> PayPal</label> 
                                             </form-group>
                                             
@@ -186,7 +186,7 @@
                                 <!-- Payment Method Widget -->
                                 <div class="single-widget payement">
                                     <div class="content">
-                                        <img src="{{('backend/img/payment-method.png')}}" alt="#">
+                                        <img src="{{asset('backend/img/payment-method.png')}}" alt="#">
                                     </div>
                                 </div>
                                 <!--/ End Payment Method Widget -->
@@ -274,41 +274,42 @@
         </div>
     </section>
     <!-- End Shop Newsletter -->
-
+<?php
+if($quantite==null){
+                $quantite=1;
+            }
+?>
      <!--/test sur les date -->
      <script type="text/javascript">
    
 
-function ValidateF(){
+        function ValidateF(){
     var input1 = document.getElementById('date_debut').value;
     var input2 = document.getElementById('date_fin').value;
-if(input1 != "" && input2 != ""){
+    if(input1 != "" && input2 != ""){
     var date1 = new Date(input1);
     var date2 = new Date(input2);
     var date3 = new Date();
-    if(date1 <  date3){
-        alert("la Date de debut doit être supérieur à la Date d'aujourd'hui ");
-        document.getElementById('date_debut').value="";
-        document.getElementById('date_fin').value="";
-        return null;
-    }
-
-    if(date2 <= date1) {
-
-        alert('la Date de Fin doit être supérieur à la Date de Debut');
-        document.getElementById('date_debut').value="";
-        document.getElementById('date_fin').value="";
-        
-        return null;
-      
-    }else{
-        var dat1 = new Date('date_debut');
-    var dat2 = new Date('date_fin');
-    var diffTime =  Math.abs(date2 - date1);
-    var diffDays =  Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
-    document.querySelector('.result').innerHTML = diffDays;
-    document.querySelector('.prix_total').innerHTML = diffDays * {{$prix}} *{{ $quantite }};
-    }
+        if(date1 <  date3){
+            alert("la Date de debut doit être supérieur à la Date d'aujourd'hui ");
+            document.getElementById('date_debut').value="";
+            document.getElementById('date_fin').value="";
+            return null;
+        }
+        if(date2 <= date1) {
+            alert('la Date de Fin doit être supérieur à la Date de Debut');
+            document.getElementById('date_debut').value="";
+            document.getElementById('date_fin').value="";
+            return null;
+         }else{
+            var dat1 = new Date('date_debut');
+            var dat2 = new Date('date_fin');
+            var diffTime =  Math.abs(date2 - date1);
+            var diffDays =  Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
+            document.querySelector('.result').innerHTML = diffDays;
+            document.querySelector('.quantite').innerHTML = {{ $quantite }};
+            document.querySelector('.prix_total').innerHTML = diffDays * {{$prix}} *{{ $quantite }}+"Dhs" ;
+            }
    
     }
 }

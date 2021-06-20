@@ -52,7 +52,7 @@
 													@endphp
 													@foreach($photo as $data)
 														<li data-thumb="{{$data}}" rel="adjustX:10, adjustY:">
-															<img src="..\backend\img\materiels\{{$data}}" alt="..\backend\img\materiels\{{$data}}">
+															<img src="{{asset('backend/img/materiels')}}/{{$data}}" alt="{{asset('backend/img/materiels')}}/{{$data}}">
 														</li>
 													@endforeach
 												</ul>
@@ -230,7 +230,7 @@
 																		</div>
 																		<div class="col-lg-12 col-12">
 																			<div class="form-group button5">
-																				<button type="submit" class="btn">Submit</button>
+																				<button type="submit" class="btn">Commanter</button>
 																			</div>
 																		</div>
 																	</div>
@@ -254,14 +254,14 @@
 																			}
 																		@endphp --}}
 																		<h4>{{ceil($materiel_detail->getReview->avg('rate'))}} <span>(Overall)</span></h4>
-																		<span>Based on {{$materiel_detail->getReview->count()}} Comments</span>
+																		<span>Basé sur {{$materiel_detail->getReview->count()}} Comments</span>
 																	</div>
 																	@foreach($materiel_detail['getReview'] as $data)
 																	<!-- Single Rating -->
 																	<div class="single-rating">
 																		<div class="rating-author">
 																			@if($data->user_info['photo'])
-																			<img src="{{$data->user_info['photo']}}" alt="{{$data->user_info['photo']}}">
+																			<img src="{{asset('backend/img/utilisateurs')}}/{{$data->user_info['photo']}}" alt="{{$data->user_info['photo']}}">
 																			@else
 																			<img src="{{asset('backend/img/avatar.png')}}" alt="Profile.jpg">
 																			@endif
@@ -329,8 +329,8 @@
 											@php
 												$photo=explode(',',$data->photo);
 											@endphp
-                                            <img class="default-img" src="..\backend\img\materiels\{{$photo[0]}}" alt="..\backend\img\materiels\{{$photo[0]}}">
-                                            <img class="hover-img" src="..\backend\img\materiels\{{$photo[0]}}" alt="..\backend\img\materiels\{{$photo[0]}}">
+                                            <img class="default-img" src="{{asset('backend/img/materiels')}}/{{$photo[0]}}" alt="{{asset('backend/img/materiels')}}/{{$photo[0]}}">
+                                            <img class="hover-img" src="{{asset('backend/img/materiels')}}/{{$photo[0]}}" alt="{{asset('backend/img/materiels')}}/{{$photo[0]}}">
                                             <span class="price-dec">{{$data->discount}} % Off</span>
                                                                     {{-- <span class="out-of-stock">Hot</span> --}}
                                         </a>
@@ -341,7 +341,7 @@
                                                 <a title="Compare" href="#"><i class="ti-bar-chart-alt"></i><span>ajouter pour comparer</span></a>
                                             </div>
                                             <div class="materiel-action-2">
-                                                <a title="Add to cart" href="#">Ajouter au panier</a>
+                                                <a title="Ajouter au panier" href="#">Ajouter au panier</a>
                                             </div>
                                         </div>
                                     </div>

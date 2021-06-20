@@ -66,7 +66,7 @@
 
         <div class="form-group">
           <label for="is_featured">Le materiel est présenté dans le stock?</label><br>
-          <input type="checkbox" name='is_featured' id='is_featured' value='1' checked> Yes
+          <input type="checkbox" name='is_featured' id='is_featured' value='1' checked> Oui
         </div>
               {{-- {{$categories}} --}}
 

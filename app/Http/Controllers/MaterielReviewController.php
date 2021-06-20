@@ -55,7 +55,7 @@ class MaterielReviewController extends Controller
 
         $user=User::where('role','admin')->get();
         $details=[
-            'title'=>'New Materiel Rating!',
+            'title'=>'Nouvelle évaluation du matériel !',
             'actionURL'=>route('materiel-detail',$materiel_info->slug),
             'fas'=>'fa-star'
         ];

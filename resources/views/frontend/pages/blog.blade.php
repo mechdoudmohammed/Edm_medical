@@ -31,7 +31,7 @@
                             <div class="col-lg-6 col-md-6 col-12">
                                 <!-- Start Single Blog  -->
                                 <div class="shop-single-blog">
-                                <img src="backend\img\{{$post->photo}}" alt="backend\img\{{$post->photo}}">
+                                <img src="{{asset('backend/img/poste')}}/{{$post->photo}}" alt="{{asset('backend/img/poste')}}/{{$post->photo}}">
                                     <div class="content">
                                         @php 
                                             $author_info=DB::table('users')->select('name')->where('id',$post->added_by)->get();

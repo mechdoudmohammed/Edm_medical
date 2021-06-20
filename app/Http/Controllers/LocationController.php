@@ -129,7 +129,7 @@ class LocationController extends Controller
         // dd($order->id);
         $users=User::where('role','admin')->first();
         $details=[
-            'title'=>'New order created',
+            'title'=>'Nouvelle commande crée',
             'actionURL'=>route('order.show',$order->id),
             'fas'=>'fa-file-alt'
         ];
@@ -244,12 +244,13 @@ class LocationController extends Controller
 
 
     public function pdf(Request $request){
-        $order=Order::getAllOrder($request->id);
-
+        return $request;
+        $location=Location::getAllOrder($request->id);
+return $location;
         // return $order;
-        $file_name=$order->order_number.'-'.$order->first_name.'.pdf';
+        $file_name=$location->order_number.'-'.$order->first_name.'.pdf';
         // return $file_name;
-        $pdf=PDF::loadview('backend.order.pdf',compact('order'));
+        $pdf=PDF::loadview('backend.location.pdf',compact('location'));
         return $pdf->download($file_name);
     }
     // Income chart

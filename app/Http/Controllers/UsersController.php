@@ -106,26 +106,37 @@ class UsersController extends Controller
     public function update(Request $request, $id)
     {
         $user=User::findOrFail($id);
-        if ($request->photo == null){
-            $request['photo'] = $user->photo;
-        }
+  
         $this->validate($request,
         [
             'name'=>'string|required|max:30',
             'email'=>'string|required',
-            'role'=>'required|in:admin,user',
+       
             'status'=>'required|in:active,inactive',
-            'photo'=>'required'
+          
         ]);
-          //enregister la photo
-          $file_extension=$request -> photo -> getClientOriginalExtension();
-          $file_name = time().".".$file_extension;
-          $path='backend/img/utilisateurs';
-          $request->photo -> move($path,$file_name);
-        // dd($request->all());
         $data=$request->all();
-        // dd($data);
-        $data['photo']=$file_name;
+        if ($request->photo == null){
+            
+            $request['photo'] = $user->photo;
+         
+        }
+        elseif($request->photo != null){
+            //enregister la photo
+            $data=$request->all();
+
+            $file_extension_img=$request->photo->getClientOriginalExtension();
+            if($file_extension_img!="png" && $file_extension_img!="jpg" && $file_extension_img!="jpeg" ){
+              request()->session()->flash('erreur','Erreur, le fichier doit etre une image');
+              return redirect()->route('users.edit',$id);
+                 }
+                 $file_name = time().".".$file_extension_img;
+                 $path='backend/img/utilisateurs';
+                 $request->photo -> move($path,$file_name);
+                 $data['photo']=$file_name;
+        }
+     
+    
         //return $data;
         $status=$user->fill($data)->save();
         if($status){

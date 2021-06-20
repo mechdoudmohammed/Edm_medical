@@ -50,12 +50,22 @@ class PostController extends Controller
             'quote'=>'string|nullable',
             'summary'=>'string|required',
             'description'=>'string|nullable',
-            'photo'=>'string|nullable',
+  
             'tags'=>'nullable',
             'added_by'=>'nullable',
             'post_cat_id'=>'required',
             'status'=>'required|in:active,inactive'
         ]);
+        //enregister la photo
+        $file_extension_img=$request -> photo -> getClientOriginalExtension();
+        $file_name = time().".".$file_extension_img;
+        $path='backend/img/poste';
+        $request->photo -> move($path,$file_name);
+        if($file_extension_img!="png" && $file_extension_img!="jpg" && $file_extension_img!="jpeg" ){
+            request()->session()->flash('erreur','Erreur, le fichier doit etre une image');
+            return redirect()->route('post.create');
+        }
+
 
         $data=$request->all();
 
@@ -65,7 +75,7 @@ class PostController extends Controller
             $slug=$slug.'-'.date('ymdis').'-'.rand(0,999);
         }
         $data['slug']=$slug;
-
+        $data['photo']=$file_name;
         $tags=$request->input('tags');
         if($tags){
             $data['tags']=implode(',',$tags);
@@ -127,14 +137,33 @@ class PostController extends Controller
             'quote'=>'string|nullable',
             'summary'=>'string|required',
             'description'=>'string|nullable',
-            'photo'=>'string|nullable',
+          
             'tags'=>'nullable',
             'added_by'=>'nullable',
             'post_cat_id'=>'required',
             'status'=>'required|in:active,inactive'
         ]);
-
         $data=$request->all();
+        if ($request->photo == null){
+            
+            $request['photo'] = $post->photo;
+         
+        }
+        elseif($request->photo != null){
+            //enregister la photo
+            $data=$request->all();
+
+            $file_extension_img=$request->photo->getClientOriginalExtension();
+            if($file_extension_img!="png" && $file_extension_img!="jpg" && $file_extension_img!="jpeg" ){
+              request()->session()->flash('erreur','Erreur, le fichier doit etre une image');
+              return redirect()->route('post.edit',$id);
+                 }
+                 $file_name = time().".".$file_extension_img;
+                 $path='backend/img/poste';
+                 $request->photo -> move($path,$file_name);
+                 $data['photo']=$file_name;
+        }
+
         $tags=$request->input('tags');
         // return $tags;
         if($tags){

@@ -112,7 +112,7 @@
                                         @endphp
                                         <div class="single-post first">
                                             <div class="image">
-                                                <img src="..\backend\img\materiels\{{$photo[0]}}" alt="..\backend\img\materiels\{{$photo[0]}}">
+                                                <img src="{{asset('backend/img/materiels')}}/{{$photo[0]}}" alt="{{asset('backend/img/materiels')}}/{{$photo[0]}}">
                                             </div>
                                             <div class="content">
                                                 <h5><a href="{{route('materiel-detail',$materiel->slug)}}">{{$materiel->nom}}</a></h5>
@@ -190,16 +190,16 @@
 															@php
 																$photo=explode(',',$materiel->photo);
 															@endphp
-															<img class="default-img" src="..\backend\img\materiels\{{$photo[0]}}" alt="..\backend\img\materiels\{{$photo[0]}}">
-															<img class="hover-img" src="..\backend\img\materiels\{{$photo[0]}}" alt="..\backend\img\materiels\{{$photo[0]}}">
+															<img class="default-img" src="{{asset('backend/img/materiels')}}/{{$photo[0]}}" alt="{{asset('backend/img/materiels')}}/{{$photo[0]}}">
+															<img class="hover-img" src="{{asset('backend/img/materiels')}}/{{$photo[0]}}" alt="{{asset('backend/img/materiels')}}/{{$photo[0]}}">
 															</a>
 															<div class="button-head">
 																<div class="materiel-action">
 																	<a data-toggle="modal" data-target="#{{$materiel->id}}" title="Quick View" href="#"><i class=" ti-eye"></i><span>Achat rapide</span></a>
-																	<a title="Wishlist" href="{{route('add-to-wishlist',$materiel->slug)}}" class="wishlist" data-id="{{$materiel->id}}"><i class=" ti-heart "></i><span>Add to Wishlist</span></a>
+																	<a title="Wishlist" href="{{route('add-to-wishlist',$materiel->slug)}}" class="wishlist" data-id="{{$materiel->id}}"><i class=" ti-heart "></i><span>Ajouter à la liste de souhaits</span></a>
 																</div>
 																<div class="materiel-action-2">
-																	<a title="Add to cart" href="{{route('add-to-cart',$materiel->slug)}}">Ajouter au panier</a>
+																	<a title="Ajouter au panier" href="{{route('add-to-cart',$materiel->slug)}}">Ajouter au panier</a>
 																</div>
 															</div>
 														</div>
@@ -262,7 +262,7 @@
 														@endphp
 														@foreach($photo as $data)
 															<div class="single-slider">
-																<img src="..\public\backend\img\materiels\{{$data}}" alt="..\public\backend\img\materiels\{{$data}}">
+																<img src="{{asset('backend/img/materiels')}}/{{$data}}" alt="{{asset('backend/img/materiels')}}/{{$data}}">
 															</div>
 														@endforeach
 													</div>

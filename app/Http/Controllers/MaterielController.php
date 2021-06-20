@@ -170,14 +170,14 @@ class MaterielController extends Controller
          
         }
         elseif($request->photo != null){
- //enregister la photo
+            //enregister la photo
             $data=$request->all();
 
             $file_extension_img=$request->photo->getClientOriginalExtension();
-            if($file_extension_img!="png" && $file_extension_img!="jpg" && $file_extension_img!="jpeg" ){
-              request()->session()->flash('erreur','Erreur, le fichier doit etre une image');
-              return redirect()->route('materiel.edit',$id);
-                 }
+                    if($file_extension_img!="png" && $file_extension_img!="jpg" && $file_extension_img!="jpeg" ){
+                    request()->session()->flash('erreur','Erreur, le fichier doit etre une image');
+                    return redirect()->route('materiel.edit',$id);
+                        }
                  $file_name = time().".".$file_extension_img;
                  $path='backend/img/materiels';
                  $request->photo -> move($path,$file_name);

@@ -133,7 +133,7 @@
                     <td>{{$order->first_name}} {{$order->last_name}}</td>
                     <td>{{$order->email}}</td>
                     <td>{{$order->quantity}}</td>
-                    <td>${{number_format($order->total_amount,2)}}</td>
+                    <td>{{number_format($order->total_amount,2)}} Dhs</td>
                     <td>
                         @if($order->status=='new')
                           <span class="badge badge-primary">{{$order->status}}</span>
@@ -152,7 +152,7 @@
                        @endif
                     </td>
 
-                    <td>
+                    <td style="display:flex;">
                         <a href="{{route('user.order.show',$order->id)}}" class="btn btn-warning btn-sm float-left mr-1" style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" title="Afficher" data-placement="bottom"><i class="fas fa-eye"></i></a> </br> 
                         @if(count($reclamations)==0)
                         <a href="{{route('user.reclamation.create',$order->id)}}" class="btn btn-info btn-sm float-left mr-1" style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" title="Reclamer" data-placement="bottom"><i class="fas fa-exclamation"></i></a> </br> 

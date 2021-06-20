@@ -36,7 +36,7 @@
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-12">
                                         <div class="form-group">
-                                            <label>First Name<span>*</span></label>
+                                            <label>Prenom<span>*</span></label>
                                             <input type="text" name="first_name" placeholder="" value="{{old('first_name')}}" value="{{old('first_name')}}">
                                             @error('first_name')
                                                 <span class='text-danger'>{{$message}}</span>
@@ -45,7 +45,7 @@
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-12">
                                         <div class="form-group">
-                                            <label>Last Name<span>*</span></label>
+                                            <label>Nom<span>*</span></label>
                                             <input type="text" name="last_name" placeholder="" value="{{old('lat_name')}}">
                                             @error('last_name')
                                                 <span class='text-danger'>{{$message}}</span>
@@ -54,7 +54,7 @@
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-12">
                                         <div class="form-group">
-                                            <label>Email Address<span>*</span></label>
+                                            <label>Email<span>*</span></label>
                                             <input type="email" name="email" placeholder="" value="{{old('email')}}">
                                             @error('email')
                                                 <span class='text-danger'>{{$message}}</span>
@@ -63,7 +63,7 @@
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-12">
                                         <div class="form-group">
-                                            <label>Phone Number <span>*</span></label>
+                                            <label>Telephone<span>*</span></label>
                                             <input type="number" name="phone" placeholder="" required value="{{old('phone')}}">
                                             @error('phone')
                                                 <span class='text-danger'>{{$message}}</span>
@@ -85,7 +85,7 @@
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-12">
                                         <div class="form-group">
-                                            <label>Address Ligne 1<span>*</span></label>
+                                            <label>Adresse 1<span>*</span></label>
                                             <input type="text" name="address1" placeholder="" value="{{old('address1')}}">
                                             @error('address1')
                                                 <span class='text-danger'>{{$message}}</span>
@@ -94,7 +94,7 @@
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-12">
                                         <div class="form-group">
-                                            <label>Address Ligne 2</label>
+                                            <label>Adresse 2</label>
                                             <input type="text" name="address2" placeholder="" value="{{old('address2')}}">
                                             @error('address2')
                                                 <span class='text-danger'>{{$message}}</span>
@@ -119,7 +119,7 @@
                             <div class="order-details">
                                 <!-- Order Widget -->
                                 <div class="single-widget">
-                                    <h2>CART  TOTALS</h2>
+                                    <h2>CART  TOTALE</h2>
                                     <div class="content">
                                         <ul>
 										    <li class="order_subtotal" data-price="{{Helper::totalCartPrice()}}">Prix initial<span>{{number_format(Helper::totalCartPrice(),2)}} Dhs</span></li>
@@ -129,11 +129,11 @@
                                                     <select name="livraison" class="nice-select">
                                                         <option value="">Selectioner votre adresse</option>
                                                         @foreach(Helper::livraison() as $livraison)
-                                                        <option value="{{$livraison->id}}" class="livraisonOption" data-price="{{$livraison->price}}">{{$livraison->type}}: ${{$livraison->price}}</option>
+                                                        <option value="{{$livraison->id}}" class="livraisonOption" data-price="{{$livraison->price}}">{{$livraison->type}}: {{$livraison->price}}Dhs</option>
                                                         @endforeach
                                                     </select>
                                                 @else 
-                                                    <span>Free</span>
+                                                    <span>Gratuite</span>
                                                 @endif
                                             </li>
                                             
@@ -147,9 +147,9 @@
                                                 }
                                             @endphp
                                             @if(session('coupon'))
-                                                <li class="last"  id="order_total_price">Total<span>{{number_format($total_amount,2)}} Dhs</span></li>
+                                                <li class="last"  id="order_total_price">Totale<span>{{number_format($total_amount,2)}} Dhs</span></li>
                                             @else
-                                                <li class="last"  id="order_total_price">Total<span>{{number_format($total_amount,2)}} Dhs</span></li>
+                                                <li class="last"  id="order_total_price">Totale<span>{{number_format($total_amount,2)}} Dhs</span></li>
                                             @endif
                                         </ul>
                                     </div>
@@ -162,8 +162,8 @@
                                         <div class="checkbox">
                                             {{-- <label class="checkbox-inline" for="1"><input name="updates" id="1" type="checkbox">Vérifier</label> --}}
                                             <form-group>
-                                                <input name="payment_method"  type="radio" value="cod"> <label> Cash On Delivery</label><br>
-                                                <input name="payment_method"  type="radio" value="paypal"> <label> PayPal</label> 
+                                                <input name="payment_method"  type="radio" value="cod"> <label>Paiement à la livraison</label><br>
+                                                <input name="payment_method"  type="radio" value="paypal"> <label> PayPal </label> 
                                             </form-group>
                                             
                                         </div>
@@ -333,7 +333,7 @@
 				let subtotal = parseFloat( $('.order_subtotal').data('price') ); 
 				let coupon = parseFloat( $('.coupon_price').data('price') ) || 0; 
 				// alert(coupon);
-				$('#order_total_price span').text('$'+(subtotal + cost-coupon).toFixed(2));
+				$('#order_total_price span').text((subtotal + cost-coupon).toFixed(2)+'Dhs');
 			});
 
 		});

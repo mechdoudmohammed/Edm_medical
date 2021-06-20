@@ -5,7 +5,7 @@
 <div class="card">
     <h5 class="card-header">Editer utilisateur</h5>
     <div class="card-body">
-      <form method="post" action="{{route('users.update',$user->id)}}">
+      <form method="post" action="{{route('users.update',$user->id)}}" enctype="multipart/form-data">
         @csrf 
         @method('PATCH')
         <div class="form-group">
@@ -54,8 +54,9 @@
             <select name="role" class="form-control">
                 <option value="">-----Selectionner Role-----</option>
                 @foreach($roles as $role)
-                    <option value="{{$role->role}}" {{(($role->role=='admin') ? 'selected' : '')}}>Admin</option>
-                    <option value="{{$role->role}}" {{(($role->role=='user') ? 'selected' : '')}}>User</option>
+                    <option value="admin" {{(($role->role=='admin') ? 'selected' : '')}}>Admin</option>
+                    <option value="user" {{(($role->role=='user') ? 'selected' : '')}}>User</option>
+                    <option value="livreur" {{(($role->role=='livreur') ? 'selected' : '')}}>Livreur</option>
                 @endforeach
             </select>
           @error('role')

@@ -46,9 +46,10 @@
               }?> > Oui<br>
               <input type="radio" name='location' value='0' id="choixb2" onclick="desactive()" <?php 
               if($materiel->Location==0){
-        echo"checked=\"checked\">";
+        echo"checked=\"checked\"";
         
-              }?> > Non <br>
+              }?>  > Non
+
               <script  type="text/javascript">
               function desactive()  {
                   if(document.getElementById('choixb2').checked )  {
@@ -73,13 +74,6 @@
           }
           ?>>
         </div>
-
-        
-        <div class="form-group">
-          <label for="is_featured">Est présenté</label><br>
-          <input type="checkbox" name='is_featured' id='is_featured' value='{{$materiel->is_featured}}' {{(($materiel->is_featured) ? 'checked' : '')}}> Oui                        
-        </div>
-              {{-- {{$categories}} --}}
 
         <div class="form-group">
           <label for="cat_id">Categorie <span class="text-danger">*</span></label>

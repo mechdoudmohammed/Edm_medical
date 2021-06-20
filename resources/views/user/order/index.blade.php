@@ -73,7 +73,7 @@
                         @endforeach
                        @endif
                     </td>
-                    <td>
+                    <td style="display:flex;">
                         <a href="{{route('user.order.show',$order->id)}}" class="btn btn-warning btn-sm float-left mr-1" style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" title="view" data-placement="bottom"><i class="fas fa-eye"></i></a> </br>
                         @if(count($reclamations)==0)
                         <a href="{{route('user.reclamation.create',$order->id)}}" class="btn btn-info btn-sm float-left mr-1" style="height:30px; width:30px;border-radius:50%" data-toggle="tooltip" title="reclamer" data-placement="bottom"><i class="fas fa-exclamation"></i></a> </br> 
@@ -122,9 +122,17 @@
             "columnDefs":[
                 {
                     "orderable":false,
-                    "targets":[8]
+                    "targets":[5,6]
                 }
-            ]
+            ],
+            "oLanguage": {
+              "sSearch": "Chercher:",
+            "sInfo":"Afficher _START_ à _END_ dans _TOTAL_ enregistrements",
+            "sInfoEmpty":"Afficher 0 à 0 dans 0 enregistrements",
+            "sLengthMenu":"Afficher _MENU_ enregistrements",
+            "sZeroRecords":"Rien à afficher",
+            "sEmptyTable":"Rien à afficher",
+}
         } );
 
         // Sweet alert

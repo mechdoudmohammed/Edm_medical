@@ -118,7 +118,7 @@
                                                     @endphp
                                                     <li>
                                                         <a href="{{route('wishlist-delete',$data->id)}}" class="remove" title="Remove this item"><i class="fa fa-remove"></i></a>
-                                                        <a class="cart-img" href="#"><img src="backend/img/materiels/{{$photo[0]}}" alt="backend/img/materiels/{{$photo[0]}}"></a>
+                                                        <a class="cart-img" href="#"><img src="{{asset('backend/img/materiels')}}/{{$photo[0]}}" alt="{{asset('backend/img/materiels')}}/{{$photo[0]}}"></a>
                                                         <h4><a href="{{route('materiel-detail',$data->materiel['slug'])}}" target="_blank">{{$data->materiel['title']}}</a></h4>
                                                         <p class="quantity">{{$data->quantity}} x - <span class="amount">{{number_format($data->price,2)}} dhs</span></p>
                                                     </li>
@@ -155,7 +155,7 @@
                                                     @endphp
                                                     <li>
                                                         <a href="{{route('cart-delete',$data->id)}}" class="remove" title="Remove this item"><i class="fa fa-remove"></i></a>
-                                                        <a class="cart-img" href="#"><img src="backend/img/materiels/{{$photo[0]}}" alt="backend/img/materiels/{{$photo[0]}}"></a>
+                                                        <a class="cart-img" href="#"><img src="{{asset('backend/img/materiels')}}/{{$photo[0]}}" alt="{{asset('backend/img/materiels')}}/{{$photo[0]}}"></a>
                                                         <h4><a href="{{route('materiel-detail',$data->materiel['slug'])}}" target="_blank">{{$data->materiel['title']}}</a></h4>
                                                         <p class="quantity">{{$data->quantity}} x - <span class="amount">{{number_format($data->price,2)}} dhs</span></p>
                                                     </li>
