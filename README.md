@@ -1,4 +1,5 @@
-Edm_medical est un projet de fin d'etude pour mise en place une solution (Web et mobile) pour la gestion, vente et location du matériel médical. 
+Edm_medical est un projet de fin d'etude pour mise en place une solution (Web et mobile) pour la gestion, vente et location du matériel médical. <br>
+Le projet est developer avec le framework laravel 7 et bootstrap.<br>
 Les comptes:
 admin@admin.com
 123
